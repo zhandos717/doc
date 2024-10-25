@@ -177,7 +177,7 @@ final class MoonShineLayout extends CompactLayout
 
 Как видите начиная от тега `HTML` все в `MoonShine` является компонентами, что дает огромную свободу кастомизации вашей админ. панели.
 
-Полный список компонетов ищите в разделе [Компоненты](docs/{{version}}/components/index)
+Полный список компонентов ищите в разделе [Компоненты](docs/{{version}}/components/index)
 
 > [!TIP]
 > Как можно заметить компонентов огромное количество и для удобства, мы объединили их в группы, чтобы вы могли удобно переопределять только те группы, которые требуется
@@ -208,7 +208,7 @@ final class MoonShineLayout extends CompactLayout
 }
 ```
 
-В примере в помощью методов `getFooterMenu`, `getFooterMenu` мы переопределили вывод меню в футере и copyright
+В примере с помощью методов `getFooterMenu`, `getFooterMenu` мы переопределили вывод меню в футере и copyright
 
 Доступные быстрые методы:
 
@@ -236,7 +236,7 @@ protected function getSidebarComponent(): Sidebar
 protected function getHeaderComponent(): Header
 ```
 
-#### Переопределить или интегрировать компонент Topbar
+#### Переопределить или интегрировать компонент TopBar
 
 ```php
 protected function getTopBarComponent(): Topbar
@@ -266,7 +266,7 @@ protected function getHomeUrl(): string
 <a name="publish"></a>
 ## Создание шаблона
 
-Чтобы создать еще один шаблон воспользуйтесь командой
+Чтобы создать еще один шаблон, воспользуйтесь командой
 
 ```
 php artisan moonshine:layout
