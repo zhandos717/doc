@@ -1,6 +1,6 @@
 # Аутентификация
 
-- [Введение](#introduction)
+- [Основы](#basics)
 - [Конфигурация](#configuration)
 - [Кастомизация](#customization)
 - [Отключение аутентификации](#disabling-authentication)
@@ -8,18 +8,17 @@
 - [Кастомные поля пользователя и профиль](#custom-user-fields)
 - [Ограничение доступа по ролям](#role-based-access)
 - [Аутентификационные pipelines](#authentication-pipelines)
+- [Socialite](#socialite)
+- [Двухфакторная аутентификация](#2fa)
+- [JWT](#jwt)
 
-## TODO
-- [ ] Socialite
-- [ ] JWT смотреть в frontend/api
-- [ ] 2FA
 ---
 
-<a name="introduction"></a>
-## Введение
+<a name="basics"></a>
+## Основы
 
-MoonShine предоставляет встроенную систему аутентификации, которая по умолчанию использует собственную модель пользователя и guard. Это позволяет быстро начать работу с административной панелью, 
-не беспокоясь о настройке аутентификации.
+`MoonShine` предоставляет встроенную систему аутентификации, которая по умолчанию использует собственную модель пользователя и `guard`.
+Это позволяет быстро начать работу с административной панелью, не беспокоясь о настройке аутентификации.
 
 <a name="configuration"></a>
 ## Конфигурация
@@ -230,3 +229,197 @@ class PhoneVerification
 - Расширяемость: Простое добавление новых методов аутентификации или проверок.
 
 Использование аутентификационных pipelines позволяет реализовать сложные сценарии аутентификации, сохраняя чистоту и модульность кода, и дает полный контроль над процессом входа пользователей в административную панель MoonShine.
+
+<a name="socialite></a>
+# Socialite
+
+Для удобства можно связать аккаунт с социальными сетями и упростить процесс аутентификации.
+
+В основе этого функционала - пакет [Laravel Socialite](https://laravel.com/docs/socialite).
+
+Убедитесь, что он у вас установлен и настроен.
+
+Далее установите пакет для интеграции `Socialite` в `MoonShine`:
+
+```shell
+composer require moonshine/socialite
+```
+
+Выполните миграции:
+
+```shell
+php artisan migrate
+```
+
+Опубликуйте файл конфигурации:
+
+```shell
+php artisan vendor:publish --provider="MoonShine\Socialite\Providers\SocialiteServiceProvider"
+```
+
+Далее в конфиге `config/moonshine-socialite.php` установите доступные драйверы и изображение для кнопки
+
+```shell
+return [
+    'drivers' => [
+        'github' => '/images/github.png',
+        'facebook' => '/images/facebook.svg',
+    ],
+];
+```
+
+> [!NOTE]
+> Драйверы должны быть заранее настроены в пакете `Socialite`
+
+Добавьте трейт `MoonShine\Socialite\Traits\HasMoonShineSocialite` к модели, которая отвечает за пользователей админ. панели (по умолчанию это `MoonshineUser`).
+
+Не забудьте опубликовать модель, если используете конфигурацию по умолчанию:
+
+```php
+<?php
+
+declare(strict_types=1);
+
+namespace App\Models;
+
+use MoonShine\Socialite\Traits\HasMoonShineSocialite;
+
+final class MoonshineUser extends \MoonShine\Laravel\Models\MoonshineUser
+{
+    use HasMoonShineSocialite;
+}
+```
+
+И заменить в файле конфигурации:
+
+```php
+// ..
+'auth' => [
+    // ..
+    'model' => \App\Models\MoonshineUser::class,
+    // ..
+],
+// ..
+```
+
+Мы автоматически добавим компонент `SocialAuth` на страницу профиля и `LoginLayout`, но если вы их переопределили и используете собственные, то добавьте компонент самостоятельно:
+
+```php
+use MoonShine\Socialite\Components\SocialAuth;
+
+protected function components(): iterable
+{
+    return [
+        // ...
+
+        SocialAuth::make(profileMode: true),
+    ];
+}
+```
+
+<a name="2fa></a>
+# Двухфакторная аутентификация
+
+Для дополнительной безопасности вы можете установить двухфакторную проверку аутентификации:
+
+```shell
+composer require moonshine/two-factor
+```
+
+Далее выполните миграции:
+
+```shell
+php artisan migrate
+```
+
+Далее добавьте `authPipeline`:
+
+~~~tabs
+tab: config
+```php
+use MoonShine\TwoFactor\TwoFactorAuthPipe;
+
+return [
+    // ...
+    'auth' => [
+        // ...
+        'pipelines' => [
+            TwoFactorAuthPipe::class
+        ],
+        // ...
+    ]
+    // ...
+];
+```
+tab: MoonShineServiceProvider
+```php
+<?php
+
+declare(strict_types=1);
+
+namespace App\Providers;
+
+use MoonShine\Laravel\DependencyInjection\MoonShineConfigurator;
+use MoonShine\Laravel\Providers\MoonShineApplicationServiceProvider;
+use MoonShine\TwoFactor\TwoFactorAuthPipe;
+
+class MoonShineServiceProvider extends MoonShineApplicationServiceProvider
+{
+    // ...
+
+    protected function configure(MoonShineConfigurator $config): MoonShineConfigurator
+    {
+        return $config->authPipelines([
+            TwoFactorAuthPipe::class
+        ]);
+    }
+}
+```
+~~~
+
+Добавьте трейт `MoonShine\TwoFactor\Traits\TwoFactorAuthenticatable` к модели, которая отвечает за пользователей админ. панели (по умолчанию это `MoonshineUser`).
+
+Не забудьте опубликовать модель, если используете конфигурацию по умолчанию:
+
+```php
+use MoonShine\TwoFactor\Traits\TwoFactorAuthenticatable;
+
+final class MoonshineUser extends \MoonShine\Laravel\Models\MoonshineUser
+{
+    use TwoFactorAuthenticatable;
+}
+```
+
+И заменить в файле конфигурации:
+
+```php
+// ..
+'auth' => [
+    // ..
+    'model' => \App\Models\MoonshineUser::class,
+    // ..
+],
+// ..
+```
+
+Мы автоматически добавим компонент `TwoFactor` на страницу профиля, но если вы ее переопределили и используете собственную, то добавьте компонент самостоятельно:
+
+```php
+use MoonShine\TwoFactor\ComponentSets\TwoFactor;
+
+protected function components(): iterable
+{
+    return [
+        // ...
+
+        TwoFactor::make(),
+    ];
+}
+```
+
+<a name="jwt></a>
+# JWT
+
+`MoonShine` также предоставляет простой способ переключить панель администратора в режим `API` и взаимодействовать через токены.
+
+Подробнее читайте в разделе [API](/docs/{{version}}/frontend/api)
