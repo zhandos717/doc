@@ -43,7 +43,8 @@
 ```
 
 Выполните консольную команду.
-```
+
+```shell
 composer update
 ```
 
@@ -279,19 +280,19 @@ class ArticleResource extends ModelResource
 
 После внесения всех изменений следует попробовать снова обновить зависимости. Обновление должно завершиться без ошибок.
 
-```php
+```shell
 composer update
 ```
 
 Если в момент обновления не были опубликованы assets, их необходимо опубликовать.
 
-```php
+```shell
 php artisan moonshine:publish
 ```
 
 или
 
-```php
+```shell
 php artisan vendor:publish --tag=laravel-assets --ansi --force
 ```
 
@@ -300,7 +301,7 @@ php artisan vendor:publish --tag=laravel-assets --ansi --force
 
 В новой версии **MoonShine** полностью изменен config. Вы можете опубликовать новый файл конфигурации через консольную команду. После публикации внесите необходимые корректировки.
 
-```php
+```shell
 php artisan moonshine:install
 ```
 

@@ -102,7 +102,7 @@ public function boot(): void
 
 Создадим поле с помощью команды `moonshine:field` и выберем, что оно расширяет Textarea
 
-```php
+```shell
 php artisan moonshine:field Quill
 ```
 

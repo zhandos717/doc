@@ -164,7 +164,8 @@ public function fields(): array
 Если вы хотите использовать файловый менеджер в *TinyMce*, то вам нужно установить пакет [Laravel FileManager](https://github.com/UniSharp/laravel-filemanager)
 
 #### Установка  
-```php
+
+```shell
 composer require unisharp/laravel-filemanager
 
 php artisan vendor:publish --tag=lfm_config

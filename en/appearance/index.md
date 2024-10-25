@@ -231,7 +231,7 @@ To change *favicons* in the *MoonShine* admin panel,you need to override the cor
 
 To do this, run the console command and select `Favicons`.
 
-```
+```shell
 php artisan moonshine:publish
 ```
 

@@ -111,7 +111,7 @@ cd packages && git clone git@github.com:moonshine-software/moonshine.git && cd m
 
 5. Create `.env` from `.env.example` (don't forget to create a database) and perform the installation below.
 
-```
+```shell
 php artisan key:generate
 php artisan storage:link
 php artisan migrate --seed

@@ -22,7 +22,7 @@
 
 Если бы вы разрабатывали самостоятельно, то создание ресурсных контроллеров и ресурсных маршрутов могло бы выглядеть так:
 
-```php
+```shell
 php artisan make:controller Controller --resource
 ```
 
@@ -37,7 +37,7 @@ Route::resource('resources', Controller::class);
 <a name="creating-a-section"></a>
 ## Создание раздела
 
-```php
+```shell
 php artisan moonshine:resource Post
 ```
 
@@ -54,11 +54,11 @@ MoonShine автоматически, на основе имени, свяжет
 
 Вы можете сразу указать привязку модели и заголовок раздела для команды:
 
-```php
+```shell
 php artisan moonshine:resource Post --model=CustomPost --title="Articles"
 ```
 
-```php
+```shell
 php artisan moonshine:resource Post --model="App\Models\CustomPost" --title="Articles"
 ```
 

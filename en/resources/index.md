@@ -22,11 +22,11 @@ At any admin panel heart are sections for editing data. **MoonShine** is no exce
 
 If you were developing on your own, then create resource controllers and resource routes can be as follows:
 
-```php
+```shell
 php artisan make:controller Controller --resource
 ```
 
-```php
+```shell
 Route::resource('resources', Controller::class);
 ```
 
@@ -54,11 +54,11 @@ MoonShine will automatically, based on the name, link the resource to the `app/M
 
 You can immediately specify the model binding and section title for the command:
 
-```php
+```shell
 php artisan moonshine:resource Post --model=CustomPost --title="Articles"
 ```
 
-```php
+```shell
 php artisan moonshine:resource Post --model="App\Models\CustomPost" --title="Articles"
 ```
 

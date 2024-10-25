@@ -401,7 +401,7 @@ unless($value = null, callable $callback = null, callable $default = null)
 
 Класс можно сгенерировать с помощью консольной команды:
 
-```php
+```shell
 php artisan moonshine:handler
 ```
 

@@ -31,7 +31,7 @@ class PostResource extends ModelResource
 
 Для создания *Policy* с привязкой к пользователю админ-панели можно воспользоваться консольной командой:
 
-```php
+```shell
 php artisan moonshine:policy
 ```
 

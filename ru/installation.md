@@ -20,14 +20,14 @@
 <a name="composer"></a>
 ## Composer
 
-```
+```shell
 composer require moonshine/moonshine
 ```
 
 <a name="install"></a>
 ## Установка
 
-```
+```shell
 php artisan moonshine:install
 ```
 
@@ -48,7 +48,7 @@ php artisan moonshine:install
 
 Если во время установки панели администрирования `MoonShine` не был создан администратор или необходимо создать еще одного, это можно сделать, выполнив консольную команду.
 
-```
+```shell
 php artisan moonshine:user
 ```
 

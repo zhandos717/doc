@@ -229,7 +229,7 @@ moonshineColors()->successBg('#000000', dark: true);
 
 Для этого выполните консольную команду и выберите `Favicons`.
 
-```
+```shell
 php artisan moonshine:publish
 ```
 

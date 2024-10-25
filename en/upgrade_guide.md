@@ -43,7 +43,8 @@ Change version **MoonShine**.
 ```
 
 Execute the console command.
-```
+
+```shell
 composer update
 ```
 
@@ -279,19 +280,19 @@ class ArticleResource extends ModelResource
 
 After all changes have been made, you should try again to update the dependencies. The update should complete without errors.
 
-```php
+```shell
 composer update
 ```
 
 If the assets were not published at the time of the update, they must be published.
 
-```php
+```shell
 php artisan moonshine:publish
 ```
 
 or
 
-```php
+```shell
 php artisan vendor:publish --tag=laravel-assets --ansi --force
 ```
 
@@ -300,7 +301,7 @@ php artisan vendor:publish --tag=laravel-assets --ansi --force
 
 The config has been completely changed in new version of **MoonShine**. You can publish the new configuration file via the console command. After publishing, make the necessary adjustments.
 
-```php
+```shell
 php artisan moonshine:install
 ```
 

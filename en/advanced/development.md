@@ -104,7 +104,7 @@ Let's take a quick look at creating your own field! This will be a visual editor
 
 Let's create a field using the `moonshine:field` command and select that it extends Textarea
 
-```php
+```shell
 php artisan moonshine:field Quill
 ```
 

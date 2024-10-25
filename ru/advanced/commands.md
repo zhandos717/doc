@@ -23,7 +23,7 @@
 
 Команда для установки пакета **MoonShine** в ваш проект *Laravel*:
 
-```php
+```shell
 php artisan moonshine:install
 ```
 
@@ -40,7 +40,7 @@ php artisan moonshine:install
 
 Команда для создания класса apply:
 
-```php
+```shell
 php artisan moonshine:apply
 ```
 
@@ -51,7 +51,7 @@ php artisan moonshine:apply
 
 Команда создает пользовательский компонент:
 
-```php
+```shell
 php artisan moonshine:component
 ```
 
@@ -65,7 +65,7 @@ php artisan moonshine:component
 
 Команда для создания контроллера:
 
-```php
+```shell
 php artisan moonshine:controller
 ```
 
@@ -79,7 +79,7 @@ php artisan moonshine:controller
 
 Команда позволяет создать пользовательское поле:
 
-```php
+```shell
 php artisan moonshine:field
 ```
 
@@ -95,7 +95,7 @@ php artisan moonshine:field
 
 Команда создает класс Handler для собственных реализаций импорта и экспорта:
 
-```php
+```shell
 php artisan moonshine:handler
 ```
 
@@ -123,7 +123,7 @@ php artisan moonshine:handler
 
 Команда создает *Policy*, привязанную к пользователю админ-панели:
 
-```php
+```shell
 php artisan moonshine:policy
 ```
 
@@ -137,7 +137,7 @@ php artisan moonshine:policy
 
 Команда для создания ресурсов:
 
-```php
+```shell
 php artisan moonshine:resource
 ```
 
@@ -165,7 +165,7 @@ php artisan moonshine:resource
 
 Команда создает класс TypeCast для работы с данными:
 
-```php
+```shell
 php artisan moonshine:type-cast
 ```
 
@@ -179,7 +179,7 @@ php artisan moonshine:type-cast
 
 Команда, позволяющая создать супер-пользователя:
 
-```php
+```shell
 php artisan moonshine:user
 ```
 
@@ -194,9 +194,10 @@ php artisan moonshine:user
 
 Команда для публикации:
 
-```php
+```shell
 php artisan moonshine:publish
 ```
+
 Для публикации доступно несколько вариантов:
 
 - **Assets** - ассеты админ-панели **MoonShine**;
@@ -207,7 +208,7 @@ php artisan moonshine:publish
 
 #### Вы можете сразу указать тип публикации в команде.
 
-```php
+```shell
 php artisan moonshine:publish assets
 ```
 

@@ -24,7 +24,7 @@ Pages with the same logic can be combined into `Resource`.
 
 To create a page class, you can use the console command:
 
-```php
+```shell
 php artisan moonshine:page
 ```
 
@@ -33,7 +33,7 @@ It is located by default in the `app/MoonShine/Pages` directory.
 
 You can specify the name of the class and the directory of its location in the command.
 
-```php
+```shell
 php artisan moonshine:page OrderStatistics --dir=Pages/Statistics
 ```
 

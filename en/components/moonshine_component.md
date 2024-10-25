@@ -17,7 +17,7 @@
 ## Creating a component
 **MoonShine** implements a console command to create a *MoonShineComponent*, which already implements the basic methods for use in the admin panel.
 
-```php
+```shell
 php artisan moonshine:component
 ```
 

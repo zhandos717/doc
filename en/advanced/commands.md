@@ -25,7 +25,7 @@ https://moonshine-laravel.com/docs/resource/advanced/advanced-commands?change-mo
 
 Command to install the **MoonShine** package in your *Laravel* project:
 
-```php
+```shell
 php artisan moonshine:install
 ```
 
@@ -42,7 +42,7 @@ Available options:
 
 The command to create the apply class is:
 
-```php
+```shell
 php artisan moonshine:apply
 ```
 
@@ -53,7 +53,7 @@ After executing the command, a file will be created in the `app/MoonShine/Applie
 
 The command creates a custom component:
 
-```php
+```shell
 php artisan moonshine:component
 ```
 
@@ -67,7 +67,7 @@ After executing the command, a class for the component will be created in the `a
 
 Command to create a controller:
 
-```php
+```shell
 php artisan moonshine:controller
 ```
 
@@ -81,7 +81,7 @@ After executing the command, a controller class will be created in the `app/Moon
 
 The command allows you to create a custom field:
 
-```php
+```shell
 php artisan moonshine:field
 ```
 
@@ -97,7 +97,7 @@ After executing the command, a field class will be created in the `app/MoonShine
 
 The command creates a Handler class for its import and export implementations:
 
-```php
+```shell
 php artisan moonshine:handler
 ```
 
@@ -125,7 +125,7 @@ After executing the command, a default page (or group of pages) will be created 
 
 The command creates a *Policy* bound to the admin panel user:
 
-```php
+```shell
 php artisan moonshine:policy
 ```
 
@@ -139,7 +139,7 @@ After executing the command, a class will be created in the `app/Policies` direc
 
 Command to create resources:
 
-```php
+```shell
 php artisan moonshine:resource
 ```
 
@@ -167,7 +167,7 @@ If a model resource with pages is created, additional pages will be created in t
 
 The command creates a TypeCast class for working with data:
 
-```php
+```shell
 php artisan moonshine:type-cast
 ```
 
@@ -181,7 +181,7 @@ After executing the command, a file will be created in the `app/MoonShine/TypeCa
 
 The command that allows you to create a super user:
 
-```php
+```shell
 php artisan moonshine:user
 ```
 
@@ -196,9 +196,10 @@ Available options:
 
 Command for publish:
 
-```php
+```shell
 php artisan moonshine:publish
 ```
+
 There are several options available for publishing:
 
 - **Assets** - **MoonShine** admin panel assets;
@@ -209,7 +210,7 @@ There are several options available for publishing:
 
 #### You can immediately specify the publication type in the command.
 
-```php
+```shell
 php artisan moonshine:publish assets
 ```
 

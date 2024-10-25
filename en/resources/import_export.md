@@ -401,7 +401,7 @@ There may be a situation where you want to change your import or export implemen
 
 The class can be generated using the console command:
 
-```php
+```shell
 php artisan moonshine:handler
 ```
 

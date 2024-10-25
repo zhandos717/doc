@@ -8,13 +8,13 @@ https://moonshine-laravel.com/docs/resource/advanced/advanced-testings?change-mo
 
 By adding the --test flag to the `moonshine:resource` command, you can generate a test file along with a basic test suite:
 
-```php
+```shell
 php artisan moonshine:resource PostResource --test
 ```
 
 Apart from creating the resource, the above command will generate the following test file `tests/Feature/PostResourceTest.php`. If you are using Pest, you can specify the --pest option:
 
-```php
+```shell
 php artisan moonshine:resource PostResource --pest
 ```
 

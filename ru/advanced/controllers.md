@@ -19,7 +19,7 @@ MoonShine позволяет работать привычным образом,
 <a name="generate-controller"></a>
 ## Генерация контроллера
 
-```php
+```shell
 php artisan moonshine:controller
 ```
 

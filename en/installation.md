@@ -18,14 +18,14 @@ To use MoonShine, the following requirements must be met before installation:
 <a name="composer"></a>
 ## Composer
 
-```
+```shell
 composer require moonshine/moonshine
 ```
 
 <a name="install"></a>
 ## Installation
 
-```
+```shell
 php artisan moonshine:install
 ```
 
@@ -46,7 +46,7 @@ php artisan moonshine:install
 
 If during the installation of the admin panel `MoonShine` an administrator was not created or it is necessary to create another one, you can do it by executing the console command.
 
-```
+```shell
 php artisan moonshine:user
 ```
 

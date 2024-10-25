@@ -4,13 +4,13 @@
 
 Добавив флаг --test к команде `moonshine:resource`, вы можете сгенерировать тестовый файл вместе с базовым набором тестов:
 
-```php
+```shell
 php artisan moonshine:resource PostResource --test
 ```
 
 Помимо создания ресурса, вышеуказанная команда сгенерирует следующий тестовый файл `tests/Feature/PostResourceTest.php`. Если вы используете Pest, вы можете указать опцию --pest:
 
-```php
+```shell
 php artisan moonshine:resource PostResource --pest
 ```
 

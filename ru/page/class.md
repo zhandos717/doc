@@ -22,7 +22,7 @@
 
 Для создания класса страницы можно использовать консольную команду:
 
-```php
+```shell
 php artisan moonshine:page
 ```
 
@@ -31,7 +31,7 @@ php artisan moonshine:page
 
 Вы можете указать имя класса и директорию его расположения в команде.
 
-```php
+```shell
 php artisan moonshine:page OrderStatistics --dir=Pages/Statistics
 ```
 

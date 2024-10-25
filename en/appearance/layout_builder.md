@@ -12,7 +12,7 @@ To change the structure of the template, you must use `LayoutBuilder`.
     
 The first step is to publish the template modification class using the console command.
 
-```
+```shell
 php artisan moonshine:publish layout
 ```
 

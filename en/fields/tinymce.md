@@ -167,7 +167,7 @@ If you want to use the file manager in *TinyMce*, then you need to install the p
 
 #### Installation 
  
-```php
+```shell
 composer require unisharp/laravel-filemanager
 
 php artisan vendor:publish --tag=lfm_config

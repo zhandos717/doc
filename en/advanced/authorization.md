@@ -32,7 +32,7 @@ class PostResource extends ModelResource
 
 To create a *Policy* with an admin panel user binding, you can use the console command:
 
-```php
+```shell
 php artisan moonshine:policy
 ```
 

@@ -20,7 +20,7 @@ Useful for displaying your complex solutions or writing additional handlers
 <a name="generate-controller"></a>  
 ## Generate controller  
 
-```php
+```shell
 php artisan moonshine:controller
 ```
 
