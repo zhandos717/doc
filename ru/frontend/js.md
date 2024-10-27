@@ -251,42 +251,82 @@ FormBuilder::make('/crud/update')
 
 За передачу параметра `callback` отвечает класс `AsyncCallback`. Давайте рассмотрим пример для `ActionButton`:
 
+## Переопределение обработки ответа
+
+С помощью `responseHandler` можно полностью переопределить поведение обработки ответа. В случае переопределения вызов событий, уведомлений и прочее, вы берете на себя.
+
 ```php
-ActionButton::make()->method('myMethod', callback: AsyncCallback::with(success: 'myResponseCallback'));
+ActionButton::make()->method('myMethod', callback: AsyncCallback::with(responseHandler: 'myResponseHandler'));
 ```
 
-Мы при клике на кнопку отправим запрос в метод myMethod и при успешном ответе вызовем функцию myResponseCallback.
+> [!NOTE]
+> `responseHandler` полностью берет обработку ответа на себя, исключая поведение по умолчанию
+
+При клике на кнопку отправим запрос в метод `myMethod` и при ответе вызовем функцию `myResponseHandler`.
 
 Следующий шаг - необходимо объявить эту функцию в `js` через глобальный класс `MoonShine`:
 
 ```js
 document.addEventListener("moonshine:init", () => {
-  MoonShine.onCallback('myResponseCallback', (response, element, events, component) => alert('response'))
+  MoonShine.onCallback('myResponseHandler', function(response, element, events, component) {
+    console.log('myResponseHandler', response, element, events, component)
+  })
 })
 ```
 
-- `response` - `json` ответ,
+- `response` - объект ответа,
 - `element` - `html` элемент, в данном случае кнопка `ActionButton`,
 - `events` - события которые будут вызваны,
 - `component` - компонент `Alpine.js`.
 
-Далее рассмотрим пример с функцией до запроса:
+## Вызов до запроса
+
+Далее рассмотрим пример с функцией до запроса `beforeRequest`:
 
 ```php
-ActionButton::make()->method('myMethod', callback: AsyncCallback::with(before: 'myBeforeRequestCallback'));
+ActionButton::make()->method('myMethod', callback: AsyncCallback::with(beforeRequest: 'myBeforeRequest'));
 ```
 
-Мы при клике на кнопку отправим запрос в метод myMethod и при успешном ответе вызовем функцию myResponseCallback.
+При клике на кнопку перед тем как отправить запрос в метод `myMethod` будет вызвана функция `myBeforeRequest`.
 
 Следующий шаг - необходимо объявить эту функцию в `js` через глобальный класс `MoonShine`:
 
 ```js
 document.addEventListener("moonshine:init", () => {
-  MoonShine.onCallback('myBeforeRequestCallback', (element, component) => alert('before'))
+  MoonShine.onCallback('myBeforeRequest', function(element, component) {
+    console.log('myBeforeRequest', element, component)
+  })
 })
 ```
 
 - `element` - `html` элемент, в данном случае кнопка `ActionButton`,
+- `component` - компонент `Alpine.js`.
+
+## Вызов после успешного ответа
+
+Далее рассмотрим пример с функцией до запроса `afterResponse`:
+
+```php
+ActionButton::make()->method('myMethod', callback: AsyncCallback::with(afterResponse: 'myAfterResponse'));
+```
+
+> [!NOTE]
+> Если вы указали `responseHandler`, то поведение обратки ответа принимает ваша функция и `afterResponse` вызван не будет
+
+При клике на кнопку будет отправлен запрос в метод `myMethod` и в случае успеха будет вызвана функция `myAfterResponse`.
+
+Следующий шаг - необходимо объявить эту функцию в `js` через глобальный класс `MoonShine`:
+
+```js
+document.addEventListener("moonshine:init", () => {
+  MoonShine.onCallback('myAfterResponse', function(data, messageType, component) {
+    console.log('myAfterResponse', data, messageType, component)
+  })
+})
+```
+
+- `data` - `json` ответ,
+- `messageType` - `ToastType`,
 - `component` - компонент `Alpine.js`.
 
 
