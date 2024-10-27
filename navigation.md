@@ -83,6 +83,7 @@
     - [CardsBuilder](/docs/{{version}}/components/cards-builder)
     - [Modal](/docs/{{version}}/components/modal)
     - [OffCanvas](/docs/{{version}}/components/off-canvas)
+    - [Fragment](/docs/{{version}}/components/fragment)
     - [Layout](/docs/{{version}}/components/layout)
     - [Html](/docs/{{version}}/components/html)
     - [Head](/docs/{{version}}/components/head)
