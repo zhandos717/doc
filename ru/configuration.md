@@ -328,6 +328,27 @@ $config->authPipelines([TwoFactor::class]);
 ```
 ~~~
 
+#### Поля пользователя
+
+Если вы просто заменили модель на свою `auth.model`, то скорее всего вы столкнетесь с проблемой не соответствия наименования полей.
+Чтобы настроить соответствие, воспользуйтесь настройкой `userField`:
+
+~~~tabs
+tab: config/moonshine.php
+```php
+'user_fields' => [
+    'username' => 'email',
+    'password' => 'password',
+    'name' => 'name',
+    'avatar' => 'avatar',
+],
+```
+tab: app/Providers/MoonShineServiceProvider.php
+```php
+$config->userField('username', 'username');
+```
+~~~
+
 <a name="localization"></a>
 ### Локализация
 
