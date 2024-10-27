@@ -253,7 +253,7 @@ FormBuilder::make('/crud/update')
 
 ## Переопределение обработки ответа
 
-С помощью `responseHandler` можно полностью переопределить поведение обработки ответа. В случае переопределения вызов событий, уведомлений и прочее, вы берете на себя.
+С помощью параметра `responseHandler` можно полностью переопределить поведение обработки ответа. В случае переопределения вызов событий, обработка ошибок, уведомлений и прочее, вы берете на себя.
 
 ```php
 ActionButton::make()->method('myMethod', callback: AsyncCallback::with(responseHandler: 'myResponseHandler'));
@@ -281,7 +281,7 @@ document.addEventListener("moonshine:init", () => {
 
 ## Вызов до запроса
 
-Далее рассмотрим пример с функцией до запроса `beforeRequest`:
+Далее рассмотрим пример с функцией до вызова запроса через параметр `beforeRequest`:
 
 ```php
 ActionButton::make()->method('myMethod', callback: AsyncCallback::with(beforeRequest: 'myBeforeRequest'));
@@ -304,7 +304,7 @@ document.addEventListener("moonshine:init", () => {
 
 ## Вызов после успешного ответа
 
-Далее рассмотрим пример с функцией до запроса `afterResponse`:
+Далее рассмотрим пример с параметром `afterResponse`, принимает наименование функции, которая будет вызвана после успешного ответа:
 
 ```php
 ActionButton::make()->method('myMethod', callback: AsyncCallback::with(afterResponse: 'myAfterResponse'));
