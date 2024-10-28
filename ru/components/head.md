@@ -32,7 +32,7 @@ Head::make([
 tab: Blade
 ```blade
 <x-moonshine::layout.head> 
-    <meta name="csrf-token" "content"="token" />
+    <meta name="csrf-token" content="token" />
 </x-moonshine::layout.head> 
 ```
 ~~~
