@@ -76,7 +76,7 @@ public function components(): array
 
 #### вызов события через ActionButton
 
-Событие боковой панели может быть вызвано с помощью компонента *ActionButton*.
+Событие боковой панели может быть вызвано с помощью компонента `ActionButton`.
 
 ```php
 use MoonShine\Components\Offcanvas;

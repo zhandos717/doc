@@ -27,7 +27,7 @@ return [
 <a name="theme"></a>
 ## Main theme
 
-`theme()` method in the `MoonShineServiceProvider` provider allows you to configure the *MoonShine* admin panel theme.
+`theme()` method in the `MoonShineServiceProvider` provider allows you to configure the **MoonShine** admin panel theme.
 
 
 ```php
@@ -227,7 +227,7 @@ moonshineColors()->successBg('#000000', dark: true);
 <a name="favicons"></a>
 ## Favicons
 
-To change *favicons* in the *MoonShine* admin panel,you need to override the corresponding template.
+To change *favicons* in the **MoonShine** admin panel,you need to override the corresponding template.
 
 To do this, run the console command and select `Favicons`.
 

@@ -25,8 +25,8 @@ Extends [MoonShineComponent](https://moonshine-laravel.com/docs/resource/compone
 <a name="basics"></a>
 ## Basics
 
-With *CardsBuilder* you can display a list of items as cards.  
-You can also use *CardsBuilder* on your own pages or even outside of **MoonShine**.
+With `CardsBuilder` you can display a list of items as cards.  
+You can also use `CardsBuilder` on your own pages or even outside of **MoonShine**.
 
 ```php
 CardsBuilder::make(
@@ -52,18 +52,18 @@ CardsBuilder::make(
 ```
 
 > [!NOTE]
-> Elements and fields for *CardsBuilder* can be specified using the appropriate methods.
+> Elements and fields for `CardsBuilder` can be specified using the appropriate methods.
 
 <a name="items-fields"></a>
 ## Items and fields
 
-The `items()` method allows you to pass data to *CardsBuilder* for filling cards.
+The `items()` method allows you to pass data to `CardsBuilder` for filling cards.
 
 ```php
 items(iterable $items = [])
 ```
 
-The `fields()` method allows you to pass *CardsBuilder* a list of fields to build a card.
+The `fields()` method allows you to pass `CardsBuilder` a list of fields to build a card.
 
 ```php
 fields(Fields|Closure|array $fields)
@@ -106,7 +106,7 @@ The `header()` method allows you to set the header for cards.
 header(Closure|string $value)
 ```
 
-- `$value` - *column* or closure returning *html* code.
+- `$value` - `column` or closure returning `html` code.
 
 ```php
 CardsBuilder::make(
@@ -142,7 +142,7 @@ The `title()` method allows you to set the title of the card.
 title(Closure|string $value)
 ```
 
-- `$value` - *column* or a closure that returns the title.
+- `$value` - `column` or a closure that returns the title.
 
 ```php
 CardsBuilder::make(
@@ -178,7 +178,7 @@ The `subtitle()` method allows you to set the subtitle of the card.
 subtitle(Closure|string $value)
 ```
 
-- `$value` - *column* or a closure that returns a subtitle.
+- `$value` - `column` or a closure that returns a subtitle.
 
 ```php
 CardsBuilder::make(
@@ -193,7 +193,7 @@ CardsBuilder::make(
 ## Thumbnail
 
 To add an image to a card, you can use the `thumbnail()` method.  
-As an argument, the methods take the value of a column field or a closure that returns the *url* of the image.
+As an argument, the methods take the value of a column field or a closure that returns the `url` of the image.
 
 ```php
 thumbnail(Closure|string $value)
@@ -210,7 +210,7 @@ CardsBuilder::make(
 <a name="buttons"></a>
 ## Buttons
 
-To add buttons based on *ActionButton*, use the `buttons()` method.
+To add buttons based on `ActionButton`, use the `buttons()` method.
 
 ```php
 CardsBuilder::make()
@@ -227,7 +227,7 @@ CardsBuilder::make()
 <a name="overlay"></a>
 ## Overlay mode
 
-The *overlay* mode allows you to place the header and headings on top of the card image.  
+The `overlay` mode allows you to place the header and headings on top of the card image.  
 This mode is activated by the `overlay()` method of the same name.
 
 ```php
@@ -325,7 +325,7 @@ CardsBuilder::make()
 <a name="columns"></a>
 ## Columns
 
-The `columnSpan()` method allows you to set the width of the cards in the *Grid*.
+The `columnSpan()` method allows you to set the width of the cards in the `Grid`.
 
 ```php
 columnSpan(
@@ -351,7 +351,7 @@ CardsBuilder::make(
 <a name="custom-component"></a>
 ## Custom component
 
-The *CardsBuilder* component allows you to override the component for building a list of an element.  
+The `CardsBuilder` component allows you to override the component for building a list of an element.  
 To do this, you need to use the `customComponent()` method.
 
 ```php

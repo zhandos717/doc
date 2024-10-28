@@ -9,7 +9,7 @@
 <a name="make"></a>
 ## Make
 
-The *Footer* system component is used to create a footer block in **MoonShine**.
+The `Footer` system component is used to create a footer block in **MoonShine**.
 
 You can create a *Footer* using the static `make()` method class `Footer`.
 

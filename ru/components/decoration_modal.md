@@ -90,7 +90,7 @@ public function components(): array
 
 #### вызов события через ActionButton
 
-Событие модального окна может быть вызвано с помощью компонента *ActionButton*.
+Событие модального окна может быть вызвано с помощью компонента `ActionButton`.
 
 ```php
 use MoonShine\Components\Modal;

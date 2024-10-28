@@ -113,7 +113,7 @@ return [
 > [!NOTE]
 > If you don't want to use an avatar, then specify `'avatar'=>''` or `'avatar'=>false`.
 
-It is possible to change *Guard* in the Profile component.
+It is possible to change `Guard` in the Profile component.
 ```php
 Profile::make(guard: 'custom')
 ```

@@ -90,7 +90,7 @@ public function components(): array
 
 #### calling an event via ActionButton
 
-The modal window event can be triggered using the *ActionButton* component.
+The modal window event can be triggered using the `ActionButton` component.
 
 ```php
 use MoonShine\Components\Modal;

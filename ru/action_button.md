@@ -106,7 +106,7 @@ public function components(): array
 <a name="color"></a> 
 ## Цвет
 
-Для *ActionButton* есть набор методов, которые позволяют установить цвет кнопки:  
+Для `ActionButton` есть набор методов, которые позволяют установить цвет кнопки:  
 `primary()`, `secondary()`, `warning()`, `success()` и `error()`.
 
 ```php
@@ -374,7 +374,7 @@ public function indexButtons(): array
 <a name="async"></a> 
 ## Асинхронный режим
 
-Метод `async()` позволяет реализовать асинхронную работу для *ActionButton*.
+Метод `async()` позволяет реализовать асинхронную работу для `ActionButton`.
 
 ```php
 async(
@@ -487,7 +487,7 @@ document.addEventListener("moonshine:init", () => {
 <a name="method"></a> 
 ## Вызов методов
 
-`method()` позволяет указать имя метода в ресурсе и вызвать его асинхронно при нажатии на *ActionButton* без необходимости создания дополнительных контроллеров.
+`method()` позволяет указать имя метода в ресурсе и вызвать его асинхронно при нажатии на `ActionButton` без необходимости создания дополнительных контроллеров.
 
 ```php
 method(
@@ -546,7 +546,7 @@ public function updateSomething(MoonShineRequest $request)
 }
 ```
 > [!WARNING]
-> Методы, вызываемые через *ActionButton* в ресурсе, должны быть публичными!
+> Методы, вызываемые через `ActionButton` в ресурсе, должны быть публичными!
 
 > [!CAUTION]
 > Для доступа к данным из запроса вы должны передать их в параметрах.

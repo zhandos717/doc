@@ -9,7 +9,7 @@ https://moonshine-laravel.com/docs/resource/advanced/advanced-authorization?chan
 <a name="basics"></a>
 ## Basics
 
-The **MoonShine** admin panel does not depart from Laravel concepts and also using *Laravel policy* can work with access rights.
+The **MoonShine** admin panel does not depart from Laravel concepts and also using `Laravel policy` can work with access rights.
 
 In MoonShine resource controllers, each method will be checked for permissions.If you have any difficulties, check out the official documentation [Laravel](https://laravel.com/docs/authorization#creating-policies)
 By default, permissions checking is disabled for resources. To enable, you need to add the property `withPolicy`.
@@ -30,7 +30,7 @@ class PostResource extends ModelResource
 }
 ```
 
-To create a *Policy* with an admin panel user binding, you can use the console command:
+To create a `Policy` with an admin panel user binding, you can use the console command:
 
 ```shell
 php artisan moonshine:policy

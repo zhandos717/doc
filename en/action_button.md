@@ -106,7 +106,7 @@ public function components(): array
 <a name="color"></a> 
 ## Color
 
-For *ActionButton* there is a set of methods that allow you to set the color of the button:  
+For `ActionButton` there is a set of methods that allow you to set the color of the button:  
 `primary()`, `secondary()`, `warning()`, `success()` and `error()`.
 
 ```php
@@ -337,7 +337,7 @@ public function components(): array
 
 ## Display
 
-Thanks to *ActionGroup* you can also change the display of buttons, display them in a line or in a drop-down menu to save space.
+Thanks to `ActionGroup` you can also change the display of buttons, display them in a line or in a drop-down menu to save space.
 
 ```php
 use MoonShine\ActionButtons\ActionButton;
@@ -357,7 +357,7 @@ public function components(): array
 <a name="bulk"></a> 
 ## Bulk
 
-The `bulk()` method allows you to create a bulk action button for a *ModelResource*.
+The `bulk()` method allows you to create a bulk action button for a `ModelResource`.
 
 ```php
 public function indexButtons(): array
@@ -369,12 +369,12 @@ public function indexButtons(): array
 ```
 
 > [!TIP]
-> The `bulk()` method, used only inside *ModelResource*.
+> The `bulk()` method, used only inside `ModelResource`.
 
 <a name="async"></a> 
 ## Async mode
 
-The `async()` method allows you to implement asynchronous operation for the *ActionButton*.
+The `async()` method allows you to implement asynchronous operation for the `ActionButton`.
 
 ```php
 async(
@@ -487,7 +487,7 @@ document.addEventListener("moonshine:init", () => {
 <a name="method"></a> 
 ## Calling methods
 
-`method()` allows you to specify the name of a method in a resource and call it asynchronously when you click on it *ActionButton* without having to create additional controllers.
+`method()` allows you to specify the name of a method in a resource and call it asynchronously when you click on it `ActionButton` without having to create additional controllers.
 
 ```php
 method(
@@ -546,17 +546,17 @@ public function updateSomething(MoonShineRequest $request)
 }
 ```
 > [!WARNING]
-> Methods called via *ActionButton* in a resource must be public!
+> Methods called via `ActionButton` in a resource must be public!
 
 > [!CAUTION]
 > To access the data from the request, you must pass it in the parameters.
 
 #### Passing the current item
 
-If *resourceItem* is present in the request, you can access the current item in the resource through the `getItem()` method.
+If `resourceItem` is present in the request, you can access the current item in the resource through the `getItem()` method.
 
 - When there is a model in the data and the button is created in the `buttons()` method [TableBuilder](https://moonshine-laravel.com/docs/resource/advanced/advanced-table_builder#buttons), [CardsBuilder](https://moonshine-laravel.com/docs/resource/advanced/advanced-cards_builder#buttons) or [FormBuilder](https://moonshine-laravel.com/docs/resource/advanced/advanced-form_builder#buttons), then it is automatically filled with data and the parameters will contain `resourceItem`.
-- When the button is on the *ModelResource* form page, you can pass the id of the current element.
+- When the button is on the `ModelResource` form page, you can pass the id of the current element.
 
 ```php
 ActionButton::make('Click me')
@@ -566,7 +566,7 @@ ActionButton::make('Click me')
     )
 ```
 
-- When the button is in the *ModelResource* index table, you need to use a closure
+- When the button is in the `ModelResource` index table, you need to use a closure
 
 ```php
 ActionButton::make('Click me')

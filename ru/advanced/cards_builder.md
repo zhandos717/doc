@@ -209,7 +209,7 @@ CardsBuilder::make(
 <a name="buttons"></a>
 ## Кнопки
 
-Для добавления кнопок на основе *ActionButton* используйте метод `buttons()`.
+Для добавления кнопок на основе `ActionButton` используйте метод `buttons()`.
 
 ```php
 CardsBuilder::make()
@@ -289,7 +289,7 @@ CardsBuilder::make()
     ->async()
 ```
 
-После успешного запроса вы можете поднимать события, добавив параметр `asyncEvents`.
+После успешного запроса вы можете вызывать события, добавив параметр `asyncEvents`.
 
 ```php
 CardsBuilder::make()

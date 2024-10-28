@@ -76,7 +76,7 @@ public function components(): array
 
 #### calling an event via ActionButton
 
-The sidebar event can be triggered using the *ActionButton* component.
+The sidebar event can be triggered using the `ActionButton` component.
 
 ```php
 use MoonShine\Components\Offcanvas;

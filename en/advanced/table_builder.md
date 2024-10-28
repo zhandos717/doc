@@ -50,11 +50,6 @@ Helper `table()` is also available:
 !!}
 ```
 
-## Text
-###Value
-
-
-
 <a name="fields"></a>
 ## Fields
 
@@ -145,7 +140,7 @@ In this example, we cast the data to the `User` model format using `ModelCast`.
 <a name="buttons"></a>
 ## Buttons
 
-To add new buttons based on *ActionButton*, use the `buttons()` method.<br/>
+To add new buttons based on `ActionButton`, use the `buttons()` method.<br/>
 Buttons will be added for each row, and when `bulk()` mode is enabled, they will be displayed in the footer for bulk actions:
 
 ```php
@@ -357,6 +352,7 @@ TableBuilder::make()
     ->creatable(limit: 6)
 ```
 #### Custom add button
+
 ```php
 TableBuilder::make()
     ->creatable(

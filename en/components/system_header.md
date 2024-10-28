@@ -2,9 +2,9 @@
 
 ## Make
 
-The *Header* system component is used to create a header block in **MoonShine**.
+The `Header` system component is used to create a header block in **MoonShine**.
 
-You can create a *Header* using the static `make()` method class `Header`.
+You can create a `Header` using the static `make()` method class `Header`.
 
 ```php
 make(array $components = [])
