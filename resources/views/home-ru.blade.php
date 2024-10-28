@@ -1053,6 +1053,9 @@ MoonShine отлично подходит для создания админ п�
                             {{ $menu['title'] }}
                         </a>
                     @endforeach
+
+                        <a href="/rules" class="font-semibold text-white hover:text-pink">Пользовательское соглашение</a>
+                        <a href="/politics" class="font-semibold text-white hover:text-pink">Политика конфиденциальности</a>
                 </nav>
             </div>
             <div class="footer-social">
