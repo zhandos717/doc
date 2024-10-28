@@ -26,7 +26,7 @@
 `ModelResource` - расширяет `CrudResource` и предоставляет функциональность для работы с моделями Eloquent. Он обеспечивает основу для создания ресурсов, связанных с моделями базы данных. `ModelResource` предоставляет методы для выполнения CRUD-операций, управления отношениями, применения фильтров и многое другое.
 
 > [!TIP]
-> Вы также можете ознакомится с разделом [CrudResource](/docs/3.x/advanced/crud-resource).
+> Вы также можете ознакомится с разделом [CrudResource](/docs/{{version}}/advanced/crud-resource).
 > `CrudResource` это абстрактный класс предоставляющий базовый интерфейс для `CRUD` операций без привязки к хранилищу и типу данных
 
 Под капотом `ModelResource` расширяет `CrudResource` и сразу включает возможность работы с `Eloquent`, если углубляться в детали MoonShine, то вы увидите все те же стандартные `Controller`, `Model` и `blade views`
@@ -57,8 +57,8 @@ php artisan moonshine:resource Post
 
 При создания `ModelResource` доступно несколько вариантов:
 
-- [Default model resource](/docs/3.x/model-resource/fields) - с объявлением полей внутри методов ресурса (`indexFields`, `formFields`, `detailFields`)
-- [Model resource with pages](/docs/3.x/model-resource/pages) - c публикацией страниц (`IndexPage`, `FormPage`, `DetailPage`)
+- [Default model resource](/docs/{{version}}/model-resource/fields) - с объявлением полей внутри методов ресурса (`indexFields`, `formFields`, `detailFields`)
+- [Model resource with pages](/docs/{{version}}/model-resource/pages) - c публикацией страниц (`IndexPage`, `FormPage`, `DetailPage`)
 
 В результате создастся класс `PostResource`, который будет основой нового раздела в панели.
 Располагается он, по умолчанию, в директории `app/MoonShine/Resources`.
@@ -183,10 +183,10 @@ final class MoonShineLayout extends CompactLayout
 ```
 
 > [!TIP]
-> О расширенных настройках `Layout` можно узнать в разделе [Layout](/docs/3.x/appearance/layout).
+> О расширенных настройках `Layout` можно узнать в разделе [Layout](/docs/{{version}}/appearance/layout).
 
 > [!TIP]
-> О расширенных настройках `MenuManager` можно узнать в разделе [Menu](/docs/3.x/appearance/menu).
+> О расширенных настройках `MenuManager` можно узнать в разделе [Menu](/docs/{{version}}/appearance/menu).
 
 <a name="alias"></a>
 ### Alias

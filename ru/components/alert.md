@@ -71,7 +71,7 @@ tab: Blade
 ```
 ~~~
 
-За более подробной информацией обратитесь к разделу [Icons](/docs/3.x/resource/appearance/icons) .
+За более подробной информацией обратитесь к разделу [Icons](/docs/{{version}}/resource/appearance/icons) .
 
 <a name="removable"></a>
 ## Удаление уведомлений
