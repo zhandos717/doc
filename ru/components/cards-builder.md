@@ -423,4 +423,4 @@ CardsBuilder::make()
 > Реализуется на основе нескольких компонентов, подробнее в разделах:
 > [Card](/docs/{{version}}/components/card),
 > [Grid](/docs/{{version}}/components/grid),
-> [Grid](/docs/{{version}}/components/column).
+> [Column](/docs/{{version}}/components/column).
