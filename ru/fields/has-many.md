@@ -70,7 +70,7 @@ class CommentResource extends ModelResource
     //...
 }
 //...
-BelongsToMany::make('Comments')
+HasMany::make('Comments')
 ```
 
 <a name="fields"></a>
@@ -250,6 +250,19 @@ HasMany::make('Comments', 'comments', resource: CommentResource::class)
 
 Поле *HasMany* имеет методы, которые можно использовать для модификации кнопок, изменения *TableBuilder* для предпросмотра и формы, а также изменения кнопки *relatedLink*.
 
+### searchable()
+
+По умолчанию на странице формы для поля HasMany доступно поле поиска, чтобы его отключить, можно воспользоваться методом `searchable`
+
+```php
+public function searchable(Closure|bool|null $condition = null): static
+```
+
+```php
+HasMany::make('Comments', 'comments', resource: CommentResource::class)
+    ->searchable(false) // отключает поле поиска
+```
+
 ### modifyItemButtons()
 
 Метод `modifyItemButtons()` позволяет изменить кнопки просмотра, редактирования, удаления и массового удаления.
@@ -353,3 +366,5 @@ Json::make('Comments', 'comments')
 
 > [!NOTE]
 > Для более подробной информации обратитесь к разделу [Поле Template](/docs/{{version}}/fields/template).
+
+disableAsync, 
