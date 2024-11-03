@@ -1,4 +1,4 @@
-# Конфигурация MoonShine
+# Конфигурация
 
 - [Введение](#introduction)
 - [Способы конфигурации](#configuration-methods)
