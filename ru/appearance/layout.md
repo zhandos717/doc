@@ -51,7 +51,7 @@ use MoonShine\MenuManager\MenuItem;
 use MoonShine\UI\Components\{Breadcrumbs,
     Components,
     Layout\Assets,
-    Layout\Block,
+    Layout\Div,
     Layout\Body,
     Layout\Burger,
     Layout\Content,
@@ -91,8 +91,8 @@ final class MoonShineLayout extends CompactLayout
                 Body::make([
                     Wrapper::make([
                         Sidebar::make([
-                            Block::make([
-                                Block::make([
+                            Div::make([
+                                Div::make([
                                     Logo::make(
                                         $this->getHomeUrl(),
                                         $this->getLogo(),
@@ -100,18 +100,18 @@ final class MoonShineLayout extends CompactLayout
                                     )->minimized(),
                                 ])->class('menu-heading-logo'),
 
-                                Block::make([
-                                    Block::make([
+                                Div::make([
+                                    Div::make([
                                         ThemeSwitcher::make(),
                                     ])->class('menu-heading-mode'),
 
-                                    Block::make([
+                                    Div::make([
                                         Burger::make(),
                                     ])->class('menu-heading-burger'),
                                 ])->class('menu-heading-actions'),
                             ])->class('menu-heading'),
 
-                            Block::make([
+                            Div::make([
                                 Menu::make(),
                                 When::make(
                                     fn(): bool => $this->isAuthEnabled(),
@@ -123,7 +123,7 @@ final class MoonShineLayout extends CompactLayout
                             ]),
                         ])->collapsed(),
 
-                        Block::make([
+                        Div::make([
                             Flash::make(),
                             Header::make([
                                 Breadcrumbs::make($this->getPage()->getBreadcrumbs())->prepend(
@@ -365,7 +365,7 @@ final class MoonShineLayout extends CompactLayout
                     Wrapper::make([
                         $this->getTopBarComponent(),
                         //$this->getSidebarComponent(),
-                        Block::make([
+                        Div::make([
                             Flash::make(),
                             $this->getHeaderComponent(),
 

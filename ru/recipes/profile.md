@@ -95,7 +95,7 @@ use MoonShine\Laravel\Layouts\CompactLayout;
 use MoonShine\MenuManager\MenuGroup;
 use MoonShine\MenuManager\MenuItem;
 use MoonShine\UI\Components\{Components,
-    Layout\Block,
+    Layout\Div,
     Layout\Body,
     Layout\Content,
     Layout\Flash,
@@ -118,7 +118,7 @@ final class AppLayout extends CompactLayout
 
                 Body::make([
                     Wrapper::make([
-                        Block::make([
+                        Div::make([
                             Flash::make(),
 
                             Content::make([
@@ -157,7 +157,7 @@ use MoonShine\Laravel\Layouts\CompactLayout;
 use MoonShine\UI\Components\{Components,
     FlexibleRender,
     Heading,
-    Layout\Block,
+    Layout\Div,
     Layout\Body,
     Layout\Content,
     Layout\Flash,
@@ -178,12 +178,12 @@ final class FormLayout extends CompactLayout
             Html::make([
                 $this->getHeadComponent(),
                 Body::make([
-                    Block::make([
-                        Block::make([
+                    Div::make([
+                        Div::make([
                             $this->getLogoComponent(),
                         ])->class('authentication-logo'),
 
-                        Block::make([
+                        Div::make([
                             Flash::make(),
                             Components::make($this->getPage()->getComponents()),
                         ])->class('authentication-content'),

@@ -93,7 +93,7 @@ rm app/MoonShine/Pages/Dashboard_old.php
 - `MoonShine\Fields\Relationships\` → `MoonShine\Laravel\Fields\Relationships\`
 - `MoonShine\Fields\Slug` → `MoonShine\Laravel\Fields\Slug`
 - `MoonShine\Fields\` → `MoonShine\UI\Fields\`
-- `MoonShine\Decorations\Block` → `MoonShine\UI\Components\Layout\Block`
+- `MoonShine\Decorations\Block` → `MoonShine\UI\Components\Layout\Box`
 - `MoonShine\Decorations\` → `MoonShine\UI\Components\Layout\*` _(некоторые на `MoonShine\UI\Components\`, проверьте вручную)_
 - `MoonShine\Enums\` → `MoonShine\Support\Enums\`
 - `MoonShine\Pages\` → `MoonShine\Laravel\Pages\`
@@ -172,7 +172,7 @@ rm app/MoonShine/Pages/Dashboard_old.php
         return $this->indexFields();
     }
     ```
-  - удалить `Block::` и прочие декорации из indexFields
+  - indexFields допускает только поля
 - `trAttributes` `tdAttributes` для `TableBuilder` теперь должны возвращать значения такие же как для вызова `customAttributes` и вместо `ComponentAttributeBag $attributes` теперь `TableBuilder $table`:
   ```
   TableBuilder::make()

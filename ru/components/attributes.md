@@ -149,7 +149,7 @@ xData(null|array|string $data = null)
 Все в Alpine начинается с директивы `x-data`. метод `xData` определяет фрагмент HTML как компонент Alpine и предоставляет реактивные данные для ссылки на этот компонент.
 
 ```php
-Block::make([])->xData(['title' = 'Hello world']) // title реактивная переменная внутри
+Div::make([])->xData(['title' = 'Hello world']) // title реактивная переменная внутри
 ```
 
 ```php
@@ -159,7 +159,7 @@ xDataMethod(string $method, ...$parameters)
 `x-data` с указанием компонента и его параметров
 
 ```php
-Block::make([])->xDataMethod('some-component', 'var', ['foo' => 'bar'])
+Div::make([])->xDataMethod('some-component', 'var', ['foo' => 'bar'])
 ```
 
 <a name="x-model"></a>
@@ -169,13 +169,13 @@ Block::make([])->xDataMethod('some-component', 'var', ['foo' => 'bar'])
 xModel(?string $column = null)
 ```
 ```php
-Block::make([
+Div::make([
     Text::make('Title')->xModel()
 ])->xData(['title' = 'Hello world'])
 
 // или
 
-Block::make([
+Div::make([
     Text::make('Name')->xModel('title')
 ])->xData(['title' = 'Hello world'])
 ```
@@ -194,21 +194,21 @@ xIf(
 `x-if` скрывает поле, удаляя его из DOM
 
 ```php
-Block::make([
+Div::make([
     Select::make('Type')->native()->options([1 => 1, 2 => 2])->xModel(),
     Text::make('Title')->xModel()->xIf('type', 1)
 ])->xData(['title' = 'Hello world', 'type' => 1])
 
 // или
 
-Block::make([
+Div::make([
     Select::make('Type')->options([1 => 1, 2 => 2])->xModel(),
     Text::make('Title')->xModel()->xIf(fn() => 'type==2||type.value==2')
 ])->xData(['title' = 'Hello world', 'type' => 1])
 
 // если нужно скрыть поле без контейнера
 
-Block::make([
+Div::make([
     Select::make('Type')->native()->options([1 => 1, 2 => 2])->xModel(),
     Text::make('Title')->xModel()->xIf('type', '=', 2, wrapper: false)
 ])->xData(['title' = 'Hello world', 'type' => 1])
@@ -237,7 +237,7 @@ xDisplay(string $value, bool $html = true)
 `x-html` вывод значения
 
 ```php
-Block::make([
+Div::make([
     Select::make('Type')
         ->native()
         ->options([

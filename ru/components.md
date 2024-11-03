@@ -21,16 +21,6 @@ Assets::make()
 <x-moonshine::layout.assets />
 ```
 
-### Block
-
-```php
-Block::make(components: [])
-```
-
-```blade
-<x-moonshine::layout.block>components</x-moonshine::layout.block>
-```
-
 ### Body
 
 ```php
