@@ -97,7 +97,6 @@
     - [Column](/docs/{{version}}/components/column)
     - [Flex](/docs/{{version}}/components/flex)
     - [Box](/docs/{{version}}/components/box)
-    - [Block](/docs/{{version}}/components/block)
     - [Div](/docs/{{version}}/components/div)
     - [Content](/docs/{{version}}/components/content)
     - [Wrapper](/docs/{{version}}/components/wrapper)
