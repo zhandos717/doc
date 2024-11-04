@@ -7,6 +7,7 @@
 - [Основные настройки](#basic-settings)
   - [Опции](#options)
   - [Заголовок](#title)
+  - [Логотип](#logo)
   - [Middleware](#middleware)
   - [Маршрутизация](#routing)
   - [Аутентификация](#authentication)
@@ -44,6 +45,7 @@
 ```php
 return [
     'title' => env('MOONSHINE_TITLE', 'MoonShine'),
+    'logo' => '/assets/logo.png',
     'domain' => env('MOONSHINE_DOMAIN'),
     'prefix' => 'admin',
     'auth' => [
@@ -99,6 +101,7 @@ class MoonShineServiceProvider extends MoonShineApplicationServiceProvider
     {
         return $config
             ->title('Мое приложение')
+            ->logo('/assets/logo.png')
             ->prefix('admin')
             ->guard('moonshine')
             ->authEnable()
@@ -169,6 +172,21 @@ tab: config/moonshine.php
 tab: app/Providers/MoonShineServiceProvider.php
 ```php
 $config->title('Мое приложение');
+```
+~~~
+
+<a name="logo"></a>
+### Логотип
+
+~~~tabs
+tab: config/moonshine.php
+```php
+'logo' => '/assets/logo.png',
+'logo_small' => '/assets/logo-small.png',
+```
+tab: app/Providers/MoonShineServiceProvider.php
+```php
+$config->logo('/assets/logo.png')->logo('/assets/logo-small.png', small: true);
 ```
 ~~~
 

@@ -1,4 +1,4 @@
-# UPGRADE MoonShine 2.x → 3.0 (черновик)
+# UPGRADE 2.x → 3.0
 
 - [Обновление пакета](#update)
 - [Первоначальная настройка](#install)
@@ -12,19 +12,20 @@
 ## Обновление пакета
 
 ### Обновить `composer.json`
-`"moonshine/moonshine": "^2.x",` → `"moonshine/moonshine": "^3.0",`
+`"moonshine/moonshine": "^2.0",` → `"moonshine/moonshine": "^3.0",`
 
-### Отредактировать `config/app.php`
-Удалить строку `App\Providers\MoonShineServiceProvider::class,`.
-
-После запуска команды `moonshine:install` сервис-провайдер добавится снова автоматически.
-
-### Сделать бэкапы config/moonshine.php, MoonShineServiceProvider.php и Dashboard.php
+### Сделать backup config/moonshine.php, MoonShineServiceProvider.php и Dashboard.php
 Они понадобятся для переноса информации
 - `mv config/moonshine.php config/moonshine_old.php`
 - `mv app/Providers/MoonShineServiceProvider.php app/Providers/MoonShineServiceProvider_old.php`
 - `mv app/MoonShine/Pages/Dashboard.php app/MoonShine/Pages/Dashboard_old.php`
- 
+
+### Отредактировать `config/app.php`
+Удалить строку `App\Providers\MoonShineServiceProvider::class,`.
+
+> [!NOTE]
+> После запуска команды `moonshine:install` сервис-провайдер добавится снова автоматически.
+
 ### Запустить обновление composer
 `composer update`
 
@@ -32,12 +33,9 @@
 ## Первоначальная настройка
 
 ### Запустить команду `moonshine:install`
-Команда `moonshine:install` создает новый сервис-провайдер, конфигурацию, Layout и Dashboard.
+Команда `moonshine:install` создает новый сервис-провайдер, конфигурацию, `Layout` и `Dashboard`.
 
 `php artisan moonshine:install`
-
-### Обновляем конфиг из бэкапа
-Параметры `'logo'` и `'logo_small'` нужно удалить, так как настройка Logo переместилась в MoonShineLayout _(смотрите документацию по Layout)_
 
 ### Перенести меню в MoonShineLayout и обновить
 - Изменения:
