@@ -9,6 +9,7 @@
     - [Специальные методы](#special)
 - [Вывод в HTML](#html)
 - [Конвертация цветов](#conversion)
+- [Глобальное переопределение](#service-provider)
 
 <a name="basics"></a>
 ## Основы
@@ -164,3 +165,39 @@ ColorMutator::toHEX('120, 67, 233'); // '#7843e9'
 // Конвертация в RGB
 ColorMutator::toRGB('#7843e9'); // '120,67,233'
 ```
+
+<a name="service-provider"></a>
+## Глобальное переопределение
+
+Вы также можете переопределить цвета глобально для всех `Layout` через `MoonShineServiceProvider`:
+
+```php
+use Illuminate\Support\ServiceProvider;
+use MoonShine\Contracts\Core\DependencyInjection\CoreContract;
+use MoonShine\Laravel\DependencyInjection\MoonShine;
+use MoonShine\Laravel\DependencyInjection\MoonShineConfigurator;
+use MoonShine\Laravel\DependencyInjection\ConfiguratorContract;
+use MoonShine\ColorManager\ColorManager;
+use MoonShine\Contracts\ColorManager\ColorManagerContract;
+
+class MoonShineServiceProvider extends ServiceProvider
+{
+    /**
+     * @param  MoonShine  $core
+     * @param  MoonShineConfigurator  $config
+     * @param  ColorManager  $colors
+     *
+     */
+    public function boot(
+        CoreContract $core,
+        ConfiguratorContract $config,
+        ColorManagerContract $colors,
+    ): void
+    {
+        $colors->primary('#7843e9');
+    }
+}
+```
+
+> [!WARNING]
+> `Layout` загружается после `ServiceProvider` и будет иметь приоритет, поэтому при использовании указания цветов через `ServiceProvider` убедитесь, что они не переопределяются в `Layout`

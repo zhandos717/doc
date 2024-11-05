@@ -115,31 +115,41 @@ class PostResource extends ModelResource
 ```php
 namespace App\Providers;
 
+use Illuminate\Support\ServiceProvider;
+use MoonShine\Contracts\Core\DependencyInjection\CoreContract;
+use MoonShine\Laravel\DependencyInjection\MoonShine;
+use MoonShine\Laravel\DependencyInjection\MoonShineConfigurator;
+use MoonShine\Laravel\DependencyInjection\ConfiguratorContract;
+
 use App\MoonShine\Resources\ArticleResource;
 use App\MoonShine\Resources\CategoryResource;
 use App\MoonShine\Resources\CommentResource;
-use App\MoonShine\Resources\MoonShineUserResource;
-use App\MoonShine\Resources\MoonShineUserRoleResource;
-use MoonShine\Contracts\Core\ResourceContract;
-use MoonShine\Laravel\Providers\MoonShineApplicationServiceProvider;
 
-class MoonShineServiceProvider extends MoonShineApplicationServiceProvider
+class MoonShineServiceProvider extends ServiceProvider
 {
     /**
-     * @return array<class-string<ResourceContract>>
+     * @param  MoonShine  $core
+     * @param  MoonShineConfigurator  $config
+     *
      */
-    protected function resources(): array
+    public function boot(
+        CoreContract $core,
+        ConfiguratorContract $config,
+    ): void
     {
-        return [
-            MoonShineUserResource::class,
-            MoonShineUserRoleResource::class,
-            ArticleResource::class,
-            CategoryResource::class,
-            CommentResource::class,
-        ];
+        $core
+            ->resources([
+                MoonShineUserResource::class,
+                MoonShineUserRoleResource::class,
+                ArticleResource::class,
+                CategoryResource::class,
+                CommentResource::class,
+            ])
+            ->pages([
+                ...$config->getPages(),
+            ])
+        ;
     }
-
-    // ...
 }
 ```
 

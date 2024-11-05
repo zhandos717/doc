@@ -482,28 +482,28 @@ final class MyLayout extends AppLayout
         <x-moonshine::layout.body>
             <x-moonshine::layout.wrapper>
                 <x-moonshine::layout.sidebar :collapsed="true">
-                    <x-moonshine::layout.block class="menu-heading">
-                        <x-moonshine::layout.block class="menu-heading-logo">
+                    <x-moonshine::layout.div class="menu-heading">
+                        <x-moonshine::layout.div class="menu-heading-logo">
                             <x-moonshine::layout.logo href="/" logo="/logo.png" :minimized="true"/>
-                        </x-moonshine::layout.block>
+                        </x-moonshine::layout.div>
 
-                        <x-moonshine::layout.block class="menu-heading-actions">
-                            <x-moonshine::layout.block class="menu-heading-mode">
+                        <x-moonshine::layout.div class="menu-heading-actions">
+                            <x-moonshine::layout.div class="menu-heading-mode">
                                 <x-moonshine::layout.theme-switcher/>
-                            </x-moonshine::layout.block>
-                            <x-moonshine::layout.block class="menu-heading-burger">
+                            </x-moonshine::layout.div>
+                            <x-moonshine::layout.div class="menu-heading-burger">
                                 <x-moonshine::layout.burger/>
-                            </x-moonshine::layout.block>
-                        </x-moonshine::layout.block>
+                            </x-moonshine::layout.div>
+                        </x-moonshine::layout.div>
 
-                    </x-moonshine::layout.block>
+                    </x-moonshine::layout.div>
 
-                    <x-moonshine::layout.block class="menu" ::class="asideMenuOpen && '_is-opened'">
+                    <x-moonshine::layout.div class="menu" ::class="asideMenuOpen && '_is-opened'">
                         <x-moonshine::layout.menu :elements="[['label' => 'Dashboard', 'url' => '/'], ['label' => 'Section', 'url' => '/section']]"/>
-                    </x-moonshine::layout.block>
+                    </x-moonshine::layout.div>
                 </x-moonshine::layout.sidebar>
 
-                <x-moonshine::layout.block class="layout-page">
+                <x-moonshine::layout.div class="layout-page">
                     <x-moonshine::layout.header>
                         <x-moonshine::breadcrumbs :items="['#' => 'Home']"/>
                         <x-moonshine::layout.search placeholder="Search" />
@@ -515,7 +515,7 @@ final class MyLayout extends AppLayout
                             Content here
                         </article>
                     </x-moonshine::layout.content>
-                </x-moonshine::layout.block>
+                </x-moonshine::layout.div>
             </x-moonshine::layout.wrapper>
         </x-moonshine::layout.body>
     </x-moonshine::layout.html>

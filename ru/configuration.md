@@ -88,18 +88,30 @@ return [
 <a name="service-provider"></a>
 ### Конфигурация через MoonShineServiceProvider
 
-Альтернативный способ настройки - использование метода `configure` в `MoonShineServiceProvider`. Этот метод предоставляет более программный подход к конфигурации.
+Альтернативный способ настройки - `MoonShineServiceProvider`. Этот метод предоставляет более программный подход к конфигурации.
 
 Пример конфигурации в `MoonShineServiceProvider`:
 
 ```php
+use Illuminate\Support\ServiceProvider;
+use MoonShine\Contracts\Core\DependencyInjection\CoreContract;
+use MoonShine\Laravel\DependencyInjection\MoonShine;
 use MoonShine\Laravel\DependencyInjection\MoonShineConfigurator;
+use MoonShine\Laravel\DependencyInjection\ConfiguratorContract;
 
-class MoonShineServiceProvider extends MoonShineApplicationServiceProvider
+class MoonShineServiceProvider extends ServiceProvider
 {
-    protected function configure(MoonShineConfigurator $config): MoonShineConfigurator
+    /**
+     * @param  MoonShine  $core
+     * @param  MoonShineConfigurator  $config
+     *
+     */
+    public function boot(
+        CoreContract $core,
+        ConfiguratorContract $config,
+    ): void
     {
-        return $config
+        $config
             ->title('Мое приложение')
             ->logo('/assets/logo.png')
             ->prefix('admin')
@@ -114,9 +126,17 @@ class MoonShineServiceProvider extends MoonShineApplicationServiceProvider
             ->layout(\MoonShine\Laravel\Layouts\AppLayout::class)
             // ...
         ;
-    }
 
-    // ... другие методы
+        $core
+            ->resources([
+                MoonShineUserResource::class,
+                MoonShineUserRoleResource::class,
+            ])
+            ->pages([
+                ...$config->getPages(),
+            ])
+        ;
+    }
 }
 ```
 
@@ -587,13 +607,25 @@ return [
 ### Пример использования в MoonShineServiceProvider
 
 ```php
+use Illuminate\Support\ServiceProvider;
+use MoonShine\Contracts\Core\DependencyInjection\CoreContract;
+use MoonShine\Laravel\DependencyInjection\MoonShine;
 use MoonShine\Laravel\DependencyInjection\MoonShineConfigurator;
+use MoonShine\Laravel\DependencyInjection\ConfiguratorContract;
 
-class MoonShineServiceProvider extends MoonShineApplicationServiceProvider
+class MoonShineServiceProvider extends ServiceProvider
 {
-    protected function configure(MoonShineConfigurator $config): MoonShineConfigurator
+    /**
+     * @param  MoonShine  $core
+     * @param  MoonShineConfigurator  $config
+     *
+     */
+    public function boot(
+        CoreContract $core,
+        ConfiguratorContract $config,
+    ): void
     {
-        return $config
+        $config
             ->title('Мое приложение')
             ->dir('app/MoonShine', 'App\MoonShine')
             ->prefix('admin')
@@ -608,7 +640,10 @@ class MoonShineServiceProvider extends MoonShineApplicationServiceProvider
             ->cacheDriver('redis')
             ->authorizationRules(function(ResourceContract $ctx, mixed $user, Ability $ability, mixed $data): bool {
                  return true;
-            });
+            })
+        ;
+
+        // ..
     }
 }
 ```

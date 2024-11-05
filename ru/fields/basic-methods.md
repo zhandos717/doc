@@ -522,7 +522,7 @@ unless($value = null, ?callable $callback = null, ?callable $default = null)
 <a name="apply"></a>
 ### Apply
 
-У каждого поля реализован метод `apply()`, который трансформирует данные с учетом *request* и *resolve* методов. Чтобы переопределить стандартный `apply` у поля, можно воспользоваться методом `onApply()`. Подробнее *о цикле жизни применения поля* можно прочитать в разделе [Основы > Процесс применения полей](/docs/{{version}}/fields/index.md#процесс-применения-полей).
+У каждого поля реализован метод `apply()`, который трансформирует данные. Чтобы переопределить стандартный `apply` у поля, можно воспользоваться методом `onApply()`. Подробнее *о цикле жизни применения поля* можно прочитать в разделе [Основы > Процесс применения полей](/docs/{{version}}/fields/index.md#процесс-применения-полей).
 
 ```php
 /**
@@ -560,6 +560,76 @@ function onBeforeApply(Closure $onBeforeApply)
  * @param  Closure(mixed, mixed, FieldContract): static  $onBeforeApply
  */
 function onAfterApply(Closure $onBeforeApply)
+```
+
+#### Глобальное определение apply логики
+
+Если вы хотите глобально для определенного поля изменить логику `apply`, то вы можете создать `apply` класс и привязать его к необходимому полю.
+
+Для начала создайте `apply` класс:
+
+```shell
+php artisan moonshine:apply FileModelApply
+```
+
+```php
+/**
+ * @implements ApplyContract<File>
+ */
+final class FileModelApply implements ApplyContract
+{
+    /**
+     * @param  File  $field
+     */
+    public function apply(FieldContract $field): Closure
+    {
+        return function (mixed $item) use ($field): mixed {
+            $requestValue = $field->getRequestValue();
+            
+            $newValue = // ..
+            
+            return data_set($item, $field->getColumn(), $newValue);
+        };
+    }
+}
+```
+
+Далее зарегистрируйте его для поля:
+
+```php
+use Illuminate\Support\ServiceProvider;
+use MoonShine\Contracts\Core\DependencyInjection\CoreContract;
+use MoonShine\Laravel\DependencyInjection\MoonShine;
+use MoonShine\Laravel\DependencyInjection\MoonShineConfigurator;
+use MoonShine\Laravel\DependencyInjection\ConfiguratorContract;
+use MoonShine\Contracts\Core\DependencyInjection\AppliesRegisterContract;
+use MoonShine\UI\Applies\AppliesRegister;
+use App\MoonShine\Applies\FileModelApply;
+use MoonShine\UI\Fields\File;
+use MoonShine\Laravel\Resources\ModelResource;
+
+class MoonShineServiceProvider extends ServiceProvider
+{
+    /**
+     * @param  MoonShine  $core
+     * @param  MoonShineConfigurator  $config
+     * @param  AppliesRegister  $applies
+     *
+     */
+    public function boot(
+        CoreContract $core,
+        ConfiguratorContract $config,
+        AppliesRegisterContract $applies,
+    ): void
+    {
+        $applies
+            // resource group, default ModelResource
+            ->for(ModelResource::class)
+            // type fields or filters
+            ->fields()
+            ->add(File::class, FileModelApply::class);
+    }
+}
 ```
 
 <a name="fill"></a>

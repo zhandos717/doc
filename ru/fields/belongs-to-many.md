@@ -41,7 +41,7 @@ BelongsToMany::make(
 
 > [!WARNING]
 > Наличие ресурса модели, на которую ссылается связь, обязательно!
-> Ресурс также необходимо зарегистрировать в сервис-провайдере _MoonShineServiceProvider_ в методе `resources()`. В противном случае будет ошибка 500 (Resource is required for MoonShine\Laravel\Fields\Relationships\BelongsToMany...).
+> Ресурс также необходимо зарегистрировать в сервис-провайдере _MoonShineServiceProvider_ в методе `$core->resources()`. В противном случае будет ошибка 500 (Resource is required for MoonShine\Laravel\Fields\Relationships\BelongsToMany...).
 
 ```php
 use MoonShine\Laravel\Fields\Relationships\BelongsToMany;

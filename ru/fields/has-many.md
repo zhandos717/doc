@@ -39,7 +39,7 @@ HasMany::make(
 
 > [!WARNING]
 > Наличие ресурса модели, на который ссылается отношение, обязательно.
-Ресурс также необходимо [зарегистрировать](/docs/{{version}}/resources#define) в сервис-провайдере `MoonShineServiceProvider` в методе `menu()` или `resources()`. В противном случае будет ошибка 500 (Resource is required for MoonShine\Laravel\Fields\Relationships\HasMany...).
+Ресурс также необходимо [зарегистрировать](/docs/{{version}}/resources#define) в сервис-провайдере `MoonShineServiceProvider` в методе `$core->resources()`. В противном случае будет ошибка 500 (Resource is required for MoonShine\Laravel\Fields\Relationships\HasMany...).
 
 ```php
 use MoonShine\Laravel\Fields\Relationships\HasMany;

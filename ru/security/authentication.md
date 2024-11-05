@@ -46,19 +46,16 @@
 <a name="customization"></a>
 ## Кастомизация
 
-Вы можете настроить аутентификацию в `MoonShineServiceProvider`, используя методы `MoonShineConfigurator`:
+Вы можете настроить аутентификацию в `MoonShineServiceProvider`:
 
 ```php
-protected function configure(MoonShineConfigurator $config): MoonShineConfigurator
-{
-    return $config
-        ->guard('admin')
-        ->authMiddleware(CustomAuthMiddleware::class)
-        ->authPipelines([
-            TwoFactorAuthentication::class,
-            PhoneVerification::class,
-        ]);
-}
+$config
+    ->guard('admin')
+    ->authMiddleware(CustomAuthMiddleware::class)
+    ->authPipelines([
+        TwoFactorAuthentication::class,
+        PhoneVerification::class,
+    ]);
 ```
 
 <a name="disabling-authentication"></a>
@@ -67,10 +64,7 @@ protected function configure(MoonShineConfigurator $config): MoonShineConfigurat
 Если вы хотите отключить встроенную аутентификацию `MoonShine`, вы можете сделать это в `MoonShineServiceProvider`:
 
 ```php
-protected function configure(MoonShineConfigurator $config): MoonShineConfigurator
-{
-    return $config->authDisable();
-}
+$config->authDisable();
 ```
 
 <a name="custom-user-model"></a>
@@ -90,14 +84,11 @@ protected function configure(MoonShineConfigurator $config): MoonShineConfigurat
 MoonShine позволяет настроить поля пользователя, используемые для аутентификации и профиля:
 
 ```php
-protected function configure(MoonShineConfigurator $config): MoonShineConfigurator
-{
-    return $config
-        ->userField('username', 'login')
-        ->userField('password', 'pass')
-        ->userField('name', 'full_name')
-        ->userField('avatar', 'profile_image');
-}
+$config
+    ->userField('username', 'login')
+    ->userField('password', 'pass')
+    ->userField('name', 'full_name')
+    ->userField('avatar', 'profile_image');
 ```
 При этом если вы хотите полностью заменить страницу профиля на свою, то можете это сделать через конфигурацию `moonshine.php`:
 
@@ -110,10 +101,7 @@ protected function configure(MoonShineConfigurator $config): MoonShineConfigurat
 Или через `MoonShineServiceProvider`:
 
 ```php
-protected function configure(MoonShineConfigurator $config): MoonShineConfigurator
-{
-    return $config->changePage(\MoonShine\Laravel\Pages\ProfilePage::class, \App\MoonShine\Pages\CustomProfile::class);
-}
+$config->changePage(\MoonShine\Laravel\Pages\ProfilePage::class, \App\MoonShine\Pages\CustomProfile::class);
 ```
 
 <a name="role-based-access"></a>
@@ -161,12 +149,9 @@ class CheckAdminRole
 Или в `MoonShineServiceProvider`:
 
 ```php
-protected function configure(MoonShineConfigurator $config): MoonShineConfigurator
-{
-    return $config->addMiddleware([
-        \App\Http\Middleware\CheckAdminRole::class,
-    ]);
-}
+$config->addMiddleware([
+    \App\Http\Middleware\CheckAdminRole::class,
+]);
 ```
 
 <a name="authentication-pipelines"></a>
@@ -179,13 +164,10 @@ protected function configure(MoonShineConfigurator $config): MoonShineConfigurat
 Настройте `pipelines` в `MoonShineServiceProvider`:
 
 ```php
-protected function configure(MoonShineConfigurator $config): MoonShineConfigurator
-{
-    return $config->authPipelines([
-        \App\MoonShine\AuthPipelines\TwoFactorAuthentication::class,
-        \App\MoonShine\AuthPipelines\PhoneVerification::class,
-    ]);
-}
+$config->authPipelines([
+    \App\MoonShine\AuthPipelines\TwoFactorAuthentication::class,
+    \App\MoonShine\AuthPipelines\PhoneVerification::class,
+]);
 ```
 
 ### Создание pipeline
@@ -353,27 +335,11 @@ return [
 ```
 tab: MoonShineServiceProvider
 ```php
-<?php
-
-declare(strict_types=1);
-
-namespace App\Providers;
-
-use MoonShine\Laravel\DependencyInjection\MoonShineConfigurator;
-use MoonShine\Laravel\Providers\MoonShineApplicationServiceProvider;
 use MoonShine\TwoFactor\TwoFactorAuthPipe;
 
-class MoonShineServiceProvider extends MoonShineApplicationServiceProvider
-{
-    // ...
-
-    protected function configure(MoonShineConfigurator $config): MoonShineConfigurator
-    {
-        return $config->authPipelines([
-            TwoFactorAuthPipe::class
-        ]);
-    }
-}
+$config->authPipelines([
+    TwoFactorAuthPipe::class
+]);
 ```
 ~~~
 

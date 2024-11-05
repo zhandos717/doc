@@ -66,28 +66,12 @@ return [
 ```
 tab: MoonShineServiceProvider
 ```php
-<?php
-
-declare(strict_types=1);
-
-namespace App\Providers;
-
-use MoonShine\Laravel\DependencyInjection\MoonShineConfigurator;
-use MoonShine\Laravel\Providers\MoonShineApplicationServiceProvider;
 use MoonShine\JWT\JWTAuthPipe;
 use MoonShine\JWT\Http\Middleware\AuthenticateApi;
 
-class MoonShineServiceProvider extends MoonShineApplicationServiceProvider
-{
-    // ...
-
-    protected function configure(MoonShineConfigurator $config): MoonShineConfigurator
-    {
-        return $config->authPipelines([
-            JWTAuthPipe::class
-        ])->middlewares([])->authMiddleware(AuthenticateApi::class);
-    }
-}
+$config->authPipelines([
+    JWTAuthPipe::class
+])->middlewares([])->authMiddleware(AuthenticateApi::class);
 ```
 ~~~
 

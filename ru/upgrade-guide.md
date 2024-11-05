@@ -50,19 +50,17 @@
 ### Зарегистрировать все классы в MoonShineServiceProvider.php
 Все ресурсы и страницы регистрируются в новом провайдере (экземпляры заменены на строковые классы, смотрите раздел [Переменные](#vars)):
 ```
-    protected function resources(): array
-    {
-        return [
-            MoonShineUserResource::class,
-            MoonShineUserRoleResource::class,
-        ];
-    }
+$core
+  ->resources([
+      MoonShineUserResource::class,
+      MoonShineUserRoleResource::class,
+  ]);
 ```
 Сгенерировать список всех классов для импорта в пространство имен можно так:
 ```
 find app/MoonShine/Resources -type f | sed "s/app/use App/" | sed "s|/|\\\|g" | sed "s/.php/;/" | sort
 ```
-Сгенерировать cписок всех классов для добавления в `resources()`:
+Сгенерировать cписок всех классов для добавления в `$core->resources()`:
 ```
 find app/MoonShine/Resources -type f -exec basename {} \; | sed "s/.php/::class,/" | sort
 ```
@@ -125,14 +123,14 @@ rm app/MoonShine/Pages/Dashboard_old.php
 - `protected function afterUpdated(Model $user): Model` → `protected function afterUpdated($user): Model`
 - `public function detailButtons(): array` → `public function detailButtons(): ListOf` (добавить `MoonShine\Support\ListOf`)
 - `public function modifyListComponent(MoonShineRenderable|TableBuilder $table): MoonShineRenderable` → `public function modifyListComponent(ComponentContract $table): ComponentContract`
-- `pages()` теперь принимает массив названий классов:
+- `$core->pages()` теперь принимает массив названий классов:
   ```
-      protected function pages(): array
-      {
-          return [
-              SettingPage::class,
-          ];
-      }
+    $core
+        ->pages([
+            ...$config->getPages(),
+            SettingPage::class,
+        ])
+    ;
   ```
 - `getActiveActions()` теперь меняется на `activeActions()`, было
   ```

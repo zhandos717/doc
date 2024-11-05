@@ -66,7 +66,7 @@ final class MoonShineLayout extends AppLayout
 ```
 
 > [!TIP]
-> Если меню создается для [ModelResource]() или [Resource](), для элемента меню будет использоваться первая страница объявленная в методе <code>pages()</code>.
+> Если меню создается для [ModelResource]() или [Resource](), для элемента меню будет использоваться первая страница объявленная в методе `pages()`.
 
 <a name="groups"></a>
 ## Группы
