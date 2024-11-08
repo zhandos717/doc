@@ -66,6 +66,19 @@ Select::make('Country', 'country_id')
     ])
     ->default('value 2')
 ```
+
+Также вы можете указывать опции через объект `Options`:
+
+```php
+Select::make('Select')->options(
+    new Options([
+        new Option(label: 'Option 1', value: '1', selected: true, properties: new OptionProperty(image: 'https://cutcode.dev/images/platforms/youtube.png')),
+        new Option(label: 'Option 2', value: '2', properties: new OptionProperty(image: 'https://cutcode.dev/images/platforms/youtube.png')),
+    ]
+)
+)
+```
+
 <a name="nullable"></a>  
 ## Nullable
 Как и у всех полей, если необходимо сохранять NULL, то нужно добавить метод `nullable()`.
@@ -119,6 +132,22 @@ Select::make('City', 'city_id')
         ]
     ])
 ```
+
+```php
+Select::make('City')->options(
+    new Options([
+        new OptionGroup('Italy', new Options([
+            new Option('Rome', '1'),
+            new Option('Milan', '2'))
+        ])),
+
+        new OptionGroup('France', new Options([
+            new Option('Paris', '3'),
+            new Option('Marseille', '4')
+        ]))
+    ])
+),
+```
 ![select group dark](https://raw.githubusercontent.com/moonshine-software/doc/3.x/resources/screenshots/select_group_dark.png)
 
 <a name="multiple"></a>
@@ -138,7 +167,6 @@ Select::make('Country', 'country_id')
         'value 2' => 'Option Label 2'
     ])
     ->multiple()
-    ];
 }
 
 //...
@@ -196,6 +224,20 @@ async(Closure|string|null $url = null, string|array|null $events = null, ?AsyncC
         "label": "Option 2"
     }
 ]
+```
+
+Также можно воспользоваться объектом `Options`:
+
+```php
+public function selectOptions(): MoonShineJsonResponse
+{
+    $options = new Options([
+        new Option(label: 'Option 1', value: '1', selected: true, properties: new OptionProperty('https://cutcode.dev/images/platforms/youtube.png')),
+        new Option(label: 'Option 2', value: '2', properties: new OptionProperty('https://cutcode.dev/images/platforms/youtube.png')),
+    ]);
+
+    return MoonShineJsonResponse::make(data: $options->toArray());
+}
 ```
 
 ```php
@@ -267,8 +309,20 @@ Select::make('Country', 'country_id')
         2 => ['image' => 'https://moonshine-laravel.com/images/ae.png'],
         //...
     ])
-
 ```
+
+Или через объект `Options`:
+
+```php
+Select::make('Select')->options(
+    new Options([
+        new Option(label: 'Option 1', value: '1', selected: true, properties: new OptionProperty(image: 'https://cutcode.dev/images/platforms/youtube.png')),
+        new Option(label: 'Option 2', value: '2', properties: new OptionProperty(image: 'https://cutcode.dev/images/platforms/youtube.png')),
+    ]
+)
+)
+```
+
 ![belongs to image dark](https://raw.githubusercontent.com/moonshine-software/doc/3.x/resources/screenshots/belongs_to_image_dark.png)
 
 <a name="options"></a>
@@ -335,3 +389,6 @@ Select::make('Type')->native()
 ```blade
 <x-moonshine::form.select asyncRoute='url' />
 ```
+
+> [!TIP]
+> Смотрите также рецепты по использованию [Select](/docs/{{version}}/recipes/select)

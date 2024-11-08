@@ -158,3 +158,4 @@
     - [Package Development](/docs/{{version}}/advanced/package-development)
 - ## Recipes
     - [Profile](/docs/{{version}}/recipes/profile)
+    - [Select](/docs/{{version}}/recipes/select)
