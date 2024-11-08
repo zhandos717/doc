@@ -390,6 +390,9 @@ final class MoonShineLayout extends CompactLayout
 }
 ```
 
+> [!WARNING]
+> Если вы хотите оставить и Sidebar и TopBar одновременно, то обязательно соблюдайте очередность, первым должен идти TopBar
+
 <a name="colors"></a>
 ## Цвета
 
