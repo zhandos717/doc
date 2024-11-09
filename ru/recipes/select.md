@@ -119,7 +119,7 @@ protected function formFields(): iterable
             Select::make('First')->options([
                 1 => 1,
                 2 => 2,
-            ])->setValue($value)->dispatchEvent(
+            ])->setValue($value)->onChangeEvent(
                 AlpineJs::event(JsEvent::FRAGMENT_UPDATED, 'selects')
             ),
 

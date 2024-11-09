@@ -8,6 +8,7 @@
   - [Выбор нескольких значений](#multiple)
   - [Поиск](#search)
   - [Асинхронный поиск](#async)
+  - [События при изменении](#on-change-event)
   - [Редактирование в режиме preview](#update-on-preview)
   - [Значения с изображением](#with-image)
   - [Опции](#options)
@@ -199,6 +200,7 @@ Select::make('Country', 'country_id')
 
 <a name="async"></a>
 ## Асинхронный поиск
+
 У поля *Select* так же можно организовать асинхронный поиск. Для это необходимо методу `async()` передать *url*, на который будет отправляться запрос с *query* параметром для поиска.
  
 ```php
@@ -263,6 +265,24 @@ Select::make('Country', 'country_id')
     ])
     ->async('/search')
     ->asyncOnInit()
+```
+
+<a name="n-change-event"></a>
+## События при изменении
+
+При изменении значения *Select*, через метод `onChangeEvent`, вы можете вызвать события:
+
+```php
+use MoonShine\UI\Fields\Select;
+
+Select::make('Country', 'country_id')
+    ->options([
+        'value 1' => 'Option Label 1',
+        'value 2' => 'Option Label 2'
+    ])
+    ->onChangeEvent(
+        AlpineJs::event(JsEvent::FRAGMENT_UPDATED, 'selects')
+    ),
 ```
 
 <a name="update-on-preview"></a>
