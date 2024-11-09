@@ -1,8 +1,11 @@
 # Select
 
-В данном разделе мы собрали разные не стандартные подходы использования Select, которые вы можете модернизировать под свои нужды
+В данном разделе мы собрали разные не стандартные подходы использования `Select`, которые вы можете модернизировать под свои нужды
 
 ## Async
+
+Пример демонстрирует метод `async`, но при этом мы используем подход работы через `asyncMethod`, 
+тем самым экономим время на создание контроллера и пишем реализацию прямо в ресурсе или странице:
 
 ```php
 protected function formFields(): iterable
@@ -45,6 +48,11 @@ Select::make('Dynamic value', 'dynamic_value')->options([4 => 4])->reactive(),
 
 ## ShowWhen
 
+За счет того, что по умолчанию `ShowWhen` удаляет скрытые элементы из `DOM` мы можем дублировать несколько `Select` с разными значениями и отображать их по условию
+
+> [!NOTE]
+> Мы добавили `setNameAttribute`, чтобы не было конфликта при сохранении формы
+
 ```php
 Select::make('Company', 'company')->options([
     1 => 'Laravel',
@@ -64,6 +72,8 @@ Select::make('Dynamic value', 'dynamic_value')
 ```
 
 ## onChangeMethod
+
+Подход в котором при изменении основного `Select` мы отправляем запрос и возвращаем `html` следующего `Select`, отображаем его в блоке по селектору:
 
 ```php
 public function selectValues(): MoonShineJsonResponse
@@ -93,6 +103,8 @@ protected function formFields(): iterable
 ```
 
 ## Fragments
+
+Благодаря тому что `Fragment` вместе с запросом отправляет данные формы, мы при перезагрузке фрагмента можем изменить набор элементов `Select`:
 
 ```php
 protected function formFields(): iterable
