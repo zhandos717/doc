@@ -36,8 +36,8 @@
 
 `php artisan moonshine:install`
 
-### Обновляем конфиг из бэкапа
-- Параметры `'logo'` и `'logo_small'` нужно удалить, так как настройка Logo переместилась в MoonShineLayout _(смотрите документацию по Layout)_.
+### Перенести параметры в config из бэкапа
+Смотрите документацию по [конфигурации](#/docs/{{version}}/configuration.md).
 
 ### Перенести меню в MoonShineLayout и обновить
 - Изменения:
