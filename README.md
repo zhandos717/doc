@@ -9,6 +9,7 @@
 - [Списки](#list)
 - [Вкладки](#tabs)
 - [Уведомления](#alert)
+- [Изображения](#images)
 
 ___
 
@@ -63,19 +64,28 @@ ___
 
 Для названия первого пункта чаще всего необходимо использовать название `Основы`, вместо похожих `Начало`, `Введение` и др.
 ```html
-<a name="basic"></a>
+<a name="basics"></a>
 ## Основы
 ```
 
 Если описывается компонент, который наследуется от другого класса, и в навигации есть пункт `Основы`, то описание наследования пишем строго после этого пункта.
 ```html
-<a name="basic"></a>
+<a name="basics"></a>
 ## Основы
 
 Наследует [Select](/docs/{{version}}/fields/select).
 
 \* имеет те же возможности.
 
+```
+
+Если базовые методы описываются в другом разделе документации, то пишем так
+
+```html
+<a name="basics"></a>
+## Основы
+
+Содержит все [Базовые методы](#/docs/{{version}}/fields/basic-methods.md).
 ```
 
 <a name="content"></a>
@@ -140,3 +150,14 @@ Content tab 2
 > [!TIP]
 > Советы.
 ```
+
+<a name="images"></a>
+## Изображения
+
+Изображения добавляем в директорию /resources/screenshots
+
+Ссылку указываем - https://raw.githubusercontent.com/moonshine-software/doc/3.x/resources/screenshots/filename.png
+
+Пример:
+
+![belongs_to_many](https://raw.githubusercontent.com/moonshine-software/doc/3.x/resources/screenshots/belongs_to_many.png)

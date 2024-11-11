@@ -23,6 +23,7 @@
   - [Поиск](#search)
   - [Действие по клику](#click-action)
   - [Сохранение состояния в URL](#save-state-in-url)
+  - [Модификация чекбокса массовых действий](#modify-row-checkbox)
 - [Настройка атрибутов](#attribute-configuration)
 - [Асинхронная загрузка](#async-loading)
   - [Lazy и whenAsync методы](#lazy)
@@ -444,6 +445,17 @@ TableBuilder::make()
 ```php
 ->pushState()
 ```
+<a name="modify-row-checkbox"></a>
+### Модификация чекбокса массовых действий
+
+Метод `modifyRowCheckbox()` позволяет модифицировать чекбокс массовых действий. 
+Пример ниже демонстрирует выбор активного чекбокса по умолчанию:
+
+```php
+->modifyRowCheckbox(
+    fn(Checkbox $checkbox, DataWrapperContract $data, TableBuilder $ctx) => $data->getKey() === 2 ? $checkbox->customAttributes(['checked' => true]) : $checkbox
+)
+```
 
 <a name="attribute-configuration"></a>
 ## Настройка атрибутов
@@ -451,8 +463,8 @@ TableBuilder::make()
 TableBuilder предоставляет методы для настройки HTML-атрибутов:
 
 ```php
-->trAttributes(fn($data, $row) => ['class' => $row % 2 ? 'bg-gray-100' : ''])
-->tdAttributes(fn($data, $row, $cell) => ['class' => $cell === 0 ? 'font-bold' : ''])
+->trAttributes(fn(?DataWrapperContract $data, int $row): array => ['class' => $row % 2 ? 'bg-gray-100' : ''])
+->tdAttributes(fn(?DataWrapperContract $data, int $row, int $cell): array => ['class' => $cell === 0 ? 'font-bold' : ''])
 ->headAttributes(['class' => 'bg-blue-500 text-white'])
 ->bodyAttributes(['class' => 'text-sm'])
 ->footAttributes(['class' => 'bg-gray-200'])
@@ -479,7 +491,7 @@ TableBuilder предоставляет методы для настройки H
 - `$events` - события, которые будут вызваны после успешного ответа,
 - `$callback` - JS callback, который можно добавить как обертку ответа.
 
-После успешного запроса можно вызвать события, добавив параметр `asyncEvents`.
+После успешного запроса можно вызвать события, добавив параметр `events`.
 
 ```php
 use MoonShine\Support\AlpineJs;
@@ -499,9 +511,13 @@ TableBuilder::make()
 - `JsEvent::TABLE_REINDEX` - реиндексация таблицы (см. `reindex()`)
 - `JsEvent::TABLE_ROW_UPDATED` - обновление строки таблицы (`AlpineJs::event(JsEvent::TABLE_ROW_UPDATED, "{component-name}-{row-id}")`)
 
-Все параметры метода `async` являются опциональными, и по умолчанию TableBuilder автоматически укажет URL на основе текущей страницы.
+> [!NOTE]
+> Для получения дополнительной информации о js событиях обратитесь к разделу [Events](/docs/{{version}}/frontend/events).
 
-В процессе использования TableBuilder в режиме `async` может возникнуть задача, когда вы используете его вне админ-панели на страницах, не объявленных в системе MoonShine. Тогда вам потребуется указать собственный URL и реализовать ответ с HTML таблицы. Давайте рассмотрим пример реализации:
+Все параметры метода `async` являются опциональными, и по умолчанию `TableBuilder` автоматически укажет URL на основе текущей страницы.
+
+В процессе использования TableBuilder в режиме `async` может возникнуть задача, когда вы используете его вне админ-панели на страницах, не объявленных в системе MoonShine. 
+Тогда вам потребуется указать собственный URL и реализовать ответ с HTML таблицы. Давайте рассмотрим пример реализации:
 
 ```php
 TableBuilder::make()->name('my-table')->async(route('undefined-page.component', [

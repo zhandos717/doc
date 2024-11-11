@@ -100,21 +100,37 @@ class PostPolicy
 Если вам нужно добавить дополнительную логику авторизации в ваше приложение или внешний пакет, используйте метод `authorizationRules` в `AuthServiceProvider` или в `MoonShineServiceProvider`.
 
 ```php
+namespace App\Providers;
+
+use Illuminate\Support\ServiceProvider;
+use MoonShine\Contracts\Core\DependencyInjection\CoreContract;
+use MoonShine\Laravel\DependencyInjection\MoonShine;
+use MoonShine\Laravel\DependencyInjection\MoonShineConfigurator;
+use MoonShine\Laravel\DependencyInjection\ConfiguratorContract;
+use MoonShine\Laravel\Enums\Ability;
 use Illuminate\Database\Eloquent\Model;
 use MoonShine\Contracts\Core\DependencyInjection\ConfiguratorContract;
 use MoonShine\Contracts\Core\ResourceContract;
-use MoonShine\Laravel\DependencyInjection\MoonShineConfigurator;
-use MoonShine\Laravel\Enums\Ability;
 
-/**
- * @param  MoonShineConfigurator  $configurator
- */
-public function boot(ConfiguratorContract $configurator): void
+class MoonShineServiceProvider extends ServiceProvider
 {
-    $configurator->authorizationRules(
-        static function (ResourceContract $resource, Model $user, Ability $ability, Model $item): bool {
-            return true;
-        }
-    );
+    /**
+     * @param  MoonShine  $core
+     * @param  MoonShineConfigurator  $config
+     *
+     */
+    public function boot(
+        CoreContract $core,
+        ConfiguratorContract $config,
+    ): void
+    {
+        $config->authorizationRules(
+            static function (ResourceContract $resource, Model $user, Ability $ability, Model $item): bool {
+                return true;
+            }
+        );
+        
+        // ..
+    }
 }
 ```

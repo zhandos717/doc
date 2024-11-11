@@ -1,4 +1,4 @@
-# UPGRADE MoonShine 2.x → 3.0 (черновик)
+# UPGRADE 2.x → 3.0
 
 - [Обновление пакета](#update)
 - [Первоначальная настройка](#install)
@@ -12,19 +12,20 @@
 ## Обновление пакета
 
 ### Обновить `composer.json`
-`"moonshine/moonshine": "^2.x",` → `"moonshine/moonshine": "^3.0",`
+`"moonshine/moonshine": "^2.0",` → `"moonshine/moonshine": "^3.0",`
 
-### Отредактировать `config/app.php`
-Удалить строку `App\Providers\MoonShineServiceProvider::class,`.
-
-После запуска команды `moonshine:install` сервис-провайдер добавится снова автоматически.
-
-### Сделать бэкапы config/moonshine.php, MoonShineServiceProvider.php и Dashboard.php
+### Сделать backup config/moonshine.php, MoonShineServiceProvider.php и Dashboard.php
 Они понадобятся для переноса информации
 - `mv config/moonshine.php config/moonshine_old.php`
 - `mv app/Providers/MoonShineServiceProvider.php app/Providers/MoonShineServiceProvider_old.php`
 - `mv app/MoonShine/Pages/Dashboard.php app/MoonShine/Pages/Dashboard_old.php`
- 
+
+### Отредактировать `config/app.php`
+Удалить строку `App\Providers\MoonShineServiceProvider::class,`.
+
+> [!NOTE]
+> После запуска команды `moonshine:install` сервис-провайдер добавится снова автоматически.
+
 ### Запустить обновление composer
 `composer update`
 
@@ -32,7 +33,7 @@
 ## Первоначальная настройка
 
 ### Запустить команду `moonshine:install`
-Команда `moonshine:install` создает новый сервис-провайдер, конфигурацию, Layout и Dashboard.
+Команда `moonshine:install` создает новый сервис-провайдер, конфигурацию, `Layout` и `Dashboard`.
 
 `php artisan moonshine:install`
 
@@ -49,19 +50,17 @@
 ### Зарегистрировать все классы в MoonShineServiceProvider.php
 Все ресурсы и страницы регистрируются в новом провайдере (экземпляры заменены на строковые классы, смотрите раздел [Переменные](#vars)):
 ```
-    protected function resources(): array
-    {
-        return [
-            MoonShineUserResource::class,
-            MoonShineUserRoleResource::class,
-        ];
-    }
+$core
+  ->resources([
+      MoonShineUserResource::class,
+      MoonShineUserRoleResource::class,
+  ]);
 ```
 Сгенерировать список всех классов для импорта в пространство имен можно так:
 ```
 find app/MoonShine/Resources -type f | sed "s/app/use App/" | sed "s|/|\\\|g" | sed "s/.php/;/" | sort
 ```
-Сгенерировать cписок всех классов для добавления в `resources()`:
+Сгенерировать cписок всех классов для добавления в `$core->resources()`:
 ```
 find app/MoonShine/Resources -type f -exec basename {} \; | sed "s/.php/::class,/" | sort
 ```
@@ -90,7 +89,7 @@ rm app/MoonShine/Pages/Dashboard_old.php
 - `MoonShine\Fields\Relationships\` → `MoonShine\Laravel\Fields\Relationships\`
 - `MoonShine\Fields\Slug` → `MoonShine\Laravel\Fields\Slug`
 - `MoonShine\Fields\` → `MoonShine\UI\Fields\`
-- `MoonShine\Decorations\Block` → `MoonShine\UI\Components\Layout\Block`
+- `MoonShine\Decorations\Block` → `MoonShine\UI\Components\Layout\Box`
 - `MoonShine\Decorations\` → `MoonShine\UI\Components\Layout\*` _(некоторые на `MoonShine\UI\Components\`, проверьте вручную)_
 - `MoonShine\Enums\` → `MoonShine\Support\Enums\`
 - `MoonShine\Pages\` → `MoonShine\Laravel\Pages\`
@@ -127,14 +126,14 @@ rm app/MoonShine/Pages/Dashboard_old.php
 - `protected function afterUpdated(Model $user): Model` → `protected function afterUpdated($user): Model`
 - `public function detailButtons(): array` → `public function detailButtons(): ListOf` (добавить `MoonShine\Support\ListOf`)
 - `public function modifyListComponent(MoonShineRenderable|TableBuilder $table): MoonShineRenderable` → `public function modifyListComponent(ComponentContract $table): ComponentContract`
-- `pages()` теперь принимает массив названий классов:
+- `$core->pages()` теперь принимает массив названий классов:
   ```
-      protected function pages(): array
-      {
-          return [
-              SettingPage::class,
-          ];
-      }
+    $core
+        ->pages([
+            ...$config->getPages(),
+            SettingPage::class,
+        ])
+    ;
   ```
 - `getActiveActions()` теперь меняется на `activeActions()`, смотрите раздел [Активные действия](#/docs/{{version}}/model-resource/index.md).
 - `detailPageUrl` → `getDetailPageUrl`,
@@ -152,7 +151,7 @@ rm app/MoonShine/Pages/Dashboard_old.php
         return $this->indexFields();
     }
     ```
-  - удалить `Block::` и прочие декорации из indexFields
+  - indexFields допускает только поля
 - `trAttributes` `tdAttributes` для `TableBuilder` теперь должны возвращать значения такие же как для вызова `customAttributes` и вместо `ComponentAttributeBag $attributes` теперь `TableBuilder $table`:
   ```
   TableBuilder::make()

@@ -57,9 +57,11 @@
 Text::make(Closure|string|null $label = null, ?string $column = null, ?Closure $formatted = null)
 ```
 
-- `$label` - лейбл, заголовок поля,
-- `$column` - связь столбца в базе и атрибута `name` у поля ввода (например: `description` > `<input name="description">`). Если это поле отношения, то используется название отношения (например: countries)
+- `$label` - лейбл, заголовок поля.
+- `$column` - связь столбца в базе и атрибута `name` у поля ввода (например: `description` > `<input name="description">`). Если это поле отношения, то используется название отношения (например: countries).
 - `$formatted` - замыкание для форматирования значения поля в режиме preview (для BelongsTo и BelongsToMany форматирует значения для выбора).
+
+> В `$label` можно добавлять html теги, они не будут экранироваться.
 
 > Если не указать `$column`, то поле в базе данных будет определено автоматически на основе `$label` (только для английского языка).
 
@@ -326,6 +328,9 @@ Text::make('Title')->readonly()
 ### Другие атрибуты
 Чтобы указать любые другие атрибуты, используется метод `customAttributes()`.
 
+> [!NOTE]
+> Поля являются компонентами, подробнее об атрибутах читайте в разделе [Атрибуты компонентов](/docs/{{version}}/components/attributes)
+
 ```php
 customAttributes(array $attributes, bool $override = false)
 ```
@@ -444,23 +449,6 @@ Text::make('Thumbnail')
   }) 
 ```
 
-Методы `beforeRender()` и `afterRender()` позволяют вывести какую-то информацию перед и после поля соответственно.
-
-```php
-beforeRender(Closure $closure)
-```
-
-```php
-afterRender(Closure $closure)
-```
-
-```php
-Image::make('Thumbnail')
-  ->beforeRender(function (Field $field) {
-      return $field->preview();
-  }) 
-```
-
 <a name="request-value-resolver"></a>
 ### Получение значения из запроса
 
@@ -534,7 +522,7 @@ unless($value = null, ?callable $callback = null, ?callable $default = null)
 <a name="apply"></a>
 ### Apply
 
-У каждого поля реализован метод `apply()`, который трансформирует данные с учетом *request* и *resolve* методов. Чтобы переопределить стандартный `apply` у поля, можно воспользоваться методом `onApply()`. Подробнее *о цикле жизни применения поля* можно прочитать в разделе [Основы > Процесс применения полей](/docs/{{version}}/fields/index.md#процесс-применения-полей).
+У каждого поля реализован метод `apply()`, который трансформирует данные. Чтобы переопределить стандартный `apply` у поля, можно воспользоваться методом `onApply()`. Подробнее *о цикле жизни применения поля* можно прочитать в разделе [Основы > Процесс применения полей](/docs/{{version}}/fields/index.md#процесс-применения-полей).
 
 ```php
 /**
@@ -572,6 +560,76 @@ function onBeforeApply(Closure $onBeforeApply)
  * @param  Closure(mixed, mixed, FieldContract): static  $onBeforeApply
  */
 function onAfterApply(Closure $onBeforeApply)
+```
+
+#### Глобальное определение apply логики
+
+Если вы хотите глобально для определенного поля изменить логику `apply`, то вы можете создать `apply` класс и привязать его к необходимому полю.
+
+Для начала создайте `apply` класс:
+
+```shell
+php artisan moonshine:apply FileModelApply
+```
+
+```php
+/**
+ * @implements ApplyContract<File>
+ */
+final class FileModelApply implements ApplyContract
+{
+    /**
+     * @param  File  $field
+     */
+    public function apply(FieldContract $field): Closure
+    {
+        return function (mixed $item) use ($field): mixed {
+            $requestValue = $field->getRequestValue();
+            
+            $newValue = // ..
+            
+            return data_set($item, $field->getColumn(), $newValue);
+        };
+    }
+}
+```
+
+Далее зарегистрируйте его для поля:
+
+```php
+use Illuminate\Support\ServiceProvider;
+use MoonShine\Contracts\Core\DependencyInjection\CoreContract;
+use MoonShine\Laravel\DependencyInjection\MoonShine;
+use MoonShine\Laravel\DependencyInjection\MoonShineConfigurator;
+use MoonShine\Laravel\DependencyInjection\ConfiguratorContract;
+use MoonShine\Contracts\Core\DependencyInjection\AppliesRegisterContract;
+use MoonShine\UI\Applies\AppliesRegister;
+use App\MoonShine\Applies\FileModelApply;
+use MoonShine\UI\Fields\File;
+use MoonShine\Laravel\Resources\ModelResource;
+
+class MoonShineServiceProvider extends ServiceProvider
+{
+    /**
+     * @param  MoonShine  $core
+     * @param  MoonShineConfigurator  $config
+     * @param  AppliesRegister  $applies
+     *
+     */
+    public function boot(
+        CoreContract $core,
+        ConfiguratorContract $config,
+        AppliesRegisterContract $applies,
+    ): void
+    {
+        $applies
+            // resource group, default ModelResource
+            ->for(ModelResource::class)
+            // type fields or filters
+            ->fields()
+            ->add(File::class, FileModelApply::class);
+    }
+}
 ```
 
 <a name="fill"></a>
@@ -653,7 +711,7 @@ onChangeUrl(
 
 - `$url` - url запроса,
 - `$method` - метод асинхронного запроса,
-- `$events` - вызываемые [AlpineJS события](TODO ссылка на доку) после успешного запроса,
+- `$events` - вызываемые [AlpineJS события](/docs/{{version}}/frontend/js#events) после успешного запроса,
 - `$selector` - selector элемента у которого будет изменяться контент,
 - `$callback` - js callback функция после получения ответа.
 
@@ -690,7 +748,7 @@ onChangeMethod(
 - `$params` - параметры для запроса,
 - `$message` - сообщения,
 - `$selector` - selector элемента у которого будет изменяться контент,
-- `$events` - вызываемые [AlpineJS события](TODO ссылка на доку) после успешного запроса,
+- `$events` - вызываемые [AlpineJS события](/docs/{{version}}/frontend/js#events) после успешного запроса,
 - `$callback` - js callback функция после получения ответа,
 - `$page` - страница содержащая метод,
 - `$resource` - ресурс содержащий метод.
@@ -796,7 +854,7 @@ public function updateOnPreview(
  - `$url` - url запроса,
  - `$resource` - ресурс содержащий updateOnPreview,
  - `$condition` - условие установки поля в режим updateOnPreview,
- - `$events` - вызываемые [AlpineJS события](TODO ссылка на доку) после успешного запроса.
+ - `$events` - вызываемые [AlpineJS события](/docs/{{version}}/frontend/js#events) после успешного запроса.
 
 > [!NOTE]
 > Параметры не являются обязательными, но должны быть заданы, если поле находится вне ресурса или же вы хотите указать полностью свой endpoint (тогда и ресурс не нужен)

@@ -26,10 +26,10 @@
 `ModelResource` - расширяет `CrudResource` и предоставляет функциональность для работы с моделями Eloquent. Он обеспечивает основу для создания ресурсов, связанных с моделями базы данных. `ModelResource` предоставляет методы для выполнения CRUD-операций, управления отношениями, применения фильтров и многое другое.
 
 > [!TIP]
-> Вы также можете ознакомится с разделом [CrudResource](/docs/3.x/advanced/crud-resource).
+> Вы также можете ознакомится с разделом [CrudResource](/docs/{{version}}/advanced/crud-resource).
 > `CrudResource` это абстрактный класс предоставляющий базовый интерфейс для `CRUD` операций без привязки к хранилищу и типу данных
 
-Под капотом `ModelResource` расширяет `CrudResource` и сразу включает возможность работы с `Eloquent`, если углублятся в детали MoonShine, то вы увидите все теже стандартные `Controller`, `Model` и `blade views`
+Под капотом `ModelResource` расширяет `CrudResource` и сразу включает возможность работы с `Eloquent`, если углубляться в детали MoonShine, то вы увидите все те же стандартные `Controller`, `Model` и `blade views`
 
 Если бы вы разрабатывали самостоятельно, то создать ресурс контроллеры и ресурс маршруты можно следующим образом:
 
@@ -57,8 +57,8 @@ php artisan moonshine:resource Post
 
 При создания `ModelResource` доступно несколько вариантов:
 
-- [Default model resource](/docs/3.x/model-resource/fields) - с объявлением полей внутри методов ресурса (`indexFields`, `formFields`, `detailFields`)
-- [Model resource with pages](/docs/3.x/model-resource/pages) - c публикацией страниц (`IndexPage`, `FormPage`, `DetailPage`)
+- [Default model resource](/docs/{{version}}/model-resource/fields) - с объявлением полей внутри методов ресурса (`indexFields`, `formFields`, `detailFields`)
+- [Model resource with pages](/docs/{{version}}/model-resource/pages) - c публикацией страниц (`IndexPage`, `FormPage`, `DetailPage`)
 
 В результате создастся класс `PostResource`, который будет основой нового раздела в панели.
 Располагается он, по умолчанию, в директории `app/MoonShine/Resources`.
@@ -103,8 +103,8 @@ class PostResource extends ModelResource
 }
 ```
 
-![resource_paginate](https://moonshine-laravel.com/screenshots/resource_paginate.png)
-![resource_paginate_dark](https://moonshine-laravel.com/screenshots/resource_paginate_dark.png)
+![resource_paginate](https://raw.githubusercontent.com/moonshine-software/doc/3.x/resources/screenshots/resource_paginate.png)
+![resource_paginate_dark](https://raw.githubusercontent.com/moonshine-software/doc/3.x/resources/screenshots/resource_paginate_dark.png)
 
 <a name="declaring-a-section-in-the-system"></a>
 ## Объявление в системе
@@ -115,38 +115,48 @@ class PostResource extends ModelResource
 ```php
 namespace App\Providers;
 
+use Illuminate\Support\ServiceProvider;
+use MoonShine\Contracts\Core\DependencyInjection\CoreContract;
+use MoonShine\Laravel\DependencyInjection\MoonShine;
+use MoonShine\Laravel\DependencyInjection\MoonShineConfigurator;
+use MoonShine\Laravel\DependencyInjection\ConfiguratorContract;
+
 use App\MoonShine\Resources\ArticleResource;
 use App\MoonShine\Resources\CategoryResource;
 use App\MoonShine\Resources\CommentResource;
-use App\MoonShine\Resources\MoonShineUserResource;
-use App\MoonShine\Resources\MoonShineUserRoleResource;
-use MoonShine\Contracts\Core\ResourceContract;
-use MoonShine\Laravel\Providers\MoonShineApplicationServiceProvider;
 
-class MoonShineServiceProvider extends MoonShineApplicationServiceProvider
+class MoonShineServiceProvider extends ServiceProvider
 {
     /**
-     * @return array<class-string<ResourceContract>>
+     * @param  MoonShine  $core
+     * @param  MoonShineConfigurator  $config
+     *
      */
-    protected function resources(): array
+    public function boot(
+        CoreContract $core,
+        ConfiguratorContract $config,
+    ): void
     {
-        return [
-            MoonShineUserResource::class,
-            MoonShineUserRoleResource::class,
-            ArticleResource::class,
-            CategoryResource::class,
-            CommentResource::class,
-        ];
+        $core
+            ->resources([
+                MoonShineUserResource::class,
+                MoonShineUserRoleResource::class,
+                ArticleResource::class,
+                CategoryResource::class,
+                CommentResource::class,
+            ])
+            ->pages([
+                ...$config->getPages(),
+            ])
+        ;
     }
-
-    // ...
 }
 ```
 
 <a name="declaring-a-section-in-the-menu"></a>
 ## Добавление в меню
 
-Все страницы в `MoonShine` имеют `Layout` и у каждой странцы он может быть свой, но по умолчанию при установке `MoonShine` добавляет базовый `MoonShineLayout` в директорию `app/MoonShine/Layouts`. В `Layout` кастомизируется все что отвечает за внешний вид ваших страниц и это касается также и навигации.
+Все страницы в `MoonShine` имеют `Layout` и у каждой страницы он может быть свой, но по умолчанию при установке `MoonShine` добавляет базовый `MoonShineLayout` в директорию `app/MoonShine/Layouts`. В `Layout` кастомизируется все что отвечает за внешний вид ваших страниц и это касается также и навигации.
 
 Чтобы добавить раздел в меню, необходимо объявить его через метод `menu()` по средствам `MenuManager`:
 
@@ -183,10 +193,10 @@ final class MoonShineLayout extends CompactLayout
 ```
 
 > [!TIP]
-> О расширенных настройках `Layout` можно узнать в разделе [Layout](/docs/3.x/appearance/layout).
+> О расширенных настройках `Layout` можно узнать в разделе [Layout](/docs/{{version}}/appearance/layout).
 
 > [!TIP]
-> О расширенных настройках `MenuManager` можно узнать в разделе [Menu](/docs/3.x/appearance/menu).
+> О расширенных настройках `MenuManager` можно узнать в разделе [Menu](/docs/{{version}}/appearance/menu).
 
 <a name="alias"></a>
 ### Alias
@@ -295,7 +305,7 @@ public function getRedirectAfterDelete(): string
 <a name="active-actions"></a>
 ## Активные действия
 
-Часто бывает, что необходимо создать ресурс, в котором будет исключена возможность удалять, или добавлять, или редактировать. И здесь речь не об авторизации, а о глобальном исключении этих разделов. Делается это крайне просто за счет метода `getActiveActions` в ресурсе
+Часто бывает, что необходимо создать ресурс, в котором будет исключена возможность удалять, или добавлять, или редактировать. И здесь речь не об авторизации, а о глобальном исключении этих разделов. Делается это крайне просто за счет метода `activeActions` в ресурсе
 
 ```php
 namespace App\MoonShine\Resources;
@@ -316,6 +326,14 @@ class PostResource extends ModelResource
     }
 
     //...
+}
+```
+
+Также можно просто создать новый список:
+```php
+protected function activeActions(): ListOf
+{
+    return new ListOf(Action::class, [Action::VIEW, Action::UPDATE]);
 }
 ```
 
@@ -439,7 +457,7 @@ protected function pageComponents(): array
 <a name="on-load"></a>
 ### Активный ресурс
 
-Метод `onLoad` дает возможность интегривоваться в момент когда ресурс загружен и в данный момент является активным
+Метод `onLoad` дает возможность интегрироваться в момент когда ресурс загружен и в данный момент является активным
 
 ```php
 namespace App\MoonShine\Resources;
@@ -459,7 +477,8 @@ class PostResource extends ModelResource
 ```
 
 > [!TIP]
-> Рецепт: [Изменение breadcrumbs из ресурса](/docs/{{version}}/recipes/index#custom-breadcrumbs).
+> TODO
+> Рецепт: [Изменение breadcrumbs из ресурса](/docs/{{version}}/recipes/custom-breadcrumbs).
 
 Вы также можете подключить `trait` к ресурсу и внутри `trait` добавить метод согласно конвенции наименований - `load{TraitName}` и через трейт обратится к `onLoad` ресурса
 
@@ -497,7 +516,7 @@ trait WithPermissions
 <a name="on-boot"></a>
 ### Создание экземпляра
 
-Метод `onBoot` дает возможность интегривоваться в момент когда MoonShine создает экземпляр ресурса в системе
+Метод `onBoot` дает возможность интегрироваться в момент когда MoonShine создает экземпляр ресурса в системе
 
 ```php
 namespace App\MoonShine\Resources;
