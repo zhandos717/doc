@@ -37,6 +37,9 @@
 
 `php artisan moonshine:install`
 
+### Перенести параметры в config из бэкапа
+Смотрите документацию по [конфигурации](#/docs/{{version}}/configuration.md).
+
 ### Перенести меню в MoonShineLayout и обновить
 - Изменения:
     - Пространства имен меню изменены на `MoonShine\MenuManager\*`.
