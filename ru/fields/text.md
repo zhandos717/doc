@@ -270,9 +270,9 @@ public function fields(): array
 updateOnPreview(?Closure $url = null, ?ResourceContract $resource = null, mixed $condition = null)
 ```
 
-- `$url` - url для обработки асинхронного запроса,
-- `$resource` - ресурс модели, на который ссылается отношение,
-- `$condition` - условие выполнения метода.
+- `$url` - (опционально) url для обработки асинхронного запроса,
+- `$resource` - (опционально) ресурс модели, если поле находится вне ресурса,
+- `$condition` - (опционально) условие выполнения метода.
 
 
 > [!NOTE]
