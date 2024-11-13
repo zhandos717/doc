@@ -270,9 +270,9 @@ The `updateOnPreview()` method allows you to edit the *Text* field in *preview* 
 updateOnPreview(?Closure $url = null, ?ResourceContract $resource = null, mixed $condition = null)
 ```
 
-- `$url` - url for asynchronous request processing,
-- `$resource` - model resource referenced by the relationship,
-- `$condition` - method run condition.
+- `$url` - (optional) url for processing an asynchronous request,
+- `$resource` - (optional) model resource if the field is outside the resource,
+- `$condition` - (optional) method execution condition.
 
 
 > [!NOTE]
