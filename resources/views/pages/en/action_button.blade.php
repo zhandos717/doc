@@ -744,4 +744,23 @@ ActionButton::make('Refresh', '#')
     ->dispatchEvent(AlpineJs::event(JsEvent::TABLE_UPDATED, 'index-table')), // [tl! focus]
 </x-code>
 
+By default, when an event with a request is called, all query parameters from the href of the ActionButton will be sent.
+Some can be excluded using the <code>exclude</code> parameter:
+
+<x-code language="php">
+->dispatchEvent(
+    AlpineJs::event(JsEvent::TABLE_UPDATED, 'index-table'),
+    exclude: ['something'] // [tl! focus]
+)
+</x-code>
+
+You can also completely exclude sending <code>withoutPayload</code>:
+
+<x-code language="php">
+->dispatchEvent(
+    AlpineJs::event(JsEvent::TABLE_UPDATED, 'index-table'),
+    withoutPayload: true // [tl! focus]
+)
+</x-code>
+
 </x-page>

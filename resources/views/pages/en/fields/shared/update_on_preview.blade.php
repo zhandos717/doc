@@ -9,9 +9,9 @@ updateOnPreview(?Closure $url = null, ?ResourceContract $resource = null, mixed 
 </x-code>
 
 <x-ul>
-    <li><code>$url</code> - url for asynchronous request processing,</li>
-    <li><code>$resource</code> - model resource referenced by the relationship,</li>
-    <li><code>$condition</code> - method run condition.</li>
+    <li><code>$url</code> - (optional) url for processing an asynchronous request,</li>
+    <li><code>$resource</code> - (optional) model resource if the field is outside the resource</li>
+    <li><code>$condition</code> - (optional) method execution condition.</li>
 </x-ul>
 
 <x-moonshine::alert type="default" icon="heroicons.information-circle">

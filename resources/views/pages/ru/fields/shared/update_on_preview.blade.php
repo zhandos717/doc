@@ -9,9 +9,9 @@ updateOnPreview(?Closure $url = null, ?ResourceContract $resource = null, mixed 
 </x-code>
 
 <x-ul>
-    <li><code>$url</code> - url для обработки асинхронного запроса,</li>
-    <li><code>$resource</code> - ресурс модели на которую ссылается отношение,</li>
-    <li><code>$condition</code> - условие выполнения метода.</li>
+    <li><code>$url</code> - (опционально) url для обработки асинхронного запроса,</li>
+    <li><code>$resource</code> - (опционально) ресурс модели, если поле находится вне ресурса</li>
+    <li><code>$condition</code> - (опционально) условие выполнения метода.</li>
 </x-ul>
 
 <x-moonshine::alert type="default" icon="heroicons.information-circle">
