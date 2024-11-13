@@ -37,6 +37,9 @@
 
 `php artisan moonshine:install`
 
+### Перенести параметры в config из бэкапа
+Смотрите документацию по [конфигурации](#/docs/{{version}}/configuration.md).
+
 ### Перенести меню в MoonShineLayout и обновить
 - Изменения:
     - Пространства имен меню изменены на `MoonShine\MenuManager\*`.
@@ -103,15 +106,18 @@ rm app/MoonShine/Pages/Dashboard_old.php
 - `MoonShine\Http\Controllers\` → `MoonShine\Laravel\Http\Controllers\`
 - `MoonShine\MoonShineAuth` → `MoonShine\Laravel\MoonShineAuth`
 
-#### Удалить
-- `MoonShine\Laravel\Handlers\ExportHandler` (меняется на пакет https://github.com/moonshine-software/import-export)
-- `MoonShine\Laravel\Handlers\ImportHandler` (меняется на пакет https://github.com/moonshine-software/import-export)
-- ```
-    /**
-     * @return list<MoonShineComponent|Field>
-     */
-  ```
-  
+#### По необходимости установить дополнительные пакеты и обновить namespace для:
+- https://github.com/moonshine-software/import-export
+  - Обработчик `MoonShine\Laravel\Handlers\ExportHandler`
+  - Обработчик `MoonShine\Laravel\Handlers\ImportHandler`
+- https://github.com/moonshine-software/apexcharts
+  - Компонент `MoonShine\UI\Components\Metrics\Wrapped\DonutChartMetric`
+  - Компонент `MoonShine\UI\Components\Metrics\Wrapped\LineChartMetric`
+- https://github.com/moonshine-software/ace
+  - Поле `MoonShine\Fields\Code`
+- https://github.com/moonshine-software/easymde
+  - Поле `MoonShine\Fields\Markdown`
+
 <a name="methods"></a>
 ### Методы
 #### Изменить
@@ -132,27 +138,7 @@ rm app/MoonShine/Pages/Dashboard_old.php
         ])
     ;
   ```
-- `getActiveActions()` теперь меняется на `activeActions()`, было
-  ```
-    public function getActiveActions(): array
-    {
-        return ['view','update'];
-    }
-  ```
-  стало так
-  ```
-    protected function activeActions(): ListOf
-    {
-        return parent::activeActions()->except(Action::DELETE, Action::MASS_DELETE);
-    }
-  ```
-  или так
-  ```
-    protected function activeActions(): ListOf
-    {
-        return new ListOf(Action::class, [Action::VIEW, Action::UPDATE]);
-    }
-  ```
+- `getActiveActions()` теперь меняется на `activeActions()`, смотрите раздел [Активные действия](#/docs/{{version}}/model-resource/index.md).
 - `detailPageUrl` → `getDetailPageUrl`,
 - `MoonShineAuth::guard()` → `MoonShineAuth::getGuard()`
 - `$field->getData()` → `$field->getData()->getOriginal()`
@@ -176,6 +162,7 @@ rm app/MoonShine/Pages/Dashboard_old.php
     ->tdAttributes(fn(mixed $data, int $row, int $cell, TableBuilder $table): array => ($cell == 3) ? ['align' => 'right'] : []) 
   ```
 - Хелпер `to_page` → `toPage`
+- Вместо метода `columnSpan` у компонентов использовать метод компонента `Column`: `Column::make([...])->columnSpan(..)` 
 
 #### Удалить
 - Удалить методы полей `hideOn*` и `showOn*` _(сразу настроить indexFields/detailFields/formFields, смотрите в документации метод exceptElements для Fields, он позволяет гибко исключать поля)_
@@ -205,8 +192,8 @@ rm app/MoonShine/Pages/Dashboard_old.php
   - поменялся формат наименования событий со строкового на генерацию хелпером:
     - `table-updated-{name}` → `AlpineJs::event(JsEvent::TABLE_UPDATED, {name})`
     - смотрите файл `src/Support/src/Enums/JsEvent.php` со списком всех событий
-
- 
+- `protected string $sortDirection = 'ASC';` → `protected SortDirection $sortDirection = SortDirection::ASC;` (также `DESC`)  
+- `$assets` теперь вместо строк принимает `AssetElementContract`, такие как `Css`, `InlineCss`, `Js`, `InlineJs` 
 #### Удалить
   - `protected bool $isAsync = true;` (теперь по умолчанию)
   
