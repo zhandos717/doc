@@ -20,8 +20,8 @@ protected function formFields(): iterable
 public function selectOptions(): MoonShineJsonResponse
 {
     $options = new Options([
-        new Option(label: 'Option 1', value: '1', selected: true, properties: new OptionProperty('https://cutcode.dev/images/platforms/youtube.png')),
-        new Option(label: 'Option 2', value: '2', properties: new OptionProperty('https://cutcode.dev/images/platforms/youtube.png')),
+        new Option(label: 'Option 1', value: '1', selected: true, properties: new OptionProperty(image: 'https://cutcode.dev/images/platforms/youtube.png')),
+        new Option(label: 'Option 2', value: '2', properties: new OptionProperty(image: 'https://cutcode.dev/images/platforms/youtube.png')),
     ]);
 
     return MoonShineJsonResponse::make(data: $options->toArray());
@@ -79,8 +79,8 @@ Select::make('Dynamic value', 'dynamic_value')
 public function selectValues(): MoonShineJsonResponse
 {
     $options = new Options([
-        new Option('Option 1', '1', false, new OptionProperty('https://cutcode.dev/images/platforms/youtube.png')),
-        new Option('Option 2', '2', true, new OptionProperty('https://cutcode.dev/images/platforms/youtube.png')),
+        new Option('Option 1', '1', false, new OptionProperty(image: 'https://cutcode.dev/images/platforms/youtube.png')),
+        new Option('Option 2', '2', true, new OptionProperty(image: 'https://cutcode.dev/images/platforms/youtube.png')),
     ]);
 
     return MoonShineJsonResponse::make()

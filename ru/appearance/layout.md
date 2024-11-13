@@ -230,7 +230,7 @@ protected function getLogoComponent(): Logo
 protected function getSidebarComponent(): Sidebar
 ```
 
-#### Переопределить компонент Sidebar
+#### Переопределить компонент Header
 
 ```php
 protected function getHeaderComponent(): Header
