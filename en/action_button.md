@@ -632,3 +632,22 @@ dispatchEvent(array|string $events)
 ActionButton::make('Refresh', '#')
     ->dispatchEvent(AlpineJs::event(JsEvent::TABLE_UPDATED, 'index-table')),
 ```
+
+By default, when an event with a request is called, all query parameters from the *href* of the *ActionButton* will be sent.
+Some can be excluded using the `exclude` parameter:
+
+```php
+->dispatchEvent(
+    AlpineJs::event(JsEvent::TABLE_UPDATED, 'index-table'),
+    exclude: ['something']
+)
+```
+
+You can also eliminate sending `withoutPayload` entirely:
+
+```php
+->dispatchEvent(
+    AlpineJs::event(JsEvent::TABLE_UPDATED, 'index-table'),
+    withoutPayload: true
+)
+```

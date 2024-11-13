@@ -422,6 +422,26 @@ FormBuilder::make()
     ->dispatchEvent(JsEvent::OFF_CANVAS_TOGGLED, 'default'),
 ```
 
+By default, when the request event is raised, all form data will be submitted.
+If the form is large, you may need to exclude a set of fields.
+You can exclude using the `exclude` parameter:
+
+```php
+->dispatchEvent(
+    AlpineJs::event(JsEvent::OFF_CANVAS_TOGGLED, 'default'),
+    exclude: ['text', 'description']
+)
+```
+
+You can also completely exclude sending data through the `withoutPayload` parameter:
+
+```php
+->dispatchEvent(
+    AlpineJs::event(JsEvent::OFF_CANVAS_TOGGLED, 'default'),
+    withoutPayload: true
+)
+```
+
 <a name="submit-event"></a>
 ## "Submit" event
 
