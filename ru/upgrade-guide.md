@@ -38,7 +38,7 @@
 `php artisan moonshine:install`
 
 ### Перенести параметры в config из бэкапа
-Смотрите документацию по [конфигурации](#/docs/{{version}}/configuration.md).
+Смотрите документацию по [конфигурации](/docs/{{version}}/configuration).
 
 ### Перенести меню в MoonShineLayout и обновить
 - Изменения:
@@ -138,7 +138,7 @@ rm app/MoonShine/Pages/Dashboard_old.php
         ])
     ;
   ```
-- `getActiveActions()` теперь меняется на `activeActions()`, смотрите раздел [Активные действия](#/docs/{{version}}/model-resource/index.md).
+- `getActiveActions()` теперь меняется на `activeActions()`, смотрите раздел [Активные действия](/docs/{{version}}/model-resource/index).
 - `detailPageUrl` → `getDetailPageUrl`,
 - `MoonShineAuth::guard()` → `MoonShineAuth::getGuard()`
 - `$field->getData()` → `$field->getData()->getOriginal()`
