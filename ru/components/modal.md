@@ -114,7 +114,7 @@ ActionButton::make(
 
 ```js
 document.addEventListener("DOMContentLoaded", () => {
-    this.dispatchEvent(new Event("modal_toggled:my-modal"))
+    this.dispatchEvent(new CustomEvent("modal_toggled:my-modal"))
 })
 ```
 
@@ -124,6 +124,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
 ```js
 this.$dispatch('modal_toggled:my-modal')
+```
+
+### Вызов события с использованием глобального класса MoonShine
+
+```js
+MoonShine.ui.toggleModal('my-modal')
 ```
 
 > [!NOTE]

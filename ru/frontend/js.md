@@ -8,6 +8,7 @@
   - [Вызов событий через Response](#response-events)
   - [Blade директива](#blade-dir)
   - [Вспомогательный класс AlpineJs](#helper)
+- [Глобальный класс](#js-core)
 - [Обработка ответа](#response-callback)
 
 <a name="basics"></a>
@@ -114,7 +115,7 @@ ActionButton::make(
 
 ```js
 document.addEventListener("DOMContentLoaded", () => {
-    this.dispatchEvent(new Event("modal_toggled:my-modal"))
+    this.dispatchEvent(new CustomEvent("modal_toggled:my-modal"))
 })
 ```
 
@@ -242,6 +243,65 @@ FormBuilder::make('/crud/update')
   ]);
 ```
 
+<a name="js-core"></a>
+# Глобальный класс
+
+Мы предоставляем глобальный класс `MoonShine` для удобного взаимодействия в клиентской части
+
+## Request
+
+```js
+MoonShine.request(ctx, '/url', method = 'get', body = {}, headers = {}, data = {})
+```
+
+## Toast
+
+```js
+MoonShine.ui.toast('Hello world', 'success')
+```
+
+## Modal
+
+Открыть/Закрыть Modal
+
+```js
+MoonShine.ui.toggleModal('modal-name')
+```
+
+## OffCanvas
+
+Открыть/Закрыть OffCanvas
+
+```js
+MoonShine.ui.toggleOffCanvas('canvas-name')
+```
+
+## Iterable
+### Reorder
+
+```js
+MoonShine.iterable.sortable(
+    container,
+    url,
+    group,
+    events,
+    attriubtes = {
+        handle: '.handle'
+    },
+    function(evt) {
+        //
+    }
+)
+```
+
+### Reindex form element names
+
+```js
+MoonShine.iterable.reindex(
+    container,
+    itemSelector = '.item'
+)
+```
 <a name="response-calback"></a>
 # Обработка ответа
 

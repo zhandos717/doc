@@ -288,6 +288,26 @@ Select::make('Country', 'country_id')
     ),
 ```
 
+Если *Select* находится в форме, то по умолчанию при вызове события с запросом будут отправлены все данные формы. 
+Если форма большая, то может потребоваться исключить набор полей.
+Исключить можно через параметр `exclude`:
+
+```php
+->onChangeEvent(
+    AlpineJs::event(JsEvent::FRAGMENT_UPDATED, 'selects'),
+    exclude: ['text', 'description']
+)
+```
+
+Также можно полностью исключить отправку данных через параметр `withoutPayload`:
+
+```php
+->onChangeEvent(
+    AlpineJs::event(JsEvent::FRAGMENT_UPDATED, 'selects'),
+    withoutPayload: true
+)
+```
+
 <a name="update-on-preview"></a>
 ## Редактирование в режиме preview
 Метод `updateOnPreview()` позволяет редактировать поле *Select* в режиме *preview*.

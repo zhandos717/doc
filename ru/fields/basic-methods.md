@@ -851,10 +851,10 @@ public function updateOnPreview(
 )
 ```
 
- - `$url` - url запроса,
- - `$resource` - ресурс содержащий updateOnPreview,
- - `$condition` - условие установки поля в режим updateOnPreview,
- - `$events` - вызываемые [AlpineJS события](/docs/{{version}}/frontend/js#events) после успешного запроса.
+ - `$url` - (опционально) url запроса,
+ - `$resource` - (опционально) ресурс содержащий updateOnPreview,
+ - `$condition` - (опционально) условие установки поля в режим updateOnPreview,
+ - `$events` - (опционально) вызываемые [AlpineJS события](/docs/{{version}}/frontend/js#events) после успешного запроса.
 
 > [!NOTE]
 > Параметры не являются обязательными, но должны быть заданы, если поле находится вне ресурса или же вы хотите указать полностью свой endpoint (тогда и ресурс не нужен)

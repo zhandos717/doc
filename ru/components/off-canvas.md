@@ -115,7 +115,7 @@ ActionButton::make(
 
 ```php
 document.addEventListener("DOMContentLoaded", () => {
-    this.dispatchEvent(new Event("off_canvas_toggled:my-canvas"))
+    this.dispatchEvent(new CustomEvent("off_canvas_toggled:my-canvas"))
 })
 ```
 
@@ -125,6 +125,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
 ```php
 this.$dispatch('off_canvas_toggled:my-canvas')
+```
+
+### Вызов события с использованием глобального класса MoonShine
+
+```js
+MoonShine.ui.toggleOffCanvas('my-canvas')
 ```
 
 > [!NOTE]

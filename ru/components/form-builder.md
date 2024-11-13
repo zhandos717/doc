@@ -480,7 +480,27 @@ dispatchEvent(array|string $events)
 
 ```php
 FormBuilder::make()
-    ->dispatchEvent(JsEvent::OFF_CANVAS_TOGGLED, 'default'),
+    ->dispatchEvent(AlpineJs::event(JsEvent::OFF_CANVAS_TOGGLED, 'default')),
+```
+
+По умолчанию при вызове события с запросом будут отправлены все данные формы.
+Если форма большая, то может потребоваться исключить набор полей.
+Исключить можно через параметр `exclude`:
+
+```php
+->dispatchEvent(
+    AlpineJs::event(JsEvent::OFF_CANVAS_TOGGLED, 'default'),
+    exclude: ['text', 'description']
+)
+```
+
+Также можно полностью исключить отправку данных через параметр `withoutPayload`:
+
+```php
+->dispatchEvent(
+    AlpineJs::event(JsEvent::OFF_CANVAS_TOGGLED, 'default'),
+    withoutPayload: true
+)
 ```
 
 <a name="submit-event"></a>
