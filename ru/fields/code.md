@@ -3,9 +3,9 @@
 - [Установка](#installation)
 - [Основы](#basics)
 - [Конфиг по умолчанию](#default-config)
-- [Language](#language)
-- [Themes](#themes)
-- [Options](#options)
+- [Язык](#language)
+- [Темы](#themes)
+- [Опции](#options)
 
 ---
 
@@ -28,7 +28,7 @@ composer require moonshine/ace
 
 \* имеет те же возможности.
 
-Поле Code является расширением Textarea с визуальным оформлением редактируемого кода.
+Поле Code является расширением *Textarea* с визуальным оформлением редактируемого кода.
 
 ```php
 use MoonShine\Ace\Fields\Code;
@@ -68,7 +68,7 @@ php artisan vendor:publish --tag="moonshine-ace-config"
 ```
 
 <a name="language"></a>
-## Language
+## Язык
 
 По умолчанию используется оформление для PHP, но с помощью метода `language()` можно изменить оформление для другого языка программирования.
 
@@ -76,7 +76,7 @@ php artisan vendor:publish --tag="moonshine-ace-config"
 language(string $language)
 ```
 
-Поддерживаемые языки: _HTML , XML , CSS , PHP , JavaScript_ и многие другие.
+Поддерживаемые языки: *HTML*, *XML*, *CSS*, *PHP*, *JavaScript* и многие другие.
 
 ```php
 Code::make('Code')
@@ -84,7 +84,7 @@ Code::make('Code')
 ```
 
 <a name="themes"></a>
-## Themes
+## Темы
 
 Чтобы изменить темы - используйте `themes()` метод.
 
@@ -98,13 +98,14 @@ Code::make('Code')
 ```
 
 <a name="options"></a>
-## Options
+## Опции
 
 `addOption()` метод позволяет вам добавить дополнительные опции для поля.
 
 ```php
 addOption(string $name, string|int|float|bool $value)
 ```
+
 ```php
 Code::make('Code')
     ->addOption('showGutter', false)

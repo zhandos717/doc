@@ -9,7 +9,7 @@
 <a name="basics"></a>
 ## Основы
 
-Содержит все [Базовые методы](#/docs/{{version}}/fields/basic-methods.md).
+Содержит все [Базовые методы](/docs/{{version}}/fields/basic-methods).
 
 Поле `Textarea` - это многострочное текстовое поле ввода в MoonShine. Это поле эквивалент тегу `<textarea></textarea>`
 
@@ -22,7 +22,7 @@ Textarea::make('Text')
 <a name="rows"></a>
 ## Высота поля
 
-Чтобы задать высоту поля - можно воспользоваться методом [custom-attributes](#/docs/{{version}}/fields/basic-methods.md#custom-attributes).
+Чтобы задать высоту поля - можно воспользоваться [атрибутами](/docs/{{version}}/fields/basic-methods#custom-attributes).
 
 ```php
 Textarea::make('Text')

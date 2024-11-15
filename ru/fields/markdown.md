@@ -3,8 +3,8 @@
 - [Установка](#installation)
 - [Основы](#basics)
 - [Конфиг по умолчанию](#default-config)
-- [Toolbar](#toolbar)
-- [Options](#options)
+- [Панель инструментов](#toolbar)
+- [Опции](#options)
 
 ---
 
@@ -27,7 +27,7 @@ composer require moonshine/easymde
 <a name="basics"></a>
 ## Основы
 
-Наследует [Textarea](/docs/{{version}}/fields/textarea.md).
+Наследует [Textarea](/docs/{{version}}/fields/textarea).
 
 \* имеет те же возможности.
 
@@ -65,7 +65,7 @@ return [
 ```
 
 <a name="toolbar"></a>
-## Toolbar
+## Панель инструментов
 
 Метод `toolbar()` позволяет полностью переопределить панель инструментов для поля.
 
@@ -79,7 +79,7 @@ Markdown::make('Description')
 ```
 
 <a name="options"></a>
-## Options
+## Опции
 
 Метод `addOption()` позволяет добавлять дополнительные параметры для поля.
 
