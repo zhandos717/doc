@@ -1,8 +1,8 @@
 # Поиск и устранение неисправностей
 
-  - [Изображения не отображаются](#images-are-not-displayed)
-  - [Проблемы с https](#problems-with-https)
-  - [Ошибка "Страница не найдена"](#error-page-not-found)
+- [Изображения не отображаются](#images-are-not-displayed)
+- [Проблемы с https](#problems-with-https)
+- [Ошибка "Страница не найдена"](#error-page-not-found)
 
 ---
 

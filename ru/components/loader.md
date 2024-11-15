@@ -3,6 +3,8 @@
 - [Основы](#basics)
 - [Смена view](#change-view)
 
+---
+
 <a name="basics"></a>
 ## Основы
 

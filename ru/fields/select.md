@@ -1,19 +1,19 @@
 # Select
 
-  - [Основы](#basics)
-  - [Значение по умолчанию](#default)
-  - [Nullable](#nullable)
-  - [Placeholder](#placeholder)
-  - [Группы](#groups)
-  - [Выбор нескольких значений](#multiple)
-  - [Поиск](#search)
-  - [Асинхронный поиск](#async)
-  - [События при изменении](#on-change-event)
-  - [Редактирование в режиме preview](#update-on-preview)
-  - [Значения с изображением](#with-image)
-  - [Опции](#options)
-  - [Нативный режим отображения](#native)
-  - [Использование в blade](#blade)
+- [Основы](#basics)
+- [Значение по умолчанию](#default)
+- [Nullable](#nullable)
+- [Placeholder](#placeholder)
+- [Группы](#groups)
+- [Выбор нескольких значений](#multiple)
+- [Поиск](#search)
+- [Асинхронный поиск](#async)
+- [События при изменении](#on-change-event)
+- [Редактирование в режиме preview](#update-on-preview)
+- [Значения с изображением](#with-image)
+- [Опции](#options)
+- [Нативный режим отображения](#native)
+- [Использование в blade](#blade)
 
 ---
 

@@ -3,6 +3,8 @@
 - [Policy](#policy)
 - [Собственная логика](#is-can)
 
+---
+
 <a name="policy"></a>
 ## Policy
 

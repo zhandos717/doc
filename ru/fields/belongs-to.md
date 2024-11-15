@@ -13,6 +13,8 @@
 - [Опции](#options)
 - [Нативный режим](#native)
 - [Реактивность](#reactive)
+- [Ссылка](#link)
+
 ---
 
 <a name="basics"></a>
@@ -403,3 +405,23 @@ BelongsTo::make('Type')->native()
 ## Реактивность
 
 Данному полю доступна [реактивность](/docs/{{version}}/fields/basic-methods.md#reactive)
+
+<a name="link"></a>
+## Ссылка
+
+По умолчанию *BelongsTo* ссылается на страницу редактирования, под капотом используется метод `link`.
+При необходимости вы можете переопределить `link`:
+
+```php
+BelongsTo::make(
+    __('moonshine::ui.resource.role'),
+    'moonshineUserRole',
+    resource: MoonShineUserRoleResource::class,
+)
+->link(
+    link: fn(string $value, BelongsTo $ctx) => $ctx->getResource()->getDetailPageUrl($ctx->getData()->getKey()),
+    name: fn(string $value) => $value,
+    icon: 'users',
+    blank: true,
+)
+```

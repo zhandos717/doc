@@ -5,6 +5,8 @@
 - [Регистрация](#registration)
 - [Взаимодействие](#interaction)
 
+---
+
 <a name="basics"></a>
 ## Основы
 

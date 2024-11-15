@@ -6,6 +6,8 @@
 - [Кастомные уведомления](#custom)
 - [WebSocket](#web-socket)
 
+---
+
 <a name="basics"></a>
 ## Основы
 

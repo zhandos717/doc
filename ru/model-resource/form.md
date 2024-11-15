@@ -1,15 +1,15 @@
 # Форма
 
-  - [Основы](#basics)
-  - [Валидация](#validation)
-    - [Сообщения](#messages)
-    - [Подготовка входных данных для проверки](#prepare)
-    - [Отображение ошибок](#display-errors)
-    - [Precognition](#precognitive)
-  - [Кнопки](#buttons)
-  - [Асинхронный режим](#async)
-  - [Модификаторы](#modifiers)
-    - [Компоненты](#components)
+- [Основы](#basics)
+- [Валидация](#validation)
+  - [Сообщения](#messages)
+  - [Подготовка входных данных для проверки](#prepare)
+  - [Отображение ошибок](#display-errors)
+  - [Precognition](#precognitive)
+- [Кнопки](#buttons)
+- [Асинхронный режим](#async)
+- [Модификаторы](#modifiers)
+  - [Компоненты](#components)
 
 ---
 

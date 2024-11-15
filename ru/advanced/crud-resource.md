@@ -5,6 +5,8 @@
 - [Пример REST-ресурса](#rest-example)
 - [Полная кастомизация](#full-customization)
 
+---
+
 <a name="basics"></a>
 ## Основы
 

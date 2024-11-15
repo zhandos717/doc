@@ -18,7 +18,7 @@ public function __invoke(MoonShineRequest $request): PageContract
 
 Тем самым вы вольны использовать самостоятельно объявленные роуты и контроллеры (если требуется) и рендерить страницы или то что требуется
 
-Для правильный работы CRUD страниц, необходимо передавать роут параметры `resourceUri` и `pageUri`, `resourceUri` опционален, так как не все страницы имеют ресурс
+Для правильной работы CRUD страниц, необходимо передавать роут параметры `resourceUri` и `pageUri`, `resourceUri` опционален, так как не все страницы имеют ресурс
 
 Пример стандартного роута
 
@@ -49,6 +49,18 @@ Route::moonshine(static function (Router $router) {
 // middleware: moonshine, Authenticate::class
 ```
 
+Пример получения роута из контекста ресурса
+
+```php
+$this->getRoute('permissions')
+```
+
+Пример получения роута вне ресурса
+
+```php
+route('moonshine.permissions', ['resourceUri' => 'user-resource', 'pageUri' => 'custom-page'])
+```
+
 ```php
 Route::moonshine(static function (Router $router) {  
     // 
@@ -65,10 +77,8 @@ withAuthenticate: false
 Наилучший путь создать `routes/moonshine.php` и внутри объявлять собственные роуты
 
 > [!NOTE]
->При создании файла `routes/moonshine.php` не забудьте объявить его в системе
->
+> При создании файла `routes/moonshine.php` не забудьте объявить его в системе
 
 > [!WARNING]
 > Нельзя одновременно использовать группы middleware `web` и `moonshine`, так как они делают одно и тоже и одновременно запускают сессии
->
 

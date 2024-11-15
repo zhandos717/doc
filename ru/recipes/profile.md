@@ -6,6 +6,8 @@
 - [Страницы](#pages)
 - [Controllers](#controllers)
 
+---
+
 <a name="intro"></a>
 ## Вступление
 

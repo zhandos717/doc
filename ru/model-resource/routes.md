@@ -1,8 +1,10 @@
 # Routes
 
-  - [Основы](#basics)
-  - [Хелпер](#helper)
-  - [Текущая страница](#current-page)
+- [Основы](#basics)
+- [Хелпер](#helper)
+- [Текущая страница](#current-page)
+
+---
 
 <a name="basics"></a>
 ## Основы

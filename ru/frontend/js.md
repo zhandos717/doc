@@ -11,6 +11,8 @@
 - [Глобальный класс](#js-core)
 - [Обработка ответа](#response-callback)
 
+---
+
 <a name="basics"></a>
 # Основы
 
