@@ -657,7 +657,7 @@ Select::make('Images')->options([
 ])  
     ->multiple()  
     ->changeFill(  
-        fn(Article $data, Select $ctx) => $article->images  
+        fn(Article $article, Select $ctx) => $article->images  
             ->map(fn($value) => "https://cutcode.dev$value")  
             ->toArray()  
     );
