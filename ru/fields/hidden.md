@@ -8,7 +8,7 @@
 <a name="basics"></a>
 ## Основы
 
-Содержит все [Базовые методы](#/docs/{{version}}/fields/basic-methods.md).
+Содержит все [Базовые методы](/docs/{{version}}/fields/basic-methods).
 
 Поле `Hidden` - это скрытое поле. Это поле эквивалент `type=hidden`.
 

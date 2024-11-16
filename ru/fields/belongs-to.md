@@ -404,7 +404,7 @@ BelongsTo::make('Type')->native()
 <a name="reactive"></a>
 ## Реактивность
 
-Данному полю доступна [реактивность](/docs/{{version}}/fields/basic-methods.md#reactive)
+Данному полю доступна [реактивность](/docs/{{version}}/fields/basic-methods#reactive)
 
 <a name="link"></a>
 ## Ссылка

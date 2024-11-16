@@ -79,9 +79,9 @@ Checkbox::make('Публичный')
 <a name="preview-edit"></a>
 ## Редактирование в режиме preview
 
-Данному полю доступно [редактирование в режиме preview](/docs/{{version}}/fields/basic-methods.md#preview-edit).
+Данному полю доступно [редактирование в режиме preview](/docs/{{version}}/fields/basic-methods#preview-edit).
 
 <a name="reactive"></a>
 ## Реактивность
 
-Данному полю доступна [реактивность](/docs/{{version}}/fields/basic-methods.md#reactive).
+Данному полю доступна [реактивность](/docs/{{version}}/fields/basic-methods#reactive).
