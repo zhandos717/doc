@@ -331,10 +331,10 @@ async(
 - `$callback` - js функция обратного вызова после получения ответа.
 
 > [!NOTE]
-> О [Events](/docs/{{version}}/frontend/events) можно узнать в разделе "Frontend"
+> О [Events](/docs/{{version}}/frontend/js#events) можно узнать в разделе "Frontend"
 > 
 > [!NOTE]
-> О [Callback](/docs/{{version}}/frontend/callback) можно узнать в разделе "Frontend"
+> О [Callback](/docs/{{version}}/frontend/js#response-calback) можно узнать в разделе "Frontend"
 
 ```php
 protected function components(): iterable
