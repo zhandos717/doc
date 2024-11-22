@@ -133,7 +133,7 @@ ActionButton::make('Alert')
 <a name="modal"></a> 
 ## Модальное окно
 
-#### Основы
+### Основы
 
 Для вызова модального окна при нажатии на кнопку используйте метод `inModal()`.
 
@@ -183,7 +183,7 @@ protected function components(): iterable
 }
 ```
 
-#### Асинхронный режим
+### Асинхронный режим
 
 Если вам нужно загрузить содержимое в модальное окно асинхронно, то включите режим `async` у `ActionButton`.
 
@@ -278,7 +278,7 @@ protected function components(): iterable
 }
 ```
 
-## Отображение
+### Отображение
 
 Благодаря `ActionGroup` вы также можете изменить отображение кнопок, отображать их в линию или в выпадающем меню для экономии места.
 
@@ -349,7 +349,7 @@ protected function components(): iterable
 }
 ```
 
-#### Уведомления
+### Уведомления
 
 Если вам нужно отобразить уведомление или сделать редирект после клика, то достаточно реализовать json ответ согласно структуре:
 
@@ -360,7 +360,7 @@ protected function components(): iterable
 > [!TIP]
 > Параметр `redirect` является необязательным.
 
-#### HTML содержимое
+### HTML содержимое
 
 Если вам нужно заменить область HTML по клику, то можно вернуть HTML содержимое или json с ключом html в ответе:
 
@@ -381,7 +381,7 @@ protected function components(): iterable
 }
 ```
 
-#### События
+### События
 
 После успешного запроса вы можете вызвать события:
 
@@ -400,7 +400,7 @@ protected function components(): iterable
 > [!TIP]
 > Для работы события `JsEvent::TABLE_UPDATED` у таблицы должен быть включен [асинхронный режим](/docs/{{version}}/model-resource/table#async).
 
-#### Обратный вызов
+### Обратный вызов
 
 Если вам нужно обработать ответ иным способом, необходимо реализовать функцию-обработчик и указать ее в методе `async()`.
 
@@ -531,7 +531,7 @@ ActionButton::make('Нажми меня')
     )
 ```
 
-## Значения полей
+#### Значения полей
 
 Метод `withSelectorsParams()` позволяет передавать значения полей с запросом, используя селекторы элементов.
 
@@ -558,7 +558,7 @@ public function updateSomething(MoonShineRequest $request): MoonShineJsonRespons
 > [!WARNING]
 > При использовании метода `withSelectorsParams()` запросы будут отправляться через `POST`.
 
-## Скачивание
+#### Скачивание
 
 Вызываемый метод может возвращать `BinaryFileResponse`, что позволяет скачать файл.
 
@@ -606,6 +606,14 @@ ActionButton::make('Обновить')
     AlpineJs::event(JsEvent::TABLE_UPDATED, 'index-table'),
     withoutPayload: true
 )
+```
+
+### URL Query Parameters
+
+Вы можете включить текущие URL query parameters (например, ?param=value) в запрос:
+
+```php
+->withQueryParams()
 ```
 
 <a name="fill"></a> 

@@ -5,6 +5,7 @@
   -  [Открытие/Закрытие](#open-close)
 - [Состояние по умолчанию](#open)
 - [Позиция](#position)
+- [Асинхронность](#async)
 - [Атрибуты переключателя](#toggler-attributes)
 
 ---
@@ -187,6 +188,21 @@ left(Closure|bool|null $condition = null)
 ```php
 OffCanvas::make('Заголовок', 'Содержимое...', 'Показать панель')
     ->left()
+```
+
+<a name="async"></a>
+## Асинхронность
+
+```php
+OffCanvas::make('Заголовок', '', 'Показать панель', asyncUrl: '/endpoint'),
+```
+
+> [!NOTE]
+> Запрос будет отправлен один раз, но если вам нужно отправлять запрос при каждом открытии, то используйте метод `alwaysLoad`
+
+```php
+OffCanvas::make(...)
+        ->alwaysLoad(),
 ```
 
 <a name="toggler-attributes"></a> 

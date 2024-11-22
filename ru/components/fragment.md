@@ -112,3 +112,16 @@ Fragment::make($components)
     ->name('fragment-name')
 ,
 ```
+
+### URL Query Parameters
+
+Вы можете включить текущие URL query parameters (например, ?param=value) в запрос фрагмента:
+
+Это позволит сохранить все параметры из URL строки текущего запроса при загрузке фрагмента.
+
+```php
+Fragment::make($components)
+    ->name('fragment-name')
+    ->withQueryParams()
+,
+```
