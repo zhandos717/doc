@@ -6,7 +6,7 @@
 namespace App\MoonShine\Resources;
 
 use App\Models\Post;
-use App\Models\Comments;
+use App\Models\Comment;
 use MoonShine\UI\Components\Layout\Column;
 use MoonShine\UI\Components\Metrics\Wrapped\Metric;
 use MoonShine\UI\Components\Metrics\Wrapped\ValueMetric;
@@ -30,7 +30,7 @@ class PostResource extends ModelResource
                 ValueMetric::make('Articles')->value(fn() => Post::count()),
             ])->columnSpan(6),
             Column::make([
-                ValueMetric::make('Comments')->value(fn() => Comments::count()),
+                ValueMetric::make('Comments')->value(fn() => Comment::count()),
             ])->columnSpan(6),
         ];
     }
