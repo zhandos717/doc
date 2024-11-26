@@ -43,14 +43,14 @@ icon(string $icon, bool $custom = false, ?string $path = null)
 ```
 
 > [!NOTE]
-> В примере иконки должны располагаться в директории `resources/views/icons`, наименовании иконки эквивалентно `blade` файлу, в котором располагается `svg`
+> В примере иконки должны располагаться в директории `resources/views/icons`, наименование иконки эквивалентно `blade` файлу, в котором располагается `svg`
 
 
 <a name="outline"></a>
 ## Outline
 
 ```php
-->icon('academic-cap') 
+->icon('academic-cap')
 ```
 
 <x-docs.icon-list prefix=""></x-docs.icon-list>
@@ -59,7 +59,7 @@ icon(string $icon, bool $custom = false, ?string $path = null)
 ## Solid
 
 ```php
-->icon('s.academic-cap') 
+->icon('s.academic-cap')
 ```
 
 <x-docs.icon-list prefix="s"></x-docs.icon-list>
@@ -68,7 +68,7 @@ icon(string $icon, bool $custom = false, ?string $path = null)
 ## Mini
 
 ```php
-->icon('m.academic-cap') 
+->icon('m.academic-cap')
 ```
 
 <x-docs.icon-list prefix="m"></x-docs.icon-list>
@@ -77,7 +77,7 @@ icon(string $icon, bool $custom = false, ?string $path = null)
 ## Compact
 
 ```php
-->icon('c.academic-cap') 
+->icon('c.academic-cap')
 ```
 
 <x-docs.icon-list prefix="c"></x-docs.icon-list>

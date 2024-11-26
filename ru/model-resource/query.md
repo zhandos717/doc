@@ -39,7 +39,7 @@ class PostResource extends ModelResource
 ```
 
 > [!NOTE]
-> Если Вам необходимо полностью переопределить `Builder`, то вы можете переопределить метод ресурса `newQuery`
+> Если вам необходимо полностью переопределить `Builder`, то вы можете переопределить метод ресурса `newQuery`
 
 <a name="receiving-a-record"></a>
 ## Получение записи
@@ -72,12 +72,12 @@ class PostResource extends ModelResource
 {
     //...
 
-    protected array $with = ['user', 'categories']; 
+    protected array $with = ['user', 'categories'];
 }
 ```
 
 > [!NOTE]
-> Если Вам необходимо полностью переопределить `Builder`, то вы можете переопределить метод ресурса `findItem`
+> Если вам необходимо полностью переопределить `Builder`, то вы можете переопределить метод ресурса `findItem`
 
 <a name="search"></a>
 ## Поиск

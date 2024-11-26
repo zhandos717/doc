@@ -53,7 +53,7 @@ public function di(MoonShineNotificationContract $notification)
 <a name="settings"></a>
 ## Настройка
 
-При установке `MoonShine` вы можете выбрать использовать уведомления или нет и использовать ли `Database Notification`, но также в процессе вы можете изменить эти настройки через конфигурацию:
+Во время установки `MoonShine` у вас есть возможность выбрать, хотите ли вы использовать уведомления и `Database Notification`. Кроме того, вы можете изменить эти настройки позже через конфигурацию:
 
 ~~~tabs
 tab: config/moonshine.php
@@ -73,13 +73,13 @@ $config
 <a name="component"></a>
 ## Компонент
 
-Для вывода уведомлений используется компонент `MoonShine\Laravel\Components\Layout\Notifications`, 
+Для вывода уведомлений используется компонент `MoonShine\Laravel\Components\Layout\Notifications`,
 который вы можете заменить на свой через [Layout](/docs/{{version}}/appearance/layout)
 
 <a name="custom"></a>
 ## Кастомные уведомления
 
-`MoonShine` гибкий и все в нем можно заменить на собственные реализации, для уведомлений нужно реализовать интерфейсы:
+`MoonShine` гибкий и всё в нем можно заменить на собственные реализации, для уведомлений нужно реализовать интерфейсы:
 
 - `MoonShine\Laravel\Contracts\Notifications\MoonShineNotificationContract`
 - `MoonShine\Laravel\Contracts\Notifications\NotificationItemContract`

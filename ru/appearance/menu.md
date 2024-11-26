@@ -18,9 +18,9 @@
 <a name="basics"></a>
 ## Основы
 
-**Menu** является основой для навигации по админ-панели, поэтому мы постарались создать гибкую систему, которая позволит вам сделать полную кастомизацию меню для разных старниц и пользователей.
+**Menu** является основой для навигации по админ-панели, поэтому мы постарались создать гибкую систему, которая позволит вам сделать полную кастомизацию меню для разных страниц и пользователей.
 
-Настройка навигационного меню осуществляется в классе который расширяет `MoonShine\Laravel\Layouts\AppLayout` через метод `menu()`. 
+Настройка навигационного меню осуществляется в классе, который расширяет `MoonShine\Laravel\Layouts\AppLayout` через метод `menu()`.
 
 В процессе установки админ-панели, в зависимости от выбранных вами конфигураций, будет создан класс **App\MoonShine\Layouts\MoonShineLayout**, который уже содержит метод `menu()`.
 
@@ -52,7 +52,7 @@ final class MoonShineLayout extends AppLayout
 {
 
     //...
-    
+
     protected function menu(): array
     {
         return [
@@ -66,7 +66,7 @@ final class MoonShineLayout extends AppLayout
 ```
 
 > [!TIP]
-> Если меню создается для [ModelResource]() или [Resource](), для элемента меню будет использоваться первая страница объявленная в методе `pages()`.
+> Если меню создается для [ModelResource]() или [Resource](), для элемента меню будет использоваться первая страница, объявленная в методе `pages()`.
 
 <a name="groups"></a>
 ## Группы
@@ -95,7 +95,7 @@ final class MoonShineLayout extends AppLayout
 {
 
     //...
-    
+
     protected function menu(): array
     {
         return [
@@ -108,7 +108,7 @@ final class MoonShineLayout extends AppLayout
 }
 ```
 
-Так же группе можно добавить элементы через метод `setItems()`.
+Также группе можно добавить элементы через метод `setItems()`.
 
 ```php
 setItems(iterable $items)
@@ -127,7 +127,7 @@ final class MoonShineLayout extends AppLayout
 {
 
     //...
-    
+
     protected function menu(): array
     {
         return [
@@ -168,7 +168,7 @@ final class MoonShineLayout extends AppLayout
 {
 
     //...
-    
+
     protected function menu(): array
     {
         return [
@@ -200,7 +200,7 @@ final class MoonShineLayout extends AppLayout
 {
 
     //...
-    
+
     protected function menu(): array
     {
         return [
@@ -235,17 +235,17 @@ final class MoonShineLayout extends AppLayout
 {
 
     //...
-    
+
     protected function menu(): array
     {
         return [
             MenuGroup::make('System', [
                 MenuItem::make('Admins', new MoonShineUserResource())
-                    ->icon('users'), 
+                    ->icon('users'),
                 MenuItem::make('Roles', new MoonShineUserRoleResource())
-                    ->icon(svg('path-to-icon-pack')->toHtml(), custom: true), 
+                    ->icon(svg('path-to-icon-pack')->toHtml(), custom: true),
             ])
-                ->icon('cog', path: 'icons') 
+                ->icon('cog', path: 'icons')
         ];
     }
 }
@@ -257,13 +257,13 @@ final class MoonShineLayout extends AppLayout
 
 ```php
 namespace MoonShine\Resources;
- 
-#[Icon('users')] 
+
+#[Icon('users')]
 class MoonShineUserResource extends ModelResource
 {
- 
+
     //...
- 
+
 }
 ```
 
@@ -297,12 +297,12 @@ final class MoonShineLayout extends AppLayout
 {
 
     //...
-    
+
     protected function menu(): array
     {
         return [
             MenuItem::make('Comments', new CommentResource())
-                ->badge(fn() => Comment::count()) 
+                ->badge(fn() => Comment::count())
         ];
     }
 }
@@ -328,23 +328,23 @@ final class MoonShineLayout extends AppLayout
 {
 
     //...
-    
+
     protected function menu(): array
     {
         return [
             MenuItem::make('menu.Comments', new CommentResource())
-                ->translatable() 
+                ->translatable()
             // or
             MenuItem::make('Comments', new CommentResource())
-                ->translatable('menu')  
+                ->translatable('menu')
         ];
     }
 }
-``` 
+```
 
 ```php
 // lang/ru/menu.php
- 
+
 return [
     'Comments' => 'Комментарии',
 ];
@@ -363,12 +363,12 @@ final class MoonShineLayout extends AppLayout
 {
 
     //...
-    
+
     protected function menu(): array
     {
         return [
             MenuItem::make('Comments', new CommentResource())
-                ->badge(fn() => __('menu.badge.new')) 
+                ->badge(fn() => __('menu.badge.new'))
         ];
     }
 }
@@ -393,12 +393,12 @@ final class MoonShineLayout extends AppLayout
 {
 
     //...
-    
+
     protected function menu(): array
     {
         return [
-            MenuItem::make('MoonShine Docs', 'https://moonshine-laravel.com/docs', 'heroicons.arrow-up', true), 
-            MenuItem::make('Laravel Docs', 'https://laravel.com/docs', blank: fn() => true), 
+            MenuItem::make('MoonShine Docs', 'https://moonshine-laravel.com/docs', 'heroicons.arrow-up', true),
+            MenuItem::make('Laravel Docs', 'https://laravel.com/docs', blank: fn() => true),
         ];
     }
 }
@@ -425,12 +425,12 @@ final class MoonShineLayout extends AppLayout
 {
 
     //...
-    
+
     protected function menu(): array
     {
         return [
-            MenuItem::make('MoonShine Docs', 'https://moonshine-laravel.com/docs', 'heroicons.arrow-up', true), 
-            MenuItem::make('Laravel Docs', 'https://laravel.com/docs', blank: fn() => true), 
+            MenuItem::make('MoonShine Docs', 'https://moonshine-laravel.com/docs', 'heroicons.arrow-up', true),
+            MenuItem::make('Laravel Docs', 'https://laravel.com/docs', blank: fn() => true),
         ];
     }
 }
@@ -462,16 +462,16 @@ final class MoonShineLayout extends AppLayout
 {
 
     //...
-    
+
     protected function menu(): array
     {
         return [
             MenuGroup::make('System', [
                 MenuItem::make('Admins', new MoonShineUserResource()),
                 MenuDivider::make()
-                    ->canSee(fn()=> true),
+                    ->canSee(fn() => true),
                 MenuItem::make('Roles', new MoonShineUserRoleResource())
-                    ->canSee(fn()=> false)
+                    ->canSee(fn() => false)
             ])
                 ->canSee(static fn(): bool => request()->user('moonshine')?->id === 1)
         ];
@@ -501,12 +501,12 @@ final class MoonShineLayout extends AppLayout
 {
 
     //...
-    
+
     protected function menu(): array
     {
         return [
             MenuItem::make('Label', '/endpoint')
-                ->whenActive(fn() => request()->fullUrlIs('*admin/endpoint/*')),  
+                ->whenActive(fn() => request()->fullUrlIs('*admin/endpoint/*')),
         ];
     }
 }
@@ -533,7 +533,7 @@ final class MoonShineLayout extends AppLayout
 {
 
     //...
-    
+
     protected function menu(): array
     {
         return [
@@ -552,7 +552,7 @@ final class MoonShineLayout extends AppLayout
 <a name="change-button"></a>
 ## Изменение кнопки
 
-Пункт меню является [ActionButton](#) и изменить его атрибуты можно воспользовавшись методом `changeButton`.
+Пункт меню является [ActionButton](#) и изменить его атрибуты можно, воспользовавшись методом `changeButton`.
 
 ```php
 /**
@@ -572,12 +572,12 @@ final class MoonShineLayout extends AppLayout
 {
 
     //...
-    
+
     protected function menu(): array
     {
         return [
             MenuItem::make('Label', '/endpoint')
-                ->changeButton(static fn(ActionButton $button) => $button->class('new-item')),  
+                ->changeButton(static fn(ActionButton $button) => $button->class('new-item')),
         ];
     }
 }
@@ -589,7 +589,7 @@ final class MoonShineLayout extends AppLayout
 <a name="custom-view"></a>
 ## Изменение шаблона
 
-Когда необходимо изменить **view** с помощью *fluent interface* можно воспользоваться методом `customView()`.
+Если нужно изменить **view** с использованием *fluent interface*, можно применить метод `customView()`.
 
 ```php
 customView(string $path)
@@ -608,15 +608,15 @@ final class MoonShineLayout extends AppLayout
 {
 
     //...
-    
+
     protected function menu(): array
     {
         return [
             MenuGroup::make('Group', [
                 MenuItem::make('Label', '/endpoint')
-                    ->customView('admin.custom-menu-item'), 
+                    ->customView('admin.custom-menu-item'),
             ])
-                ->customView('admin.custom-menu-group'),   
+                ->customView('admin.custom-menu-group'),
         ];
     }
 }

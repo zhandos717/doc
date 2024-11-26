@@ -15,7 +15,7 @@
   - [Обновление ряда](#update-row)
 - [Модификаторы](#modifiers)
   - [Компоненты](#components)
-  - [Элементы thead, tbody, tfoot](#thead-tbody-tfoot) 
+  - [Элементы thead, tbody, tfoot](#thead-tbody-tfoot)
 
 ---
 
@@ -37,7 +37,7 @@ use MoonShine\Support\Enums\SortDirection;
 
 class PostResource extends ModelResource
 {
-    protected string $sortColumn = 'created_at'; // Поле сортировки по умолчанию 
+    protected string $sortColumn = 'created_at'; // Поле сортировки по умолчанию
 
     protected SortDirection $sortDirection = SortDirection::DESC; // Тип сортировки по умолчанию
 
@@ -118,7 +118,7 @@ protected function customIndexButtons(): ListOf
 <a name="attributes"></a>
 ## Атрибуты
 
-Чтобы добавить атрибуты для `td` элемента таблицы, можно воспользоваться методом `customWrapperAttributes` у поля которое представляет нужную вам ячейку
+Чтобы добавить атрибуты для `td` элемента таблицы, можно воспользоваться методом `customWrapperAttributes` у поля, которое представляет нужную вам ячейку
 
 ```php
 protected function indexFields(): iterable
@@ -131,8 +131,8 @@ protected function indexFields(): iterable
 }
 ```
 
-Также есть возможность возможность кастомизировать `tr` и `td` у таблицы с данными через ресурс.
-Для это необходимо использовать соответствующие методы `trAttributes()` и `tdAttributes()`, которым нужно передать замыкание, возвращающее массив атрибутов для компонента таблица.
+Также есть возможность кастомизировать `tr` и `td` у таблицы с данными через ресурс.
+Для этого необходимо использовать соответствующие методы `trAttributes()` и `tdAttributes()`, которым нужно передать замыкание, возвращающее массив атрибутов для компонента таблицы.
 
 ```php
 namespace App\MoonShine\Resources;
@@ -518,7 +518,7 @@ protected function tfoot(): null|TableRowsContract|Closure
 }
 ```
 
-#### Пример добавления дополнительной строки в tfoot  
+#### Пример добавления дополнительной строки в tfoot
 ```php
     protected function tfoot(): null|TableRowsContract|Closure
     {

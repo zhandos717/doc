@@ -9,8 +9,7 @@
 <a name="basics"></a>
 ## Основы
 
-Компонент **Head** используется для размещения информации о документе: метаданные (например, заголовок окна или кодировку), 
-ссылки на скрипты и таблицы стилей.
+Компонент **Head** используется для размещения информации о документе: метаданные (например, заголовок окна или кодировка), ссылки на скрипты и таблицы стилей.
 
 > [!NOTE]
 > Компонент **Head** содержит по умолчанию некоторые стандартные метаданные.
@@ -20,20 +19,20 @@ tab: Class
 ```php
 use MoonShine\UI\Components\Layout\Head;
 
-Head::make(array|iterable $components = []); 
+Head::make(array|iterable $components = []);
 ```
 ```php
-Head::make([ 
+Head::make([
     Meta::make('csrf-token')->customAttributes([
         'content' => 'token',
     ]),
-]); 
+]);
 ```
 tab: Blade
 ```blade
-<x-moonshine::layout.head> 
+<x-moonshine::layout.head>
     <meta name="csrf-token" content="token" />
-</x-moonshine::layout.head> 
+</x-moonshine::layout.head>
 ```
 ~~~
 
@@ -49,19 +48,19 @@ tab: Blade
 ~~~tabs
 tab: Class
 ```php
-title(string $title); 
+title(string $title);
 ```
 ```php
-Head::make([ 
+Head::make([
     // ...
 ])
-    ->title('Заголовок страницы'); 
+    ->title('Заголовок страницы');
 ```
 tab: Blade
 ```blade
-<x-moonshine::layout.head title='Заголовок страницы'> 
+<x-moonshine::layout.head title='Заголовок страницы'>
     //...
-</x-moonshine::layout.head> 
+</x-moonshine::layout.head>
 ```
 ~~~
 
@@ -74,18 +73,18 @@ tab: Blade
 ~~~tabs
 tab: Class
 ```php
-bodyColor(string $color); 
+bodyColor(string $color);
 ```
 ```php
-Head::make([ 
+Head::make([
     // ...
 ])
-    ->bodyColor('#7843e9'); 
+    ->bodyColor('#7843e9');
 ```
 tab: Blade
 ```blade
-<x-moonshine::layout.head bodyColor='#7843e9'> 
+<x-moonshine::layout.head bodyColor='#7843e9'>
     //...
-</x-moonshine::layout.head> 
+</x-moonshine::layout.head>
 ```
 ~~~

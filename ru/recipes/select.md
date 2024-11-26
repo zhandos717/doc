@@ -4,7 +4,7 @@
 
 ## Async
 
-Пример демонстрирует метод `async`, но при этом мы используем подход работы через `asyncMethod`, 
+Пример демонстрирует метод `async`, но при этом мы используем подход работы через `asyncMethod`,
 тем самым экономим время на создание контроллера и пишем реализацию прямо в ресурсе или странице:
 
 ```php
@@ -59,12 +59,12 @@ Select::make('Company', 'company')->options([
     2 => 'CutCode',
     3 => 'Symfony',
 ]),
-            
+
 Select::make('Dynamic value', 'dynamic_value')
     ->setNameAttribute('dynamic_value_1')
     ->showWhen('company', '1')
     ->options([1 => 1, 2 => 2,]),
-    
+
 Select::make('Dynamic value', 'dynamic_value')
     ->setNameAttribute('dynamic_value_2')
     ->showWhen('company', '2')
@@ -73,7 +73,7 @@ Select::make('Dynamic value', 'dynamic_value')
 
 ## onChangeMethod
 
-Подход в котором при изменении основного `Select` мы отправляем запрос и возвращаем `html` следующего `Select`, отображаем его в блоке по селектору:
+Подход, в котором при изменении основного `Select` мы отправляем запрос и возвращаем `html` следующего `Select`, отображаем его в блоке по селектору:
 
 ```php
 public function selectValues(): MoonShineJsonResponse

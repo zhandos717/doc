@@ -22,7 +22,7 @@ ___
 <a name="set-attribute"></a>
 ## Добавление
 
-Метод `setAttribute()` добавляет или изменить атрибут компонента.
+Метод `setAttribute()` добавляет или изменяет атрибут компонента.
 
 ```php
 setAttribute(string $name, string|bool $value)
@@ -70,7 +70,7 @@ customAttributes(array $attributes, bool $override = false)
 ```
 
 - `$attributes` - массив добавляемых атрибутов,
-- `$override` - ключ который позволяет перезаписать существующие атрибуты.
+- `$override` - ключ, который позволяет перезаписать существующие атрибуты.
 
 ```php
 $component->customAttributes(['data-role' => 'admin'], true);
@@ -101,7 +101,7 @@ $component->mergeAttribute('class', 'new-class');
 ```php
 class(string|array $classes)
 ```
-- `$classes` - классы которые необходимо добавить к компоненту.
+- `$classes` - классы, которые необходимо добавить к компоненту.
 
 ```php
 $component->class(['btn', 'btn-primary']);
@@ -137,7 +137,7 @@ $component->style(['color' => 'red']);
 <a name="description"></a>
 ## Описание
 
-Методы позволяющие удобно взаимодействовать с Alpine.js
+Методы, позволяющие удобно взаимодействовать с Alpine.js
 
 <a name="x-data"></a>
 ### x-data
@@ -146,7 +146,7 @@ $component->style(['color' => 'red']);
 xData(null|array|string $data = null)
 ```
 
-Все в Alpine начинается с директивы `x-data`. метод `xData` определяет фрагмент HTML как компонент Alpine и предоставляет реактивные данные для ссылки на этот компонент.
+Всё в Alpine начинается с директивы `x-data`. метод `xData` определяет фрагмент HTML как компонент Alpine и предоставляет реактивные данные для ссылки на этот компонент.
 
 ```php
 Div::make([])->xData(['title' = 'Hello world']) // title реактивная переменная внутри

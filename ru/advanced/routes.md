@@ -3,16 +3,16 @@
 `MoonShine` под капотом использует стандартный `Laravel Routing`. Все отображаемые страницы рендерятся через `PageController`, который имеет очень простой вид
 
 ```php
-public function __invoke(MoonShineRequest $request): PageContract  
-{  
-    $request->getResource()?->loaded();  
-  
-    $page = $request  
-        ->getPage()  
-        ->checkUrl()  
-        ->loaded();  
-  
-    return $page;  
+public function __invoke(MoonShineRequest $request): PageContract
+{
+    $request->getResource()?->loaded();
+
+    $page = $request
+        ->getPage()
+        ->checkUrl()
+        ->loaded();
+
+    return $page;
 }
 ```
 
@@ -32,16 +32,16 @@ Route::get('/admin/resource/{resourceUri}/{pageUri}', CustomController::class)
 > Префикс `resource` можно изменить или удалить через [настройки конфигурации](/docs/{{version}}/configuration)
 >
 
-Данный пример включает в себя роут с параметрами ресурса и страницы, а также группу middleware `moonshine` список которой распалагается в конфиге `moonshine.php` и middleware `Authenticate` для доступа к ендпоинту только для авторизованного пользователя
+Данный пример включает в себя роут с параметрами ресурса и страницы, а также группу middleware `moonshine`, список которой распалагается в конфиге `moonshine.php`, и middleware `Authenticate` для доступа к ендпоинту только для авторизованного пользователя
 
 Для быстрый реализации примера выше, можно воспользоваться `Route` директивой `moonshine`
 
 ```php
-Route::moonshine(static function (Router $router) {  
-    $router->post(  
-        'permissions/{resourceItem}',  
-        PermissionController::class  
-    )->name('permissions');  
+Route::moonshine(static function (Router $router) {
+    $router->post(
+        'permissions/{resourceItem}',
+        PermissionController::class
+    )->name('permissions');
 }, withResource: true, withPage: true, withAuthenticate: true);
 
 // result
@@ -62,13 +62,13 @@ route('moonshine.permissions', ['resourceUri' => 'user-resource', 'pageUri' => '
 ```
 
 ```php
-Route::moonshine(static function (Router $router) {  
-    // 
-}, 
+Route::moonshine(static function (Router $router) {
+    //
+},
 // add prefix {resourceUri}
-withResource: false, 
+withResource: false,
 // add prefix {pageUri}
-withPage: false, 
+withPage: false,
 // add middleware Authenticate::class
 withAuthenticate: false
 );

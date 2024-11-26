@@ -336,7 +336,7 @@ customAttributes(array $attributes, bool $override = false)
 ```
 
 - `$attributes` - массив атрибутов
-- `$override` - для добавления атрибутов к полю, используется `merge`. Если атрибут, который вы хотите добавить к полю, уже присутствует, то он добавлен не будет. `$override = true` позволяет изменить поведение данное поведение и перезаписать уже добавленный атрибут.
+- `$override` - для добавления атрибутов к полю, используется `merge`. Если атрибут, который вы хотите добавить к полю, уже присутствует, то он добавлен не будет. `$override = true` позволяет изменить данное поведение и перезаписать уже добавленный атрибут.
 
 ```php
 Password::make('Title')
@@ -393,7 +393,7 @@ File::make('image')->virtualColumn('image_2')
 <a name="default"></a>
 ### Значение по умолчанию
 
-Для указания значения по умолчанию, используется метод `default()`
+Для указания значения по умолчанию используется метод `default()`
 ```php
 default(mixed $default)
 ```
@@ -446,7 +446,7 @@ Text::make('Thumbnail')
       return view('moonshine::ui.image', [
           'value' => Storage::url($value)
       ]);
-  }) 
+  })
 ```
 
 <a name="request-value-resolver"></a>
@@ -535,11 +535,11 @@ onApply(Closure $onApply)
 Text::make('Thumbnail by link', 'thumbnail')
     ->onApply(function(Model $item, $value, Field $field) {
         $path = 'thumbnail.jpg';
-        
+
         if ($value) {
             $item->thumbnail = Storage::put($path, file_get_contents($value));
         }
-        
+
         return $item;
     })
 ```
@@ -585,9 +585,9 @@ final class FileModelApply implements ApplyContract
     {
         return function (mixed $item) use ($field): mixed {
             $requestValue = $field->getRequestValue();
-            
+
             $newValue = // ..
-            
+
             return data_set($item, $field->getColumn(), $newValue);
         };
     }
@@ -635,7 +635,7 @@ class MoonShineServiceProvider extends ServiceProvider
 <a name="fill"></a>
 ### Заполнение
 
-Поля можно заполнить значениями используя метод `fill()`. Более подробно о процессе заполнения поля можно прочитать в разделе [Основы > Изменить наполнение](/docs/{{version}}/fields/index#change-fill).
+Поля можно заполнить значениями, используя метод `fill()`. Более подробно о процессе заполнения поля можно прочитать в разделе [Основы > Изменить наполнение](/docs/{{version}}/fields/index#change-fill).
 
 ```php
 fill(mixed $value = null, ?DataWrapperContract $casted = null, int $index = 0)
@@ -651,15 +651,15 @@ Text::make('Title')
 Для того чтобы изменить логику заполнения поля, можно использовать метод `changeFill()`.
 
 ```php
-Select::make('Images')->options([  
-    '/images/1.png' => 'Picture 1',  
-    '/images/2.png' => 'Picture 2',  
-])  
-    ->multiple()  
-    ->changeFill(  
-        fn(Article $article, Select $ctx) => $article->images  
-            ->map(fn($value) => "https://cutcode.dev$value")  
-            ->toArray()  
+Select::make('Images')->options([
+    '/images/1.png' => 'Picture 1',
+    '/images/2.png' => 'Picture 2',
+])
+    ->multiple()
+    ->changeFill(
+        fn(Article $article, Select $ctx) => $article->images
+            ->map(fn($value) => "https://cutcode.dev$value")
+            ->toArray()
     );
 ```
 
@@ -674,19 +674,19 @@ Select::make('Images')->options([
 > Метод `afterFill` работает уже с наполненным полем.
 
 ```php
-Select::make('Links')->options([  
-    '/images/1.png' => 'Picture 1',  
-    '/images/2.png' => 'Picture 2',  
-])  
-    ->multiple()    
-    ->afterFill(  
-        function(Select $ctx) {  
-            if(collect($ctx->toValue())->every(fn($value) => str_contains($value, 'cutcode.dev'))) {  
-                return $ctx->customWrapperAttributes(['class' => 'full-url']);  
-            }  
-  
-            return $ctx;  
-        }  
+Select::make('Links')->options([
+    '/images/1.png' => 'Picture 1',
+    '/images/2.png' => 'Picture 2',
+])
+    ->multiple()
+    ->afterFill(
+        function(Select $ctx) {
+            if(collect($ctx->toValue())->every(fn($value) => str_contains($value, 'cutcode.dev'))) {
+                return $ctx->customWrapperAttributes(['class' => 'full-url']);
+            }
+
+            return $ctx;
+        }
     )
 ```
 
@@ -717,7 +717,7 @@ onChangeUrl(
 
 ```php
 Switcher::make('Active')
-    ->onChangeUrl(fn() => '/endpoint') 
+    ->onChangeUrl(fn() => '/endpoint')
 ```
 
 Eсли требуется заменить область с html после успешного запроса, вы можете в ответе вернуть HTML контент или json с ключом html.
@@ -775,13 +775,13 @@ changeRender(Closure $callback)
 ```
 В данном поле Select трансформируется в текст:
 ```php
-Select::make('Links')->options([  
-    '/images/1.png' => 'Picture 1',  
-    '/images/2.png' => 'Picture 2',  
-])  
-    ->multiple()  
-    ->changeRender(  
-        fn(?array $values, Select $ctx) => Text::make($ctx->getLabel())->fill(implode(',', $values))  
+Select::make('Links')->options([
+    '/images/1.png' => 'Picture 1',
+    '/images/2.png' => 'Picture 2',
+])
+    ->multiple()
+    ->changeRender(
+        fn(?array $values, Select $ctx) => Text::make($ctx->getLabel())->fill(implode(',', $values))
     )
 ```
 
@@ -803,7 +803,7 @@ Select::make('Links')->options([
 ```php
 use App\Enums\StatusEnum;
 use MoonShine\UI\Fields\Enum;
- 
+
 Enum::make('Status')
     ->attach(StatusEnum::class)
     ->fromRaw(fn(string $raw, Enum $ctx) => StatusEnum::tryFrom($raw))
@@ -811,7 +811,7 @@ Enum::make('Status')
 
 #### Получения необработанного значения
 
-Метод `modifyRawValue()` позволяет добавить замыкание для получения необработанного значения. 
+Метод `modifyRawValue()` позволяет добавить замыкание для получения необработанного значения.
 
 ```php
 /**
@@ -824,7 +824,7 @@ modifyRawValue(Closure $callback)
 ```php
 use App\Enums\StatusEnum;
 use MoonShine\UI\Fields\Enum;
- 
+
 Enum::make('Status')
     ->attach(StatusEnum::class)
     ->modifyRawValue(fn(StatusEnum $raw, Enum $ctx) => $raw->value))
@@ -961,10 +961,10 @@ FormBuilder::make()
                     ->findByColumn('slug')
                     ?->setValue(str($value ?? '')->slug()->value())
                 );
-            }), 
- 
+            }),
+
         Text::make('Slug')
-            ->reactive() 
+            ->reactive()
     ])
 ```
 
@@ -979,8 +979,8 @@ Slug будет генерироваться в процессе ввода те
 ```php
 Select::make('Category', 'category_id')
     ->reactive(function(Fields $fields, ?string $value, Field $field, array $values): Fields {
-        $field->setValue($value);  
- 
+        $field->setValue($value);
+
         return tap($fields, static fn ($fields) =>
             $fields
                 ->findByColumn('article_id')
