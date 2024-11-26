@@ -7,6 +7,7 @@ namespace App\MoonShine\Resources;
 
 use App\Models\Post;
 use App\Models\Comments;
+use MoonShine\UI\Components\Layout\Column;
 use MoonShine\UI\Components\Metrics\Wrapped\Metric;
 use MoonShine\UI\Components\Metrics\Wrapped\ValueMetric;
 use MoonShine\Laravel\Resources\ModelResource;
