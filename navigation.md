@@ -159,3 +159,4 @@
 - ## Recipes
     - [Profile](/docs/{{version}}/recipes/profile)
     - [Select](/docs/{{version}}/recipes/select)
+    - [Dashboard settings](/docs/{{version}}/recipes/dashboard-settings)
