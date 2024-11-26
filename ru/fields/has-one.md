@@ -3,6 +3,7 @@
 - [Основы](#basics)
 - [Поля](#fields)
 - [ID родителя](#parent-id)
+- [Модификация](#modify)
 
 ---
 
@@ -122,4 +123,38 @@ protected function getParentRelationName(): string
 
 ```php
 $this->getParentId();
+```
+
+<a name="modify"></a>
+## Модификация
+
+### Preview
+
+Метод `modifyTable()` позволяет изменить *TableBuilder* для предпросмотра.
+
+```php
+HasOne::make('Comment', resource: CommentResource::class)
+    ->modifyTable(
+        fn(TableBuilder $table) => $table
+    )
+```
+
+### Форма
+
+Метод `modifyForm()` позволяет изменить *FormBuilder* для редактирования.
+
+```php
+HasOne::make('Comment', resource: CommentResource::class)
+    ->modifyForm(
+        fn(FormBuilder $form) => $form->submit('Custom title')
+    )
+```
+
+### Редирект после изменения
+
+Метод `redirectAfter()` позволяет редирект после сохранения/добавления/удаления.
+
+```php
+HasOne::make('Comment', resource: CommentResource::class)
+    ->redirectAfter(fn(int $parentId) => route('home'))
 ```

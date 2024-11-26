@@ -323,6 +323,15 @@ HasMany::make('Comments', resource: CommentResource::class)
     )
 ```
 
+### Редирект после изменения
+
+Метод `redirectAfter()` позволяет редирект после сохранения/добавления/удаления.
+
+```php
+HasMany::make('Comments', resource: CommentResource::class)
+    ->redirectAfter(fn(int $parentId) => route('home'))
+```
+
 <a name="add-action-buttons"></a>
 ## Добавление ActionButtons
 
