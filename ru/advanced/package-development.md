@@ -12,7 +12,7 @@
 
 Основой `MoonShine` являются пакеты `Laravel`. Если вы новичок в разработке пакетов `Laravel`, вот несколько ресурсов, которые помогут вам понять основные концепции:
 
-- Глава [«Разработка пакетов»](https://laravel.com/docs/packages) в документации `Laravel` служит отличным справочным руководством.
+- Глава [Разработка пакетов](https://laravel.com/docs/packages) в документации `Laravel` служит отличным справочным руководством.
 - [Курс по разработке пакетов от CutCode](https://learn.cutcode.dev/moonshine)
 - [Бесплатное руководство по разработке пакетов от CutCode](https://youtu.be/a_udqxegrRI?si=F8F_v8uGLGLkEbpQ)
 
@@ -215,7 +215,7 @@ final class Quill extends Textarea
 ```blade
 <div x-data="quill">
     <div class="ql-editor" :id="$id('quill')" style="height: auto;">{!! $value ?? '' !!}</div>
-  
+
     <x-moonshine::form.textarea
         :attributes="$attributes->merge([
             'class' => 'ql-textarea',

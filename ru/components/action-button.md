@@ -204,7 +204,7 @@ protected function components(): iterable
 ```
 
 > [!NOTE]
-> О [Fragment](/docs/{{version}}/components/fragment) можно узнать в разделе «Компоненты»
+> О [Fragment](/docs/{{version}}/components/fragment) можно узнать в разделе "Компоненты"
 
 <a name="confirm"></a>
 ## Подтверждение
@@ -619,7 +619,7 @@ ActionButton::make('Обновить')
 <a name="fill"></a>
 ## Наполнение данными
 
-При работе с `ModelResource`, кнопки действий `ActionButton` обычно автоматически наполняются необходимыми данными. Этот процесс происходит «под капотом» с использованием метода `setData`. Давайте рассмотрим этот механизм подробнее.
+При работе с `ModelResource`, кнопки действий `ActionButton` обычно автоматически наполняются необходимыми данными. Этот процесс происходит "под капотом" с использованием метода `setData`. Давайте рассмотрим этот механизм подробнее.
 
 ```php
 ActionButton::make('Button')->setData(?DataWrapperContract $data = null)

@@ -212,7 +212,7 @@ FormBuilder::make('/crud/update')
 
 Кнопки формы можно модифицировать и добавлять.
 
-Для настройки кнопки «submit» используйте метод `submit()`.
+Для настройки кнопки "submit" используйте метод `submit()`.
 
 ```php
 submit(string $label, array $attributes = [])
