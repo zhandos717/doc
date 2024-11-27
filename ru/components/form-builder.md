@@ -27,7 +27,7 @@
 
 Поля и компоненты в `FormBuilder` используются внутри форм, которые обрабатываются `FormBuilder`. Благодаря `FormBuilder` поля отображаются и заполняются данными.
 `FormBuilder` используется на странице редактирования, а также для полей отношений, таких как `HasOne`.
-Вы также можете использовать `FormBuilder` на своих собственных страницах, в модальных окна или даже за пределами `MoonShine`.
+Вы также можете использовать `FormBuilder` на своих собственных страницах, в модальных окнах или даже за пределами `MoonShine`.
 
 ~~~tabs
 tab: Class
@@ -98,7 +98,7 @@ FormBuilder::make()
 <a name="fields"></a>
 ### Поля
 
-Метод `fields()` для объявления полей формы и компонеты:
+Метод `fields()` для объявления полей формы и компонентов:
 
 ```php
 fields(FieldsContract|Closure|iterable $fields)
@@ -293,7 +293,7 @@ FormBuilder::make('/crud/update')
 Список событий для `FormBuilder`:
 
 - `JsEvent::FORM_SUBMIT` - submit формы,
-- `JsEvent::FORM_RESET` - сброс значений формы по ее имени,
+- `JsEvent::FORM_RESET` - сброс значений формы по её имени,
 
 > [!NOTE]
 > TODO
@@ -369,14 +369,14 @@ FormBuilder::make('/crud/update')
 <a name="multiple-forms"></a>
 ### Несколько форм одновременно
 
-Если у вас есть несколько форм на одной странице и они не в режиме `async`, то Вам также необходимо указать наименование для `errorBag` в `FormRequest` или в `Controller`:
+Если у вас есть несколько форм на одной странице и они не в режиме `async`, то вам также необходимо указать наименование для `errorBag` в `FormRequest` или в `Controller`:
 
 [Подробнее о наименования errorBag](https://laravel.com/docs/validation#named-error-bags)
 
 ```php
 FormBuilder::make(route('multiple-forms.one'))
     ->name('formOne'),
-    
+
 FormBuilder::make(route('multiple-forms.two'))
     ->name('formTwo'),
 
@@ -386,21 +386,21 @@ FormBuilder::make(route('multiple-forms.three'))
 class FormOneFormRequest extends FormRequest
 {
     protected $errorBag = 'formOne';
-    
+
     // ..
 }
 
 class FormTwoFormRequest extends FormRequest
 {
     protected $errorBag = 'formTwo';
-    
+
     // ..
 }
 
 class FormThreeFormRequest extends FormRequest
 {
     protected $errorBag = 'formThree';
-    
+
     // ..
 }
 ```
@@ -408,7 +408,7 @@ class FormThreeFormRequest extends FormRequest
 <a name="apply"></a>
 ## Применение
 
-Метод `apply()` в `FormBuilder` итерирует все поля формы и вызывает их методы apply.
+Метод `apply()` в `FormBuilder` итерирует все поля формы и вызывает их методы `apply`.
 
 ```php
 apply(

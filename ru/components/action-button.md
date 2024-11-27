@@ -23,10 +23,10 @@
 \* имеет те же возможности.
 
 
-<a name="basics"></a> 
+<a name="basics"></a>
 ## Основы
 
-Когда вам нужно добавить кнопку с определенным действием, на помощь приходят `ActionButton`.  
+Когда вам нужно добавить кнопку с определенным действием, на помощь приходят `ActionButton`.
 В `MoonShine` они уже используются - в формах, таблицах, на страницах.
 
 ```php
@@ -37,9 +37,9 @@ ActionButton::make(
 )
 ```
 
-- `label` - текст кнопки,  
-- `url` - URL ссылки кнопки,  
-- `data` - опциональные данные кнопки, доступные в замыканиях.  
+- `label` - текст кнопки,
+- `url` - URL ссылки кнопки,
+- `data` - опциональные данные кнопки, доступные в замыканиях.
 
 ```php
 use MoonShine\UI\Components\ActionButton;
@@ -55,7 +55,7 @@ protected function components(): iterable
 }
 ```
 
-<a name="blank"></a> 
+<a name="blank"></a>
 ## Открытие в новом окне
 
 Метод `blank()` позволяет открыть URL в новом окне. Добавится атрибут `target="_blank"`
@@ -67,7 +67,7 @@ ActionButton::make(
 )->blank()
 ```
 
-<a name="icon"></a> 
+<a name="icon"></a>
 ## Иконка
 
 Метод `icon()` позволяет указать иконку для кнопки.
@@ -82,10 +82,10 @@ ActionButton::make(
 > [!NOTE]
 > Для получения более подробной информации обратитесь к разделу [Иконки](/docs/{{version}}/appearance/icons).
 
-<a name="color"></a> 
+<a name="color"></a>
 ## Цвет
 
-Для *ActionButton* есть набор методов, которые позволяют установить цвет кнопки:  
+Для *ActionButton* есть набор методов, которые позволяют установить цвет кнопки:
 `primary()`, `secondary()`, `warning()`, `success()` и `error()`.
 
 ```php
@@ -95,7 +95,7 @@ ActionButton::make(
 )->primary()
 ```
 
-<a name="badge"></a> 
+<a name="badge"></a>
 ## Бейдж
 
 Метод `badge()` позволяет добавить бейдж к кнопке.
@@ -109,7 +109,7 @@ ActionButton::make('Кнопка')->badge(fn() => Comment::count())
 //...
 ```
 
-<a name="onclick"></a> 
+<a name="onclick"></a>
 ## onClick
 
 Метод `onClick` позволяет выполнить js-код при клике:
@@ -130,7 +130,7 @@ ActionButton::make('Alert')
   })
 ```
 
-<a name="modal"></a> 
+<a name="modal"></a>
 ## Модальное окно
 
 ### Основы
@@ -206,7 +206,7 @@ protected function components(): iterable
 > [!NOTE]
 > О [Fragment](/docs/{{version}}/components/fragment) можно узнать в разделе "Компоненты"
 
-<a name="confirm"></a> 
+<a name="confirm"></a>
 ## Подтверждение
 
 Метод `withConfirm()` позволяет создать кнопку с подтверждением действия.
@@ -232,7 +232,7 @@ ActionButton::make(
     )
 ```
 
-<a name="offcanvas"></a> 
+<a name="offcanvas"></a>
 ## Боковая панель
 
 Для того чтобы при нажатии на кнопку вызывалась боковая панель, используйте метод `inOffCanvas()`.
@@ -259,10 +259,10 @@ protected function components(): iterable
 }
 ```
 
-<a name="group"></a> 
+<a name="group"></a>
 ## Группировка
 
-Если вам нужно выстроить логику с несколькими `ActionButton`, однако некоторые должны быть скрыты или отображены в выпадающем меню, в этом случае используйте компонент `ActionGroup`.
+Если вам необходимо организовать логику с несколькими `ActionButton`, при этом некоторые из них должны быть скрыты или отображены в выпадающем меню, используйте компонент `ActionGroup`.
 
 ```php
 use MoonShine\UI\Components\ActionGroup;
@@ -296,7 +296,7 @@ protected function components(): iterable
 }
 ```
 
-<a name="bulk"></a> 
+<a name="bulk"></a>
 ## Массовые действия
 
 Метод `bulk()` позволяет создать кнопку массового действия для `ModelResource`.
@@ -311,7 +311,7 @@ protected function indexButtons(): ListOf
 > [!TIP]
 > Метод `bulk()`, используется только внутри `ModelResource`.
 
-<a name="async"></a> 
+<a name="async"></a>
 ## Асинхронный режим
 
 Метод `async()` позволяет реализовать асинхронную работу для `ActionButton`.
@@ -332,7 +332,7 @@ async(
 
 > [!NOTE]
 > О [Events](/docs/{{version}}/frontend/js#events) можно узнать в разделе "Frontend"
-> 
+>
 > [!NOTE]
 > О [Callback](/docs/{{version}}/frontend/js#response-calback) можно узнать в разделе "Frontend"
 
@@ -402,7 +402,7 @@ protected function components(): iterable
 
 ### Обратный вызов
 
-Если вам нужно обработать ответ иным способом, необходимо реализовать функцию-обработчик и указать ее в методе `async()`.
+Если вам нужно обработать ответ иным способом, необходимо реализовать функцию-обработчик и указать её в методе `async()`.
 
 ```php
 protected function components(): iterable
@@ -429,7 +429,7 @@ document.addEventListener("moonshine:init", () => {
 })
 ```
 
-<a name="method"></a> 
+<a name="method"></a>
 ### Вызов методов
 
 `method()` позволяет указать имя метода в ресурсе и вызвать его асинхронно при нажатии на `ActionButton` без необходимости создания дополнительных контроллеров.
@@ -575,7 +575,7 @@ public function download(): BinaryFileResponse
 }
 ```
 
-<a name="event"></a> 
+<a name="event"></a>
 ## Отправка событий
 
 Для отправки javascript-событий вы можете использовать метод `dispatchEvent()`.
@@ -590,7 +590,7 @@ ActionButton::make('Обновить')
 ```
 
 По умолчанию при вызове события с запросом будут отправлены все query параметры из *href* у *ActionButton*.
-Некоторые исключить можно через параметр `exclude`:
+Исключить ненужные можно через параметр `exclude`:
 
 ```php
 ->dispatchEvent(
@@ -608,15 +608,15 @@ ActionButton::make('Обновить')
 )
 ```
 
-### URL Query Parameters
+### Параметры запроса URL
 
-Вы можете включить текущие URL query parameters (например, ?param=value) в запрос:
+Вы можете включить параметры текущего запроса URL (например, `?param=value`) в запрос:
 
 ```php
 ->withQueryParams()
 ```
 
-<a name="fill"></a> 
+<a name="fill"></a>
 ## Наполнение данными
 
 При работе с `ModelResource`, кнопки действий `ActionButton` обычно автоматически наполняются необходимыми данными. Этот процесс происходит "под капотом" с использованием метода `setData`. Давайте рассмотрим этот механизм подробнее.

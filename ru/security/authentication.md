@@ -343,7 +343,7 @@ $config->authPipelines([
 ```
 ~~~
 
-Добавьте трейт `MoonShine\TwoFactor\Traits\TwoFactorAuthenticatable` к модели, которая отвечает за пользователей админ. панели (по умолчанию это `MoonshineUser`).
+Добавьте трейт `MoonShine\TwoFactor\Traits\TwoFactorAuthenticatable` к модели, которая отвечает за пользователей админ-панели (по умолчанию это `MoonshineUser`).
 
 Не забудьте опубликовать модель, если используете конфигурацию по умолчанию:
 
@@ -368,7 +368,7 @@ final class MoonshineUser extends \MoonShine\Laravel\Models\MoonshineUser
 // ..
 ```
 
-Мы автоматически добавим компонент `TwoFactor` на страницу профиля, но если вы ее переопределили и используете собственную, то добавьте компонент самостоятельно:
+Мы автоматически добавим компонент `TwoFactor` на страницу профиля, но если вы её переопределили и используете собственную, то добавьте компонент самостоятельно:
 
 ```php
 use MoonShine\TwoFactor\ComponentSets\TwoFactor;

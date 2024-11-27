@@ -24,7 +24,7 @@
 ```
 
 ### 2. Создание резервных копий
-Перед обновлением необходимо сделать backup следующих файлов:
+Перед обновлением необходимо сделать резервные копии следующих файлов:
 
 ```bash
 mv config/moonshine.php config/moonshine_old.php
@@ -73,7 +73,7 @@ php artisan moonshine:install
    ```php
    // Было
    MenuItem::make('Settings', new SettingResource(), 'heroicons.outline.adjustments-vertical')
-   
+
    // Стало
    MenuItem::make('Settings', SettingResource::class, 'adjustments-vertical')
    ```
@@ -136,7 +136,7 @@ MoonShine\Fields\Relationships\ → MoonShine\Laravel\Fields\Relationships\
 MoonShine\Fields\Slug → MoonShine\Laravel\Fields\Slug
 MoonShine\Fields\ → MoonShine\UI\Fields\
 MoonShine\Decorations\Block → MoonShine\UI\Components\Layout\Box
-MoonShine\Decorations\ → MoonShine\UI\Components\Layout\* 
+MoonShine\Decorations\ → MoonShine\UI\Components\Layout\*
     (некоторые на MoonShine\UI\Components\, проверьте вручную)
 MoonShine\Enums\ → MoonShine\Support\Enums\
 MoonShine\Pages\ → MoonShine\Laravel\Pages\
@@ -168,7 +168,7 @@ MoonShine\MoonShineAuth → MoonShine\Laravel\MoonShineAuth
 4. [EasyMDE](https://github.com/moonshine-software/easymde):
   - `MoonShine\Fields\Markdown`
 
-5. [EasyMDE](https://github.com/moonshine-software/tinymce):
+5. [TinyMce](https://github.com/moonshine-software/tinymce):
   - `MoonShine\Fields\TinyMce`
 
 <a name="methods"></a>
@@ -231,12 +231,12 @@ protected function formFields(): iterable
 ```php
 // Новый формат
 TableBuilder::make()
-    ->tdAttributes(fn(mixed $data, int $row, TableBuilder $table): array => 
+    ->tdAttributes(fn(mixed $data, int $row, TableBuilder $table): array =>
         $row === 3 ? ['class' => 'bgc-yellow'] : []
-    ) 
-    ->tdAttributes(fn(mixed $data, int $row, int $cell, TableBuilder $table): array => 
+    )
+    ->tdAttributes(fn(mixed $data, int $row, int $cell, TableBuilder $table): array =>
         $cell === 3 ? ['align' => 'right'] : []
-    ) 
+    )
 ```
 
 5. Изменения в других методах:

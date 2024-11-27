@@ -175,12 +175,12 @@ final class MoonShineLayout extends CompactLayout
 }
 ```
 
-Как видите начиная от тега `HTML` все в `MoonShine` является компонентами, что дает огромную свободу кастомизации вашей админ. панели.
+Как видите, начиная от тега `HTML` всё в `MoonShine` является компонентами, что дает огромную свободу кастомизации вашей админ-панели.
 
 Полный список компонентов ищите в разделе [Компоненты](docs/{{version}}/components/index)
 
 > [!TIP]
-> Как можно заметить компонентов огромное количество и для удобства, мы объединили их в группы, чтобы вы могли удобно переопределять только те группы, которые требуется
+> Как можно заметить, компонентов огромное количество, и для удобства мы объединили их в группы, чтобы вы могли удобно переопределять только те группы, которые требуются
 
 ```php
 <?php
@@ -277,7 +277,7 @@ php artisan moonshine:layout
 <a name="page"></a>
 ## Изменение шаблона страницы
 
-По умолчанию страницы используют шаблон отображения `AppLayout` или `CompactLayout`. 
+По умолчанию страницы используют шаблон отображения `AppLayout` или `CompactLayout`.
 Но вы можете изменить на собственный шаблон, просто заменив значение свойства `$layout`
 
 Подробнее про страницы читайте в разделе [Страница](docs/{{version}}/page/index)
@@ -307,7 +307,7 @@ final class MyLayout extends AppLayout
     {
         return [
             ...parent::assets(),
-    
+
             Css::make('/vendor/moonshine/assets/minimalistic.css')->defer(),
         ];
     }
@@ -348,7 +348,7 @@ final class MyLayout extends AppLayout
 <a name="top-menu"></a>
 ### Верхнее меню
 
-По умолчанию `MoonShin`e имеет компонент верхнего меню, который можно использовать вместо `Sidebar` или совместно с ним. Давайте посмотрим, как заменить `Sidebar` на `TopBar` в `Layout`.
+По умолчанию `MoonShine` имеет компонент верхнего меню, который можно использовать вместо `Sidebar` или совместно с ним. Давайте посмотрим, как заменить `Sidebar` на `TopBar` в `Layout`.
 
 ```php
 // ..
@@ -464,7 +464,7 @@ final class MyLayout extends AppLayout
 <a name="blade"></a>
 ## Blade
 
-`MoonShine` позволяет создавать шаблоны напрямую через `Blade`. 
+`MoonShine` позволяет создавать шаблоны напрямую через `Blade`.
 
 Пример базового шаблона:
 
@@ -515,7 +515,7 @@ final class MyLayout extends AppLayout
 
                     <x-moonshine::layout.content>
                         <article class="article">
-                            Content here
+                            Ваш контент
                         </article>
                     </x-moonshine::layout.content>
                 </x-moonshine::layout.div>

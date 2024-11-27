@@ -11,7 +11,7 @@
 Админ-панель **MoonShine** не отходит от концепций Laravel и также использует *Laravel policy* для работы с правами доступа.
 В контроллерах ресурсов MoonShine каждый метод будет проверяться на наличие разрешений. Если у вас возникнут трудности, обратитесь к официальной документации [Laravel](https://laravel.com/docs/authorization#creating-policies)
 
-По умолчанию проверка разрешений для ресурсов отключена. Чтобы включить ее, необходимо добавить свойство `withPolicy`.
+По умолчанию проверка разрешений для ресурсов отключена. Чтобы включить её, необходимо добавить свойство `withPolicy`.
 
 ```php
 namespace App\MoonShine\Resources;
@@ -97,7 +97,7 @@ class PostPolicy
 
 <a name="additional_logic"></a>
 ## Дополнительная логика
-   
+
 Если вам нужно добавить дополнительную логику авторизации в ваше приложение или внешний пакет, используйте метод `authorizationRules` в `AuthServiceProvider` или в `MoonShineServiceProvider`.
 
 ```php
@@ -130,7 +130,7 @@ class MoonShineServiceProvider extends ServiceProvider
                 return true;
             }
         );
-        
+
         // ..
     }
 }

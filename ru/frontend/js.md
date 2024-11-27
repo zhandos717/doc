@@ -28,7 +28,7 @@
 Благодаря своей легковесности и простоте синтаксиса, `Alpine.js` отлично подходит для задач админ-панели, не утяжеляя при этом ваше приложение.
 
 > [!NOTE]
-> Несмотря на то, что `Alpine.js` является рекомендуемым решением для MoonShine, вы не ограничены в выборе JavaScript-инструментов или использования ванильного js. 
+> Несмотря на то, что `Alpine.js` является рекомендуемым решением для MoonShine, вы не ограничены в выборе JavaScript-инструментов или использования ванильного js.
 
 > [!TIP]
 > Рекомендуем ознакомится с [Alpine.js](https://alpinejs.dev)
@@ -43,14 +43,14 @@ php artisan moonshine:component MyComponent
 ```
 
 Путь оставим как предлагает `MoonShine` - `/resources/views/admin/components/my-component.blade.php`.
-Внутри добавим `x-data` с наименованием нашего компонента, тем самым мы укажем, что область внутри является `Alpine.js` компонентом
+Внутри добавим `x-data` с наименованием нашего компонента, тем самым мы укажем, что область внутри является компонентом `Alpine.js`
 
 ```html
 <div x-data="myComponent">
 </div>
 ```
 
-Далее создадим скрипт, где в дальнейшем реализуем логику `Alpine.js` компонента 
+Далее создадим скрипт, где в дальнейшем реализуем логику компонента `Alpine.js`
 
 ```html
 <script>
@@ -64,7 +64,7 @@ document.addEventListener("alpine:init", () => {
 </script>
 ```
 
-Для наглядности мы показали вам скрипт прямо в `blade`, 
+Для наглядности мы показали вам скрипт прямо в `blade`,
 но рекомендуем выносить компоненты в отдельные `js` файлы и подключать их через [AssetManager](/docs/{{version}}/appearance/assets)
 
 > [!WARNING]
@@ -73,7 +73,7 @@ document.addEventListener("alpine:init", () => {
 <a name="events"></a>
 ## События
 
-Благодаря `js` событиям вы можете удобно взаимодействовать с `MoonShine`! Обновлять формы, таблица, области, вызывать модальные окна, сбрасывать формы и многое другое. 
+Благодаря `js` событиям вы можете удобно взаимодействовать с `MoonShine`! Обновлять формы, таблицы, области, вызывать модальные окна, сбрасывать формы и многое другое.
 Вы также можете создавать собственные события в `js`.
 
 <a name="#default-events"></a>
@@ -121,7 +121,7 @@ document.addEventListener("DOMContentLoaded", () => {
 })
 ```
 
-Или с использованием магического метода `$dispatch()` из *`alpine.js`:
+Или с использованием магического метода `$dispatch()` из `Alpine.js`:
 
 ```js
 this.$dispatch('modal_toggled:my-modal')
@@ -296,7 +296,7 @@ MoonShine.iterable.sortable(
 )
 ```
 
-### Reindex form element names
+### Переиндексация имён элементов формы
 
 ```js
 MoonShine.iterable.reindex(
@@ -308,15 +308,15 @@ MoonShine.iterable.reindex(
 <a name="response-calback"></a>
 ## Обработка ответа
 
-`MoonShine` позволяет интегрироваться в процесс выполнения асинхронных запросов в `js`, указывая какая функция выполниться перед запросом и после получения ответа.
+`MoonShine` позволяет интегрироваться в процесс выполнения асинхронных запросов в `js`, указывая какая функция выполнится перед запросом и после получения ответа.
 
-`ActionButton`, `FormBuilder`, `TableBuilder`, `Field` и другие компоненты реализующие интерфейс `HasAsyncContract` в `async` методах также содержат параметр `callback`.
+`ActionButton`, `FormBuilder`, `TableBuilder`, `Field` и другие компоненты, реализующие интерфейс `HasAsyncContract` в `async` методах, также содержат параметр `callback`.
 
 За передачу параметра `callback` отвечает класс `AsyncCallback`. Давайте рассмотрим пример для `ActionButton`:
 
 ### Переопределение обработки ответа
 
-С помощью параметра `responseHandler` можно полностью переопределить поведение обработки ответа. В случае переопределения вызов событий, обработка ошибок, уведомлений и прочее, вы берете на себя.
+С помощью параметра `responseHandler` можно полностью переопределить поведение обработки ответа. В случае переопределения вызов событий, обработку ошибок, уведомлений и прочее вы берете на себя.
 
 ```php
 ActionButton::make()->method('myMethod', callback: AsyncCallback::with(responseHandler: 'myResponseHandler'));
@@ -350,7 +350,7 @@ document.addEventListener("moonshine:init", () => {
 ActionButton::make()->method('myMethod', callback: AsyncCallback::with(beforeRequest: 'myBeforeRequest'));
 ```
 
-При клике на кнопку перед тем как отправить запрос в метод `myMethod` будет вызвана функция `myBeforeRequest`.
+При нажатии на кнопку перед отправкой запроса в метод `myMethod` будет выполнена функция `myBeforeRequest`.
 
 Следующий шаг - необходимо объявить эту функцию в `js` через глобальный класс `MoonShine`:
 
@@ -367,7 +367,7 @@ document.addEventListener("moonshine:init", () => {
 
 ### Вызов после успешного ответа
 
-Далее рассмотрим пример с параметром `afterResponse`, принимает наименование функции, которая будет вызвана после успешного ответа:
+Далее рассмотрим пример с параметром `afterResponse`, принимающим наименование функции, которая будет вызвана после успешного ответа:
 
 ```php
 ActionButton::make()->method('myMethod', callback: AsyncCallback::with(afterResponse: 'myAfterResponse'));

@@ -32,13 +32,13 @@
 php artisan moonshine:page
 ```
 
-После ввода имени класса будет создан файл, который является основой для страницы в админ-панели.  
+После ввода имени класса будет создан файл, который является основой для страницы в админ-панели.
 По умолчанию он располагается в директории `app/MoonShine/Pages`.
 
 > [!NOTE]
-> Страницы при выполнении команды автоматически регистрируются в системе, но если вы создаете страницу вручную, то ее необходимо самостоятельно зарегистрировать в `MoonShineServiceProvider` в методе `$core->pages()`
+> Страницы при выполнении команды автоматически регистрируются в системе, но если вы создаете страницу вручную, то её необходимо самостоятельно зарегистрировать в `MoonShineServiceProvider` в методе `$core->pages()`
 
-Также Вы можете указать имя класса и директорию его расположения в команде.
+Также можно указать имя класса и директорию его расположения в команде.
 
 ```php
 php artisan moonshine:page OrderStatistics --dir=Pages/Statistics
@@ -49,7 +49,7 @@ php artisan moonshine:page OrderStatistics --dir=Pages/Statistics
 <a name="title"></a>
 ## Заголовок
 
-Заголовок страницы можно задать через свойство `title`, а `subtitle` задает подзаголовок.
+Заголовок страницы можно задать через свойство `title`, а подзаголовок — через `subtitle`:
 
 ```php
 use MoonShine\Laravel\Pages\Page;
@@ -64,7 +64,7 @@ class CustomPage extends Page
 }
 ```
 
-Если для заголовка и подзаголовка требуется какая-то логика, то методы `title()` и `subtitle()` позволяют ее реализовать.
+Если для заголовка и подзаголовка требуется какая-то логика, то методы `title()` и `subtitle()` позволяют её реализовать:
 
 ```php
 class CustomPage extends Page
@@ -217,7 +217,7 @@ class CustomPage extends Page
 <a name="render"></a>
 ## Рендеринг
 
-Вы можете отображать страницу вне `MoonShine`, просто вернув ее в Контроллере
+Вы можете отображать страницу вне `MoonShine`, просто вернув её в контроллере:
 
 ```php
 class ProfileController extends Controller
@@ -267,7 +267,7 @@ protected function modifyResponse(): ?Response
     if (request()->has('id')) {
         return redirect()->to('/admin/article-resource/index-page');
     }
-    
+
     return null;
 }
 ```
@@ -305,7 +305,7 @@ class PostPage extends Page
 <a name="on-boot"></a>
 ### Создание экземпляра
 
-Метод `booted` дает возможность интегрироваться в момент когда MoonShine создает экземпляр страницы в системе
+Метод `booted` дает возможность интегрироваться в момент, когда MoonShine создает экземпляр страницы в системе
 
 ```php
 namespace App\MoonShine\Pages;
