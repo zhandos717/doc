@@ -304,6 +304,7 @@ $assets // строки
 
 // Стало
 $assets // принимает AssetElementContract, такие как Css, InlineCss, Js, InlineJs
+Для управления используется [AssetManager](/docs/{{version}}/appearance/assets).
 ```
 
 #### Удаленные переменные
