@@ -39,3 +39,13 @@ class PostResource extends ModelResource
 
 > [!NOTE]
 > Для более подробной информации, пожалуйста, обратитесь к разделам [Metrics](/docs/{{version}}/components/metrics)
+
+
+Если вам необходимо обвернуть метрики во *Fragment*:
+
+```php
+protected function fragmentMetrics(): ?Closure
+{
+    return static fn(array $components): Fragment => Fragment::make($components)->name('metrics');
+}
+```
