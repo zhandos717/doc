@@ -26,12 +26,8 @@ class PostResource extends ModelResource
     protected function metrics(): array
     {
         return [
-            Column::make([
-                ValueMetric::make('Articles')->value(fn() => Post::count()),
-            ])->columnSpan(6),
-            Column::make([
-                ValueMetric::make('Comments')->value(fn() => Comment::count()),
-            ])->columnSpan(6),
+            ValueMetric::make('Articles')->value(fn() => Post::count())->columnSpan(6),
+            ValueMetric::make('Comments')->value(fn() => Comment::count())->columnSpan(6),
         ];
     }
 
