@@ -15,6 +15,7 @@
     - [Активная страница](#on-load)
     - [Создание экземпляра](#on-boot)
 - [Создание ссылки на страницу в ресурсе](#link-from-resource)
+- [Assets](#assets)
 
 <a name="basics"></a>
 ## Основы
@@ -343,5 +344,19 @@ public function indexButtons(): ListOf
             ),
         ),
     );
+}
+```
+
+<a name="assets"></a>
+## Assets
+
+```php
+protected function onLoad(): void
+{
+    parent::onLoad();
+    
+    $this->getAssetManager()
+        ->add(Css::make('/css/app.css'))
+        ->append(Js::make('/js/app.js'));
 }
 ```

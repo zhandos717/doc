@@ -30,7 +30,7 @@ tab: Blade
 <a name="assets"></a>
 ## Кастомные favicons
 
-Для изменения favicons, необходимо воспользоваться методом `assets()` или указать соответствующий параметр в blade компоненте.
+Для изменения favicons, необходимо воспользоваться методом `customAssets()` или указать соответствующий параметр в blade компоненте.
 
 ~~~tabs
 tab: Class
@@ -42,7 +42,7 @@ assets(array $assets);
 Favicon::make([ 
     // ...
 ])
-    ->assets([
+    ->customAssets([
         'apple-touch' => Vite::asset('favicons/apple-touch-icon.png'),
         '32' => Vite::asset('favicons/favicon-32x32.png'),
         '16' => Vite::asset('favicons/favicon-16x16.png'),

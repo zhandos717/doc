@@ -17,6 +17,7 @@
 - [Жизненный цикл](#lifecycle)
     - [Активный ресурс](#on-load)
     - [Создание экземпляра](#on-boot)
+- [Assets](#assets)
 
 ---
 
@@ -536,3 +537,15 @@ class PostResource extends ModelResource
 ```
 
 Вы также можете подключить `trait` к ресурсу и внутри `trait` добавить метод согласно конвенции наименований - `boot{TraitName}` и через трейт обратится к `onBoot` ресурса
+
+<a name="assets"></a>
+## Assets
+
+```php
+protected function onLoad(): void
+{
+    $this->getAssetManager()
+        ->add(Css::make('/css/app.css'))
+        ->append(Js::make('/js/app.js'));
+}
+```

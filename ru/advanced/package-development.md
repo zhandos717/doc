@@ -154,7 +154,7 @@ trait HasMyPackageTrait
 {
     public function loadHasMyPackageTrait(): void
     {
-        $this->getFormPage()->pushAssets([
+        $this->getFormPage()->addAssets([
             Js::make('vendor/my-package/js/app.js'),
             Css::make('vendor/my-package/css/app.css'),
         ]);
@@ -199,7 +199,7 @@ final class Quill extends Textarea
 {
     protected string $view = 'moonshine-quill::fields.quill';
 
-    public function getAssets(): array
+    public function assets(): array
     {
         return [
             Css::make('/css/moonshine/quill/quill.snow.css'), // тема

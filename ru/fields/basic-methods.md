@@ -22,6 +22,7 @@
   - [Значение по умолчанию](#default)
   - [Nullable](#nullable)
   - [Изменение отображения](#custom-view)
+  - [Хук до рендера](#on-before-render)
   - [Получение значения из запроса](#request-value-resolver)
   - [До и после рендеринга](#before-and-after-render)
   - [Условные методы](#conditional-methods)
@@ -40,6 +41,7 @@
   - [Вложенные поля](#nested-fields)
   - [Множественные условия](#multiple-conditions)
   - [Поддерживаемые операторы](#supported-operators)
+- [Кастомное поле](#custom)
 
 ---
 
@@ -447,6 +449,24 @@ Text::make('Thumbnail')
           'value' => Storage::url($value)
       ]);
   })
+```
+
+<a name="on-before-render"></a>
+### Хук до рендера
+
+Если вам необходимо получить доступ к полю непосредственно перед рендером, для этого можно воспользоваться методом `onBeforeRender()`.
+
+```php
+/**
+ * @param  Closure(static $ctx): void  $onBeforeRender
+ */
+public function onBeforeRender(Closure $onBeforeRender): static
+```
+
+```php
+Text::make('Thumbnail')->onBeforeRender(function(Text $ctx) {
+    // 
+})
 ```
 
 <a name="request-value-resolver"></a>
@@ -912,6 +932,36 @@ Text::make('Name')
     ]),
 ```
 
+Если вы реализуете собственное поле, то объявить набор ассетов в нем можно двумя способами.
+
+1. Через метод `assets()`:
+
+```php
+/**
+ * @return list<AssetElementContract>
+ */
+protected function assets(): array
+{
+    return [
+        Js::make('/js/custom.js'),
+        Css::make('/css/styles.css')
+    ];
+}
+```
+
+1. Через метод `booted()`:
+
+```php
+protected function booted(): void
+{
+    parent::booted();
+    
+    $this->getAssetManager()
+        ->add(Css::make('/css/app.css'))
+        ->append(Js::make('/js/app.js'));
+}
+```
+
 <a name="macroable"></a>
 ## Трейт Macroable
 
@@ -1125,3 +1175,13 @@ BelongsTo::make('Category', 'category', , resource: CategoryResource::class)
 > [!NOTE]
 > Оператор `in` проверяет, содержится ли значение в массиве.
 > Оператор `not in` проверяет, не содержится ли значение в массиве.
+
+<a name="custom"></a>
+## Кастомное поле
+
+Вы можете создать собственное поле, со своим view и логикой и использовать его в административной панели MoonShine.
+Для этого воспользуйтесь командой:
+
+```shell
+php artisan moonshine:field
+```
