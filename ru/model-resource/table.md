@@ -125,7 +125,7 @@ protected function indexFields(): iterable
 {
   return [
     // ..
-    Text::make('Title')->customWrapperAttributes(['width' => '20%])m
+    Text::make('Title')->customWrapperAttributes(['width' => '20%]);
     // ..
   ];
 }
