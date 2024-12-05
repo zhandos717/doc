@@ -18,7 +18,7 @@ make(iterable $components = [])
 ```
 
 ```php
-use MoonShine\UI\Components\Fragment;
+use MoonShine\Laravel\Components\Fragment;
 use MoonShine\UI\Fields\Text;
 
 //...
