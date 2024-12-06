@@ -589,7 +589,8 @@ ActionButton::make('Обновить')
     ->dispatchEvent(AlpineJs::event(JsEvent::TABLE_UPDATED, 'index-table')),
 ```
 
-По умолчанию при вызове события с запросом будут отправлены все query параметры из *href* у *ActionButton*.
+По умолчанию при вызове события с запросом будут отправлены все query параметры (например, `?param=value`) из  `url` (указанного при создании `ActionButton`).
+
 Исключить ненужные можно через параметр `exclude`:
 
 ```php
