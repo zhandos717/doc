@@ -155,6 +155,9 @@ relatedLink(?string $linkRelation = null, Closure|bool $condition = null)
 - `linkRelation` - ссылка на отношение,
 - `condition` - замыкание или булево значение, отвечающее за отображение отношения в виде ссылки.
 
+> [!NOTE]
+> Не забудьте добавить отношение в свойство *with* ресурса
+
 ```php
 HasMany::make('Comments', resource: CommentResource::class)
     ->relatedLink()
@@ -330,6 +333,15 @@ HasMany::make('Comments', resource: CommentResource::class)
 ```php
 HasMany::make('Comments', resource: CommentResource::class)
     ->redirectAfter(fn(int $parentId) => route('home'))
+```
+
+### Модификация QueryBuilder
+
+Метод `modifyBuilder()` позволяет модифицировать запрос через *QueryBuilder*.
+
+```php
+HasMany::make('Comments', resource: CommentResource::class)
+    ->modifyBuilder(fn(Relation $query, HasMany $ctx) => $query)
 ```
 
 <a name="add-action-buttons"></a>
