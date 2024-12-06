@@ -221,6 +221,7 @@ php artisan moonshine:publish
 - **Assets** - ассеты админ-панели `MoonShine`;
 - **Assets template** - создает шаблон для добавления собственных стилей или создания собственной темы для `MoonShine`;
 - **System Resources** - системные `MoonShineUserResource`, `MoonShineUserRoleResource`, которые вы можете изменить.
+- **System Forms** - системные `LoginForm`, `FiltersForm`, которые вы можете изменить.
 
 #### Вы можете сразу указать тип публикации в команде.
 
@@ -232,6 +233,7 @@ php artisan moonshine:publish assets
 - assets
 - assets-template
 - resources
+- forms
 
 <a name="apply"></a>
 ## Apply
