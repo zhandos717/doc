@@ -1,4 +1,4 @@
-# Компонент Carousel
+# Carousel
 
 - [Основы](#basics)
 - [Элементы](#items)
