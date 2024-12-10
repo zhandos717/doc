@@ -11,13 +11,13 @@
 Компонент `Loader` позволяет создать стилизованный индикатор загрузки.
 
 ~~~tabs
-tab: Tab 1
+tab: Class
 ```php
 use MoonShine\UI\Components\Loader;
 
 Loader::make()
 ```
-tab: Tab 2
+tab: Blade
 ```blade
 <x-moonshine::loader />
 ```
