@@ -94,7 +94,6 @@
     - [Header](/docs/{{version}}/components/header)
     - [Footer](/docs/{{version}}/components/footer)
     - [Grid](/docs/{{version}}/components/grid)
-    - [Column](/docs/{{version}}/components/column)
     - [Flex](/docs/{{version}}/components/flex)
     - [Box](/docs/{{version}}/components/box)
     - [Div](/docs/{{version}}/components/div)
