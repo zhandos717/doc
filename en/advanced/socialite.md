@@ -1,6 +1,3 @@
-/docs/{{version}}/advanced/socialite?_lang=en
-
-------
 # Socialite 
 
 For convenience, you can link your account to social networks and simplify the authentication process.

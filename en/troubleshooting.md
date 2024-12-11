@@ -1,6 +1,3 @@
-/docs/{{version}}/troubleshooting?_lang=en
-
-------
 # Troubleshooting  
 
   - [Images are not displayed](#images-are-not-displayed)  

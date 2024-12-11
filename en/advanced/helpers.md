@@ -1,6 +1,3 @@
-/docs/{{version}}/advanced/helpers?_lang=en
-
-------
 # Helpers
 
 - [Basic](#basic)

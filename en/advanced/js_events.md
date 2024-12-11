@@ -1,7 +1,3 @@
-/docs/{{version}}/advanced/js_events?_lang=en
-
-------
-
 # Js events
 
 - [Js events](#js-events)

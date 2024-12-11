@@ -1,7 +1,3 @@
-/docs/{{version}}/advanced/commands?_lang=en
-
-------
-
 # Commands
 
 - [Install](#install)

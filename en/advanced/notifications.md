@@ -1,6 +1,3 @@
-/docs/{{version}}/advanced/notifications?_lang=en
-
-------
 # Notifications  
 
 If there is a need to add notifications to the MoonShine notification center, then use the `MoonShine\Notifications\MoonShineNotification` class.

@@ -1,7 +1,3 @@
-/docs/{{version}}/advanced/form_builder?_lang=en
-
-------
-
 # FormBuilder
 
 - [Basics](#basics)

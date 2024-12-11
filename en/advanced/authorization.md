@@ -1,6 +1,3 @@
-/docs/{{version}}/advanced/authorization?_lang=en
-
-------
 # Authorization
 
   - [Basics](#basics)

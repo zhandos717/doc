@@ -1,7 +1,3 @@
-/docs/{{version}}/advanced/authentication?_lang=en
-
-------
-
 # Authentication
 
   - [Basics](#basics)

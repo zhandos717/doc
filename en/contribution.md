@@ -1,6 +1,3 @@
-/docs/{{version}}/contribution?_lang=en
-
-------
 # Contribution Guide
 
   - [How can we help?](#how-can-we-help)

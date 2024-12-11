@@ -1,7 +1,3 @@
-/docs/{{version}}/advanced/type_casts?_lang=en
-
-------
-
 # TypeCasts
 
 By default in MoonShine, fields operate on primitive types and do not know anything about models. This was done so that the system was not tied only to models, and the fields could, depending on the situation have access to both raw data and typed data.

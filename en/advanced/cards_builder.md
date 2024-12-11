@@ -1,6 +1,3 @@
-/docs/{{version}}/advanced/cards_builder?_lang=en
-
-------
 # CardsBuilder
 
   - [Basics](#basics)

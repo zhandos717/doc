@@ -1,6 +1,3 @@
-/docs/{{version}}/recipes?_lang=en
-
-------
 # Recipes
  
  - [Form and events](#form-with-events)

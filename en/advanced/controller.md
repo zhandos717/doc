@@ -1,6 +1,3 @@
-/docs/{{version}}/advanced/controller?_lang=en
-
-------
 # Controllers  
 
   - [Generate controller](#generate-controller)  

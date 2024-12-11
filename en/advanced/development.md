@@ -1,7 +1,3 @@
-/docs/{{version}}/advanced/development?_lang=en
-
-------
-
 # Package development
 
 - [Basics](#basics)

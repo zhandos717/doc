@@ -1,7 +1,3 @@
-/docs/{{version}}/advanced/testings?_lang=en
-
-------
-
 # Testing
 
 ## Creating a resource with a test file

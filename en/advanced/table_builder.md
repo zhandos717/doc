@@ -1,6 +1,3 @@
-/docs/{{version}}/advanced/table_builder?_lang=en
-
-------
 # TableBuilder
 
 <a name="basics"></a>
