@@ -1,4 +1,4 @@
-https://moonshine-laravel.com/docs/resource/advanced/advanced-js_events?change-moonshine-locale=en
+/docs/{{version}}/advanced/js_events?_lang=en
 
 ------
 

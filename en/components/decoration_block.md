@@ -86,7 +86,7 @@ public function components(): array
 ```
 
 > [!NOTE]
-> For more detailed information, please refer to the section [Icons](https://moonshine-laravel.com/docs/resource/appearance/icons).
+> For more detailed information, please refer to the section [Icons](/docs/{{version}}/appearance/icons).
 
 ![block_icon](https://raw.githubusercontent.com/moonshine-software/doc/2.x/resources/screenshots/block_icon.png)
 ![block_icon_dark](https://raw.githubusercontent.com/moonshine-software/doc/2.x/resources/screenshots/block_icon_dark.png)

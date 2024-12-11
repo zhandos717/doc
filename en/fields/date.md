@@ -5,7 +5,7 @@
 
 ---
 
-Extends [Text](https://moonshine-laravel.com/docs/resource/fields/fields-text)  
+Extends [Text](/docs/{{version}}/fields/text)  
 * has the same features
 
 The *Date* field is an extension of *Text*, which by default sets `type=date` and has additional methods.

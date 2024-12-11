@@ -1,9 +1,6 @@
-https://moonshine-laravel.com/docs?change-moonshine-locale=en
-
-------
 # Welcome
 
-[![MoonShine](https://raw.githubusercontent.com/moonshine-software/doc/2.x/resources/screenshots/main.png)](https://moonshine-laravel.com/video/moon_shine_logo_2.mp4)
+[![MoonShine](https://raw.githubusercontent.com/moonshine-software/doc/2.x/resources/screenshots/main.png)](/video/moon_shine_logo_2.mp4)
 
 
 ## Hi Laravel user!
@@ -39,7 +36,7 @@ What does MoonShine stand for? It's not exactly "moonlight": my idea is the name
 
 ## Where to start?
 
-MoonShine is ready to appear in your project. Simply follow the [installation guide](https://moonshine-laravel.com/docs/resource/getting-started/installation) , and then find in the documentation how to implement the required functionality and add it to your project.
+MoonShine is ready to appear in your project. Simply follow the [installation guide](/docs/{{version}}/installation) , and then find in the documentation how to implement the required functionality and add it to your project.
 
 If you want to learn MoonShine quickly, I recommend checking out my [video guides](https://www.youtube.com/playlist?list=PLIDM0FwRatgQQmiwoAa6axuWZWB18Zlb6) .
 

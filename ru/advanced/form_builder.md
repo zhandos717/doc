@@ -132,7 +132,7 @@ FormBuilder::make('/crud/update', 'PUT')
 В этом примере мы приводим данные к формату модели `User`, используя `ModelCast`.
 
 > [!NOTE]
-> Для более подробной информации обратитесь к разделу [TypeCasts](https://moonshine-laravel.com/docs/resource/advanced/advanced-type_casts)
+> Для более подробной информации обратитесь к разделу [TypeCasts](/docs/{{version}}/advanced/type_casts)
 
 <a name="fillcast"></a>
 ## FillCast
@@ -268,7 +268,7 @@ FormBuilder::make('/crud/update', 'PUT')
 - `fragment-updated-{name}` - обновляет blade фрагмент по его имени.
 
 > [!NOTE]
-> Рецепт [При успешном запросе форма обновляет таблицу и сбрасывает значения](https://moonshine-laravel.com/docs/resource/recipes/recipes#form-with-events)
+> Рецепт [При успешном запросе форма обновляет таблицу и сбрасывает значения](/docs/{{version}}/recipes#form-with-events)
 
 >[!WARNING]
 >Метод `async()` должен идти после метода `name()`!
@@ -454,5 +454,5 @@ public function formButtons(): array
 ```
 
 > [!NOTE]
-> Для получения дополнительной информации о помощниках AlpineJs обратитесь к разделу [Js events](https://moonshine-laravel.com/docs/resource/advanced/advanced-js_events#helper).
+> Для получения дополнительной информации о помощниках AlpineJs обратитесь к разделу [Js events](/docs/{{version}}/advanced/js_events#helper).
 

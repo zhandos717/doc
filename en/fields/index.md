@@ -575,7 +575,7 @@ public function fields(): array
 ```
 
 > [!NOTE]
-> If you just need to specify which fields to display on pages or change the order of display, then you can use a convenient method [field overrides](https://moonshine-laravel.com/docs/resource/models-resources/resources-fields#override).
+> If you just need to specify which fields to display on pages or change the order of display, then you can use a convenient method [field overrides](/docs/{{version}}/resources/fields#override).
 
 <a name="show-when"></a>
 ## Dynamic display
@@ -1222,7 +1222,7 @@ public function someMethod(MoonShineRequest $request): void
 ```
 
 > [!NOTE]
-> Example of sorting the *CardsBuilder* component in the section [Recipes](https://moonshine-laravel.com/docs/resource/recipes/recipes#sorting-for-cards-builder)
+> Example of sorting the *CardsBuilder* component in the section [Recipes](/docs/{{version}}/recipes#sorting-for-cards-builder)
 
 <a name="for-value"></a>
 ## Methods for values

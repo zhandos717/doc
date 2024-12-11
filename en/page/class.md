@@ -82,7 +82,7 @@ class CustomPage extends Page
 <a name="components"></a>
 ## Components
 
-The page is built from components, which can be both decorations and components of the admin panel itself, [FormBuilder](https://moonshine-laravel.com/docs/resource/advanced/advanced-form_builder) , [TableBuilder](https://moonshine-laravel.com/docs/resource/advanced/advanced-table_builder) , and just *blade* components, and even *Livewire* components.
+The page is built from components, which can be both decorations and components of the admin panel itself, [FormBuilder](/docs/{{version}}/advanced/form_builder) , [TableBuilder](/docs/{{version}}/advanced/table_builder) , and just *blade* components, and even *Livewire* components.
 
 To register page components, use the `components()` method.
 
@@ -120,7 +120,7 @@ class CustomPage extends Page
 ```
 
 > [!NOTE]
-> For more detailed information, please refer to the section [Components](https://moonshine-laravel.com/docs/resource/components/components-index).
+> For more detailed information, please refer to the section [Components](/docs/{{version}}/components/index).
 
 <a name="breadcrumbs"></a>
 ## Bread crumbs

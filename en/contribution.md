@@ -1,4 +1,4 @@
-https://moonshine-laravel.com/docs/resource/getting-started/contribution?change-moonshine-locale=en
+/docs/{{version}}/contribution?_lang=en
 
 ------
 # Contribution Guide

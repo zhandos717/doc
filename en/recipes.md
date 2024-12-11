@@ -1,4 +1,4 @@
-https://moonshine-laravel.com/docs/resource/recipes/recipes?change-moonshine-locale=en
+/docs/{{version}}/recipes?_lang=en
 
 ------
 # Recipes

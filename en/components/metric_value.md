@@ -128,7 +128,7 @@ public function components(): array
 ```
 
 > [!NOTE]
-> For more detailed information, please refer to the section [Icons](https://moonshine-laravel.com/docs/resource/appearance/icons).
+> For more detailed information, please refer to the section [Icons](/docs/{{version}}/appearance/icons).
 
 ![value_metric_icon](https://raw.githubusercontent.com/moonshine-software/doc/2.x/resources/screenshots/value_metric_icon.png)
 ![value_metric_icon_dark](https://raw.githubusercontent.com/moonshine-software/doc/2.x/resources/screenshots/value_metric_icon_dark.png)
@@ -173,7 +173,7 @@ public function components(): array
 ```
 
 > [!NOTE]
-> See the [Decoration Layout](https://moonshine-laravel.com/docs/resource/components/components-decoration_layout) section for more details.
+> See the [Decoration Layout](/docs/{{version}}/components/decoration_layout) section for more details.
 
 ![value_metric_column_span](https://raw.githubusercontent.com/moonshine-software/doc/2.x/resources/screenshots/value_metric_column_span.png)
 ![value_metric_column_span_dark](https://raw.githubusercontent.com/moonshine-software/doc/2.x/resources/screenshots/value_metric_column_span_dark.png)

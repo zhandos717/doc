@@ -91,7 +91,7 @@ TableBuilder::make()
 ```
 
 > [!NOTE]
-> Соответствие данных с полями осуществляется через значение [column](https://moonshine-laravel.com/docs/resource/fields/fields-index#make) полей!
+> Соответствие данных с полями осуществляется через значение [column](/docs/{{version}}/fields/index#make) полей!
 
 
 
@@ -151,7 +151,7 @@ TableBuilder::make(items: User::paginate())
 
 
 > [!NOTE]
-> Для более подробной информации обратитесь к разделу [TypeCasts](https://moonshine-laravel.com/docs/resource/advanced/advanced-type_casts).
+> Для более подробной информации обратитесь к разделу [TypeCasts](/docs/{{version}}/advanced/type_casts).
 
 
 <a name="buttons"></a>

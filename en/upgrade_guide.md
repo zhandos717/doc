@@ -92,7 +92,7 @@ class MoonShineServiceProvider extends MoonShineApplicationServiceProvider
 **MoonShine 2.0** uses only icons from the Heroicons set, so it is necessary to replace the old system icons (add, app, bookmark, bookmark, clip, delete, edit, export, filter, search, show and users).
 
 > [!NOTE]
-> For more detailed information, please refer to the section [Icons](https://moonshine-laravel.com/docs/resource/appearance/icons).
+> For more detailed information, please refer to the section [Icons](/docs/{{version}}/appearance/icons).
 
 <a name="resources"></a>
 ## 5. Resources
@@ -106,7 +106,7 @@ The property to display in relationship fields `titleField` should be renamed to
 The property to go after save `routeAfterSave` in the **MoonShine 2.0** renamed to `redirectAfterSave`, or you can use the method `redirectAfterSave()`, which returns a string with the route to redirect.
 
 > [!NOTE]
-> For more information, please refer to the section [Resources](https://moonshine-laravel.com/docs/resource/models-resources/resources-index#redirects).
+> For more information, please refer to the section [Resources](/docs/{{version}}/resources/index#redirects).
 
 Also some properties have been renamed.
 
@@ -203,7 +203,7 @@ class ArticleResource extends ModelResource
 ```
 
 In **MoonShine 2.0** for fields. *HasOne* and *HasMany* there is no more separation and are only displayed in resourceMode. Methods `removable()` and `fullPage()` have been excluded.
-If these fields should be placed in the main form, you can use the field [Json in relationship mode](https://moonshine-laravel.com/docs/resource/fields/fields-json#relation).
+If these fields should be placed in the main form, you can use the field [Json in relationship mode](/docs/{{version}}/fields/json#relation).
 
 Method `onlyCount()` fields *HasMany* renamed to `onlyLink()` and now allows you to display not only the quantity, but also creates a link to view their records.
 
@@ -218,7 +218,7 @@ The *BelongsToMany* relationship field has a *BelongsToMany* method `select()` r
 In the **MoonShine 2.0** admin panel the same fields are used for building filters, duplicate fields for filters have been eliminated.
 
 > [!NOTE]
-> For more information, please refer to the section [Filters](https://moonshine-laravel.com/docs/resource/models-resources/resources-filters).
+> For more information, please refer to the section [Filters](/docs/{{version}}/resources/filters).
 
 <a name="import-export"></a>
 ## 8. Import / Export
@@ -245,7 +245,7 @@ class ArticleResource extends ModelResource
 ```
 
 > [!NOTE]
-> For more information, please refer to the section [Import/Export](https://moonshine-laravel.com/docs/resource/models-resources/resources-import_export).
+> For more information, please refer to the section [Import/Export](/docs/{{version}}/resources/import_export).
 
 <a name="actions"></a>
 ## 9. Actions
@@ -272,7 +272,7 @@ class ArticleResource extends ModelResource
 ```
 
 > [!TIP]
-> For more information, please refer to the section [ActionButton](https://moonshine-laravel.com/docs/resource/actionbutton/action_button).
+> For more information, please refer to the section [ActionButton](/docs/{{version}}/action_button).
 
 
 <a name="updating-dependencies"></a>
@@ -308,7 +308,7 @@ php artisan moonshine:install
 <a name="dashboard"></a>
 ## 12. Dashboard
 
-*Dashboard* as well as *CustomPage* are now [Pages](https://moonshine-laravel.com/docs/resource/page/page-class). Once installed, a page is generated for the *Dashboard* `app/MoonShine/Pages/Dashboard.php`. You need to move all components to a new page.
+*Dashboard* as well as *CustomPage* are now [Pages](/docs/{{version}}/page/class). Once installed, a page is generated for the *Dashboard* `app/MoonShine/Pages/Dashboard.php`. You need to move all components to a new page.
 
 > [!TIP]
 > Congratulations on your successful project update!

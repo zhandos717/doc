@@ -1,4 +1,4 @@
-https://moonshine-laravel.com/docs/resource/advanced/advanced-table_builder?change-moonshine-locale=en
+/docs/{{version}}/advanced/table_builder?_lang=en
 
 ------
 # TableBuilder
@@ -74,7 +74,7 @@ TableBuilder::make()
 ```
 
 > [!NOTE]
-> The correspondence of data with fields is carried out through the value [column](https://moonshine-laravel.com/docs/resource/fields/fields-index#make) fields!
+> The correspondence of data with fields is carried out through the value [column](/docs/{{version}}/fields/index#make) fields!
 
 
 
@@ -134,7 +134,7 @@ In this example, we cast the data to the `User` model format using `ModelCast`.
 
 
 > [!NOTE]
-> For more detailed information, please refer to the section [TypeCasts](https://moonshine-laravel.com/docs/resource/advanced/advanced-type_casts)
+> For more detailed information, please refer to the section [TypeCasts](/docs/{{version}}/advanced/type_casts)
 
 
 <a name="buttons"></a>

@@ -1,4 +1,4 @@
-https://moonshine-laravel.com/docs/resource/advanced/advanced-testings?change-moonshine-locale=en
+/docs/{{version}}/advanced/testings?_lang=en
 
 ------
 

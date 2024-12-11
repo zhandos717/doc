@@ -131,5 +131,5 @@ public function components(): array
 ```
 
 > [!NOTE]  
-> Подробнее смотрите в разделе [Decoration Layout](https://moonshine-laravel.com/docs/resource/components/components-decoration_layout).
+> Подробнее смотрите в разделе [Decoration Layout](/docs/{{version}}/components/decoration_layout).
 

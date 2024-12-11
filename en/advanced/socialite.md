@@ -1,4 +1,4 @@
-https://moonshine-laravel.com/docs/resource/advanced/advanced-socialite?change-moonshine-locale=en
+/docs/{{version}}/advanced/socialite?_lang=en
 
 ------
 # Socialite 

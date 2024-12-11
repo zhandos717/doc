@@ -1,4 +1,4 @@
-https://moonshine-laravel.com/docs/resource/advanced/advanced-type_casts?change-moonshine-locale=en
+/docs/{{version}}/advanced/type_casts?_lang=en
 
 ------
 

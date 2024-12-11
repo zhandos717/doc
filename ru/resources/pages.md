@@ -75,7 +75,7 @@ PageType::DETAIL;
 <a name="fields"></a>
 ## Добавление полей
 
-[Поля](https://moonshine-laravel.com/docs/resource/fields/fields-index) в **MoonShine** используются не только для ввода данных, но и для их вывода.  
+[Поля](/docs/{{version}}/fields/index) в **MoonShine** используются не только для ввода данных, но и для их вывода.  
 Метод `fields()` в классе страницы *crud* позволяет указать необходимые поля.
 
 ```php
@@ -155,7 +155,7 @@ class ArticleIndexPage extends IndexPage
 }
 ```
 > [!TIP]
-> Пример страницы индекса с компонентом *CardsBuilder* в разделе [Рецепты](https://moonshine-laravel.com/docs/resource/recipes/recipes#index-page-cards)
+> Пример страницы индекса с компонентом *CardsBuilder* в разделе [Рецепты](/docs/{{version}}/recipes#index-page-cards)
 
 #### DetailPage
 
@@ -289,10 +289,10 @@ class ArticleFormPage extends FormPage
 Для удобства все страницы *crud* разделены на три слоя, которые отвечают за отображение определенной области на странице.
 
 - `TopLayer` - используется для отображения метрик на странице индекса и для дополнительных кнопок на странице редактирования
-- `MainLayer` - этот слой используется для отображения основной информации с помощью [FormBuilder](https://moonshine-laravel.com/docs/resource/advanced/advanced-form_builder) и [TableBuilder](https://moonshine-laravel.com/docs/resource/advanced/advanced-table_builder)
+- `MainLayer` - этот слой используется для отображения основной информации с помощью [FormBuilder](/docs/{{version}}/advanced/form_builder) и [TableBuilder](/docs/{{version}}/advanced/table_builder)
 - `BottomLayer` - используется для отображения дополнительной информации
 
-Для настройки слоев используются соответствующие методы: `topLayer()`, `mainLayer()` и `bottomLayer()`. Методы должны возвращать массив [Компонентов](https://moonshine-laravel.com/docs/resource/page/page-class#components).
+Для настройки слоев используются соответствующие методы: `topLayer()`, `mainLayer()` и `bottomLayer()`. Методы должны возвращать массив [Компонентов](/docs/{{version}}/page/class#components).
 
 ```php
 namespace App\MoonShine\Pages\Post;

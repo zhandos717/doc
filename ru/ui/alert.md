@@ -55,7 +55,7 @@
 > Alert
 
 > [!NOTE]
-> Более подробную информацию смотрите в разделе [Иконки](https://moonshine-laravel.com/docs/resource/appearance/icons).
+> Более подробную информацию смотрите в разделе [Иконки](/docs/{{version}}/appearance/icons).
 
 <a name="removable"></a>
 ## Удаление уведомлений

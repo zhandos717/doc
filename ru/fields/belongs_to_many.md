@@ -40,7 +40,7 @@ BelongsToMany::make(
 - `$resource` - ресурс модели, на который ссылается отношение.
 
 > [!WARNING]
-> Наличие ресурса модели, на который ссылается отношение, обязательно! Ресурс также необходимо [зарегистрировать](https://moonshine-laravel.com/docs/resource/models-resources/resources-index#define) в сервис-провайдере *MoonShineServiceProvider* в методе `menu()` или `resources()`. В противном случае будет ошибка 404.
+> Наличие ресурса модели, на который ссылается отношение, обязательно! Ресурс также необходимо [зарегистрировать](/docs/{{version}}/resources/index#define) в сервис-провайдере *MoonShineServiceProvider* в методе `menu()` или `resources()`. В противном случае будет ошибка 404.
 
 ```php
 use MoonShine\Fields\Relationships\BelongsToMany;
@@ -586,7 +586,7 @@ public function fields(): array
                 asyncSearchValueCallback: function ($country, Field $field) {
                     return $country->id . ' | ' . $country->title;
                 },
-                'https://moonshine-laravel.com/async'
+                '/async'
             )
     ];
 }

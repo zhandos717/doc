@@ -79,7 +79,7 @@ to_page(page: PageType::FORM, fragment: true);
 ```
 
 > [!TIP] 
-> Для получения дополнительной информации о типах страниц см. [PageType](https://moonshine-laravel.com/docs/resource/models-resources/resources-pages#page-type).
+> Для получения дополнительной информации о типах страниц см. [PageType](/docs/{{version}}/resources/pages#page-type).
 
 <a name="current-page"></a>
 ## Текущая страница

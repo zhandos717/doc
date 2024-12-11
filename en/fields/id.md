@@ -1,6 +1,6 @@
 # ID
 
-Extends [Hidden](https://moonshine-laravel.com/docs/resource/fields/fields-hidden)
+Extends [Hidden](/docs/{{version}}/fields/hidden)
 * has the same features  
 
 The *ID* field is used for the primary key.

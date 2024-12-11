@@ -1,6 +1,6 @@
 # MorphOne
 
-Расширяет [HasOne](https://moonshine-laravel.com/docs/resource/fields/fields-has_one)
+Расширяет [HasOne](/docs/{{version}}/fields/has_one)
 * имеет те же функции  
 
 Поле отношения в Laravel типа morphOne.

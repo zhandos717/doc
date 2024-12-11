@@ -1,4 +1,4 @@
-https://moonshine-laravel.com/docs/resource/advanced/advanced-development?change-moonshine-locale=en
+/docs/{{version}}/advanced/development?_lang=en
 
 ------
 

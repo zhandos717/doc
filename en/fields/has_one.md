@@ -31,7 +31,7 @@ HasOne::make(
 
 > [!WARNING]
 > The presence of the model resource referenced by the relation is mandatory!  
-> The resource also needs to be [registered](https://moonshine-laravel.com/docs/resource/models-resources/resources-index#define) with the service provider *MoonShineServiceProvider* in the method `menu()` or `resources()`. Otherwise, there will be a 404 error.
+> The resource also needs to be [registered](/docs/{{version}}/resources/index#define) with the service provider *MoonShineServiceProvider* in the method `menu()` or `resources()`. Otherwise, there will be a 404 error.
 
 ```php
 use MoonShine\Fields\Relationships\HasOne; 
@@ -159,4 +159,4 @@ $this->getParentId();
 ```
 
 > [!TIP]
-> Recipe: [saving files](https://moonshine-laravel.com/docs/resource/recipes/recipes#hasmany-parent-id) _HasMany_ connections in the directory with the parent ID.
+> Recipe: [saving files](/docs/{{version}}/recipes#hasmany-parent-id) _HasMany_ connections in the directory with the parent ID.

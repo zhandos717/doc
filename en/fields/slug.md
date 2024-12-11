@@ -9,7 +9,7 @@
 
 ---
 
-Extends [Text](https://moonshine-laravel.com/docs/resource/fields/fields-text)
+Extends [Text](/docs/{{version}}/fields/text)
 * has the same features
 
 > [!INFO]
@@ -166,4 +166,4 @@ public function fields(): array
 ```
 
 > [!NOTE]
-> Lives is based on [field reactivity](https://moonshine-laravel.com/docs/resource/fields/fields-index#reactive).
+> Lives is based on [field reactivity](/docs/{{version}}/fields/index#reactive).

@@ -70,7 +70,7 @@ public function fields(): array
 ```
 
 > [!NOTE]
-> The default is _disk_ `public`. You can change it in the file  [configurations](https://moonshine-laravel.com/docs/resource/getting-started/configuration).
+> The default is _disk_ `public`. You can change it in the file  [configurations](/docs/{{version}}/configuration).
 
 > [!NOTE] 
 >When using the `local` driver, the `url` value returned is not a URL. For this reason, we >recommend that you always store your files with names that will create valid URLs.
@@ -409,4 +409,4 @@ removeExcludedFiles()
 ```
 
 > [!TIP]
-> Recipe: [saving images](https://moonshine-laravel.com/docs/resource/recipes/recipes#images-in-linked-table) in the linked table.
+> Recipe: [saving images](/docs/{{version}}/recipes#images-in-linked-table) in the linked table.

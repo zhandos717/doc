@@ -6,7 +6,7 @@
 
 ---
 
-Extends [Text](https://moonshine-laravel.com/docs/resource/fields/fields-text)
+Extends [Text](/docs/{{version}}/fields/text)
 * has the same features
 
 <a name="basics"></a>

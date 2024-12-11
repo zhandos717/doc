@@ -75,7 +75,7 @@ PageType::DETAIL;
 <a name="fields"></a>
 ## Adding fields
 
-[Fields](https://moonshine-laravel.com/docs/resource/fields/fields-index) in **MoonShine** are used not only for data input, but also for their output.  
+[Fields](/docs/{{version}}/fields/index) in **MoonShine** are used not only for data input, but also for their output.  
 The `fields()` method in the page *crud* class allows you to specify the required fields.
 
 ```php
@@ -155,7 +155,7 @@ class ArticleIndexPage extends IndexPage
 }
 ```
 > [!TIP]
-> Example index page with *CardsBuilder* component in section [Recipes](https://moonshine-laravel.com/docs/resource/recipes/recipes#index-page-cards)
+> Example index page with *CardsBuilder* component in section [Recipes](/docs/{{version}}/recipes#index-page-cards)
 - DetailPage
 
 The `detailComponent()` method allows you to change the main component of a detail page.
@@ -289,10 +289,10 @@ class ArticleFormPage extends FormPage
 For convenience, all *crud* pages are divided into three layers, which are responsible for displaying a specific area on the page.
 
 - `TopLayer` - used to display metrics on the index page and for additional buttons on the edit page
-- `MainLayer` - this layer is used to display basic information using [FormBuilder](https://moonshine-laravel.com/docs/resource/advanced/advanced-form_builder) and [TableBuilder](https://moonshine-laravel.com/docs/resource/advanced/advanced-table_builder)
+- `MainLayer` - this layer is used to display basic information using [FormBuilder](/docs/{{version}}/advanced/form_builder) and [TableBuilder](/docs/{{version}}/advanced/table_builder)
 - `BottomLayer` - used to display additional information
 
-To customize layers, the corresponding methods are used: `topLayer()`, `mainLayer()`, and `bottomLayer()`. Methods must return [Components](https://moonshine-laravel.com/docs/resource/page/page-class#components) an array.
+To customize layers, the corresponding methods are used: `topLayer()`, `mainLayer()`, and `bottomLayer()`. Methods must return [Components](/docs/{{version}}/page/class#components) an array.
 
 ```php
 namespace App\MoonShine\Pages\Post;

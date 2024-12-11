@@ -41,7 +41,7 @@ class PostResource extends ModelResource
 
 > [!TIP]
 > Поля являются ключевым элементом в построении форм в админ-панели **Moonshine**.
-[Подробнее о полях](https://moonshine-laravel.com/docs/resource/fields/fields-index)
+[Подробнее о полях](/docs/{{version}}/fields/index)
 
 Если вам нужно кэшировать состояние фильтров, используйте свойство `saveFilterState` в ресурсе
 

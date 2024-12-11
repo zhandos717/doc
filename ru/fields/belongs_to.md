@@ -38,7 +38,7 @@ BelongsTo::make(
 
 > [!WARNING]
 > Наличие ресурса модели, на который ссылается отношение, обязательно!
-> Ресурс также необходимо [зарегистрировать](https://moonshine-laravel.com/docs/resource/models-resources/resources-index#define) в сервис-провайдере _MoonShineServiceProvider_ в методе `menu()` или `resources()`. В противном случае будет ошибка 404.
+> Ресурс также необходимо [зарегистрировать](/docs/{{version}}/resources/index#define) в сервис-провайдере _MoonShineServiceProvider_ в методе `menu()` или `resources()`. В противном случае будет ошибка 404.
 
 
 ```php
@@ -135,7 +135,7 @@ public function fields(): array
 ```
 
 > [!WARNING]
-> При использовании поля _BelongsTo_ для сортировки или фильтрации позиций необходимо методом `setColumn()` установить поле в таблице базы данных или переопределить метод [sorting](https://moonshine-laravel.com/docs/resource/models-resources/resources-query#order) у ресурса модели.
+> При использовании поля _BelongsTo_ для сортировки или фильтрации позиций необходимо методом `setColumn()` установить поле в таблице базы данных или переопределить метод [sorting](/docs/{{version}}/resources/query#order) у ресурса модели.
 
 Если вам нужно изменить column при работе с моделями, используйте метод `onAfterFill`
 
@@ -395,7 +395,7 @@ public function fields(): array
                 asyncSearchValueCallback: function ($country, Field $field) {
                     return $country->id . ' | ' . $country->title;
                 },
-                'https://moonshine-laravel.com/async'
+                '/async'
             )
     ];
 }

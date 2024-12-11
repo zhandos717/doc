@@ -29,7 +29,7 @@ HasOne::make(
 
 > [!WARNING]
 > Наличие ресурса модели, на который ссылается отношение, обязательно!  
-> Ресурс также необходимо [зарегистрировать](https://moonshine-laravel.com/docs/resource/models-resources/resources-index#define) в сервис-провайдере *MoonShineServiceProvider* в методе `menu()` или `resources()`. В противном случае будет ошибка 404.
+> Ресурс также необходимо [зарегистрировать](/docs/{{version}}/resources/index#define) в сервис-провайдере *MoonShineServiceProvider* в методе `menu()` или `resources()`. В противном случае будет ошибка 404.
 
 ```php
 use MoonShine\Fields\Relationships\HasOne; 
@@ -157,4 +157,4 @@ $this->getParentId();
 ```
 
 > [!TIP]
-> Рецепт: [сохранение файлов](https://moonshine-laravel.com/docs/resource/recipes/recipes#hasmany-parent-id) связей *HasMany* в директории с ID родителя.
+> Рецепт: [сохранение файлов](/docs/{{version}}/recipes#hasmany-parent-id) связей *HasMany* в директории с ID родителя.

@@ -13,7 +13,7 @@
  To insert icons into your custom elements, you can use the `moonshine::icon` component.
  
 > [!NOTE]
-> All available [icons](https://moonshine-laravel.com/docs/resource/appearance/icons).
+> All available [icons](/docs/{{version}}/appearance/icons).
 
 <a name="size"></a>
 ## Size
@@ -37,7 +37,7 @@ Using the `size` parameter you can set the size of the icon.
 ```
 
 > [!TIP]
-> There are several colors available by default, but you can expand them using your own [color classes](https://moonshine-laravel.com/docs/resource/appearance/appearance-assets) TailwindCSS.
+> There are several colors available by default, but you can expand them using your own [color classes](/docs/{{version}}/appearance/assets) TailwindCSS.
 
 <a name="customization"></a>
 ## Customization
@@ -53,4 +53,4 @@ A custom style for icons can be set using the `class` parameter.
 ```
 
 > [!TIP]
-> Build MoonShine contains a limited list of TailwindCSS classes. Use [custom styles](https://moonshine-laravel.com/docs/resource/appearance/appearance-assets).
+> Build MoonShine contains a limited list of TailwindCSS classes. Use [custom styles](/docs/{{version}}/appearance/assets).

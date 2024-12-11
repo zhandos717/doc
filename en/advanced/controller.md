@@ -1,4 +1,4 @@
-https://moonshine-laravel.com/docs/resource/advanced/advanced-controller?change-moonshine-locale=en
+/docs/{{version}}/advanced/controller?_lang=en
 
 ------
 # Controllers  

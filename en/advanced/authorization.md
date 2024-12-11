@@ -1,4 +1,4 @@
-https://moonshine-laravel.com/docs/resource/advanced/advanced-authorization?change-moonshine-locale=en
+/docs/{{version}}/advanced/authorization?_lang=en
 
 ------
 # Authorization

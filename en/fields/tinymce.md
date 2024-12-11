@@ -7,7 +7,7 @@
 
 ---
 
-Extends [Textarea](https://moonshine-laravel.com/docs/resource/fields/fields-textarea)
+Extends [Textarea](/docs/{{version}}/fields/textarea)
 * has the same features
 
 <a name="make"></a>  

@@ -57,7 +57,7 @@ public function components(): array
 ```
 
 > [!NOTE]
-> Для более подробной информации обратитесь к разделу [Иконки](https://moonshine-laravel.com/docs/resource/appearance/icons).
+> Для более подробной информации обратитесь к разделу [Иконки](/docs/{{version}}/appearance/icons).
 
 <a name="show"></a> 
 ## Отображение

@@ -1,6 +1,6 @@
 # Position
 
-Расширяет [Preview](https://moonshine-laravel.com/docs/resource/fields/fields-preview)
+Расширяет [Preview](/docs/{{version}}/fields/preview)
 * имеет те же функции  
 
 Поле *Position* позволяет создавать нумерацию для итерируемых элементов.

@@ -92,7 +92,7 @@ class MoonShineServiceProvider extends MoonShineApplicationServiceProvider
 **MoonShine 2.0** использует только иконки из набора Heroicons, поэтому необходимо заменить старые системные иконки (add, app, bookmark, bookmark, clip, delete, edit, export, filter, search, show и users).
 
 > [!NOTE]
-> Для более подробной информации обратитесь к разделу [Иконки](https://moonshine-laravel.com/docs/resource/appearance/icons).
+> Для более подробной информации обратитесь к разделу [Иконки](/docs/{{version}}/appearance/icons).
 
 <a name="resources"></a>
 ## 5. Ресурсы
@@ -106,7 +106,7 @@ class MoonShineServiceProvider extends MoonShineApplicationServiceProvider
 Свойство для перехода после сохранения `routeAfterSave` в **MoonShine 2.0** переименовано в `redirectAfterSave`, или можно использовать метод `redirectAfterSave()`, который возвращает строку с маршрутом для перенаправления.
 
 > [!NOTE]
-> Для получения дополнительной информации обратитесь к разделу [Ресурсы](https://moonshine-laravel.com/docs/resource/models-resources/resources-index#redirects).
+> Для получения дополнительной информации обратитесь к разделу [Ресурсы](/docs/{{version}}/resources/index#redirects).
 
 Также были переименованы некоторые свойства.
 
@@ -203,7 +203,7 @@ class ArticleResource extends ModelResource
 ```
 
 В **MoonShine 2.0** для полей *HasOne* и *HasMany* больше нет разделения и отображаются только в resourceMode. Методы `removable()` и `fullPage()` были исключены.
-Если эти поля должны быть размещены в основной форме, можно использовать поле [Json в режиме отношений](https://moonshine-laravel.com/docs/resource/fields/fields-json#relation).
+Если эти поля должны быть размещены в основной форме, можно использовать поле [Json в режиме отношений](/docs/{{version}}/fields/json#relation).
 
 Метод `onlyCount()` полей *HasMany* переименован в `onlyLink()` и теперь позволяет отображать не только количество, но и создает ссылку для просмотра их записей.
 
@@ -218,7 +218,7 @@ class ArticleResource extends ModelResource
 В панели администрирования **MoonShine 2.0** для построения фильтров используются те же поля, дублирующие поля для фильтров устранены.
 
 > [!NOTE]
-> Для получения дополнительной информации обратитесь к разделу [Фильтры](https://moonshine-laravel.com/docs/resource/models-resources/resources-filters).
+> Для получения дополнительной информации обратитесь к разделу [Фильтры](/docs/{{version}}/resources/filters).
 
 <a name="import-export"></a>
 ## 8. Импорт / Экспорт
@@ -245,7 +245,7 @@ class ArticleResource extends ModelResource
 ```
 
 > [!NOTE]
-> Для получения дополнительной информации обратитесь к разделу [Импорт/Экспорт](https://moonshine-laravel.com/docs/resource/models-resources/resources-import_export).
+> Для получения дополнительной информации обратитесь к разделу [Импорт/Экспорт](/docs/{{version}}/resources/import_export).
 
 <a name="actions"></a>
 ## 9. Действия
@@ -272,7 +272,7 @@ class ArticleResource extends ModelResource
 ```
 
 > [!TIP]
-> Для получения дополнительной информации обратитесь к разделу [ActionButton](https://moonshine-laravel.com/docs/resource/actionbutton/action_button).
+> Для получения дополнительной информации обратитесь к разделу [ActionButton](/docs/{{version}}/action_button).
 
 
 <a name="updating-dependencies"></a>
@@ -308,7 +308,7 @@ php artisan moonshine:install
 <a name="dashboard"></a>
 ## 12. Панель управления
 
-*Dashboard*, как и *CustomPage*, теперь являются [Страницами](https://moonshine-laravel.com/docs/resource/page/page-class). После установки для *Dashboard* генерируется страница `app/MoonShine/Pages/Dashboard.php`. Необходимо перенести все компоненты на новую страницу.
+*Dashboard*, как и *CustomPage*, теперь являются [Страницами](/docs/{{version}}/page/class). После установки для *Dashboard* генерируется страница `app/MoonShine/Pages/Dashboard.php`. Необходимо перенести все компоненты на новую страницу.
 
 > [!TIP]
 > Поздравляем с успешным обновлением проекта!

@@ -16,7 +16,7 @@ Adding fields to _ModelResource_ is easy!
 <a name="default"></a>
 ## Default
 
-In _ModelResource_ by default it is necessary in the `fields()` method return an array with all [Fields](https://moonshine-laravel.com/docs/resource/fields/fields-index) .
+In _ModelResource_ by default it is necessary in the `fields()` method return an array with all [Fields](/docs/{{version}}/fields/index) .
 
 ```php
 namespace App\MoonShine\Resources;

@@ -55,7 +55,7 @@ public function components(): array
 //...
 
 ```
-![image_1](https://moonshine-laravel.com/images/image_1.jpg)
+![image_1](/images/image_1.jpg)
 
 <a name="header"></a>
 ## Header
@@ -76,7 +76,7 @@ Cards::make(
     ->header(static fn() => Badge::make('new', 'success'))
 ```
 
-![image_2](https://moonshine-laravel.com/images/image_2.jpg)
+![image_2](/images/image_2.jpg)
 
 <a name="actions"></a>
 ## Buttons
@@ -98,7 +98,7 @@ Cards::make(
     )
 ```
 
-![image_1](https://moonshine-laravel.com/images/image_1.jpg)
+![image_1](/images/image_1.jpg)
 
 <a name="subtitle"></a>
 ## Subtitle
@@ -117,7 +117,7 @@ Cards::make(
     ->subtitle(static fn() => 'Subtitle')
 ```
 
-![image_2](https://moonshine-laravel.com/images/image_2.jpg)
+![image_2](/images/image_2.jpg)
 
 <a name="url"></a>
 ## Link
@@ -139,7 +139,7 @@ Cards::make(
     ->url(static fn() => 'https://cutcode.dev')
 ```
 
-![image_1](https://moonshine-laravel.com/images/image_1.jpg)
+![image_1](/images/image_1.jpg)
 
 <a name="thumbnail"></a>
 ## Thumbnails
@@ -157,7 +157,7 @@ Cards::make(
     ->thumbnail(['/images/image_2.jpg','/images/image_1.jpg'])
 ```
 
-![image_1](https://moonshine-laravel.com/images/image_1.jpg)
+![image_1](/images/image_1.jpg)
 
 <a name="values"></a>
 ## List of values
@@ -181,7 +181,7 @@ Cards::make(
     ])
 ```
 
-![image_1](https://moonshine-laravel.com/images/image_1.jpg)
+![image_1](/images/image_1.jpg)
 
 <a name="overlay"></a>
 ## Overlay mode
@@ -200,4 +200,4 @@ Cards::make(
     ->overlay()
 ```
 
-![image_2](https://moonshine-laravel.com/images/image_2.jpg)
+![image_2](/images/image_2.jpg)

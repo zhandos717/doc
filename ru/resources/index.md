@@ -45,9 +45,9 @@ php artisan moonshine:resource Post
 - выберите тип ресурса
 
 При создании *ModelResource* доступно несколько вариантов:
-- [Ресурс модели по умолчанию](https://moonshine-laravel.com/docs/resource/models-resources/resources-fields#default) - ресурс модели с общими полями
-- [Отдельный ресурс модели](https://moonshine-laravel.com/docs/resource/models-resources/resources-fields#separate) - ресурс модели с разделением полей
-- [Ресурс модели со страницами](https://moonshine-laravel.com/docs/resource/models-resources/resources-pages) - ресурс модели со страницами.
+- [Ресурс модели по умолчанию](/docs/{{version}}/resources/fields#default) - ресурс модели с общими полями
+- [Отдельный ресурс модели](/docs/{{version}}/resources/fields#separate) - ресурс модели с разделением полей
+- [Ресурс модели со страницами](/docs/{{version}}/resources/pages) - ресурс модели со страницами.
 
 В результате будет создан класс `PostResource`, который станет основой нового раздела в панели. По умолчанию он располагается в директории `app/MoonShine/Resources`.  
 MoonShine автоматически, на основе имени, свяжет ресурс с моделью `app/Models/Post`. Заголовок раздела также будет сгенерирован автоматически и будет "Posts".
@@ -117,7 +117,7 @@ class MoonShineServiceProvider extends MoonShineApplicationServiceProvider
 ```
 
 > [!TIP]
-> О расширенных настройках вы можете узнать в разделе [Меню](https://moonshine-laravel.com/docs/resource/menu/menu).
+> О расширенных настройках вы можете узнать в разделе [Меню](/docs/{{version}}/menu).
 
 Если вам нужно только зарегистрировать ресурс в системе, не добавляя его в навигационное меню:
 
@@ -229,7 +229,7 @@ class PostResource extends ModelResource
 ## Кнопки
 
 По умолчанию на странице индекса ресурса модели есть только кнопка создания.  
-Метод `actions()` позволяет добавить дополнительные [кнопки](https://moonshine-laravel.com/docs/resource/actionbutton/action_button).
+Метод `actions()` позволяет добавить дополнительные [кнопки](/docs/{{version}}/action_button).
 
 ```php
 namespace MoonShine\Resources;
@@ -358,7 +358,7 @@ class PostResource extends ModelResource
 ```
 
 > [!TIP]
-> Рецепт: [Изменение хлебных крошек из ресурса](https://moonshine-laravel.com/docs/resource/recipes/recipes#custom-breadcrumbs).
+> Рецепт: [Изменение хлебных крошек из ресурса](/docs/{{version}}/recipes#custom-breadcrumbs).
 
 Вы также можете подключить трейт к ресурсу и внутри трейта добавить метод по соглашению об именовании - `boot{TraitName}` и через трейт получить доступ к загрузке ресурса
 

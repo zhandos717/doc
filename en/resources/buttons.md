@@ -22,12 +22,12 @@
 ## Basics
 
 Buttons are displayed on resource pages: index page, form pages (create/edit) and detail page.  
-They are responsible for basic actions with elements and are components [`ActionButton`](https://moonshine-laravel.com/docs/resource/actionbutton/action_button).
+They are responsible for basic actions with elements and are components [`ActionButton`](/docs/{{version}}/action_button).
 
-In the **MoonShine** admin panel there are many methods that allow you to override the resource as a separate [button](https://moonshine-laravel.com/docs/resource/actionbutton/action_button) , and the whole [group](https://moonshine-laravel.com/docs/resource/actionbutton/action_button#group) .
+In the **MoonShine** admin panel there are many methods that allow you to override the resource as a separate [button](/docs/{{version}}/action_button) , and the whole [group](/docs/{{version}}/action_button#group) .
 
 > [!NOTE]
-> More detailed information about the [ActionButton](https://moonshine-laravel.com/docs/resource/actionbutton/action_button) component.
+> More detailed information about the [ActionButton](/docs/{{version}}/action_button) component.
 
 > [!WARNING]
 > The buttons for creating, viewing, editing, deleting and mass deleting are placed in separate classes, in order to apply all the necessary methods to them and thereby eliminate duplication, since these buttons are also used in HasMany, BelongsToMany, etc.
@@ -325,7 +325,7 @@ public function getFiltersButton(): ActionButton
 <a name="form"></a>
 ## Form buttons
 
-The `getFormBuilderButtons()` method allows you to add additional [buttons](https://moonshine-laravel.com/docs/resource/actionbutton/action_button) into the create or edit form.
+The `getFormBuilderButtons()` method allows you to add additional [buttons](/docs/{{version}}/action_button) into the create or edit form.
 
 ```php
 namespace MoonShine\Resources;
@@ -354,7 +354,7 @@ class PostResource extends ModelResource
 ## Buttons on the index page
 
 By default, the model resource index page only has a button to create.  
-The `actions()` method allows you to add additional [buttons](https://moonshine-laravel.com/docs/resource/actionbutton/action_button) .
+The `actions()` method allows you to add additional [buttons](/docs/{{version}}/action_button) .
 
 ```php
 namespace MoonShine\Resources;
@@ -386,7 +386,7 @@ class PostResource extends ModelResource
 <a name="buttons"></a>
 ## Element buttons
 
-The `buttons()` method allows you to specify additional buttons, which will be displayed in the index table, in the creation and editing forms, as well as on the detailed page, if they are not overridden for pages by the corresponding methods [`indexButton()`](https://moonshine-laravel.com/docs/resource/models-resources/resources-buttons#indexButton) , [`formButtons()`](https://moonshine-laravel.com/docs/resource/models-resources/resources-buttons#formButtons) and [`detailButtons()`](https://moonshine-laravel.com/docs/resource/models-resources/resources-buttons#detailButtons) .
+The `buttons()` method allows you to specify additional buttons, which will be displayed in the index table, in the creation and editing forms, as well as on the detailed page, if they are not overridden for pages by the corresponding methods [`indexButton()`](/docs/{{version}}/resources/buttons#indexButton) , [`formButtons()`](/docs/{{version}}/resources/buttons#formButtons) and [`detailButtons()`](/docs/{{version}}/resources/buttons#detailButtons) .
 
 ```php
 namespace MoonShine\Resources;
@@ -442,7 +442,7 @@ class PostResource extends ModelResource
 ![resource_buttons_index_dark](https://raw.githubusercontent.com/moonshine-software/doc/2.x/resources/screenshots/resource_buttons_index_dark.png)
 
 > [!TIP]
-> An example of creating custom buttons for the index table in the section [Recipes](https://moonshine-laravel.com/docs/resource/recipes/recipes#custom-buttons)
+> An example of creating custom buttons for the index table in the section [Recipes](/docs/{{version}}/recipes#custom-buttons)
 
 For bulk actions with elements, you need to add the `bulk()` method
 

@@ -17,7 +17,7 @@
 
 ---
 
-Расширяет [MoonShineComponent](https://moonshine-laravel.com/docs/resource/components/components-moonshine_component)
+Расширяет [MoonShineComponent](/docs/{{version}}/components/moonshine_component)
 * имеет те же функции
 
 <a name="basics"></a> 
@@ -101,7 +101,7 @@ public function components(): array
 ```
 
 > [!NOTE]
-> Для получения более подробной информации обратитесь к разделу [Иконки](https://moonshine-laravel.com/docs/resource/appearance/icons).
+> Для получения более подробной информации обратитесь к разделу [Иконки](/docs/{{version}}/appearance/icons).
 
 <a name="color"></a> 
 ## Цвет
@@ -269,7 +269,7 @@ public function components(): array
 ```
 
 > [!NOTE]
-> О [Fragment](https://moonshine-laravel.com/docs/resource/components/components-decoration_fragment) можно узнать в разделе "Компоненты"
+> О [Fragment](/docs/{{version}}/components/decoration_fragment) можно узнать в разделе "Компоненты"
 
 <a name="confirm"></a> 
 ## Подтверждение
@@ -289,7 +289,7 @@ ActionButton::make(
 ```
 
 > [!WARNING]
-> `withConfirm` не работает с `async` режимами. Для асинхронного режима нужно сделать свою реализацию через [Modal](https://moonshine-laravel.com/docs/resource/components/components-decoration_modal) или [inModal()](https://moonshine-laravel.com/docs/resource/components/components-decoration_modal).
+> `withConfirm` не работает с `async` режимами. Для асинхронного режима нужно сделать свою реализацию через [Modal](/docs/{{version}}/components/decoration_modal) или [inModal()](/docs/{{version}}/components/decoration_modal).
 
 <a name="offcanvas"></a> 
 ## Боковая панель
@@ -453,7 +453,7 @@ public function components(): array
 }
 ```
 > [!TIP]
-> Для работы события `table-updated-index-table` должен быть включен [асинхронный режим](https://moonshine-laravel.com/docs/resource/models-resources/resources-table#async).
+> Для работы события `table-updated-index-table` должен быть включен [асинхронный режим](/docs/{{version}}/resources/table#async).
 
 #### Обратный вызов
 
@@ -555,7 +555,7 @@ public function updateSomething(MoonShineRequest $request)
 
 Если в запросе присутствует *resourceItem*, вы можете получить доступ к текущему элементу в ресурсе через метод `getItem()`.
 
-- Когда в данных есть модель, и кнопка создается в методе `buttons()` [TableBuilder](https://moonshine-laravel.com/docs/resource/advanced/advanced-table_builder#buttons), [CardsBuilder](https://moonshine-laravel.com/docs/resource/advanced/advanced-cards_builder#buttons) или [FormBuilder](https://moonshine-laravel.com/docs/resource/advanced/advanced-form_builder#buttons), она автоматически заполняется данными, и параметры будут содержать `resourceItem`.
+- Когда в данных есть модель, и кнопка создается в методе `buttons()` [TableBuilder](/docs/{{version}}/advanced/table_builder#buttons), [CardsBuilder](/docs/{{version}}/advanced/cards_builder#buttons) или [FormBuilder](/docs/{{version}}/advanced/form_builder#buttons), она автоматически заполняется данными, и параметры будут содержать `resourceItem`.
 - Когда кнопка находится на странице формы *ModelResource*, вы можете передать id текущего элемента.
 
 ```php

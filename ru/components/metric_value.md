@@ -118,7 +118,7 @@ public function components(): array
 ```
 
 > [!NOTE]
-> Для более подробной информации обратитесь к разделу [Иконки](https://moonshine-laravel.com/docs/resource/appearance/icons).
+> Для более подробной информации обратитесь к разделу [Иконки](/docs/{{version}}/appearance/icons).
 
 <a name="column-span"></a>
 ## Ширина блока
@@ -160,5 +160,5 @@ public function components(): array
 ```
 
 > [!NOTE]
-> Подробнее смотрите в разделе [Decoration Layout](https://moonshine-laravel.com/docs/resource/components/components-decoration_layout).
+> Подробнее смотрите в разделе [Decoration Layout](/docs/{{version}}/components/decoration_layout).
 

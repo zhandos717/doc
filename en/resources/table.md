@@ -42,7 +42,7 @@ class PostResource extends ModelResource
 To add buttons to the table, use `ActionButton` and the `indexButtons` or `buttons` methods in the resource
 
 > [!TIP]
-> [More details ActionButton](https://moonshine-laravel.com/docs/resource/actionbutton/action_button)
+> [More details ActionButton](/docs/{{version}}/action_button)
 
 ```php
 public function indexButtons(): array
@@ -54,7 +54,7 @@ public function indexButtons(): array
 ```
 
 > [!TIP]
-> An example of creating custom buttons for the index table in the section [Recipes](https://moonshine-laravel.com/docs/resource/recipes/recipes#custom-buttons)
+> An example of creating custom buttons for the index table in the section [Recipes](/docs/{{version}}/recipes#custom-buttons)
 
 For bulk actions you need to add the `bulk` method
 

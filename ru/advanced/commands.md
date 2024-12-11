@@ -33,7 +33,7 @@ php artisan moonshine:install
 - `-m`, `--without-migrations` - без выполнения миграций.
 
 > [!NOTE]
-> Для более подробной информации обратитесь к разделу [Установка](https://moonshine-laravel.com/docs/resource/getting-started/installation).
+> Для более подробной информации обратитесь к разделу [Установка](/docs/{{version}}/installation).
 
 <a name="apply"></a>
 ## Apply
@@ -58,7 +58,7 @@ php artisan moonshine:component
 После выполнения команды в директории `app/MoonShine/Components` будет создан класс для компонента, а в директории `resources/views/admin/components` - файл *Blade*.
 
 > [!NOTE]
-> Для более подробной информации обратитесь к разделу [Компоненты](https://moonshine-laravel.com/docs/resource/components/components-index).
+> Для более подробной информации обратитесь к разделу [Компоненты](/docs/{{version}}/components/index).
 
 <a name="controller"></a>
 # Контроллер
@@ -72,7 +72,7 @@ php artisan moonshine:controller
 После выполнения команды в директории `app/MoonShine/Controllers` будет создан класс контроллера, который можно использовать в маршрутах админ-панели.
 
 > [!NOTE]
-> Для более подробной информации обратитесь к разделу [Контроллеры](https://moonshine-laravel.com/docs/resource/advanced/advanced-controller).
+> Для более подробной информации обратитесь к разделу [Контроллеры](/docs/{{version}}/advanced/controller).
 
 <a name="field"></a>
 ## Поле
@@ -88,7 +88,7 @@ php artisan moonshine:field
 После выполнения команды в директории `app/MoonShine/Fields` будет создан класс поля, а в директории `/resources/views/admin/fields` - файл *Blade*.
 
 > [!NOTE]
-> Для более подробной информации обратитесь к разделу [Поле](https://moonshine-laravel.com/docs/resource/fields/fields-index).
+> Для более подробной информации обратитесь к разделу [Поле](/docs/{{version}}/fields/index).
 
 <a name="handler"></a>
 ## Обработчик
@@ -102,7 +102,7 @@ php artisan moonshine:handler
 После выполнения команды в директории `app/MoonShine/Handlers` будет создан класс обработчика.
 
 > [!NOTE]
-> Для более подробной информации обратитесь к разделу [Импорт/Экспорт](https://moonshine-laravel.com/docs/resource/models-resources/resources-import_export).
+> Для более подробной информации обратитесь к разделу [Импорт/Экспорт](/docs/{{version}}/resources/import_export).
 
 <a name="page"></a>
 ## Страница
@@ -116,7 +116,7 @@ php artisan moonshine:handler
 После выполнения команды в директории `app/MoonShine/Pages` будет создана страница по умолчанию (или группа страниц).
 
 > [!NOTE]
-> Для более подробной информации обратитесь к разделу [Страница](https://moonshine-laravel.com/docs/resource/page/page-class).
+> Для более подробной информации обратитесь к разделу [Страница](/docs/{{version}}/page/class).
 
 <a name="policy"></a>
 ## Политика
@@ -130,7 +130,7 @@ php artisan moonshine:policy
 После выполнения команды в директории `app/Policies` будет создан класс.
 
 > [!NOTE]
-> Для более подробной информации обратитесь к разделу [Авторизация](https://moonshine-laravel.com/docs/resource/advanced/advanced-authorization).
+> Для более подробной информации обратитесь к разделу [Авторизация](/docs/{{version}}/advanced/authorization).
 
 <a name="resource"></a>
 ## Ресурс
@@ -149,16 +149,16 @@ php artisan moonshine:resource
 
 При создании *Resource* доступно несколько вариантов:
 
-- **[Модельный ресурс по умолчанию](https://moonshine-laravel.com/docs/resource/models-resources/resources-fields#default)** - модельный ресурс с общими полями;
-- **[Отдельный модельный ресурс](https://moonshine-laravel.com/docs/resource/models-resources/resources-fields#separate)** - модельный ресурс с разделением полей;
-- **[Модельный ресурс со страницами](https://moonshine-laravel.com/docs/resource/models-resources/resources-pages)** - модельный ресурс со страницами;
+- **[Модельный ресурс по умолчанию](/docs/{{version}}/resources/fields#default)** - модельный ресурс с общими полями;
+- **[Отдельный модельный ресурс](/docs/{{version}}/resources/fields#separate)** - модельный ресурс с разделением полей;
+- **[Модельный ресурс со страницами](/docs/{{version}}/resources/pages)** - модельный ресурс со страницами;
 - **Пустой ресурс** - пустой ресурс.
 
 После выполнения команды в директории `app/MoonShine/Resources/` будет создан файл ресурса.
 Если создается модельный ресурс со страницами, в директории `app/MoonShine/Pages` будут созданы дополнительные страницы.
 
 > [!NOTE]
-> Для более подробной информации обратитесь к разделу [Модельные ресурсы](https://moonshine-laravel.com/docs/resource/models-resources/resources-index).
+> Для более подробной информации обратитесь к разделу [Модельные ресурсы](/docs/{{version}}/resources/index).
 
 <a name="type_cast"></a>
 ## Приведение типов
@@ -172,7 +172,7 @@ php artisan moonshine:type-cast
 После выполнения команды в директории `app/MoonShine/TypeCasts` будет создан файл.
 
 > [!NOTE]
-> Для более подробной информации обратитесь к разделу [TypeCasts](https://moonshine-laravel.com/docs/resource/advanced/advanced-type_casts).
+> Для более подробной информации обратитесь к разделу [TypeCasts](/docs/{{version}}/advanced/type_casts).
 
 <a name="user"></a>
 ## Пользователь
@@ -201,9 +201,9 @@ php artisan moonshine:publish
 Для публикации доступно несколько вариантов:
 
 - **Assets** - ассеты админ-панели **MoonShine**;
-- **[Assets template](https://moonshine-laravel.com/docs/resource/appearance/appearance-assets#vite)** - создает шаблон для добавления собственных стилей в админ-панель **MoonShine**;
-- **[Layout](https://moonshine-laravel.com/docs/resource/appearance/appearance-layout_builder)** - класс MoonShineLayout, отвечающий за общий внешний вид админ-панели;
-- **[Favicons](https://moonshine-laravel.com/docs/resource/appearance/appearance-index#favicons)** - переопределяет шаблон для изменения фавиконок;
+- **[Assets template](/docs/{{version}}/appearance/assets#vite)** - создает шаблон для добавления собственных стилей в админ-панель **MoonShine**;
+- **[Layout](/docs/{{version}}/appearance/layout_builder)** - класс MoonShineLayout, отвечающий за общий внешний вид админ-панели;
+- **[Favicons](/docs/{{version}}/appearance/index#favicons)** - переопределяет шаблон для изменения фавиконок;
 - **System Resources** - системные MoonShineUserResource, MoonShineUserRoleResource, которые вы можете изменить.
 
 #### Вы можете сразу указать тип публикации в команде.

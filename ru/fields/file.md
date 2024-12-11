@@ -69,7 +69,7 @@ public function fields(): array
 ```
 
 > [!NOTE]
-> По умолчанию используется диск `public`. Вы можете изменить его в файле [конфигурации](https://moonshine-laravel.com/docs/resource/getting-started/configuration).
+> По умолчанию используется диск `public`. Вы можете изменить его в файле [конфигурации](/docs/{{version}}/configuration).
 
 > [!NOTE] 
 > При использовании драйвера `local` возвращаемое значение `url` не является URL. По этой причине мы рекомендуем всегда хранить ваши файлы с именами, которые будут создавать допустимые URL.
@@ -403,4 +403,4 @@ removeExcludedFiles()
 ```
 
 > [!TIP]
-> Рецепт: [сохранение изображений](https://moonshine-laravel.com/docs/resource/recipes/recipes#images-in-linked-table) в связанной таблице.
+> Рецепт: [сохранение изображений](/docs/{{version}}/recipes#images-in-linked-table) в связанной таблице.

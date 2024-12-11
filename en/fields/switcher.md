@@ -1,6 +1,6 @@
 # Switcher
 
-Extends [Checkbox](https://moonshine-laravel.com/docs/resource/fields/fields-checkbox)
+Extends [Checkbox](/docs/{{version}}/fields/checkbox)
 * has the same features  
 
 The *Switcher* field is an extension of *Checkbox* with a different visual design.

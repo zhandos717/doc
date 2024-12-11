@@ -66,7 +66,7 @@ QueryTag::make(
 ```
 
 > [!NOTE]
-> For more detailed information, please refer to the section [Icons](https://moonshine-laravel.com/docs/resource/appearance/icons)
+> For more detailed information, please refer to the section [Icons](/docs/{{version}}/appearance/icons)
 
 <a name="active-item"></a>
 ## Active item

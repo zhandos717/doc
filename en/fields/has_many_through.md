@@ -1,6 +1,6 @@
 # HasManyThrough
 
-Extends [HasMany](https://moonshine-laravel.com/docs/resource/fields/fields-has_many)
+Extends [HasMany](/docs/{{version}}/fields/has_many)
 * has the same features    
 
 The *HasManyThrough* field is designed to work with the relation of the same name in Laravel, inherits from the *HasMany* field and includes all its methods.

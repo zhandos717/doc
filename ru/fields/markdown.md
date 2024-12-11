@@ -5,7 +5,7 @@
 - [Опции](#options)  
 - [Глобальная конфигурация](#global-configuration)  
 
-Расширяет [Textarea](https://moonshine-laravel.com/docs/resource/fields/fields-textarea)
+Расширяет [Textarea](/docs/{{version}}/fields/textarea)
 * имеет те же функции
 
 <a name="basics"></a>  

@@ -60,7 +60,7 @@ public function components(): array
 ```
 
 > [!NOTE]
-> For more detailed information, please refer to the section [Icons](https://moonshine-laravel.com/docs/resource/appearance/icons) .
+> For more detailed information, please refer to the section [Icons](/docs/{{version}}/appearance/icons) .
 
 ![collapse_icon](https://raw.githubusercontent.com/moonshine-software/doc/2.x/resources/screenshots/collapse_icon.png)
 ![collapse_icon_dark](https://raw.githubusercontent.com/moonshine-software/doc/2.x/resources/screenshots/collapse_icon_dark.png)

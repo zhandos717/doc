@@ -45,9 +45,9 @@ php artisan moonshine:resource Post
 - select resource type
 
 There are several options available when creating a *ModelResource*:
-- [Default model resource](https://moonshine-laravel.com/docs/resource/models-resources/resources-fields#default) - model resource with common fields
-- [Separate model resource](https://moonshine-laravel.com/docs/resource/models-resources/resources-fields#separate) - model resource with field separation
-- [Model resource with pages](https://moonshine-laravel.com/docs/resource/models-resources/resources-pages) - model resource with pages.
+- [Default model resource](/docs/{{version}}/resources/fields#default) - model resource with common fields
+- [Separate model resource](/docs/{{version}}/resources/fields#separate) - model resource with field separation
+- [Model resource with pages](/docs/{{version}}/resources/pages) - model resource with pages.
 
 As a result, a `PostResource` class will be created, which will be a new section basis in the panel. It is located, by default, in the `app/MoonShine/Resources` directory.  
 MoonShine will automatically, based on the name, link the resource to the `app/Models/Post` model. The section title will also be generated automatically and will be “Posts”.
@@ -117,7 +117,7 @@ class MoonShineServiceProvider extends MoonShineApplicationServiceProvider
 ```
 
 > [!TIP]
-> You can learn about advanced settings in the section [Menu](https://moonshine-laravel.com/docs/resource/menu/menu).
+> You can learn about advanced settings in the section [Menu](/docs/{{version}}/menu).
 
 If you only need to register the resource in the system without adding it to the navigation menu:
 
@@ -229,7 +229,7 @@ class PostResource extends ModelResource
 ## Buttons
 
 By default, the model resource index page only has a button to create.  
-The `actions()` method allows you to add additional [buttons](https://moonshine-laravel.com/docs/resource/actionbutton/action_button).
+The `actions()` method allows you to add additional [buttons](/docs/{{version}}/action_button).
 
 ```php
 namespace MoonShine\Resources;
@@ -359,7 +359,7 @@ class PostResource extends ModelResource
 ```
 
 > [!TIP]
-> Recipe: [Changing breadcrumbs from a resource](https://moonshine-laravel.com/docs/resource/recipes/recipes#custom-breadcrumbs).
+> Recipe: [Changing breadcrumbs from a resource](/docs/{{version}}/recipes#custom-breadcrumbs).
 
 You can also connect trait to a resource and inside trait add a method according to the naming convention - `boot{TraitName}` and through the trait will access the boot resource
 

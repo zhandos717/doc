@@ -16,7 +16,7 @@ The `make()` method takes the name of the component as a parameter.
 HiddenIds::make('index-table')
 ```
 
-The table must contain the [ID](https://moonshine-laravel.com/docs/resource/fields/fields-id) field.
+The table must contain the [ID](/docs/{{version}}/fields/id) field.
 
 <a name="use"></a>
 ## Use

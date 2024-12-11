@@ -44,8 +44,8 @@ public function components(): array
 //...
 ```
 
-![2](https://moonshine-laravel.com/images/image_2.jpg)
-![1](https://moonshine-laravel.com/images/image_1.jpg)
+![2](/images/image_2.jpg)
+![1](/images/image_1.jpg)
 
 <a name="images"></a>
 ## Images
@@ -65,8 +65,8 @@ Carousel::make(
 ->items(['/images/image_2.jpg','/images/image_1.jpg'])
 ````
 
-![2](https://moonshine-laravel.com/images/image_2.jpg)
-![1](https://moonshine-laravel.com/images/image_1.jpg)
+![2](/images/image_2.jpg)
+![1](/images/image_1.jpg)
 
 <a name="#portrait"></a>
 ## Portrait orientation
@@ -85,5 +85,5 @@ Carousel::make(
 ->items(['/images/image_2.jpg','/images/image_1.jpg'])
 ```
 
-![1](https://moonshine-laravel.com/images/image_portrait_1.jpg)
-![2](https://moonshine-laravel.com/images/image_portrait_2.jpg)
+![1](/images/image_portrait_1.jpg)
+![2](/images/image_portrait_2.jpg)

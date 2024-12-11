@@ -1,6 +1,6 @@
 # MorphTo
 
-Extends [BelongsTo](https://moonshine-laravel.com/docs/resource/fields/fields-belongs_to)
+Extends [BelongsTo](/docs/{{version}}/fields/belongs_to)
 * has the same features    
 
 MorphTo relationship field in Laravel

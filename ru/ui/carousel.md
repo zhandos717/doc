@@ -26,9 +26,9 @@
 
 ```php
 <x-moonshine::carousel
-    :items="[&quot;/images/image_portrait_1.jpg&quot;, &quot;/images/image_portrait_2.jpg&quot;]"
-    :alt=&quot;fake()-&gt;sentence(3)&quot;
-    :portrait=&quot;true&quot;
+    :items="['/images/image_portrait_1.jpg', '/images/image_portrait_2.jpg']"
+    :alt="fake()->sentence(3)"
+    :portrait="true"
 >
 </x-moonshine::carousel>
 ```

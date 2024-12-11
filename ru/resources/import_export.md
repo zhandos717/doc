@@ -162,7 +162,7 @@ public function import(): ?ImportHandler
 
 #### События
 
-Для изменения логики импорта можно использовать [события](https://moonshine-laravel.com/docs/resource/models-resources/resources-events) ресурса модели.
+Для изменения логики импорта можно использовать [события](/docs/{{version}}/resources/events) ресурса модели.
 
 ```php
 //  MoonShine\Resources\ModelResource

@@ -35,7 +35,7 @@ HasMany::make(
 
 > [!WARNING]
 > Наличие ресурса модели, на который ссылается отношение, обязательно.
-Ресурс также необходимо [зарегистрировать](https://moonshine-laravel.com/docs/resource/models-resources/resources-index#define) в сервис-провайдере `MoonShineServiceProvider` в методе `menu()` или `resources()`. В противном случае будет ошибка 404.
+Ресурс также необходимо [зарегистрировать](/docs/{{version}}/resources/index#define) в сервис-провайдере `MoonShineServiceProvider` в методе `menu()` или `resources()`. В противном случае будет ошибка 404.
 
 ```php
 use MoonShine\Fields\Relationships\HasMany; 
@@ -311,7 +311,7 @@ $this->getParentId();
 ```
 
 > [!TIP]
-> Рецепт: [сохранение файлов](https://moonshine-laravel.com/docs/resource/recipes/recipes#hasmany-parent-id) связей *HasMany* в директории с ID родителя.
+> Рецепт: [сохранение файлов](/docs/{{version}}/recipes#hasmany-parent-id) связей *HasMany* в директории с ID родителя.
 
 <a name="change-edit-button"></a> 
 ## Кнопка редактирования
@@ -468,14 +468,14 @@ public function fields(): array
 //...
 ```
 > [!NOTE]
-> Для более подробной информации обратитесь к разделу [Json поле](https://moonshine-laravel.com/docs/resource/fields/fields-json#relation).
+> Для более подробной информации обратитесь к разделу [Json поле](/docs/{{version}}/fields/json#relation).
 
 #### Отношение через поле Template
 
 Используя *поле Template*, вы можете построить поле для отношений *HasMany*, используя fluent интерфейс в процессе декларации.
 
 > [!NOTE]
-> Для более подробной информации обратитесь к разделу [Поле Template](https://moonshine-laravel.com/docs/resource/fields/fields-template).
+> Для более подробной информации обратитесь к разделу [Поле Template](/docs/{{version}}/fields/template).
 
 #### Вкладки поля HasMany
 

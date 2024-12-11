@@ -1,6 +1,6 @@
 # MorphMany
 
-Расширяет [HasMany](https://moonshine-laravel.com/docs/resource/fields/fields-has_many)
+Расширяет [HasMany](/docs/{{version}}/fields/has_many)
 * имеет те же функции    
 
 Поле отношения в Laravel типа morphMany

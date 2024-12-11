@@ -5,7 +5,7 @@
 
 ---
 
-Extends [Textarea](https://moonshine-laravel.com/docs/resource/fields/fields-textarea)
+Extends [Textarea](/docs/{{version}}/fields/textarea)
 *has the same features
 
 The *Code* field is an extension of *Textarea* with a visual appearance of the edited code.

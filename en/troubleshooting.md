@@ -1,4 +1,4 @@
-https://moonshine-laravel.com/docs/resource/getting-started/troubleshooting?change-moonshine-locale=en
+/docs/{{version}}/troubleshooting?_lang=en
 
 ------
 # Troubleshooting  

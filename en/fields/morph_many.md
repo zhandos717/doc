@@ -1,6 +1,6 @@
 # MorphMany
 
-Extends [HasMany](https://moonshine-laravel.com/docs/resource/fields/fields-has_many)
+Extends [HasMany](/docs/{{version}}/fields/has_many)
 * has the same features    
 
 Relationship field in Laravel of type morphMany

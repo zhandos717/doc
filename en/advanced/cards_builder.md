@@ -1,4 +1,4 @@
-https://moonshine-laravel.com/docs/resource/advanced/advanced-cards_builder?change-moonshine-locale=en
+/docs/{{version}}/advanced/cards_builder?_lang=en
 
 ------
 # CardsBuilder
@@ -19,7 +19,7 @@ https://moonshine-laravel.com/docs/resource/advanced/advanced-cards_builder?chan
   - [Columns](#columns)
   - [Custom component](#custom-component)
 
-Extends [MoonShineComponent](https://moonshine-laravel.com/docs/resource/components/components-moonshine_component)
+Extends [MoonShineComponent](/docs/{{version}}/components/moonshine_component)
 * has the same features
 
 <a name="basics"></a>
@@ -76,7 +76,7 @@ CardsBuilder::make()
 ```
 
 > [!TIP]
-> The correspondence of data with fields is carried out through the value [column](https://moonshine-laravel.com/docs/resource/fields/fields-index#make) fields!
+> The correspondence of data with fields is carried out through the value [column](/docs/{{version}}/fields/index#make) fields!
 
 <a name="cast"></a>
 ## Casting
@@ -95,7 +95,7 @@ CardsBuilder::make(items: User::paginate())
 In this example, we cast the data to the `User` model format using `ModelCast`.
 
 > [!NOTE]
-> For more detailed information, please refer to the section [TypeCasts](https://moonshine-laravel.com/docs/resource/advanced/advanced-type_casts" class="text-purple underline" link="https://moonshine-laravel.com/docs/resource/advanced/advanced-type_casts)
+> For more detailed information, please refer to the section [TypeCasts](/docs/{{version}}/advanced/type_casts" class="text-purple underline" link="/docs/{{version}}/advanced/type_casts)
 
 <a name="header"></a>
 ## Header
@@ -308,7 +308,7 @@ MoonShine already has a set of ready-made events:
 - `fragment-updated-{name}` - updating blade fragment by name.
 
 > [!NOTE]
-> To trigger an event, you must specify a unique [component name](https://moonshine-laravel.com/docs/resource/components/components-moonshine_component#name)!
+> To trigger an event, you must specify a unique [component name](/docs/{{version}}/components/moonshine_component#name)!
 
 <a name="attributes"></a>
 ## Attributes

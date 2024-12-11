@@ -3,7 +3,7 @@
 - [Язык](#language)
 - [Нумерация строк](#line-numbers)
 
-Расширяет [Textarea](https://moonshine-laravel.com/docs/resource/fields/fields-textarea)
+Расширяет [Textarea](/docs/{{version}}/fields/textarea)
 *имеет те же функции
 
 Поле *Code* является расширением *Textarea* с визуальным отображением редактируемого кода.

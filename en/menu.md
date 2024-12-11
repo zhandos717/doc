@@ -31,7 +31,7 @@ MenuItem::make(Closure|string $label, Closure|MenuFiller|string $filler, null|st
 `$blank` - open in new tab.
 
 > [!NOTE]
-> You can pass as the second parameter [ModelResource](https://moonshine-laravel.com/docs/resource/models-resources/resources-index) , [Page](https://moonshine-laravel.com/docs/resource/page/page-class) or Resource.
+> You can pass as the second parameter [ModelResource](/docs/{{version}}/resources/index) , [Page](/docs/{{version}}/page/class) or Resource.
 
 ```php
 namespace App\Providers;
@@ -57,7 +57,7 @@ class MoonShineServiceProvider extends MoonShineApplicationServiceProvider
 ```
 
 > [!NOTE]
-> If the menu is created for [ModelResource](https://moonshine-laravel.com/docs/resource/models-resources/resources-index) or Resource, then the menu item will use the first page advertised in method `pages()`.
+> If the menu is created for [ModelResource](/docs/{{version}}/resources/index) or Resource, then the menu item will use the first page advertised in method `pages()`.
 
 #### Menu via Closure
 
@@ -89,7 +89,7 @@ class MoonShineServiceProvider extends MoonShineApplicationServiceProvider
 > It will be useful if you decide to use multi *tenancy* or if you have both the web and admin parts implemented on MoonShine.
 
 > [!WARNING]
-> When declaring a menu using *Closure*, you need to manually register [pages](https://moonshine-laravel.com/docs/resource/page/page-instance#define) and [resources](https://moonshine-laravel.com/docs/resource/models-resources/resources-index#define) in the corresponding methods.
+> When declaring a menu using *Closure*, you need to manually register [pages](/docs/{{version}}/page/instance#define) and [resources](/docs/{{version}}/resources/index#define) in the corresponding methods.
 
 <a name="group"></a>  
 ## Groups  
@@ -421,7 +421,7 @@ class MoonShineServiceProvider extends MoonShineApplicationServiceProvider
 #### Via attribute  
   
 
-The menu item will display an icon if the class [ModelResource](https://moonshine-laravel.com/docs/resource/models-resources/resources-index), [Page](https://moonshine-laravel.com/docs/resource/page/page-class) or *Resource* the `Icon` attribute is specified and the icon is not overridden in other ways.  
+The menu item will display an icon if the class [ModelResource](/docs/{{version}}/resources/index), [Page](/docs/{{version}}/page/class) or *Resource* the `Icon` attribute is specified and the icon is not overridden in other ways.  
 
 ```php
 namespace MoonShine\Resources;
@@ -436,7 +436,7 @@ class MoonShineUserResource extends ModelResource
 ```
 
 > [!NOTE]
-> For more detailed information, please refer to the section [Icons](https://moonshine-laravel.com/docs/resource/appearance/icons).
+> For more detailed information, please refer to the section [Icons](/docs/{{version}}/appearance/icons).
 
 <a name="badge"></a>  
 ## Label  
@@ -475,7 +475,7 @@ class MoonShineServiceProvider extends MoonShineApplicationServiceProvider
 
 #### Through a class method
 
-For [ModelResource](https://moonshine-laravel.com/docs/resource/models-resources/resources-index), [Page](https://moonshine-laravel.com/docs/resource/page/page-class) or Resource There is an alternative way to set the badge - method `getBadge()`.
+For [ModelResource](/docs/{{version}}/resources/index), [Page](/docs/{{version}}/page/class) or Resource There is an alternative way to set the badge - method `getBadge()`.
 
 ```php
 namespace App\MoonShine\Resources;

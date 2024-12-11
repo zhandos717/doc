@@ -22,12 +22,12 @@
 ## Основы
 
 Кнопки отображаются на страницах ресурса: на странице индекса, страницах форм (создание/редактирование) и странице детального просмотра.  
-Они отвечают за основные действия с элементами и являются компонентами [`ActionButton`](https://moonshine-laravel.com/docs/resource/actionbutton/action_button).
+Они отвечают за основные действия с элементами и являются компонентами [`ActionButton`](/docs/{{version}}/action_button).
 
-В админ-панели **MoonShine** существует множество методов, которые позволяют переопределить ресурс как отдельную [кнопку](https://moonshine-laravel.com/docs/resource/actionbutton/action_button), так и всю [группу](https://moonshine-laravel.com/docs/resource/actionbutton/action_button#group).
+В админ-панели **MoonShine** существует множество методов, которые позволяют переопределить ресурс как отдельную [кнопку](/docs/{{version}}/action_button), так и всю [группу](/docs/{{version}}/action_button#group).
 
 > [!NOTE]
-> Более подробная информация о компоненте [ActionButton](https://moonshine-laravel.com/docs/resource/actionbutton/action_button).
+> Более подробная информация о компоненте [ActionButton](/docs/{{version}}/action_button).
 
 > [!WARNING]
 > Кнопки для создания, просмотра, редактирования, удаления и массового удаления размещены в отдельных классах, чтобы применить к ним все необходимые методы и тем самым устранить дублирование, поскольку эти кнопки также используются в HasMany, BelongsToMany и т.д.
@@ -325,7 +325,7 @@ public function getFiltersButton(): ActionButton
 <a name="form"></a>
 ## Кнопки форм
 
-Метод `getFormBuilderButtons()` позволяет добавить дополнительные [кнопки](https://moonshine-laravel.com/docs/resource/actionbutton/action_button) в форму создания или редактирования.
+Метод `getFormBuilderButtons()` позволяет добавить дополнительные [кнопки](/docs/{{version}}/action_button) в форму создания или редактирования.
 
 ```php
 namespace MoonShine\Resources;
@@ -354,7 +354,7 @@ class PostResource extends ModelResource
 ## Кнопки на странице индекса
 
 По умолчанию на странице индекса ресурса модели есть только кнопка создания.  
-Метод `actions()` позволяет добавить дополнительные [кнопки](https://moonshine-laravel.com/docs/resource/actionbutton/action_button).
+Метод `actions()` позволяет добавить дополнительные [кнопки](/docs/{{version}}/action_button).
 
 ```php
 namespace MoonShine\Resources;
@@ -386,7 +386,7 @@ class PostResource extends ModelResource
 <a name="buttons"></a>
 ## Кнопки элемента
 
-Метод `buttons()` позволяет указать дополнительные кнопки, которые будут отображаться в таблице индекса, в формах создания и редактирования, а также на детальной странице, если они не переопределены для страниц соответствующими методами [`indexButton()`](https://moonshine-laravel.com/docs/resource/models-resources/resources-buttons#indexButton), [`formButtons()`](https://moonshine-laravel.com/docs/resource/models-resources/resources-buttons#formButtons) и [`detailButtons()`](https://moonshine-laravel.com/docs/resource/models-resources/resources-buttons#detailButtons).
+Метод `buttons()` позволяет указать дополнительные кнопки, которые будут отображаться в таблице индекса, в формах создания и редактирования, а также на детальной странице, если они не переопределены для страниц соответствующими методами [`indexButton()`](/docs/{{version}}/resources/buttons#indexButton), [`formButtons()`](/docs/{{version}}/resources/buttons#formButtons) и [`detailButtons()`](/docs/{{version}}/resources/buttons#detailButtons).
 
 ```php
 namespace MoonShine\Resources;
@@ -442,7 +442,7 @@ class PostResource extends ModelResource
 ![resource_buttons_index_dark](https://raw.githubusercontent.com/moonshine-software/doc/2.x/resources/screenshots/resource_buttons_index_dark.png)
 
 > [!TIP]
-> Пример создания пользовательских кнопок для таблицы индекса в разделе [Рецепты](https://moonshine-laravel.com/docs/resource/recipes/recipes#custom-buttons)
+> Пример создания пользовательских кнопок для таблицы индекса в разделе [Рецепты](/docs/{{version}}/recipes#custom-buttons)
 
 Для массовых действий с элементами необходимо добавить метод `bulk()`
 

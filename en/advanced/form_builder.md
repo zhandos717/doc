@@ -1,4 +1,4 @@
-https://moonshine-laravel.com/docs/resource/advanced/advanced-form_builder?change-moonshine-locale=en
+/docs/{{version}}/advanced/form_builder?_lang=en
 
 ------
 
@@ -135,7 +135,7 @@ FormBuilder::make('/crud/update', 'PUT')
 In this example, we cast the data to the `User` model format using `ModelCast`.
 
 > [!NOTE]
-> For more detailed information, please refer to the section [TypeCasts](https://moonshine-laravel.com/docs/resource/advanced/advanced-type_casts)
+> For more detailed information, please refer to the section [TypeCasts](/docs/{{version}}/advanced/type_casts)
 
 <a name="fillcast"></a>
 ## FillCast
@@ -271,7 +271,7 @@ FormBuilder::make('/crud/update', 'PUT')
 - `fragment-updated-{name}` - updates a blade fragment by its name.
 
 > [!NOTE]
-> Recipe [Upon a successful request, the form updates the table and resets the values](https://moonshine-laravel.com/docs/resource/recipes/recipes#form-with-events)
+> Recipe [Upon a successful request, the form updates the table and resets the values](/docs/{{version}}/recipes#form-with-events)
 
 >[!WARNING]
 >The `async()` method must come after the `name()` method!
@@ -463,4 +463,4 @@ public function formButtons(): array
 ```
 
 > [!NOTE]
-> For more information about AlpineJs helpers, please refer to [Js events](https://moonshine-laravel.com/docs/resource/advanced/advanced-js_events#helper).
+> For more information about AlpineJs helpers, please refer to [Js events](/docs/{{version}}/advanced/js_events#helper).

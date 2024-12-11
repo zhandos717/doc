@@ -1,4 +1,4 @@
-https://moonshine-laravel.com/docs/resource/advanced/advanced-helpers?change-moonshine-locale=en
+/docs/{{version}}/advanced/helpers?_lang=en
 
 ------
 # Helpers

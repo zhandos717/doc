@@ -1,6 +1,6 @@
 # MorphToMany
 
-Extends [BelongsToMany](https://moonshine-laravel.com/docs/resource/fields/fields-belongs_to_many) 
+Extends [BelongsToMany](/docs/{{version}}/fields/belongs_to_many) 
 * has the same features
 
 MorphToMany relationship field in Laravel

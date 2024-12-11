@@ -575,7 +575,7 @@ public function fields(): array
 ```
 
 > [!NOTE]
-> Если вам просто нужно указать, какие поля отображать на страницах или изменить порядок отображения, то вы можете использовать удобный метод [переопределения полей](https://moonshine-laravel.com/docs/resource/models-resources/resources-fields#override).
+> Если вам просто нужно указать, какие поля отображать на страницах или изменить порядок отображения, то вы можете использовать удобный метод [переопределения полей](/docs/{{version}}/resources/fields#override).
 
 <a name="show-when"></a>
 ## Динамическое отображение
@@ -1224,7 +1224,7 @@ public function someMethod(MoonShineRequest $request): void
 ```
 
 > [!NOTE]
-> Пример сортировки компонента *CardsBuilder* в разделе [Рецепты](https://moonshine-laravel.com/docs/resource/recipes/recipes#sorting-for-cards-builder)
+> Пример сортировки компонента *CardsBuilder* в разделе [Рецепты](/docs/{{version}}/recipes#sorting-for-cards-builder)
 
 <a name="for-value"></a>
 ## Методы для значений

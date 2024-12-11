@@ -65,7 +65,7 @@ class MoonShineServiceProvider extends MoonShineApplicationServiceProvider
 ```
 
 > [!TIP]
-> О расширенных настройках вы можете узнать в разделе [Меню](https://moonshine-laravel.com/docs/resource/menu/menu).
+> О расширенных настройках вы можете узнать в разделе [Меню](/docs/{{version}}/menu).
 
 Если вам нужно только зарегистрировать страницу в системе без добавления ее в навигационное меню, то необходимо использовать метод `pages()`:
 

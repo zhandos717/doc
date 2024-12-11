@@ -16,7 +16,7 @@
 <a name="default"></a>
 ## По умолчанию
 
-В _ModelResource_ по умолчанию необходимо в методе `fields()` вернуть массив со всеми [Полями](https://moonshine-laravel.com/docs/resource/fields/fields-index).
+В _ModelResource_ по умолчанию необходимо в методе `fields()` вернуть массив со всеми [Полями](/docs/{{version}}/fields/index).
 
 ```php
 namespace App\MoonShine\Resources;

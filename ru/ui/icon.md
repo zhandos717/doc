@@ -13,7 +13,7 @@
 Для вставки иконок в свои пользовательские элементы можно использовать компонент `moonshine::icon`.
 
 > [!NOTE]
-> Все доступные [иконки](https://moonshine-laravel.com/docs/resource/appearance/icons).
+> Все доступные [иконки](/docs/{{version}}/appearance/icons).
 
 <a name="size"></a>
 ## Размер
@@ -37,7 +37,7 @@
 ```
 
 > [!TIP]
-> По умолчанию доступно несколько цветов, но вы можете расширить их, используя свои собственные [цветовые классы](https://moonshine-laravel.com/docs/resource/appearance/appearance-assets) TailwindCSS.
+> По умолчанию доступно несколько цветов, но вы можете расширить их, используя свои собственные [цветовые классы](/docs/{{version}}/appearance/assets) TailwindCSS.
 
 <a name="customization"></a>
 ## Настройка
@@ -53,4 +53,4 @@
 ```
 
 > [!TIP]
-> Сборка MoonShine содержит ограниченный список классов TailwindCSS. Используйте [пользовательские стили](https://moonshine-laravel.com/docs/resource/appearance/appearance-assets).
+> Сборка MoonShine содержит ограниченный список классов TailwindCSS. Используйте [пользовательские стили](/docs/{{version}}/appearance/assets).

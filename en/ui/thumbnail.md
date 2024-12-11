@@ -14,7 +14,7 @@ To create thumbnails, you can use the `moonshine::thumbnails` component.
 <x-moonshine::thumbnails value="/images/thumb_1.jpg"/>
 ```
 
-![thumb](https://moonshine-laravel.com/images/thumb_1.jpg)
+![thumb](/images/thumb_1.jpg)
 
 You can also specify the `alt` attribute.
 
@@ -34,7 +34,7 @@ You can pass an array of images to the component.
     '/images/thumb_3.jpg'
 ]"/>
 ```
-![thumb](https://moonshine-laravel.com/images/thumb_1.jpg)
-![thumb](https://moonshine-laravel.com/images/thumb_2.jpg)
-![thumb](https://moonshine-laravel.com/images/thumb_3.jpg)
+![thumb](/images/thumb_1.jpg)
+![thumb](/images/thumb_2.jpg)
+![thumb](/images/thumb_3.jpg)
 

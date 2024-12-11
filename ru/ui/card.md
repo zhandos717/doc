@@ -31,7 +31,7 @@
 </x-moonshine::card>
 ```
 
-![image_1](https://moonshine-laravel.com/images/image_1.jpg)
+![image_1](/images/image_1.jpg)
 
 <a name="overlay"></a>
 ## Режим наложения
@@ -59,7 +59,7 @@
 </x-moonshine::card>
 ```
 
-![image_1](https://moonshine-laravel.com/images/image_1.jpg)
+![image_1](/images/image_1.jpg)
 
 <a name="carousel"></a>
 ## Карусель изображений
@@ -87,4 +87,4 @@
 </x-moonshine::card>
 ```
 
-![image_1](https://moonshine-laravel.com/images/image_1.jpg)
+![image_1](/images/image_1.jpg)

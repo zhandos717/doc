@@ -16,7 +16,7 @@
 HiddenIds::make('index-table')
 ```
 
-Таблица должна содержать поле [ID](https://moonshine-laravel.com/docs/resource/fields/fields-id).
+Таблица должна содержать поле [ID](/docs/{{version}}/fields/id).
 
 <a name="use"></a>
 ## Использование

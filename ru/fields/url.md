@@ -6,7 +6,7 @@
 
 ---
 
-Расширяет [Text](https://moonshine-laravel.com/docs/resource/fields/fields-text)
+Расширяет [Text](/docs/{{version}}/fields/text)
 * имеет те же функции
 
 <a name="basics"></a>

@@ -18,7 +18,7 @@
 
 ---
 
-Расширяет [MoonShineComponent](https://moonshine-laravel.com/docs/resource/components/components-moonshine_component)
+Расширяет [MoonShineComponent](/docs/{{version}}/components/moonshine_component)
 * имеет те же функции
 
 <a name="basics"></a>
@@ -75,7 +75,7 @@ CardsBuilder::make()
 ```
 
 > [!TIP]
-> Соответствие данных с полями осуществляется через значение [column](https://moonshine-laravel.com/docs/resource/fields/fields-index#make) полей!
+> Соответствие данных с полями осуществляется через значение [column](/docs/{{version}}/fields/index#make) полей!
 
 <a name="cast"></a>
 ## Приведение типов
@@ -94,7 +94,7 @@ CardsBuilder::make(items: User::paginate())
 В этом примере мы приводим данные к формату модели `User` с помощью `ModelCast`.
 
 > [!NOTE]
-> Для более подробной информации обратитесь к разделу [TypeCasts](https://moonshine-laravel.com/docs/resource/advanced/advanced-type_casts)
+> Для более подробной информации обратитесь к разделу [TypeCasts](/docs/{{version}}/advanced/type_casts)
 
 <a name="header"></a>
 ## Заголовок
@@ -307,7 +307,7 @@ MoonShine уже имеет набор готовых событий:
 - `fragment-updated-{name}` - обновление blade фрагмента по имени.
 
 > [!NOTE]
-> Для срабатывания события необходимо указать уникальное [имя компонента](https://moonshine-laravel.com/docs/resource/components/components-moonshine_component#name)!
+> Для срабатывания события необходимо указать уникальное [имя компонента](/docs/{{version}}/components/moonshine_component#name)!
 
 <a name="attributes"></a>
 ## Атрибуты

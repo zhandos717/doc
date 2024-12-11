@@ -60,4 +60,4 @@
 ```
 
 > [!NOTE]
-> Все доступные [иконки](https://moonshine-laravel.com/docs/resource/appearance/icons).
+> Все доступные [иконки](/docs/{{version}}/appearance/icons).

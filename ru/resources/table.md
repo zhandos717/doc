@@ -42,7 +42,7 @@ class PostResource extends ModelResource
 Для добавления кнопок в таблицу используйте `ActionButton` и методы `indexButtons` или `buttons` в ресурсе
 
 > [!TIP]
-> [Подробнее об ActionButton](https://moonshine-laravel.com/docs/resource/actionbutton/action_button)
+> [Подробнее об ActionButton](/docs/{{version}}/action_button)
 
 ```php
 public function indexButtons(): array
@@ -54,7 +54,7 @@ public function indexButtons(): array
 ```
 
 > [!TIP]
-> Пример создания пользовательских кнопок для индексной таблицы в разделе [Рецепты](https://moonshine-laravel.com/docs/resource/recipes/recipes#custom-buttons)
+> Пример создания пользовательских кнопок для индексной таблицы в разделе [Рецепты](/docs/{{version}}/recipes#custom-buttons)
 
 Для массовых действий нужно добавить метод `bulk`
 

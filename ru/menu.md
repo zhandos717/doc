@@ -31,7 +31,7 @@ MenuItem::make(Closure|string $label, Closure|MenuFiller|string $filler, null|st
 `$blank` - открыть в новой вкладке.
 
 > [!NOTE]
-> В качестве второго параметра можно передать [ModelResource](https://moonshine-laravel.com/docs/resource/models-resources/resources-index), [Page](https://moonshine-laravel.com/docs/resource/page/page-class) или Resource.
+> В качестве второго параметра можно передать [ModelResource](/docs/{{version}}/resources/index), [Page](/docs/{{version}}/page/class) или Resource.
 
 ```php
 namespace App\Providers;
@@ -57,7 +57,7 @@ class MoonShineServiceProvider extends MoonShineApplicationServiceProvider
 ```
 
 > [!NOTE]
-> Если меню создается для [ModelResource](https://moonshine-laravel.com/docs/resource/models-resources/resources-index) или Resource, то пункт меню будет использовать первую страницу, объявленную в методе `pages()`.
+> Если меню создается для [ModelResource](/docs/{{version}}/resources/index) или Resource, то пункт меню будет использовать первую страницу, объявленную в методе `pages()`.
 
 #### Меню через Closure
 
@@ -89,7 +89,7 @@ class MoonShineServiceProvider extends MoonShineApplicationServiceProvider
 > Это будет полезно, если вы решите использовать мультитенантность или если у вас реализованы как веб, так и админ части на MoonShine.
 
 > [!WARNING]
-> При объявлении меню с использованием *Closure* необходимо вручную зарегистрировать [страницы](https://moonshine-laravel.com/docs/resource/page/page-instance#define) и [ресурсы](https://moonshine-laravel.com/docs/resource/models-resources/resources-index#define) в соответствующих методах.
+> При объявлении меню с использованием *Closure* необходимо вручную зарегистрировать [страницы](/docs/{{version}}/page/instance#define) и [ресурсы](/docs/{{version}}/resources/index#define) в соответствующих методах.
 
 <a name="group"></a>
 ## Группы
@@ -421,7 +421,7 @@ class MoonShineServiceProvider extends MoonShineApplicationServiceProvider
 
 #### Через атрибут
 
-Пункт меню отобразит иконку, если у класса [ModelResource](https://moonshine-laravel.com/docs/resource/models-resources/resources-index), [Page](https://moonshine-laravel.com/docs/resource/page/page-class) или *Resource* указан атрибут `Icon`, и иконка не переопределена другими способами.
+Пункт меню отобразит иконку, если у класса [ModelResource](/docs/{{version}}/resources/index), [Page](/docs/{{version}}/page/class) или *Resource* указан атрибут `Icon`, и иконка не переопределена другими способами.
 
 ```php
 namespace MoonShine\Resources;
@@ -436,7 +436,7 @@ class MoonShineUserResource extends ModelResource
 ```
 
 > [!NOTE]
-> Для более подробной информации обратитесь к разделу [Иконки](https://moonshine-laravel.com/docs/resource/appearance/icons).
+> Для более подробной информации обратитесь к разделу [Иконки](/docs/{{version}}/appearance/icons).
 
 <a name="badge"></a>
 ## Метка
@@ -475,7 +475,7 @@ class MoonShineServiceProvider extends MoonShineApplicationServiceProvider
 
 #### Через метод класса
 
-Для [ModelResource](https://moonshine-laravel.com/docs/resource/models-resources/resources-index), [Page](https://moonshine-laravel.com/docs/resource/page/page-class) или Resource есть альтернативный способ установки метки - метод `getBadge()`.
+Для [ModelResource](/docs/{{version}}/resources/index), [Page](/docs/{{version}}/page/class) или Resource есть альтернативный способ установки метки - метод `getBadge()`.
 
 ```php
 namespace App\MoonShine\Resources;

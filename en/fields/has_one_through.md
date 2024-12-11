@@ -1,6 +1,6 @@
 # HasOneThrough
 
-Extends  [HasMany](https://moonshine-laravel.com/docs/resource/fields/fields-has_one)
+Extends  [HasMany](/docs/{{version}}/fields/has_one)
 * has the same features  
 
 The *HasOneThrough* field is designed to work with the relation of the same name in Laravel, inherits from the *HasOne* field and includes all its methods.

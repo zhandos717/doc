@@ -166,4 +166,4 @@ public function fields(): array
 ```
 
 > [!NOTE]
-> Живое поле основано на [реактивности полей](https://moonshine-laravel.com/docs/resource/fields/fields-index#reactive).
+> Живое поле основано на [реактивности полей](/docs/{{version}}/fields/index#reactive).

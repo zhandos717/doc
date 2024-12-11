@@ -37,7 +37,7 @@ BelongsTo::make(
 
 > [!WARNING]
 > The presence of the model resource referenced by the relation is mandatory!
-> The resource also needs to be [registered](https://moonshine-laravel.com/docs/resource/models-resources/resources-index#define) with the service provider _MoonShineServiceProvider_ in the method `menu()` or `resources()`. Otherwise, there will be a 404 error.
+> The resource also needs to be [registered](/docs/{{version}}/resources/index#define) with the service provider _MoonShineServiceProvider_ in the method `menu()` or `resources()`. Otherwise, there will be a 404 error.
 
 
 ```php
@@ -134,7 +134,7 @@ public function fields(): array
 ```
 
 > [!WARNING]
-> When using the _BelongsTo_ field to sort or filter positions, you must use the method `setColumn()` set a field in a database table or override a method [sorting](https://moonshine-laravel.com/docs/resource/models-resources/resources-query#order) at the model resource.
+> When using the _BelongsTo_ field to sort or filter positions, you must use the method `setColumn()` set a field in a database table or override a method [sorting](/docs/{{version}}/resources/query#order) at the model resource.
 
 If you need to change column when working with models, use the `onAfterFill` method
 
@@ -394,7 +394,7 @@ public function fields(): array
                 asyncSearchValueCallback: function ($country, Field $field) {
                     return $country->id . ' | ' . $country->title;
                 },
-                'https://moonshine-laravel.com/async'
+                '/async'
             )
     ];
 }

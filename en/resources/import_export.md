@@ -162,7 +162,7 @@ If the `import()` method returns *NULL*, then the import button will not appear 
 
 #### Events
 
-To change the import logic, you can use [events](https://moonshine-laravel.com/docs/resource/models-resources/resources-events) of the model resource.
+To change the import logic, you can use [events](/docs/{{version}}/resources/events) of the model resource.
 
 ```php
 //  MoonShine\Resources\ModelResource

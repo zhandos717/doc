@@ -14,7 +14,7 @@
 <x-moonshine::thumbnails value="/images/thumb_1.jpg"/>
 ```
 
-![thumb](https://moonshine-laravel.com/images/thumb_1.jpg)
+![thumb](/images/thumb_1.jpg)
 
 Вы также можете указать атрибут `alt`.
 
@@ -34,6 +34,6 @@
     '/images/thumb_3.jpg'
 ]"/>
 ```
-![thumb](https://moonshine-laravel.com/images/thumb_1.jpg)
-![thumb](https://moonshine-laravel.com/images/thumb_2.jpg)
-![thumb](https://moonshine-laravel.com/images/thumb_3.jpg)
+![thumb](/images/thumb_1.jpg)
+![thumb](/images/thumb_2.jpg)
+![thumb](/images/thumb_3.jpg)

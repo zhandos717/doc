@@ -8,7 +8,7 @@
 
 <a name="make"></a>
 ## Make
-Extends [Select](https://moonshine-laravel.com/docs/resource/fields/fields-select)  
+Extends [Select](/docs/{{version}}/fields/select)  
 * has the same features  
 
 Works the same as the *Select* field, but takes an *Enum* as options.

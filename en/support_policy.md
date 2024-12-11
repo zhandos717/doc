@@ -1,4 +1,4 @@
-https://moonshine-laravel.com/docs/resource/getting-started/support_policy?change-moonshine-locale=en
+/docs/{{version}}/support_policy?_lang=en
 
 ------
 # Support policy

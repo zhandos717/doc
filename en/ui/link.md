@@ -60,4 +60,4 @@ You can pass the `icon` parameter.
 ```
 
 > [!NOTE]
-> All available [icons](https://moonshine-laravel.com/docs/resource/appearance/icons) .
+> All available [icons](/docs/{{version}}/appearance/icons) .

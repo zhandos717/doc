@@ -1,6 +1,6 @@
 # ID
 
-Расширяет [Hidden](https://moonshine-laravel.com/docs/resource/fields/fields-hidden)
+Расширяет [Hidden](/docs/{{version}}/fields/hidden)
 * имеет те же функции  
 
 Поле *ID* используется для первичного ключа.

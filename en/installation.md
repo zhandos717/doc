@@ -19,7 +19,7 @@ To use MoonShine, the following requirements must be met before installation:
 ## Composer
 
 ```shell
-composer require moonshine/moonshine
+composer require "moonshine/moonshine:^2.0"
 ```
 
 <a name="install"></a>
@@ -31,15 +31,15 @@ php artisan moonshine:install
 
 > [!NOTE]
 > Once executed, a `config/moonshine.php` with basic settings will be added.  
-> [More information about the configuration file](https://moonshine-laravel.com/docs/resource/getting-started/configuration)
+> [More information about the configuration file](/docs/{{version}}/configuration)
 
 > [!NOTE]
 > A directory with the administration panel and resources will also be added - `app/MoonShine`.  
-> [More about Resources](https://moonshine-laravel.com/docs/resource/models-resources/resources-index)
+> [More about Resources](/docs/{{version}}/resources/index)
 
 > [!NOTE]
 > And a `MoonShineServiceProvider` provider will also be added, where resources should be registered.  
-> [More about Resources](https://moonshine-laravel.com/docs/resource/models-resources/resources-index)
+> [More about Resources](/docs/{{version}}/resources/index)
 
 <a name="admin"></a>
 ## Creating an administrator
@@ -96,10 +96,10 @@ class MoonShineServiceProvider extends MoonShineApplicationServiceProvider
 
 > [!NOTE]
 > Once installed, several resources will be registered in the `MoonShineServiceProvider`.  
-> [More about Menu](https://moonshine-laravel.com/docs/resource/menu/menu).
+> [More about Menu](/docs/{{version}}/menu).
 
 Great! Now you can create and register sections of the future admin panel and get to work! But don't forget to read the documentation to the end!
 
 > [!NOTE]
 > By default, the admin panel can be accessed by url `/admin`.  
-> You can change the url in the [configuration file](https://moonshine-laravel.com/docs/resource/getting-started/configuration).
+> You can change the url in the [configuration file](/docs/{{version}}/configuration).

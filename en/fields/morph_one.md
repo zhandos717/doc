@@ -1,6 +1,6 @@
 # MorphOne
 
-Extends [HasOne](https://moonshine-laravel.com/docs/resource/fields/fields-has_one)
+Extends [HasOne](/docs/{{version}}/fields/has_one)
 * has the same features  
 
 Relationship field in Laravel of type morphOne.

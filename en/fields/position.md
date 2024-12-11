@@ -1,6 +1,6 @@
 # Position
 
-Extends [Preview](https://moonshine-laravel.com/docs/resource/fields/fields-preview)
+Extends [Preview](/docs/{{version}}/fields/preview)
 * has the same features  
 
 The *Position* field allows you to create numbering for iterating elements.

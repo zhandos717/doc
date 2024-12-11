@@ -41,7 +41,7 @@ class PostResource extends ModelResource
 
 > [!TIP]
 > Fields are a key element in building forms in the **Moonshine** admin panel.
-[More about Fields](https://moonshine-laravel.com/docs/resource/fields/fields-index)
+[More about Fields](/docs/{{version}}/fields/index)
 
 If you need to cache the filters state, use the `saveFilterState` property in the resource
 

@@ -1,6 +1,6 @@
 # Password  
  
-Extends [Text](https://moonshine-laravel.com/docs/resource/fields/fields-text)  
+Extends [Text](/docs/{{version}}/fields/text)  
 * has the same features  
 
 The *Password*and *PasswordRepeat* fields are intended for working with passwords, they have `type=password` set by default.  

@@ -167,6 +167,3 @@
 
 - ## Recipes
   - [Recipes](/docs/{{version}}/recipes)
-
-- ## Packages
-  - [Packages](/docs/{{version}}/packages)

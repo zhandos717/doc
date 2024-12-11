@@ -80,7 +80,7 @@ class CustomPage extends Page
 <a name="components"></a>
 ## Компоненты
 
-Страница строится из компонентов, которыми могут быть как декорации и компоненты самой админ-панели, [FormBuilder](https://moonshine-laravel.com/docs/resource/advanced/advanced-form_builder), [TableBuilder](https://moonshine-laravel.com/docs/resource/advanced/advanced-table_builder), так и просто *blade* компоненты, и даже компоненты *Livewire*.
+Страница строится из компонентов, которыми могут быть как декорации и компоненты самой админ-панели, [FormBuilder](/docs/{{version}}/advanced/form_builder), [TableBuilder](/docs/{{version}}/advanced/table_builder), так и просто *blade* компоненты, и даже компоненты *Livewire*.
 
 Для регистрации компонентов страницы используется метод `components()`.
 
@@ -118,7 +118,7 @@ class CustomPage extends Page
 ```
 
 > [!NOTE]
-> Для более подробной информации обратитесь к разделу [Компоненты](https://moonshine-laravel.com/docs/resource/components/components-index).
+> Для более подробной информации обратитесь к разделу [Компоненты](/docs/{{version}}/components/index).
 
 <a name="breadcrumbs"></a>
 ## Хлебные крошки

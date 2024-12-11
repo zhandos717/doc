@@ -21,7 +21,7 @@
 ## Composer
 
 ```shell
-composer require moonshine/moonshine
+composer require "moonshine/moonshine:^2.0"
 ```
 
 <a name="install"></a>
@@ -33,15 +33,15 @@ php artisan moonshine:install
 
 > [!NOTE]
 > После выполнения будет добавлен `config/moonshine.php` с базовыми настройками.  
-> [Подробнее о файле конфигурации](https://moonshine-laravel.com/docs/resource/getting-started/configuration)
+> [Подробнее о файле конфигурации](/docs/{{version}}/configuration)
 
 > [!NOTE]
 > Также будет добавлена директория с панелью администрирования и ресурсами - `app/MoonShine`.  
-> [Подробнее о Ресурсах](https://moonshine-laravel.com/docs/resource/models-resources/resources-index)
+> [Подробнее о Ресурсах](/docs/{{version}}/resources/index)
 
 > [!NOTE]
 > И также будет добавлен провайдер `MoonShineServiceProvider`, где следует регистрировать ресурсы.  
-> [Подробнее о Ресурсах](https://moonshine-laravel.com/docs/resource/models-resources/resources-index)
+> [Подробнее о Ресурсах](/docs/{{version}}/resources/index)
 
 <a name="admin"></a>
 ## Создание администратора
@@ -98,10 +98,10 @@ class MoonShineServiceProvider extends MoonShineApplicationServiceProvider
 
 > [!NOTE]
 > После установки в `MoonShineServiceProvider` будет зарегистрировано несколько ресурсов.  
-> [Подробнее о Меню](https://moonshine-laravel.com/docs/resource/menu/menu).
+> [Подробнее о Меню](/docs/{{version}}/menu).
 
 Отлично! Теперь вы можете создавать и регистрировать разделы будущей панели администрирования и приступать к работе! Но не забудьте дочитать документацию до конца!
 
 > [!NOTE]
 > По умолчанию доступ к панели администрирования осуществляется по url `/admin`.  
-> Вы можете изменить url в [файле конфигурации](https://moonshine-laravel.com/docs/resource/getting-started/configuration).
+> Вы можете изменить url в [файле конфигурации](/docs/{{version}}/configuration).

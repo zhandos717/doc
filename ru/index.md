@@ -1,6 +1,6 @@
 # Добро пожаловать
 
-[![MoonShine](https://raw.githubusercontent.com/moonshine-software/doc/2.x/resources/screenshots/main.png)](https://moonshine-laravel.com/video/moon_shine_logo_2.mp4)
+[![MoonShine](https://raw.githubusercontent.com/moonshine-software/doc/2.x/resources/screenshots/main.png)](/video/moon_shine_logo_2.mp4)
 
 
 ## Привет, пользователь Laravel!
@@ -36,7 +36,7 @@ MoonShine это админ-панель, которую могут исполь
 
 ## С чего начать?
 
-MoonShine готов появиться в вашем проекте. Просто следуйте [руководству по установке](https://moonshine-laravel.com/docs/resource/getting-started/installation), а дальше найдите в документации как реализовать нужный функционал и добавьте в свой проект.
+MoonShine готов появиться в вашем проекте. Просто следуйте [руководству по установке](/docs/{{version}}/installation), а дальше найдите в документации как реализовать нужный функционал и добавьте в свой проект.
 
 Если хотите быстро освоить MoonShine, рекомендую посмотреть мои [видеоуроки](https://youtube.com/playlist?list=PLTucyHptHtTnfDI18bZnYEgvJIFmW8fGy&si=DgnBSDcpP9FTAc8Q) и [статьи](https://cutcode.dev/articles/moonshine-tips-tricks).
 

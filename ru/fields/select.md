@@ -308,8 +308,8 @@ public function fields(): array
                 2 => 'United Arab Emirates',
                 //...
             ])->optionProperties(fn() => [
-                1 => ['image' => 'https://moonshine-laravel.com/images/ad.png'],
-                2 => ['image' => 'https://moonshine-laravel.com/images/ae.png'],
+                1 => ['image' => '/images/ad.png'],
+                2 => ['image' => '/images/ae.png'],
                 //...
             ])
     ];

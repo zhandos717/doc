@@ -1,6 +1,6 @@
 # Image
 
-Extends [File](https://moonshine-laravel.com/docs/resource/fields/fields-file)
+Extends [File](/docs/{{version}}/fields/file)
 * has the same features  
 
 The *Image* field is an extension of *File*, which allows you to display previews of loaded images.

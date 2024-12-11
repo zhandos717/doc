@@ -130,7 +130,7 @@ link(
 - `$blank` - открывать ссылку в новой вкладке.
 
 > [!NOTE]
-> Для более подробной информации обратитесь к разделу [Иконки](https://moonshine-laravel.com/docs/resource/appearance/icons).
+> Для более подробной информации обратитесь к разделу [Иконки](/docs/{{version}}/appearance/icons).
 
 ```php
 use MoonShine\Fields\Preview;

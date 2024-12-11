@@ -1,4 +1,4 @@
-https://moonshine-laravel.com/docs/resource/advanced/advanced-notifications?change-moonshine-locale=en
+/docs/{{version}}/advanced/notifications?_lang=en
 
 ------
 # Notifications  

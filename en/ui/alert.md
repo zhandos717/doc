@@ -55,7 +55,7 @@ It is possible for a notification to change its icon; to do this, you need to pa
 > Alert
 
 > [!NOTE]
-> For more detailed information, please refer to the section [Icons](https://moonshine-laravel.com/docs/resource/appearance/icons) .
+> For more detailed information, please refer to the section [Icons](/docs/{{version}}/appearance/icons) .
 
 <a name="removable"></a>
 ## Deleting notifications

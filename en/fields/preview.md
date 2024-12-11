@@ -132,7 +132,7 @@ link(
 - `$blank` - open the link in a new tab.
 
 > [!NOTE]
-> For more detailed information, please refer to the section [Icons](https://moonshine-laravel.com/docs/resource/appearance/icons).
+> For more detailed information, please refer to the section [Icons](/docs/{{version}}/appearance/icons).
 
 ```php
 use MoonShine\Fields\Preview;
@@ -143,7 +143,7 @@ public function fields(): array
 {
     return [
         Preview::make('Link')
-            ->link('https://moonshine-laravel.com', blank: false),
+            ->link('/', blank: false),
         Preview::make('Link')
             ->link(fn($link, Field $field) => $link, fn($name, Field $field) => 'Go')
     ];

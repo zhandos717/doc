@@ -37,7 +37,7 @@ HasMany::make(
 
 > [!WARNING]
 > The presence of the model resource referenced by the relation is mandatory
-The resource also needs to be [registered](https://moonshine-laravel.com/docs/resource/models-resources/resources-index#define) with the service provider `MoonShineServiceProvider` in the method `menu()` or `resources()`. Otherwise, there will be a 404 error.
+The resource also needs to be [registered](/docs/{{version}}/resources/index#define) with the service provider `MoonShineServiceProvider` in the method `menu()` or `resources()`. Otherwise, there will be a 404 error.
 
 ```php
 use MoonShine\Fields\Relationships\HasMany; 
@@ -313,7 +313,7 @@ $this->getParentId();
 ```
 
 > [!TIP]
-> Recipe: [saving files](https://moonshine-laravel.com/docs/resource/recipes/recipes#hasmany-parent-id) *HasMany* connections in the directory with the parent ID.
+> Recipe: [saving files](/docs/{{version}}/recipes#hasmany-parent-id) *HasMany* connections in the directory with the parent ID.
 
 <a name="change-edit-button"></a> 
 ## Edit button
@@ -470,14 +470,14 @@ public function fields(): array
 //...
 ```
 > [!NOTE]
-> For more detailed information, please refer to the section [Json field](https://moonshine-laravel.com/docs/resource/fields/fields-json#relation).
+> For more detailed information, please refer to the section [Json field](/docs/{{version}}/fields/json#relation).
 
 #### Relationship via Template field
 
 Using the *Template field* you can construct a field for *HasMany* relationships using fluent interface during the declaration process.
 
 > [!NOTE]
-> For more detailed information, please refer to the section [Template field](https://moonshine-laravel.com/docs/resource/fields/fields-template).
+> For more detailed information, please refer to the section [Template field](/docs/{{version}}/fields/template).
 
 #### HasMany field tabs
 

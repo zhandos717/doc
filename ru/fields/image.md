@@ -1,6 +1,6 @@
 # Image
 
-Расширяет [File](https://moonshine-laravel.com/docs/resource/fields/fields-file)
+Расширяет [File](/docs/{{version}}/fields/file)
 * имеет те же функции
 
 Поле *Image* является расширением *File*, которое позволяет отображать превью загруженных изображений.

@@ -23,4 +23,4 @@ public function fields(): array
 ```
 
 > [!TIP]
-> Рецепт: [Отношение HasOne через поле Template](https://moonshine-laravel.com/docs/resource/recipes/recipes#hasone-through-template).
+> Рецепт: [Отношение HasOne через поле Template](/docs/{{version}}/recipes#hasone-through-template).
