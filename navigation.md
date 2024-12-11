@@ -132,7 +132,6 @@
     - [Tabs](/docs/{{version}}/components/tabs)
     - [Thumbnails](/docs/{{version}}/components/thumbnails)
     - [Title](/docs/{{version}}/components/title)
-    - [Url](/docs/{{version}}/components/url)
     - [ActionGroup](/docs/{{version}}/components/action-group)
     - [Components](/docs/{{version}}/components/components)
     - [FieldsGroup](/docs/{{version}}/components/fields-group)
