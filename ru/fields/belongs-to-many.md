@@ -444,7 +444,7 @@ BelongsToMany::make('Cities', 'cities', resource: CityResource::class)
     ->associatedWith('country_id')
 ```
 
-> [TIP]
+> [!TIP]
 > Для более сложной настройки вы можете использовать `asyncSearch()`.
 
 <a name="with-image"></a>
