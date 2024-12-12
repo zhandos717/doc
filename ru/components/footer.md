@@ -14,7 +14,7 @@
 Вы можете создать *Footer*, используя статический метод `make()` класса `Footer`.
 
 ```php
-make(array $components = [])
+make(iterable $components = [])
 ```
 
 - `$components` - массив компонентов, которые располагаются в подвале.

@@ -5,7 +5,7 @@
 Вы можете создать *Header*, используя статический метод `make()` класса `Header`.
 
 ```php
-make(array $components = [])
+make(iterable $components = [])
 ```
 `$components` - массив компонентов, которые располагаются в заголовке.
 
