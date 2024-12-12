@@ -1,8 +1,8 @@
-# Декоратор Divider
+# Divider
 
 - [Основы](#basics)
 - [Метка](#label)
-- [Центрирование](#Centering)
+- [Центрирование](#сentering)
 
 ---
 
