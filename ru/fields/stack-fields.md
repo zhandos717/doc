@@ -14,7 +14,7 @@
 Метод `fields()` должен принимать массив полей для группировки.
 
 ```php
-use MoonShine\UI\Fields\BelongsTo;
+use MoonShine\Laravel\Fields\BelongsTo;
 use MoonShine\UI\Fields\StackFields;
 use MoonShine\UI\Fields\Text;
 

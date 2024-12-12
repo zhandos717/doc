@@ -22,7 +22,7 @@
 С помощью данного поля вы можете генерировать slug на основе выбранного поля, а также сохранять только уникальные значения.
 
 ```php
-use MoonShine\UI\Fields\Slug;
+use MoonShine\Laravel\Fields\Slug;
 
 Slug::make('Slug')
 ```
