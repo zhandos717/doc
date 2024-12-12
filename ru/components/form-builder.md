@@ -11,6 +11,7 @@
 - [Настройка атрибутов](#attributes)
 - [Асинхронный режим](#asynchronous-mode)
   - [Вызов методов](#calling-methods)
+  - [Реактивность](#reactive)
 - [Валидация](#validation)
   - [Отображение ошибок валидации](#displaying-validation-errors)
   - [Прекогнитивная валидация](#precognitive)
@@ -339,6 +340,16 @@ public function updateSomething(MoonShineRequest $request): void
 {
     throw new \Exception('Мое сообщение');
 }
+```
+
+<a name="reactive"></a>
+### Реактивность
+
+По умолчанию полям внутри формы доступна реактивность, но если форма находится вне ресурса, 
+тогда реактивность будет недоступна, так как форма не знает куда отправлять запросы. В случае использования формы вне ресурсов вы можете указать реактивный URL самостоятельно:
+
+```php
+FormBuilder::make()->reactiveUrl(fn(FormBuilder $form) => $form->getCore()->getRouter()->getEndpoints()->reactive($page, $resource, $extra))
 ```
 
 <a name="validation"></a>
