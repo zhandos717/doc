@@ -42,4 +42,3 @@ tab: Blade
 ```php
 Icon::make(svg('path-to-icon-pack')->toHtml())->custom(),
 ```
-~~~
