@@ -36,7 +36,7 @@ use MoonShine\Ace\Fields\Code;
 Code::make('Code')
 ```
 
-![fields_code](https://moonshine-laravel.com/screenshots/code.png)
+![fields_code](https://raw.githubusercontent.com/moonshine-software/doc/3.x/resources/screenshots/code.png)
 
 > [!NOTE]
 > Поле работает на основе [Ace](https://ace.c9.io/) библиотеки.
