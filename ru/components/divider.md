@@ -1,4 +1,4 @@
-# Декоратор Divider
+# Divider
 
 - [Основы](#basics)
 - [Метка](#label)
