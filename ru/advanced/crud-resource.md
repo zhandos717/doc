@@ -40,27 +40,27 @@ final class RestCrudResource extends CrudResource
 {
     public function findItem(bool $orFail = false): mixed
     {
-        // TODO: Implement findItem() method.
+        //
     }
 
     public function getItems(): mixed
     {
-        // TODO: Implement getItems() method.
+        //
     }
 
     public function massDelete(array $ids): void
     {
-        // TODO: Implement massDelete() method.
+        //
     }
 
     public function delete(mixed $item, ?FieldsContract $fields = null): bool
     {
-        // TODO: Implement delete() method.
+        //
     }
 
     public function save(mixed $item, ?FieldsContract $fields = null): mixed
     {
-        // TODO: Implement save() method.
+        //
     }
 }
 ```

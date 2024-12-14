@@ -158,3 +158,7 @@
     - [Profile](/docs/{{version}}/recipes/profile)
     - [Select](/docs/{{version}}/recipes/select)
     - [Dashboard settings](/docs/{{version}}/recipes/dashboard-settings)
+    - [IndexPage with CardsBuilder](/docs/{{version}}/recipes/index-page-cards)
+    - [Breadcrumbs](/docs/{{version}}/recipes/custom-breadcrumbs)
+    - [Form events](/docs/{{version}}/recipes/form-with-events)
+    - [HasMany with parent id](/docs/{{version}}/recipes/hasmany-parent-id)
