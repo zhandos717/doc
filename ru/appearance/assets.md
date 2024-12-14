@@ -122,7 +122,7 @@ $assetManager->add([
 ]);
 ```
 
-> [TIP]
+> [!TIP]
 > Вы также можете воспользоваться хелпером `moonshine()->getAssetManager()`
 
 Метод *append* всегда будет добавлять ресурсы до основного списка из *CrudResource*, *Page*, *Layout*, *Component*, *Field*, а *prepend* после.

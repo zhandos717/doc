@@ -179,6 +179,22 @@ TableBuilder::make()
 ->vertical()
 ```
 
+Если вы хотите изменить атрибуты колонок при вертикальном режиме, то воспользуйтесь параметрами `title` или `value`:
+
+```php
+/** @param TableBuilder $component */
+public function modifyDetailComponent(ComponentContract $component): ComponentContract
+{
+    return $component->vertical(
+        title: fn(FieldContract $field, Column $default, TableBuilder $ctx): ComponentContract => $default->columnSpan(2),
+        value: fn(FieldContract $field, Column $default, TableBuilder $ctx): ComponentContract => $default->columnSpan(10),
+    );
+}
+```
+
+- `title` - Колонка с заголовком
+- `value` - Колонка со значением
+
 <a name="editable-table"></a>
 ### Редактируемая таблица
 

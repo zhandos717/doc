@@ -102,5 +102,5 @@ tab: Blade
 </x-moonshine::dropdown>
 ```
 
-> [NOTE]
+> [!NOTE]
 > Дополнительные варианты расположения можно найти в официальной документации [tippy.js](https://atomiks.github.io/tippyjs/v6/all-props/#placement).
