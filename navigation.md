@@ -162,3 +162,7 @@
     - [Breadcrumbs](/docs/{{version}}/recipes/custom-breadcrumbs)
     - [Form events](/docs/{{version}}/recipes/form-with-events)
     - [HasMany with parent id](/docs/{{version}}/recipes/hasmany-parent-id)
+    - [Async metrics](/docs/{{version}}/recipes/async-metrics)
+    - [Change field logic](/docs/{{version}}/recipes/change-field-logic)
+    - [Template](/docs/{{version}}/recipes/template)
+    - [UpdateOnPreview pivot](/docs/{{version}}/recipes/update-on-preview-pivot)

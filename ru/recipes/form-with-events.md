@@ -22,3 +22,56 @@ TableBuilder::make()
     ->name('main-table')
     ->async()
 ```
+
+Давайте также рассмотрим, как добавить свои собственные события:
+
+```bladehtml
+<div x-data=""
+     @form_updated:my-event.window="alert()"
+>
+</div>
+```
+
+Вы также можете воспользоваться удобной директивой `defineEvent`, которая сделает то же самое что и пример выше:
+
+```bladehtml
+<div 
+  x-data=""
+  @defineEvent('form_updated', 'my-event', 'alert()')
+>
+</div>
+```
+
+Итоговый пример:
+
+```bladehtml
+<div x-data="my"
+     @defineEvent('form_updated', 'my-event', 'asyncRequest')
+>
+</div>
+
+<script>
+    document.addEventListener("alpine:init", () => {
+        Alpine.data("my", () => ({
+            init() {
+
+            },
+            asyncRequest() {
+                this.$event.preventDefault()
+
+                // this.$el
+                // this.$root
+            }
+        }))
+    })
+</script>
+```
+
+```php
+FormBuilder::make(route('form-table.store'))
+    ->fields([
+        Text::make('Title')
+    ])
+    ->name('main-form')
+    ->async(events: ['form_updated:my-event'])
+```
