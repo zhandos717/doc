@@ -166,3 +166,4 @@
     - [Change field logic](/docs/{{version}}/recipes/change-field-logic)
     - [Template](/docs/{{version}}/recipes/template)
     - [UpdateOnPreview pivot](/docs/{{version}}/recipes/update-on-preview-pivot)
+    - [Menu authorization](/docs/{{version}}/recipes/menu-authorization)
