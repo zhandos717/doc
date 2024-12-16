@@ -205,7 +205,7 @@ creatable(
 ```
 
 ```php
-BelongsTo::make('Author', resource: new AuthorResource())
+BelongsTo::make('Author', resource: AuthorResource::class)
     ->creatable()
 ```
 
@@ -216,7 +216,7 @@ BelongsTo::make('Author', resource: new AuthorResource())
 Вы можете настроить кнопку создания, передав параметр _button_ в метод.
 
 ```php
-BelongsTo::make('Author', resource: new AuthorResource())
+BelongsTo::make('Author', resource: AuthorResource::class)
     ->creatable(
         button: ActionButton::make('Custom button', '')
     )
