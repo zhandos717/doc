@@ -37,7 +37,7 @@ php artisan moonshine:install
 - `-d`, `--without-notifications` - без уведомлений,
 
 > [!NOTE]
-> Для более подробной информации обратитесь к разделу [Установка](docs/{{version}}/installation).
+> Для более подробной информации обратитесь к разделу [Установка](/docs/{{version}}/installation).
 
 <a name="user"></a>
 ## Пользователь
