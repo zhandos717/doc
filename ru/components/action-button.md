@@ -151,9 +151,7 @@ ActionButton::make(
         title: fn() => 'Заголовок модального окна',
         content: fn() => 'Содержимое модального окна',
         name: 'my-modal',
-        builder: fn(Modal $modal, ActionButton $ctx) => $modal->buttons([
-          ActionButton::make('Нажми меня в модальном окне', 'https://moonshine-laravel.com')
-        ])
+        builder: fn(Modal $modal, ActionButton $ctx) => $modal
     )
 ```
 
