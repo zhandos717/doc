@@ -232,7 +232,7 @@ HasMany::make('Comments', 'comments', resource: CommentResource::class)
     ->changeEditButton(
         ActionButton::make(
             'Edit',
-            fn(Comment $comment) => (new CommentResource())->formPageUrl($comment)
+            fn(Comment $comment) => app(CommentResource::class)->formPageUrl($comment)
         )
     )
 ```
@@ -376,7 +376,7 @@ HasMany::make('Comments', 'comments', resource: CommentResource::class)
 
 ```php
 Json::make('Comments', 'comments')
-    ->asRelation(new CommentResource())
+    ->asRelation(CommentResource::class)
     //...
 ```
 
