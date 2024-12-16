@@ -176,7 +176,7 @@ final class MoonShineLayout extends CompactLayout
 
 As you can see, starting from the `HTML` tag, everything in `MoonShine` consists of components, which provides tremendous freedom to customize your admin panel.
 
-Find the complete list of components in the [Components](docs/{{version}}/components/index) section.
+Find the complete list of components in the [Components](/docs/{{version}}/components/index) section.
 
 > [!TIP]
 > As you may notice, there are a huge number of components, and for convenience, we have grouped them together so that you can conveniently override only the groups required.
@@ -278,7 +278,7 @@ After creating, the `Layout` will appear in the `app/MoonShine/Layouts` director
 
 By default, pages use the display template `AppLayout` or `CompactLayout`. But you can change it to your custom template by simply replacing the value of the `$layout` property.
 
-Read more about pages in the [Page](docs/{{version}}/page/index) section.
+Read more about pages in the [Page](/docs/{{version}}/page/index) section.
 
 ```php
 use App\MoonShine\Layouts\MyLayout;

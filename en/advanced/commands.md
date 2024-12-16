@@ -37,7 +37,7 @@ Available options:
 - `-d`, `--without-notifications` - without notifications,
 
 > [!NOTE]
-> For more details, refer to the [Installation](docs/{{version}}/installation) section.
+> For more details, refer to the [Installation](/docs/{{version}}/installation) section.
 
 <a name="user"></a>
 ## User
