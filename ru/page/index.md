@@ -148,7 +148,7 @@ class CustomPage extends Page
 ## Шаблон
 
 По умолчанию страницы используют шаблон отображения `AppLayout` или `CompactLayout`.
-Подробнее про шаблоны читайте в разделе [Layout](docs/{{version}}/appearance/layout)
+Подробнее про шаблоны читайте в разделе [Layout](/docs/{{version}}/appearance/layout)
 
 ```php
 use MoonShine\Laravel\Layouts\AppLayout;
