@@ -157,8 +157,18 @@ ActionButton::make(
 
 - `title` - заголовок модального окна,
 - `content` - содержимое модального окна,
-- `name` - наименование модального окна для вызова событий,
+- `name` - уникальное наименование модального окна для вызова событий,
 - `builder` - замыкание с доступом к компоненту `Modal`
+
+> [!WARNING]
+> Если вы используете несколько однотипных модальных окон, например в таблицах для каждого элемента,
+> то вам необходимо указывать уникальный `name` для каждой:
+
+```php
+->inModal(
+    name: static fn (mixed $item, ActionButtonContract $ctx): string => "delete-button-{$ctx->getData()?->getKey()}"
+)
+```
 
 Вы также можете открыть модальное окно с помощью метода `toggleModal`, а если `ActionButton` находится внутри модального окна, то просто `openModal`
 
@@ -225,9 +235,18 @@ ActionButton::make(
         formBuilder: null,
         // опционально - замыкание с Modal
         modalBuilder: null,
-        // опционально - наименование компонента Modal
-        name: null,
+        name: 'my-modal',
     )
+```
+
+> [!WARNING]
+> Если вы используете несколько однотипных модальных окон, например в таблицах для каждого элемента,
+> то вам необходимо указывать уникальный `name` для каждой:
+
+```php
+->inModal(
+    name: static fn (mixed $item, ActionButtonContract $ctx): string => "delete-button-{$ctx->getData()?->getKey()}"
+)
 ```
 
 <a name="offcanvas"></a>
