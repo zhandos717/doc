@@ -6,15 +6,15 @@
 - [Color](#color)
 - [Badge](#badge)
 - [onClick](#onclick)
-- [Modal window](#modal)
+- [Modal](#modal)
 - [Confirmation](#confirm)
-- [Off canvas](#offcanvas)
+- [Offcanvas](#offcanvas)
 - [Grouping](#group)
 - [Bulk actions](#bulk)
 - [Async mode](#async)
     - [Method calls](#method)
-- [Sending events](#event)
-- [Filling with data](#fill)
+- [Event dispatching](#event)
+- [Data filling](#fill)
 
 ---
 
@@ -22,12 +22,11 @@ Inherits [MoonShineComponent](/docs/{{version}}/components/index).
 
 \* has the same capabilities.
 
-
 <a name="basics"></a>
 ## Basics
 
-When you need to add a button with a specific action, `ActionButton` comes to the rescue.
-In `MoonShine`, they are already being used - in forms, tables, on pages.
+When you need to add a button with a specific action, `ActionButton` comes to the rescue. 
+In `MoonShine`, they are already used - in forms, tables, and on pages.
 
 ```php
 ActionButton::make(
@@ -38,8 +37,8 @@ ActionButton::make(
 ```
 
 - `label` - button text,
-- `url` - URL link of the button,
-- `data` - optional button data available in closures.
+- `url` - button link URL,
+- `data` - optional button data, available in closures.
 
 ```php
 use MoonShine\UI\Components\ActionButton;
@@ -48,7 +47,7 @@ protected function components(): iterable
 {
     return [
         ActionButton::make(
-            label: 'Button title',
+            label: 'Button Title',
             url: 'https://moonshine-laravel.com',
         )
     ];
@@ -58,7 +57,7 @@ protected function components(): iterable
 <a name="blank"></a>
 ## Open in new window
 
-The `blank()` method allows you to open a URL in a new window. The attribute `target="_blank"` will be added.
+The `blank()` method allows opening a URL in a new window. The attribute `target="_blank"` will be added.
 
 ```php
 ActionButton::make(
@@ -70,7 +69,7 @@ ActionButton::make(
 <a name="icon"></a>
 ## Icon
 
-The `icon()` method allows you to specify an icon for the button.
+The `icon()` method allows specifying an icon for the button.
 
 ```php
 ActionButton::make(
@@ -85,7 +84,7 @@ ActionButton::make(
 <a name="color"></a>
 ## Color
 
-For *ActionButton* there is a set of methods that allow you to set the button color: 
+For *ActionButton*, there is a set of methods to set the button color: 
 `primary()`, `secondary()`, `warning()`, `success()`, and `error()`.
 
 ```php
@@ -98,7 +97,7 @@ ActionButton::make(
 <a name="badge"></a>
 ## Badge
 
-The `badge()` method allows you to add a badge to the button.
+The `badge()` method allows adding a badge to the button.
 
 ```php
 badge(Closure|string|int|float|null $value)
@@ -112,7 +111,7 @@ ActionButton::make('Button')->badge(fn() => Comment::count())
 <a name="onclick"></a>
 ## onClick
 
-The `onClick` method allows you to execute JS code when clicked:
+The `onClick` method allows executing js code upon clicking:
 
 ```php
 ActionButton::make(
@@ -131,14 +130,14 @@ ActionButton::make('Alert')
 ```
 
 <a name="modal"></a>
-## Modal window
+## Modal
 
 ### Basics
 
-To call a modal window when clicking on the button, use the `inModal()` method.
+To trigger a modal window when the button is clicked, use the `inModal()` method.
 
 > [!NOTE]
-> For more detailed information on modal window methods, refer to the [Modal](/docs/{{version}}/components/modal) section.
+> For more detailed information on modal methods, refer to the [Modal](/docs/{{version}}/components/modal) section.
 
 ```php
 use MoonShine\UI\Components\Modal;
@@ -148,21 +147,28 @@ ActionButton::make(
     url: 'https://moonshine-laravel.com',
 )
     ->inModal(
-        title: fn() => 'Modal window title',
-        content: fn() => 'Modal window content',
+        title: fn() => 'Modal Window Title',
+        content: fn() => 'Modal Window Content',
         name: 'my-modal',
-        builder: fn(Modal $modal, ActionButton $ctx) => $modal->buttons([
-          ActionButton::make('Click me in modal window', 'https://moonshine-laravel.com')
-        ])
+        builder: fn(Modal $modal, ActionButton $ctx) => $modal
     )
 ```
 
 - `title` - modal window title,
 - `content` - modal window content,
-- `name` - modal window name for event calls,
+- `name` - unique modal window name for event dispatching,
 - `builder` - closure with access to the `Modal` component.
 
-You can also open the modal window using the `toggleModal` method, and if the `ActionButton` is inside the modal window, just use `openModal`.
+> [!WARNING]
+> If you are using multiple similar modal windows, such as in tables for each item, you need to specify a unique `name` for each:
+
+```php
+->inModal(
+    name: static fn (mixed $item, ActionButtonContract $ctx): string => "delete-button-{$ctx->getData()?->getKey()}"
+)
+```
+
+You can also open a modal window using the `toggleModal` method, and if the `ActionButton` is inside a modal window, simply `openModal`.
 
 ```php
 use MoonShine\UI\Components\ActionButton;
@@ -185,7 +191,7 @@ protected function components(): iterable
 
 ### Async mode
 
-If you need to load content into the modal window asynchronously, enable the `async` mode on the `ActionButton`.
+If you need to load content in the modal window asynchronously, enable the `async` mode on the `ActionButton`.
 
 ```php
 protected function components(): iterable
@@ -197,19 +203,19 @@ protected function components(): iterable
         )
             ->async()
             ->inModal(
-                title: fn() => 'Modal window title',
+                title: fn() => 'Modal Window Title',
             )
     ];
 }
 ```
 
 > [!NOTE]
-> You can learn about [Fragment](/docs/{{version}}/components/fragment) in the "Components" section.
+> You can find out about [Fragment](/docs/{{version}}/components/fragment) in the "Components" section.
 
 <a name="confirm"></a>
 ## Confirmation
 
-The `withConfirm()` method allows you to create a button with a confirmation action.
+The `withConfirm()` method allows creating a button with action confirmation.
 
 ```php
 ActionButton::make(
@@ -217,9 +223,9 @@ ActionButton::make(
     url: 'https://moonshine-laravel.com',
 )
     ->withConfirm(
-        title: 'Confirmation modal window title',
-        content: 'Confirmation modal window content',
-        button: 'Confirmation modal window button',
+        title: 'Confirmation Modal Window Title',
+        content: 'Confirmation Modal Window Content',
+        button: 'Confirmation Modal Window Button',
         // optionally - additional form fields
         fields: null,
         method: HttpMethod::POST,
@@ -227,15 +233,23 @@ ActionButton::make(
         formBuilder: null,
         // optionally - closure with Modal
         modalBuilder: null,
-        // optionally - name of the Modal component
-        name: null,
+        name: 'my-modal',
     )
 ```
 
-<a name="offcanvas"></a>
-## Off canvas
+> [!WARNING]
+> If you are using multiple similar modal windows, such as in tables for each item, you need to specify a unique `name` for each:
 
-To trigger an off canvas when clicking the button, use the `inOffCanvas()` method.
+```php
+->inModal(
+    name: static fn (mixed $item, ActionButtonContract $ctx): string => "delete-button-{$ctx->getData()?->getKey()}"
+)
+```
+
+<a name="offcanvas"></a>
+## Offcanvas
+
+To trigger an offcanvas panel when clicking the button, use the `inOffCanvas()` method.
 
 ```php
 use MoonShine\UI\Components\OffCanvas;
@@ -248,11 +262,11 @@ protected function components(): iterable
             url: 'https://moonshine-laravel.com',
         )
             ->inOffCanvas(
-                title: fn() => 'Off canvas title',
+                title: fn() => 'Offcanvas Title',
                 content: fn() => 'Content',
                 name: false,
                 builder: fn(OffCanvas $offCanvas, ActionButton $ctx) => $offCanvas->left()
-                // optionally - need to ensure components are available for search in the system, since content is just HTML
+                // optionally - necessary for components to be available for searching in the system, as content is just HTML
                 components: []
             )
     ];
@@ -262,7 +276,7 @@ protected function components(): iterable
 <a name="group"></a>
 ## Grouping
 
-If you need to organize logic with multiple `ActionButton`, where some of them should be hidden or displayed in a dropdown menu, use the `ActionGroup` component.
+If you need to organize logic with multiple `ActionButton`, with some of them needing to be hidden or displayed in a dropdown menu, use the `ActionGroup` component.
 
 ```php
 use MoonShine\UI\Components\ActionGroup;
@@ -280,7 +294,7 @@ protected function components(): iterable
 
 ### Display
 
-Thanks to `ActionGroup`, you can also change the display of buttons, showing them inline or in a dropdown menu to save space.
+With `ActionGroup`, you can also change the display of buttons, showing them inline or in a dropdown for space-saving.
 
 ```php
 use MoonShine\UI\Components\ActionGroup;
@@ -299,7 +313,7 @@ protected function components(): iterable
 <a name="bulk"></a>
 ## Bulk actions
 
-The `bulk()` method allows you to create a bulk action button for `ModelResource`.
+The `bulk()` method allows creating a bulk action button for `ModelResource`.
 
 ```php
 protected function indexButtons(): ListOf
@@ -309,12 +323,12 @@ protected function indexButtons(): ListOf
 ```
 
 > [!TIP]
-> The `bulk()` method is used only inside `ModelResource`.
+> The `bulk()` method is only used within `ModelResource`.
 
 <a name="async"></a>
 ## Async mode
 
-The `async()` method allows you to implement asynchronous operation for `ActionButton`.
+The `async()` method allows implementing asynchronous functionality for `ActionButton`.
 
 ```php
 async(
@@ -325,16 +339,16 @@ async(
 )
 ```
 
-- `$method` - method of the asynchronous request,
-- `$selector` - selector of the element, the content of which will change according to the response,
+- `$method` - the method of the asynchronous request,
+- `$selector` - the selector of the element whose content will change according to the response,
 - `$events` - events that will be triggered after a successful request,
-- `$callback` - JS callback function after receiving the response.
+- `$callback` - js callback function after receiving the response.
 
 > [!NOTE]
-> You can learn about [Events](/docs/{{version}}/frontend/js#events) in the "Frontend" section.
+> You can learn more about [Events](/docs/{{version}}/frontend/js#events) in the "Frontend" section.
 >
 > [!NOTE]
-> You can learn about [Callback](/docs/{{version}}/frontend/js#response-calback) in the "Frontend" section.
+> You can learn more about [Callback](/docs/{{version}}/frontend/js#response-calback) in the "Frontend" section.
 
 ```php
 protected function components(): iterable
@@ -351,7 +365,7 @@ protected function components(): iterable
 
 ### Notifications
 
-If you need to display a notification or perform a redirect after clicking, simply implement a JSON response according to the structure:
+If you need to display a notification or redirect after clicking, simply implement a json response according to the structure:
 
 ```php
 {message: 'Toast', messageType: 'success', redirect: '/url'}
@@ -362,7 +376,7 @@ If you need to display a notification or perform a redirect after clicking, simp
 
 ### HTML content
 
-If you need to replace an HTML area upon clicking, you can return HTML content or JSON with the key html in the response:
+If you need to replace an HTML area upon clicking, you can return HTML content or json with the html key in the response:
 
 ```php
 {html: 'Html content'}
@@ -402,7 +416,7 @@ protected function components(): iterable
 
 ### Callback
 
-If you need to handle the response in a different way, you need to implement a handler function and specify it in the `async()` method.
+If you need to handle the response differently, you must implement a handler function and specify it in the `async()` method.
 
 ```php
 protected function components(): iterable
@@ -432,7 +446,7 @@ document.addEventListener("moonshine:init", () => {
 <a name="method"></a>
 ### Method calls
 
-`method()` allows you to specify the name of a method in the resource and call it asynchronously when clicking on the `ActionButton` without the need to create additional controllers.
+`method()` allows specifying a method name in the resource and call it asynchronously when the `ActionButton` is clicked, without the need to create additional controllers.
 
 ```php
 method(
@@ -447,14 +461,14 @@ method(
 )
 ```
 
-- `$method` - method name,
+- `$method` - the method name,
 - `$params` - optionally - parameters for the request,
 - `$message` - optionally - message upon successful execution,
-- `$selector` - optionally - selector of the element whose content will change,
-- `$events` - optionally - events that will be triggered after a successful request,
-- `$callback` - optionally - JS callback function after receiving a response,
-- `$page` - optionally - page containing the method (if the button is outside the page and resource),
-- `$resource` - optionally - resource containing the method (if the button is outside the resource).
+- `$selector` - optionally - the selector of the element whose content will change,
+- `$events` - optionally - events that will be triggered after a successful query,
+- `$callback` - optionally - js callback function after receiving the response,
+- `$page` - optionally - the page containing the method (if the button is outside the page and resource),
+- `$resource` - optionally - the resource containing the method (if the button is outside the resource).
 
 ```php
 protected function components(): iterable
@@ -504,13 +518,13 @@ public function updateSomething(MoonShineRequest $request)
 > Methods called via `ActionButton` in the resource must be public!
 
 > [!CAUTION]
-> To access data from the request, you must pass it as parameters.
+> For access to data from the request, you must pass them as parameters.
 
 #### Passing the current item
 
 If the request contains `resourceItem`, you can access the current item in the resource through the `getItem()` method.
 
-- When the data contains a model, and the button is created in the `indexButtons()` or `detailButtons` or `formButtons` method of [TableBuilder](/docs/{{version}}/components/table-builder#buttons), [CardsBuilder](/docs/{{version}}/components/cards-builder#buttons) or [FormBuilder](/docs/{{version}}/components/form-builder#buttons), it is automatically populated with data, and the parameters will contain `resourceItem`.
+- When the data contains a model and the button is created in the `indexButtons()` method or `detailButtons` or `formButtons` of [TableBuilder](/docs/{{version}}/components/table-builder#buttons), [CardsBuilder](/docs/{{version}}/components/cards-builder#buttons) or [FormBuilder](/docs/{{version}}/components/form-builder#buttons), it automatically gets the data, and the parameters will contain `resourceItem`.
 - When the button is on the form page of `ModelResource`, you can pass the id of the current item.
 
 ```php
@@ -533,7 +547,7 @@ ActionButton::make('Click me')
 
 #### Field values
 
-The `withSelectorsParams()` method allows you to pass field values with the request using element selectors.
+The `withSelectorsParams()` method allows passing field values with the request using element selectors.
 
 ```php
 ActionButton::make('Async method')
@@ -558,9 +572,9 @@ public function updateSomething(MoonShineRequest $request): MoonShineJsonRespons
 > [!WARNING]
 > When using the `withSelectorsParams()` method, requests will be sent via `POST`.
 
-#### Downloading
+#### Download
 
-The called method can return `BinaryFileResponse`, allowing you to download a file.
+The invoked method can return `BinaryFileResponse`, allowing a file download.
 
 ```php
 ActionButton::make('Download')->method('download')
@@ -576,22 +590,22 @@ public function download(): BinaryFileResponse
 ```
 
 <a name="event"></a>
-## Sending events
+## Event dispatching
 
-To send JavaScript events, you can use the `dispatchEvent()` method.
+To dispatch JavaScript events, you can use the `dispatchEvent()` method.
 
 ```php
 dispatchEvent(array|string $events)
 ```
 
 ```php
-ActionButton::make('Update')
+ActionButton::make('Refresh')
     ->dispatchEvent(AlpineJs::event(JsEvent::TABLE_UPDATED, 'index-table')),
 ```
 
-By default, when triggering events with a request, all query parameters (e.g., `?param=value`) from the `url` (specified when creating the `ActionButton`) will be sent.
+By default, when an event is triggered with a request, all query parameters (e.g., `?param=value`) from the `url` (specified when creating the `ActionButton`) will be sent.
 
-You can exclude unnecessary ones via the `exclude` parameter:
+You can exclude unnecessary ones through the `exclude` parameter:
 
 ```php
 ->dispatchEvent(
@@ -600,7 +614,7 @@ You can exclude unnecessary ones via the `exclude` parameter:
 )
 ```
 
-You can also completely exclude sending with `withoutPayload`:
+You can also completely exclude the sending of `withoutPayload`:
 
 ```php
 ->dispatchEvent(
@@ -611,23 +625,23 @@ You can also completely exclude sending with `withoutPayload`:
 
 ### URL query parameters
 
-You can include the parameters of the current URL request (e.g., `?param=value`) in the request:
+You can include the current request URL parameters (e.g., `?param=value`) in the request:
 
 ```php
 ->withQueryParams()
 ```
 
 <a name="fill"></a>
-## Filling with data
+## Data filling
 
-When working with `ModelResource`, action buttons `ActionButton` are usually automatically filled with the necessary data. This process happens "under the hood" using the `setData` method. Let's take a closer look at this mechanism.
+When working with `ModelResource`, the action buttons `ActionButton` are usually automatically filled with the necessary data. This process happens "under the hood" using the `setData` method. Let’s examine this mechanism in more detail.
 
 ```php
 ActionButton::make('Button')->setData(?DataWrapperContract $data = null)
 ```
 
 > [!NOTE]
-> Read more about DataWrapperContract in the [TypeCasts](/docs/{{version}}/advanced/type-casts) section.
+> For more information about DataWrapperContract, read the [TypeCasts](/docs/{{version}}/advanced/type-casts) section.
 
 Methods with callbacks before and after filling the button are also available.
 

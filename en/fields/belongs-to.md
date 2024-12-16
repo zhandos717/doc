@@ -4,10 +4,10 @@
 - [Default Value](#default)
 - [Nullable](#nullable)
 - [Placeholder](#placeholder)
-- [Creatable Relationship](#creatable)
-- [Searchable Values](#searchable)
-- [Change Value Query](#values-query)
-- [Async Search](#async-search)
+- [Creating Relation Object](#creatable)
+- [Searching Values](#searchable)
+- [Modifying Value Retrieval Query](#values-query)
+- [Asynchronous Search](#async-search)
 - [Associated Fields](#associated)
 - [Values with Image](#with-image)
 - [Options](#options)
@@ -20,9 +20,9 @@
 <a name="basics"></a>
 ## Basics
 
-The _BelongsTo_ field is designed to work with the corresponding relationship in Laravel and contains all [Basic methods](/docs/{{version}}/fields/basic-methods).
+The _BelongsTo_ field is designed to work with the same-name relationship in Laravel and contains all [Basic Methods](/docs/{{version}}/fields/basic-methods).
 
-To create this field use the static method `make()`.
+To create this field, use the static method `make()`.
 
 ```php
 BelongsTo::make(
@@ -33,14 +33,14 @@ BelongsTo::make(
 )
 ```
 
-- `$label` - label, header of the field,
-- `$relationName` - name of the relationship,
-- `$formatted` - closure or field in the related table to display values,
-- `$resource` - model resource that the relationship refers to.
+- `$label` - the label, the title of the field,
+- `$relationName` - the name of the relation,
+- `$formatted` - a closure or field in the related table for displaying values,
+- `$resource` - the model resource that the relationship refers to.
 
 > [!WARNING]
-> It is mandatory to have a model resource that the relationship refers to!  
-> The resource also needs to be registered in the _MoonShineServiceProvider_ service provider in the `$core->resources()` method. Otherwise, a 500 error will occur (Resource is required for MoonShine\Laravel\Fields\Relationships\BelongsTo...).
+> The model resource that the relationship refers to is mandatory!
+> The resource must also be registered in the _MoonShineServiceProvider_ service provider in the `$core->resources()` method. Otherwise, there will be a 500 error (Resource is required for MoonShine\Laravel\Fields\Relationships\BelongsTo...).
 
 
 ```php
@@ -54,7 +54,7 @@ BelongsTo::make('Country', 'country', resource: CountryResource::class)
 ![belongs_to_dark](https://raw.githubusercontent.com/moonshine-software/doc/3.x/resources/screenshots/belongs_to_dark.png)
 
 > [!NOTE]
-> If you do not specify `$relationName`, the name of the relationship will be determined automatically based on `$label`.
+> If `$relationName` is not specified, the relation name will be determined automatically based on `$label`.
 
 ```php
 BelongsTo::make('Country', resource: CountryResource::class)
@@ -71,7 +71,7 @@ class CountryResource extends ModelResource
 BelongsTo::make('Country', 'country')
 ```
 
-If you do not specify `$relationName`, the name of the relationship will be determined automatically based on `$label` (according to camelCase rules).
+If you do not specify `$relationName`, the name of the relationship will be determined automatically based on `$label` (by camelCase rules).
 
 ```php
 class CountryResource extends ModelResource
@@ -83,8 +83,8 @@ BelongsTo::make('Country')
 ```
 
 > [!NOTE]
-> By default, the value is displayed using the field in the related table that is specified by the `$column` property in the model resource.  
-> The `$formatted` argument allows you to override the `$column` property.
+> By default, the field used to display the value is the one specified by the `$column` property in the model resource.  
+> The `$formatted` argument allows overriding the $column property.
 
 ```php
 namespace App\MoonShine\Resources;
@@ -103,7 +103,7 @@ BelongsTo::make(
 )
 ```
 
-If a more complex value for display is required, you can pass a callback function to the `$formatted` argument.
+If you need to specify a more complex value for display, you can pass a callback function to the `$formatted` argument.
 
 ```php
 BelongsTo::make(
@@ -144,7 +144,7 @@ BelongsTo::make('Country', resource: CategoryResource::class)
 <a name="nullable"></a>
 ## Nullable
 
-As with all fields, if you need to store NULL, you must add the `nullable()` method.
+As with all fields, if you need to store NULL, you should add the `nullable()` method.
 
 ```php
 nullable(Closure|bool|null $condition = null)
@@ -162,7 +162,7 @@ BelongsTo::make('Country', resource: CategoryResource::class)
 > [!TIP]
 > MoonShine is a very convenient and functional tool. However, to use it, you need to be confident in the basics of Laravel.
 
-Don't forget to specify in the database table that the field can accept `Nullable` values.
+Don't forget to specify in the database table that the field can accept a `Null` value.
 
 <a name="placeholder"></a>
 ## Placeholder
@@ -180,9 +180,9 @@ BelongsTo::make('Country', 'country')
 ```
 
 <a name="searchable"></a>
-## Searchable Values
+## Searching Values
 
-If you need to search among the values, you should add the `searchable()` method.
+If you need to search among values, you must add the `searchable()` method.
 
 ```php
 use MoonShine\Laravel\Fields\Relationships\BelongsTo;
@@ -193,9 +193,9 @@ BelongsTo::make('Country', 'country', resource: CountryResource::class)
 ```
 
 <a name="creatable"></a>
-## Creatable Relationship
+## Creating Relation Object
 
-The `creatable()` method allows creating a new relationship object through a modal window.
+The `creatable()` method allows you to create a new relation object via a modal window.
 
 ```php
 creatable(
@@ -205,7 +205,7 @@ creatable(
 ```
 
 ```php
-BelongsTo::make('Author', resource: new AuthorResource())
+BelongsTo::make('Author', resource: AuthorResource::class)
     ->creatable()
 ```
 
@@ -216,16 +216,16 @@ BelongsTo::make('Author', resource: new AuthorResource())
 You can customize the create button by passing the _button_ parameter to the method.
 
 ```php
-BelongsTo::make('Author', resource: new AuthorResource())
+BelongsTo::make('Author', resource: AuthorResource::class)
     ->creatable(
         button: ActionButton::make('Custom button', '')
     )
 ```
 
 <a name="values-query"></a>
-## Change Value Query
+## Query for Values
 
-The `valuesQuery()` method allows you to change the query for fetching values.
+The `valuesQuery()` method allows you to change the query to retrieve values.
 
 ```php
 valuesQuery(Closure $callback)
@@ -240,9 +240,9 @@ BelongsTo::make('Category', 'category', resource: CategoryResource::class)
 ```
 
 <a name="async-search"></a>
-## Async Search
+## Asynchronous Search
 
-To implement async value searching, use the `asyncSearch()` method.
+To implement asynchronous value search, use the `asyncSearch()` method.
 
 ```php
 asyncSearch(
@@ -261,15 +261,15 @@ BelongsTo::make('Country', 'country', resource: CategoryResource::class)
 ```
 
 > [!TIP]
-> The search will be performed based on the resource's relationship field `column`. By default, `column=id`.
+> The search will be carried out by the field specified for the resource `column`. By default `column=id`.
 
 You can pass parameters to the `asyncSearch()` method:
-*   `$column` - the field to search by,
-*   `$searchQuery` - callback function for filtering values,
-*   `$formatted` - callback function for customizing output,
-*   `$associatedWith` - the field to establish a relationship with,
-*   `$limit` - the number of elements in the search results,
-*   `$url` - URL for handling the async request,
+*   `$column` - the field by which the search is conducted,
+*   `$searchQuery` - a callback function for filtering values,
+*   `$formatted` - a callback function for customizing output,
+*   `$associatedWith` - the field with which the association is established,
+*   `$limit` - the number of items in the search results,
+*   `$url` - the URL for processing the asynchronous request,
 
 ```php
 use Illuminate\Contracts\Database\Eloquent\Builder;
@@ -290,7 +290,7 @@ BelongsTo::make('Country', 'country', resource: CategoryResource::class)
 ```
 
 > [!NOTE]
-> When building the query in `asyncSearchQuery()`, you can use the current form values. To do this, you need to pass `Request` to the callback function.
+> When building the query in `asyncSearchQuery()`, you can use the current values of the form. To do this, it is necessary to pass `Request` into the callback function.
 
 ```php
 use Illuminate\Contracts\Database\Eloquent\Builder;
@@ -309,7 +309,7 @@ BelongsTo::make('City', 'city',  resource: CityResource::class)
 ```
 
 > [!NOTE]
-> When building the query in `asyncSearchQuery()`, the original state of the builder is preserved.  
+> When building the query in `asyncSearchQuery()`, the initial state of the builder is preserved.  
 If you need to replace it with your builder, use the `replaceQuery` flag.
 
 ```php
@@ -332,14 +332,14 @@ BelongsTo::make('City', 'city',  resource: CityResource::class)
 <a name="associated"></a>
 ## Associated Fields
 
-To establish a relationship between selection values in fields, you can use the `associatedWith()` method.
+To establish a relationship of selection values between fields, you can use the `associatedWith()` method.
 
 ```php
 associatedWith(string $column, ?Closure $searchQuery = null)
 ```
 
-- `$column` - the field to establish the relationship with,
-- `$searchQuery` - callback function for filtering values.
+- `$column` - the field with which the relationship is established,
+- `$searchQuery` - a callback function for filtering values.
 
 ```php
 BelongsTo::make('City', 'city', resource: CityResource::class)
@@ -353,7 +353,7 @@ BelongsTo::make('City', 'city', resource: CityResource::class)
 ## Values with Image
 
 > [!NOTE]
-> The `withImage()` method allows adding an image to the value.
+> The `withImage()` method allows you to add an image to the value.
 
 ```php
 withImage(
@@ -363,23 +363,23 @@ withImage(
 )
 ```
 
-- `$column` - the field containing the image,
+- `$column` - the field with the image,
 - `$disk` - the file system disk,
-- `$dir` - the directory relative to the disk root.
+- `$dir` - the directory relative to the root of the disk.
 
 ```php
 BelongsTo::make('Country', resource: CountryResource::class)
     ->withImage('thumb', 'public', 'countries')
 ```
 
-![belongs_to_image](https://raw.githubusercontent.com/moonshine-software/doc/3.x/resources/screenshots/belongs_to_image.png) 
+![belongs_to_image](https://raw.githubusercontent.com/moonshine-software/doc/3.x/resources/screenshots/belongs_to_image.png)
 
 ![belongs_to_image_dark](https://raw.githubusercontent.com/moonshine-software/doc/3.x/resources/screenshots/belongs_to_image_dark.png)
 
 <a name="options"></a>
 ## Options
 
-All selection options are available for modification through *data attributes*:
+All selection options are available for modification via *data attributes*:
 
 ```php
 BelongsTo::make('Country', resource: CountryResource::class)
@@ -404,12 +404,12 @@ BelongsTo::make('Type')->native()
 <a name="reactive"></a>
 ## Reactivity
 
-This field supports [reactivity](/docs/{{version}}/fields/basic-methods#reactive)
+This field supports [reactivity](/docs/{{version}}/fields/basic-methods#reactive).
 
 <a name="link"></a>
 ## Link
 
-By default, *BelongsTo* links to the edit page, using the `link` method under the hood. If necessary, you can override `link`:
+By default, *BelongsTo* links to the edit page, using the `link` method under the hood. If needed, you can override the `link`:
 
 ```php
 BelongsTo::make(

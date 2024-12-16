@@ -3,7 +3,7 @@
 - [Basics](#basics)
 - [Fields](#fields)
 - [Creating a relationship object](#creatable)
-- [Limit of records](#limit)
+- [Record count](#limit)
 - [Only link](#only-link)
 - [Parent ID](#parent-id)
 - [Edit button](#change-edit-button)
@@ -30,15 +30,16 @@ HasMany::make(
 )
 ```
 
-- `$label` - the label, the title of the field,
-- `$relationName` - the name of the relationship,
-- `$resource` - the model resource that the relationship refers to.
+- `$label` - label, header of the field,
+- `$relationName` - name of the relation,
+- `$resource` - model resource that the relation points to.
 
 > [!CAUTION]
 > The `$formatted` parameter is not used in the `HasMany` field!
 
 > [!WARNING]
-> The presence of a model resource that the relationship refers to is mandatory. The resource must also be [registered](/docs/{{version}}/resources#define) in the service provider `MoonShineServiceProvider` in the `$core->resources()` method. Otherwise, a 500 error will occur (Resource is required for MoonShine\Laravel\Fields\Relationships\HasMany...).
+> The existence of the model resource that the relationship points to is mandatory.
+The resource also needs to be [registered](/docs/{{version}}/resources#define) in the `MoonShineServiceProvider` service provider in the `$core->resources()` method. Otherwise, a 500 error will occur (Resource is required for MoonShine\Laravel\Fields\Relationships\HasMany...).
 
 ```php
 use MoonShine\Laravel\Fields\Relationships\HasMany;
@@ -50,7 +51,7 @@ HasMany::make('Comments', 'comments', resource: CommentResource::class)
 
 ![has_many_dark](https://raw.githubusercontent.com/moonshine-software/doc/3.x/resources/screenshots/has_many_dark.png)
 
-You can omit `$resource` if the model resource matches the name of the relationship.
+You can omit the `$resource` if the model resource matches the name of the relation.
 
 ```php
 class CommentResource extends ModelResource
@@ -61,7 +62,7 @@ class CommentResource extends ModelResource
 HasMany::make('Comments', 'comments')
 ```
 
-If you do not specify `$relationName`, then the name of the relationship will be automatically determined based on `$label` (according to camelCase rules).
+If you do not specify `$relationName`, then the name of the relation will be determined automatically based on `$label` (following camelCase rules).
 
 ```php
 class CommentResource extends ModelResource
@@ -118,7 +119,7 @@ HasMany::make('Comments', resource: CommentResource::class)
 
 ![has_many_creatable_dark](https://raw.githubusercontent.com/moonshine-software/doc/3.x/resources/screenshots/has_many_creatable_dark.png)
 
-You can customize the *creation button* by passing the button parameter to the method.
+You can customize the *create* button by passing the button parameter in the method.
 
 ```php
 HasMany::make('Comments', resource: CommentResource::class)
@@ -128,7 +129,7 @@ HasMany::make('Comments', resource: CommentResource::class)
 ```
 
 <a name="limit"></a>
-## Limit of records
+## Record count
 
 The `limit()` method allows you to limit the number of records displayed in the *preview*.
 
@@ -144,18 +145,18 @@ HasMany::make('Comments', resource: CommentResource::class)
 <a name="only-link"></a>
 ## Only link
 
-The `relatedLink()` method will display the relationship as a link with the number of elements. The link will lead to the IndexPage of the child resource from the HasMany relationship, where only those elements will be shown.
+The `relatedLink()` method allows you to display the relationship as a link with the count of elements. The link will lead to the IndexPage of the child resource from the HasMany relationship, only showing those data elements.
 
 ```php
 relatedLink(?string $linkRelation = null, Closure|bool $condition = null)
 ```
 
 You can pass optional parameters to the method:
-- `linkRelation` - a link to the relationship,
-- `condition` - a closure or boolean value that determines whether to display the relationship as a link.
+- `linkRelation` - link to the relation,
+- `condition` - closure or boolean value responsible for displaying the relation as a link.
 
 > [!NOTE]
-> Don’t forget to add the relationship to the *with* property of the resource.
+> Don’t forget to add the relation to the *with* property of the resource.
 
 ```php
 HasMany::make('Comments', resource: CommentResource::class)
@@ -165,14 +166,14 @@ HasMany::make('Comments', resource: CommentResource::class)
 
 ![has_many_link_dark](https://raw.githubusercontent.com/moonshine-software/doc/3.x/resources/screenshots/has_many_link_dark.png)
 
-The `linkRelation` parameter allows you to create a link to the relationship with the binding of the parent resource.
+The `linkRelation` parameter allows you to create a link to the relation with parent resource binding.
 
 ```php
 HasMany::make('Comments', resource: CommentResource::class)
     ->relatedLink('comment')
 ```
 
-The `condition` parameter through a closure allows you to change the display method depending on the conditions.
+The `condition` parameter through a closure allows you to change the display method based on conditions.
 
 ```php
 HasMany::make('Comments', resource: CommentResource::class)
@@ -184,7 +185,7 @@ HasMany::make('Comments', resource: CommentResource::class)
 <a name="parent-id"></a>
 ## Parent ID
 
-If the relationship has a resource, and you want to get the ID of the parent element, you can use the *ResourceWithParent* trait.
+If the relation has a resource, and you want to get the ID of the parent element, you can use the *ResourceWithParent* trait.
 
 ```php
 use MoonShine\Resources\ModelResource;
@@ -198,7 +199,7 @@ class PostImageResource extends ModelResource
 }
 ```
 
-When using the trait, you need to define the following methods:
+When using the trait, you need to define the methods:
 
 ```php
 protected function getParentResourceClassName(): string
@@ -219,7 +220,7 @@ $this->getParentId();
 ```
 
 > [!TIP]
-> Recipe: [saving files](/docs/{{version}}/recipes/hasmany-parent-id) of *HasMany* relationships in the directory with the parent ID.
+> Recipe: [saving files](/docs/{{version}}/recipes/hasmany-parent-id) of *HasMany* relations in the directory with the parent ID.
 
 <a name="change-edit-button"></a>
 ## Edit button
@@ -231,7 +232,7 @@ HasMany::make('Comments', 'comments', resource: CommentResource::class)
     ->changeEditButton(
         ActionButton::make(
             'Edit',
-            fn(Comment $comment) => (new CommentResource())->formPageUrl($comment)
+            fn(Comment $comment) => app(CommentResource::class)->formPageUrl($comment)
         )
     )
 ```
@@ -239,7 +240,7 @@ HasMany::make('Comments', 'comments', resource: CommentResource::class)
 <a name="without-modals"></a>
 ## Modal window
 
-By default, creating and editing a record of the *HasMany* field occurs in a modal window, the `withoutModals()` method allows you to disable this behavior.
+By default, creating and editing a record in the *HasMany* field occurs in a modal window; the `withoutModals()` method allows you to disable this behavior.
 
 ```php
 HasMany::make('Comments', 'comments', resource: CommentResource::class)
@@ -249,11 +250,11 @@ HasMany::make('Comments', 'comments', resource: CommentResource::class)
 <a name="modify"></a>
 ## Modification
 
-The *HasMany* field has methods that can be used to modify buttons, change the *TableBuilder* for previews and forms, as well as change the *relatedLink* button.
+The *HasMany* field has methods that can be used to modify buttons, change the *TableBuilder* for preview and form, as well as change the *relatedLink* button.
 
 ### searchable()
 
-By default, there is a search field available on the form page for the HasMany field; to disable it, you can use the `searchable` method.
+By default, a search field is available on the form page for the HasMany field; to disable it, you can use the `searchable` method.
 
 ```php
 public function searchable(Closure|bool|null $condition = null): static
@@ -313,7 +314,7 @@ HasMany::make('Comments', resource: CommentResource::class)
 
 ### modifyTable()
 
-The `modifyTable()` method allows you to change the *TableBuilder* for previews and forms.
+The `modifyTable()` method allows you to change the *TableBuilder* for preview and form.
 
 ```php
 HasMany::make('Comments', resource: CommentResource::class)
@@ -324,16 +325,16 @@ HasMany::make('Comments', resource: CommentResource::class)
     )
 ```
 
-### Redirect after changing
+### Redirect after modification
 
-The `redirectAfter()` method allows you to redirect after saving/adding/deleting.
+The `redirectAfter()` method allows for redirection after saving/adding/deleting.
 
 ```php
 HasMany::make('Comments', resource: CommentResource::class)
     ->redirectAfter(fn(int $parentId) => route('home'))
 ```
 
-### Modifying QueryBuilder
+### Modify QueryBuilder
 
 The `modifyBuilder()` method allows you to modify the query through *QueryBuilder*.
 
@@ -347,7 +348,7 @@ HasMany::make('Comments', resource: CommentResource::class)
 
 ### indexButtons()
 
-The `indexButtons` method allows you to add additional ActionButtons for working with HasMany items.
+The `indexButtons` method allows you to add additional ActionButtons for working with HasMany elements.
 
 ```php
 HasMany::make('Comments', 'comments', resource: CommentResource::class)
@@ -358,7 +359,7 @@ HasMany::make('Comments', 'comments', resource: CommentResource::class)
 
 ### formButtons()
 
-The `formButtons` method allows you to add additional ActionButtons inside the form when creating or editing a HasMany item.
+The `formButtons` method allows you to add additional ActionButtons inside the form when creating or editing a HasMany element.
 
 ```php
 HasMany::make('Comments', 'comments', resource: CommentResource::class)
@@ -370,19 +371,18 @@ HasMany::make('Comments', 'comments', resource: CommentResource::class)
 <a name="advanced"></a>
 ## Advanced usage
 
-### Relationship through JSON field
-
-The *HasMany* field is displayed outside the main resource form by default. If you need to display relationship fields inside the main form, you can use the *JSON* field in `asRelation()` mode.
+### Relation through JSON field
+The *HasMany* field is displayed outside the main resource form by default. If you need to display the relation fields inside the main form, you can use the *JSON* field in `asRelation()` mode.
 
 ```php
 Json::make('Comments', 'comments')
-    ->asRelation(new CommentResource())
+    ->asRelation(CommentResource::class)
     //...
 ```
 
-### Relationship through Template field
+### Relation through Template field
 
 Using the *Template* field, you can build a field for *HasMany* relationships using a fluent interface during declaration.
 
 > [!NOTE]
-> For more information, refer to the [Template field](/docs/{{version}}/fields/template).
+> For more detailed information, refer to the [Template field](/docs/{{version}}/fields/template).
