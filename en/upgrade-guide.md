@@ -242,6 +242,7 @@ TableBuilder::make()
 5. Changes in other methods:
 - Helper `to_page` → `toPage`
 - Instead of the `columnSpan` method in components, use the component method `Column`: `Column::make([...])->columnSpan(..)`
+- Instead of `expansion('url')`, use the `suffix('url')` method
 
 #### Removed Methods
 1. Field display methods:
