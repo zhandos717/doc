@@ -47,7 +47,6 @@ protected function formFields(): iterable
                 ? $this->getRouter()->getEndpoints()->method('removeAvatar', params: ['resourceItem' => $this->getItemID()])
                 : null,
             '@click.prevent' => <<<'JS'
-                console.log()
                 fetch(`${$event.target.closest('a').dataset.asyncUrl}&index=${$event.target.closest('tr').rowIndex}`).then(() => remove())
             JS
         ]),
