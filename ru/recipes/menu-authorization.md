@@ -1,8 +1,6 @@
-# "Видимость" элементов меню в соответствии с политиками
+# Отображение элементов меню по условию
 
-Предварительно необходимо создать политики для соответствующих моделей.
-
-Через фасад Gate:
+1. Через фасад Gate:
 
 ```php
 use Illuminate\Support\Facades\Gate;
@@ -17,7 +15,7 @@ protected function menu(): array
 }
 ```
 
-Через ресурс:
+2. Через ресурс:
 
 ```php
 use MoonShine\Laravel\Enums\Ability;
@@ -26,7 +24,28 @@ protected function menu(): array
 {
   return [
     MenuItem::make('Роли', MoonShineUserRoleResource::class)
-      ->canSee(fn(MenuItem $item) => $item->getFiller()->can(Ability::VIEW_ANY))
+      ->canSee(fn(MenuItem $item) => $item->getFiller()->can(Ability::VIEW_ANY)),
   ];
 }
 ```
+
+3. Без политик:
+
+```php
+protected function menu(): array
+{
+    $menu = [
+        MenuItem::make('Articles', ArticleResource::class),
+    ];
+
+    if (request()->user()->isSuperUser()) {
+        $menu[] = MenuItem::make(
+            'Admins',
+            MoonShineUserResource::class,
+        );
+    }
+
+    return $menu;
+}
+```
+   
