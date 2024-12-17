@@ -444,10 +444,8 @@ Text::make('Title')->customView('fields.my-custom-input')
 
 ```php
 Text::make('Thumbnail')
-  ->changePreview(function ($value, Field $field) {
-      return view('moonshine::ui.image', [
-          'value' => Storage::url($value)
-      ]);
+  ->changePreview(function (?string $value, Text $field) {
+      return Thumbnails::make($value);
   })
 ```
 

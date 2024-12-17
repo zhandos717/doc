@@ -441,10 +441,8 @@ The `changePreview()` method allows overriding the view for preview (everywhere 
 
 ```php
 Text::make('Thumbnail')
-  ->changePreview(function ($value, Field $field) {
-      return view('moonshine::ui.image', [
-          'value' => Storage::url($value)
-      ]);
+  ->changePreview(function (?string $value, Text $field) {
+      return Thumbnails::make($value);
   })
 ```
 
