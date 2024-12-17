@@ -167,3 +167,4 @@
     - [Template](/docs/{{version}}/recipes/template)
     - [UpdateOnPreview pivot](/docs/{{version}}/recipes/update-on-preview-pivot)
     - [Menu authorization](/docs/{{version}}/recipes/menu-authorization)
+    - [Async remove on click](/docs/{{version}}/recipes/async-remove-on-click)
