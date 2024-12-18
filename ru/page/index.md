@@ -17,6 +17,8 @@
 - [Создание ссылки на страницу в ресурсе](#link-from-resource)
 - [Assets](#assets)
 
+---
+
 <a name="basics"></a>
 ## Основы
 

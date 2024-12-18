@@ -17,6 +17,8 @@
 - [Creating a Link to a Page from a Resource](#link-from-resource)
 - [Assets](#assets)
 
+---
+
 <a name="basics"></a>
 ## Basics
 
