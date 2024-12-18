@@ -1,8 +1,6 @@
-# "Visibility" of menu items according to policies
+# Display menu items based on a condition
 
-First, it is necessary to create policies for the corresponding models.
-
-Through the Gate facade:
+1. Using Gate facade:
 
 ```php
 use Illuminate\Support\Facades\Gate;
@@ -17,7 +15,7 @@ protected function menu(): array
 }
 ```
 
-Through the resource:
+2. Using resource:
 
 ```php
 use MoonShine\Laravel\Enums\Ability;
@@ -26,7 +24,24 @@ protected function menu(): array
 {
   return [
     MenuItem::make('Roles', MoonShineUserRoleResource::class)
-      ->canSee(fn(MenuItem $item) => $item->getFiller()->can(Ability::VIEW_ANY))
+      ->canSee(fn(MenuItem $item) => $item->getFiller()->can(Ability::VIEW_ANY)),
   ];
+}
+```
+
+3. Without Policy:
+
+```php
+protected function menu(): array
+{
+    $menu = [
+        MenuItem::make('Articles', ArticleResource::class),
+    ];
+
+    if (request()->user()->isSuperUser()) {
+        $menu[] = MenuItem::make('Admins', MoonShineUserResource::class);
+    }
+
+    return $menu;
 }
 ```
