@@ -193,6 +193,15 @@ public function modifyDetailComponent(ComponentContract $component): ComponentCo
 - `title` - Column with the header
 - `value` - Column with the value
 
+You can also pass an integer value to specify the columns:
+
+```php
+$component->vertical(
+    title: 2,
+    value: 10,
+)
+```
+
 <a name="editable-table"></a>
 ### Editable Table
 
@@ -524,7 +533,7 @@ Event list for TableBuilder:
 
 All parameters of the `async` method are optional, and by default, `TableBuilder` will automatically set URL based on the current page.
 
-In the process of using TableBuilder in `async` mode, there may arise a task where you use it outside the admin panel on pages that are not declared in the MoonShine system. Then you will need to specify your own URL and implement a response with the HTML table. Let's consider an implementation example:
+In the process of using *TableBuilder* in `async` mode, there may arise a task where you use it outside the admin panel on pages that are not declared in the MoonShine system. Then you will need to specify your own URL and implement a response with the HTML table. Let's consider an implementation example:
 
 ```php
 TableBuilder::make()->name('my-table')->async(route('undefined-page.component', [
