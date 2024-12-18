@@ -50,7 +50,7 @@ return [
     'domain' => env('MOONSHINE_DOMAIN'),
     'prefix' => 'admin',
     'auth' => [
-        'enable' => true,
+        'enabled' => true,
         'guard' => 'moonshine',
     ],
     'use_migrations' => true,
@@ -308,7 +308,7 @@ $config->guard('admin');
 tab: config/moonshine.php
 ```php
 'auth' => [
-    'enable' => false,
+    'enabled' => false,
     // ...
 ],
 ```
