@@ -157,6 +157,7 @@
 - ## Recipes
     - [Profile](/docs/{{version}}/recipes/profile)
     - [Select](/docs/{{version}}/recipes/select)
+    - [Tabs](/docs/{{version}}/recipes/tabs)
     - [Dashboard settings](/docs/{{version}}/recipes/dashboard-settings)
     - [IndexPage with CardsBuilder](/docs/{{version}}/recipes/index-page-cards)
     - [Breadcrumbs](/docs/{{version}}/recipes/custom-breadcrumbs)
